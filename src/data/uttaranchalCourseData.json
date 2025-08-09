@@ -5,15 +5,15 @@
       "name": "Online MBA",
       "level": "pg",
       "university": "Uttaranchal University",
-      "fees": "₹1,80,000",
+      "fees": "₹98,000",
       "duration": "2 Years",
       "specializationsCount": 12,
       "rating": 4.5,
       "reviews": 703,
       "feesBreakdown": {
-        "fullFees": "INR 1,80,000",
-        "perSemester": "INR 45,000",
-        "emi": "INR 7,500/Month"
+        "fullFees": "INR 98,000",
+        "perSemester": "INR 47,000",
+        "emi": "INR 3,956/Month"
       },
       "curriculum": [
         {
@@ -67,9 +67,9 @@
       "rating": 4.4,
       "reviews": 650,
       "feesBreakdown": {
-        "fullFees": "INR 1,20,000",
-        "perSemester": "INR 20,000",
-        "emi": "INR 1,667/Month"
+        "fullFees": "INR 1,02,000",
+        "perSemester": "INR 32,000",
+        "emi": "INR 2,693/Month"
       },
       "curriculum": [
         {
@@ -108,12 +108,7 @@
       "specializations": [
         "Marketing",
         "Finance",
-        "Human Resource",
-        "Operations",
-        "Retail",
-        "Logistics",
-        "Digital Business",
-        "International Business"
+        "Human Resource"
       ]
     },
     {
@@ -121,15 +116,15 @@
       "name": "Online MCA",
       "level": "pg",
       "university": "Uttaranchal University",
-      "fees": "₹1,50,000",
+      "fees": "₹96,000",
       "duration": "2 Years",
       "specializationsCount": 4,
       "rating": 4.6,
       "reviews": 420,
       "feesBreakdown": {
-        "fullFees": "INR 1,50,000",
-        "perSemester": "INR 37,500",
-        "emi": "INR 6,250/Month"
+        "fullFees": "INR 96,000",
+        "perSemester": "INR 46,000",
+        "emi": "INR 3,872/Month"
       },
       "curriculum": [
         {
@@ -166,15 +161,15 @@
       "name": "Online BCA",
       "level": "ug",
       "university": "Uttaranchal University",
-      "fees": "₹1,08,000",
+      "fees": "₹1,02,000",
       "duration": "3 Years",
       "specializationsCount": 6,
       "rating": 4.3,
       "reviews": 580,
       "feesBreakdown": {
-        "fullFees": "INR 1,08,000",
-        "perSemester": "INR 18,000",
-        "emi": "INR 1,500/Month"
+        "fullFees": "INR 1,02,000",
+        "perSemester": "INR 32,000",
+        "emi": "INR 2,693/Month"
       },
       "curriculum": [
         {
@@ -224,15 +219,15 @@
       "name": "Online BA",
       "level": "ug",
       "university": "Uttaranchal University",
-      "fees": "₹45,000",
+      "fees": "₹61,200",
       "duration": "3 Years",
       "specializationsCount": 3,
       "rating": 4.1,
       "reviews": 350,
       "feesBreakdown": {
-        "fullFees": "INR 45,000",
-        "perSemester": "INR 7,500",
-        "emi": "INR 625/Month"
+        "fullFees": "INR 61,200",
+        "perSemester": "INR 18,400",
+        "emi": "INR 3,097/Month"
       },
       "curriculum": [
         {
