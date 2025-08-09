@@ -101,7 +101,7 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
             </DialogHeader>
 
             <form onSubmit={handleSubmit} className="space-y-3">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <Label htmlFor="fullName" className="text-sm font-bold text-gray-700">
                     Full Name *
@@ -152,7 +152,7 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
                 />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <Label htmlFor="state" className="text-sm font-bold text-gray-700">
                     State *
@@ -170,24 +170,23 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
                     </SelectContent>
                   </Select>
                 </div>
-              </div>
-
-              <div>
-                <Label htmlFor="course" className="text-sm font-bold text-gray-700">
-                  Course *
-                </Label>
-                <Select onValueChange={(value) => handleInputChange("course", value)}>
-                  <SelectTrigger className="mt-1">
-                    <SelectValue placeholder="Select course" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {courses.map((course) => (
-                      <SelectItem key={course.value} value={course.value}>
-                        {course.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <div>
+                  <Label htmlFor="course" className="text-sm font-bold text-gray-700">
+                    Course *
+                  </Label>
+                  <Select onValueChange={(value) => handleInputChange("course", value)}>
+                    <SelectTrigger className="mt-1">
+                      <SelectValue placeholder="Select course" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {courses.map((course) => (
+                        <SelectItem key={course.value} value={course.value}>
+                          {course.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
               </div>
 
               <div className="flex items-start space-x-2">
