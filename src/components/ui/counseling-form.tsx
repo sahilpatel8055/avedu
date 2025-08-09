@@ -77,8 +77,8 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="w-[min(92vw,420px)] max-w-none rounded-2xl p-4 sm:p-5 bg-white mx-2 sm:mx-4 my-4 sm:my-8 overflow-hidden">
-        <div className="h-full">
+      <DialogContent className="w-[min(92vw,900px)] max-w-none rounded-2xl p-4 sm:p-5 bg-white mx-2 sm:mx-4 my-4 sm:my-8 overflow-hidden">
+        <div className="grid lg:grid-cols-2 gap-0 h-full">
           {/* Left Side - Form */}
           <div className="p-3 sm:p-4">
             <DialogHeader className="mb-3 sm:mb-4">
@@ -228,6 +228,27 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
             </div>
           </div>
 
+          <aside className="hidden lg:flex items-center justify-center p-4">
+            <div className="w-full rounded-xl bg-primary/5 p-4 shadow-sm">
+              <div className="rounded-lg overflow-hidden mb-4">
+                <div className="aspect-square bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center">
+                  <span className="text-primary font-semibold">Compare & Apply</span>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-primary/80 text-xs font-medium inline-flex items-center rounded-full bg-primary/10 px-3 py-1 mb-1">Compare & Apply from 100+ Online Universities</div>
+                <h3 className="text-lg font-bold text-foreground">Get Free Counseling & Find Your Perfect Course</h3>
+                <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-2"><svg className="h-4 w-4 text-primary" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2"/></svg>100+ Universities</li>
+                  <li className="flex items-center gap-2"><svg className="h-4 w-4 text-primary" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2"/></svg>30X comparison factors</li>
+                  <li className="flex items-center gap-2"><svg className="h-4 w-4 text-primary" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2"/></svg>Free expert consultation</li>
+                  <li className="flex items-center gap-2"><svg className="h-4 w-4 text-primary" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2"/></svg>Quick loan facility</li>
+                  <li className="flex items-center gap-2"><svg className="h-4 w-4 text-primary" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2"/></svg>Celebrating 1 lac admissions</li>
+                  <li className="flex items-center gap-2"><svg className="h-4 w-4 text-primary" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2"/></svg>Post admission support</li>
+                </ul>
+              </div>
+            </div>
+          </aside>
         </div>
       </DialogContent>
     </Dialog>

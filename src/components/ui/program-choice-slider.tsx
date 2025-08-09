@@ -142,7 +142,7 @@ const ProgramChoiceSlider: React.FC<ProgramChoiceSliderProps> = ({ universityTyp
               scrollbarWidth: 'none',
               overscrollBehaviorX: 'contain',
               userSelect: 'none',
-              touchAction: 'pan-x'
+              touchAction: 'auto'
             }}
           >
             <style>
