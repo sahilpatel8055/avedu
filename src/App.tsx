@@ -31,6 +31,12 @@ import UttaranchalCoursePage from "./pages/course/UttaranchalCoursePage";
 import VguCoursePage from "./pages/course/VguCoursePage";
 // NEW Sikkim dynamic course page
 import SikkimCoursePage from "./pages/course/SikkimCoursePage";
+// NEW Amity dynamic course page
+import AmityCoursePage from "./pages/course/AmityCoursePage";
+// NEW LPU dynamic course page
+import LPUCoursePage from "./pages/course/LPUCoursePage";
+// NEW Mangalyatan dynamic course page
+import MangalayatanCoursePage from "./pages/course/MangalayatanCoursePage";
 // Legal pages
 import Disclaimer from "./pages/legal/Disclaimer";
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
@@ -83,9 +89,9 @@ const App = () => (
           <Route path="/university/vgu/:courseId" element={<VguCoursePage />} />
           {/* Add routes for Sikkim, Amity, LPU, and Mangalyatan course pages */}
           <Route path="/university/sikkim/:courseId" element={<SikkimCoursePage />} />
-          <Route path="/university/amity/:courseId" element={<SikkimCoursePage />} />
-          <Route path="/university/lpu/:courseId" element={<SikkimCoursePage />} />
-          <Route path="/university/mangalyatan/:courseId" element={<SikkimCoursePage />} />
+          <Route path="/university/amity/:courseId" element={<AmityCoursePage />} />
+          <Route path="/university/lpu/:courseId" element={<LPUCoursePage />} />
+          <Route path="/university/mangalyatan/:courseId" element={<MangalayatanCoursePage />} />
           {/* Legal pages */}
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

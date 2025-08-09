@@ -37,7 +37,7 @@ import amityLogo from "@/assets/amity-logo.jpg";
 import lpuLogo from "@/assets/lpu-logo.jpg";
 import mangalyatanLogo from "@/assets/mangalyatan-logo.png";
 import HorizontalUniversityScroll from "@/components/ui/horizontal-university-scroll";
-import CareerAssistance from "@/components/ui/career-assistance";
+
 
 const OnlineBBA = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
@@ -370,8 +370,6 @@ const OnlineBBA = () => {
         </div>
       </section>
 
-      {/* Career Assistance Section */}
-      <CareerAssistance />
 
       {/* Specializations */}
       <section className="py-16 bg-white">
