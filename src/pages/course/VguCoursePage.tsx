@@ -11,17 +11,6 @@ import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
 import CareerAssistance from "@/components/ui/career-assistance";
 import hiringPartnersImg from "@/assets/hiring-partners.png";
 
-const features = [
-  "NAAC A+ Accredited",
-  "UGC-DEB Approved",
-  "Industry-Aligned Curriculum",
-  "Expert Faculty Network",
-  "Comprehensive Learning Resources",
-  "Career Support Services",
-  "Flexible Learning Options",
-  "Strong Alumni Network"
-];
-
 const VguCoursePage = () => {
   const { courseId } = useParams();
   const course = vguCourseData.courses.find(c => c.id === courseId);
@@ -35,7 +24,7 @@ const VguCoursePage = () => {
   }
 
   return (
-    <div className="popular-course-landing min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <NavigationHeader />
       
       {/* Hero Section */}
@@ -124,20 +113,7 @@ const VguCoursePage = () => {
         </div>
       </section>
 
-      {/* Features Section (Replica) - 3rd Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Vivekananda Global University?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-start gap-3 p-4 bg-white/90 rounded-lg border border-yellow-300">
-                <div className="flex-shrink-0 w-2 h-2 bg-gray-900 rounded-full mt-2"></div>
-                <p className="text-sm text-gray-800">{feature}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Curriculum & Specializations Section */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Curriculum & Specializations</h2>

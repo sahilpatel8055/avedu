@@ -153,21 +153,6 @@ const VGU = () => {
         </div>
       </section>
 
-      {/* Features Section (Replica) - Inserted as 3rd Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Vivekananda Global University?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-start gap-3 p-4 bg-white/90 rounded-lg border border-yellow-300">
-                <div className="flex-shrink-0 w-2 h-2 bg-gray-900 rounded-full mt-2"></div>
-                <p className="text-sm text-gray-800">{feature}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Program Choice Slider */}
       <ProgramChoiceSlider universityType="vgu" />
 
@@ -199,7 +184,7 @@ const VGU = () => {
           <h2 className="text-3xl font-bold text-center mb-12">Popular Courses</h2>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {courses.map((course, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow bg-[hsl(var(--popular-card-bg))]">
+              <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader className="pb-4">
                   <div className="flex items-center justify-center mb-4">
                     <img src={course.image} alt={course.name} className="w-16 h-16 object-cover rounded-lg" />

@@ -24,7 +24,7 @@ const UttaranchalCoursePage = () => {
   }
 
   return (
-    <div className="popular-course-landing min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <NavigationHeader />
       
       {/* Hero Section */}

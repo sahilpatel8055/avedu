@@ -57,17 +57,6 @@ const specializationIcons = {
   "Accounts & Finance": Banknote
 };
 
-const features = [
-  "NAAC A++ Accredited",
-  "WES Recognized Degrees",
-  "Industry-Aligned Curriculum",
-  "Expert Faculty Network",
-  "Comprehensive Learning Resources",
-  "Career Support Services",
-  "Flexible Learning Options",
-  "Global Alumni Network"
-];
-
 const ManipalCoursePage = () => {
   const { courseId } = useParams<{ courseId: string }>();
   const course = manipalCourseData.courses.find((c) => c.id === courseId);
@@ -87,7 +76,7 @@ const ManipalCoursePage = () => {
   };
 
   return (
-    <div className="popular-course-landing min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <NavigationHeader />
 
       {/* Header Section */}
@@ -196,20 +185,7 @@ const ManipalCoursePage = () => {
           </Tabs>
         </Card>
 
-        {/* Features Section (Replica) - 3rd Section */}
-        <section className="py-16 bg-muted/30 mt-12">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Why Choose Manipal University Online?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-start gap-3 p-4 bg-card rounded-lg border">
-                  <div className="flex-shrink-0 w-2 h-2 bg-primary rounded-full mt-2"></div>
-                  <p className="text-sm text-foreground">{feature}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Curriculum Section */}
         <h2 className="text-3xl font-bold text-foreground mt-12 mb-6 flex items-center gap-2">
           <BookOpen className="w-8 h-8 text-primary" /> Online {course.name} Curriculum
         </h2>
