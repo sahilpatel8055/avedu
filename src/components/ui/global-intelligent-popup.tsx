@@ -6,8 +6,8 @@ const GlobalIntelligentPopup = () => {
 
   // Initialize intelligent popup with default configuration
   useIntelligentPopup(openForm, {
-    timeDelay: 20,
-    scrollThreshold: 35,
+    timeDelay: 25,
+    scrollThreshold: 50,
     submissionCooldown: 10,
     closureCooldown: 5
   });
