@@ -77,7 +77,7 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="relative w-[90%] max-w-4xl max-h-[95vh] p-0 bg-white mx-auto my-2 sm:my-4 overflow-hidden rounded-xl shadow-[0_0_60px_hsl(var(--primary)/0.25)]">
+      <DialogContent className="relative z-[110] opacity-100 w-[90%] max-w-4xl max-h-[95vh] p-0 bg-white mx-auto my-2 sm:my-4 overflow-hidden rounded-xl shadow-[0_0_60px_hsl(var(--primary)/0.25)]">
         {/* Lamp glow effect (popup only) */}
         <div aria-hidden className="pointer-events-none absolute -top-12 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full bg-[radial-gradient(closest-side,hsl(var(--primary)/0.35),transparent_70%)] blur-2xl" />
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full max-h-[95vh]">
