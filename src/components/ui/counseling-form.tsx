@@ -11,6 +11,8 @@ import { useToast } from "@/hooks/use-toast";
 interface CounselingFormProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  onFormSubmit?: () => void;
+  onFormClose?: () => void;
 }
 
 const states = [
@@ -34,7 +36,7 @@ const courses = [
   { value: "online-msc", label: "Online M.Sc (Master of Science)" }
 ];
 
-const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange }) => {
+const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onFormSubmit, onFormClose }) => {
   const [formData, setFormData] = useState({
     fullName: "",
     contactNumber: "",
@@ -65,6 +67,7 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange }) =
       title: "Form Submitted Successfully!",
       description: "Our counselor will contact you within 24 hours.",
     });
+    onFormSubmit?.();
     onOpenChange(false);
   };
 
@@ -86,7 +89,10 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange }) =
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  onClick={() => onOpenChange(false)}
+                  onClick={() => {
+                    onFormClose?.();
+                    onOpenChange(false);
+                  }}
                   className="h-8 w-8"
                 >
                   <X className="h-4 w-4" />
