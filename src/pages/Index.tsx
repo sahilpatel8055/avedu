@@ -87,7 +87,7 @@ const Index = () => {
   }));
 
   // Words for FlipWords animation with blue color
-  const flipWords = ["Online Course", "Learning Path", "Career Path", "Flexible Course"];
+  const flipWords = ["Online Course", "Learning Path", "Career Path"];
 
   return (
     <div className="min-h-screen bg-background">

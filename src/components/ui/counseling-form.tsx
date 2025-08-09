@@ -77,8 +77,8 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="w-[min(92vw,900px)] max-w-none rounded-2xl p-4 sm:p-5 bg-white mx-2 sm:mx-4 my-4 sm:my-8 overflow-hidden">
-        <div className="grid lg:grid-cols-2 gap-0 h-full">
+      <DialogContent className="w-[min(92vw,900px)] max-w-none rounded-2xl p-3 sm:p-5 bg-white mx-2 sm:mx-4 my-2 sm:my-8 overflow-hidden">
+        <div className="grid lg:grid-cols-[65%_35%] gap-0 h-full">
           {/* Left Side - Form */}
           <div className="p-3 sm:p-4">
             <DialogHeader className="mb-3 sm:mb-4">
@@ -152,7 +152,7 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
                 />
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <Label htmlFor="state" className="text-sm font-bold text-gray-700">
                     State *
@@ -161,7 +161,7 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
                     <SelectTrigger className="mt-1">
                       <SelectValue placeholder="Select your state" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="z-50 bg-popover text-popover-foreground">
                       {states.map((state) => (
                         <SelectItem key={state} value={state}>
                           {state}
@@ -178,7 +178,7 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
                     <SelectTrigger className="mt-1">
                       <SelectValue placeholder="Select course" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="z-50 bg-popover text-popover-foreground">
                       {courses.map((course) => (
                         <SelectItem key={course.value} value={course.value}>
                           {course.label}
