@@ -342,7 +342,7 @@ const UniversityCard = ({ university, onOpenCounseling }: { university: Universi
               View Courses
             </Button>
           </Link>
-          <Button size="sm" className="gap-0.5 w-full text-[0.65rem] py-1 sm:py-1.5 h-auto" onClick={onOpenCounseling}>
+          <Button size="sm" className="gap-0.5 w-full text-[0.65rem] py-1 sm:py-1.5 h-auto" onClick={onOpenCounseling ?? (() => document.dispatchEvent(new CustomEvent('open-counseling')))}>
             <ExternalLink className="h-2.5 w-2.5 sm:h-3 w-3" />
             Apply Now
           </Button>
