@@ -1,6 +1,6 @@
 import { useCounselingForm } from "@/hooks/use-counseling-form";
 import { useIntelligentPopup } from "@/hooks/use-intelligent-popup";
-
+import { Button } from "@/components/ui/button";
 const GlobalIntelligentPopup = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
 
@@ -12,7 +12,17 @@ const GlobalIntelligentPopup = () => {
     closureCooldown: 5
   });
 
-  return <CounselingFormComponent />;
+  return (
+    <>
+      {/* Mobile floating CTA */}
+      <div className="md:hidden fixed bottom-4 right-4 z-[60]">
+        <Button className="rounded-full px-4 py-2 shadow-lg" onClick={openForm}>
+          Get 100% free counseling session
+        </Button>
+      </div>
+      <CounselingFormComponent />
+    </>
+  );
 };
 
 export default GlobalIntelligentPopup;

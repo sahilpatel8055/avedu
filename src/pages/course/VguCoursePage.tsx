@@ -24,7 +24,7 @@ const VguCoursePage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="popular-course-landing min-h-screen bg-background">
       <NavigationHeader />
       
       {/* Hero Section */}
@@ -71,6 +71,35 @@ const VguCoursePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Features Section (3rd Section) */}
+      <section className="py-16 bg-yellow-400 rounded-none">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">What Makes Online VGU Right Choice?</h2>
+            <p className="text-lg text-muted-foreground">Discover why students choose VGU for online education.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl font-bold text-green-600 mb-2">UGC</div>
+              <div className="text-sm text-gray-700">Approved University</div>
+            </div>
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl font-bold text-green-600 mb-2">100+</div>
+              <div className="text-sm text-gray-700">Industry Partners</div>
+            </div>
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl font-bold text-green-600 mb-2">₹6L</div>
+              <div className="text-sm text-gray-700">Average Package</div>
+            </div>
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl font-bold text-green-600 mb-2">24/7</div>
+              <div className="text-sm text-gray-700">Learning Support</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Fees & Eligibility Section */}
       <section className="py-16">

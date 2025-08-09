@@ -24,7 +24,7 @@ const UttaranchalCoursePage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="popular-course-landing min-h-screen bg-background">
       <NavigationHeader />
       
       {/* Hero Section */}
@@ -71,6 +71,35 @@ const UttaranchalCoursePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Features Section (3rd Section) */}
+      <section className="py-16 bg-yellow-400 rounded-none">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Why Opt For Uttaranchal University Online?</h2>
+            <p className="text-lg text-muted-foreground">Key advantages of studying with Uttaranchal University Online.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl font-bold text-green-600 mb-2">25+</div>
+              <div className="text-sm text-gray-700">Years of Excellence</div>
+            </div>
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl font-bold text-green-600 mb-2">A+</div>
+              <div className="text-sm text-gray-700">NAAC Accreditation</div>
+            </div>
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl font-bold text-green-600 mb-2">₹8L</div>
+              <div className="text-sm text-gray-700">Highest Package</div>
+            </div>
+            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl font-bold text-green-600 mb-2">90%</div>
+              <div className="text-sm text-gray-700">Placement Rate</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Fees & Eligibility Section */}
       <section className="py-16">
