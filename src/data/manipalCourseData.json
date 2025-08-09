@@ -56,7 +56,12 @@
         "Finance",
         "Human Resource Management",
         "BFSI",
-        "Operations Management"
+        "Operations Management",
+        "International Business",
+        "Project Management",
+        "Retail Management",
+        "Information System Management",
+        "Supply Chain Management"
       ]
     },
     {
@@ -113,11 +118,9 @@
         }
       ],
       "specializations": [
-        "Data Science",
+        "Data Science & Analytics",
         "Cloud Computing",
-        "Cyber Security",
-        "Artificial Intelligence",
-        "Full Stack Development"
+        "Cyber Security"
       ]
     },
     {
@@ -164,12 +167,11 @@
         }
       ],
       "specializations": [
-        "Data Science",
+        "AI & Data Science",
         "Cloud Computing",
         "Cyber Security",
-        "Artificial Intelligence",
-        "Full Stack Development",
-        "UI/UX Design"
+        "Comprehensive Emerging Technologies",
+        "AI & ML"
       ]
     },
     {
@@ -230,11 +232,12 @@
       ],
       "specializations": [
         "Marketing",
-        "Finance",
-        "HRM",
-        "Operations",
-        "Business Analytics",
-        "IT & Systems"
+        "Digital Marketing",
+        "Finance & accounting",
+        "Human Resource Management",
+        "Enthepreneurship Management & Family Business",
+        "Data Analytics",
+        "Retail AND E-Commerce"
       ]
     },
     {
@@ -350,9 +353,9 @@
       "rating": 4.6,
       "reviews": 3210,
       "feesBreakdown": {
-        "fullFees": "INR 1,40,000",
-        "perSemester": "INR 35,000",
-        "emi": "INR 5,833/Month"
+        "fullFees": "INR 80,000",
+        "perSemester": "INR 20,000",
+        "emi": "INR 3,334/Month"
       },
       "curriculum": [
         {
@@ -381,7 +384,7 @@
           ]
         }
       ],
-      "specializations": ["Journalism", "Public Relations"]
+      "specializations": ["Journalism & Mass Communication", "Economics"]
     },
     {
       "id": "online-ba",
@@ -438,7 +441,7 @@
           ]
         }
       ],
-      "specializations": ["Journalism", "Public Relations"]
+      "specializations": ["English", "Political Science", "Sociology"]
     }
   ]
 }
