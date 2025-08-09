@@ -32,6 +32,8 @@ All colors MUST be HSL. Professional education-focused design.
     --card: 0 0% 100%;
     --card-foreground: 215 25% 27%;
     --card-hover: 210 40% 98%;
+    /* Scoped utility for Popular Courses cards */
+    --popular-card-bg: 200 34% 83%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 27%;

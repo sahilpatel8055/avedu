@@ -77,10 +77,12 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="w-[90%] max-w-4xl max-h-[95vh] p-0 bg-white mx-auto my-2 sm:my-4 overflow-hidden">
+      <DialogContent className="relative w-[90%] max-w-4xl max-h-[95vh] p-0 bg-white mx-auto my-2 sm:my-4 overflow-hidden rounded-xl shadow-[0_0_60px_hsl(var(--primary)/0.25)]">
+        {/* Lamp glow effect (popup only) */}
+        <div aria-hidden className="pointer-events-none absolute -top-12 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full bg-[radial-gradient(closest-side,hsl(var(--primary)/0.35),transparent_70%)] blur-2xl" />
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full max-h-[95vh]">
           {/* Left Side - Form */}
-          <div className="p-4 sm:p-6 lg:p-8 overflow-y-auto">
+          <div className="relative p-4 sm:p-6 lg:p-8 overflow-y-auto">
             <DialogHeader className="mb-3 sm:mb-4">
               <div className="flex items-center justify-between mb-2">
                 <h2 className="text-lg sm:text-xl font-bold text-blue-600">
@@ -245,10 +247,11 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
 
           {/* Right Side - Image & Benefits */}
           <div className="hidden lg:flex lg:flex-col bg-gradient-to-br from-blue-50 to-indigo-100 p-3 lg:p-4 relative overflow-hidden">
-            <div className="relative flex-1 flex items-center justify-center">
+            <div className="relative flex-1 flex items-center justify-center opacity-70 sm:opacity-100">
               <img 
                 src="/lovable-uploads/4e819542-d4de-47e5-a745-52662caced1a.png"
-                alt="Graduate student"
+                alt="Student graduate illustration for counseling"
+                loading="lazy"
                 className="w-56 h-56 xl:w-64 xl:h-64 object-cover rounded-lg shadow-lg"
               />
             </div>
