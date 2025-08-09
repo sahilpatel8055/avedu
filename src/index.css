@@ -208,3 +208,10 @@ All colors MUST be HSL. Professional education-focused design.
     display: none;
   }
 }
+
+@layer components {
+  /* Scope popular course landing pages card background override */
+  .popular-course-landing .rounded-lg.border {
+    background-color: hsl(var(--popular-card-bg));
+  }
+}

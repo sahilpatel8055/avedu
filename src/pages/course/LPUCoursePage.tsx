@@ -58,6 +58,17 @@ const specializationIcons = {
   "Accounts & Finance": Banknote
 };
 
+const features = [
+  "NAAC A++ Accredited",
+  "Industry-Relevant Curriculum",
+  "Global Faculty Network",
+  "Comprehensive Placement Support",
+  "Flexible Learning Modules",
+  "Technology-Enhanced Learning",
+  "Scholarship Opportunities",
+  "International Exposure Programs"
+];
+
 const LPUCoursePage = () => {
   const { courseId } = useParams<{ courseId: string }>();
   // Using manipal course data for now - ideally would have separate lpu data
@@ -78,7 +89,7 @@ const LPUCoursePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="popular-course-landing min-h-screen bg-background">
       <NavigationHeader />
 
       {/* Header Section */}
@@ -136,7 +147,6 @@ const LPUCoursePage = () => {
 
       <div className="container mx-auto px-4 py-12">
 
-        {/* Fees Card Section */}
         <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center gap-2">
           <DollarSign className="w-8 h-8 text-primary" /> Online {course.name} Fee
         </h2>
@@ -187,7 +197,20 @@ const LPUCoursePage = () => {
           </Tabs>
         </Card>
 
-        {/* Curriculum Section */}
+        {/* Features Section (Replica) - 3rd Section */}
+        <section className="py-16 bg-muted/30 mt-12">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">Why Choose Lovely Professional University?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-start gap-3 p-4 bg-white/90 rounded-lg border border-yellow-300">
+                  <div className="flex-shrink-0 w-2 h-2 bg-gray-900 rounded-full mt-2"></div>
+                  <p className="text-sm text-gray-800">{feature}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
         <h2 className="text-3xl font-bold text-foreground mt-12 mb-6 flex items-center gap-2">
           <BookOpen className="w-8 h-8 text-primary" /> Online {course.name} Curriculum
         </h2>
