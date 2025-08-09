@@ -77,8 +77,8 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="w-[70%] max-w-3xl max-h-[85vh] p-0 bg-white mx-auto overflow-hidden rounded-2xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 h-full max-h-[85vh]">
+      <DialogContent className="w-[90%] max-w-4xl max-h-[90dvh] sm:max-h-[90vh] p-0 bg-white mx-auto overflow-hidden rounded-xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 h-full max-h-[90dvh] sm:max-h-[90vh]">
           {/* Left Side - Form */}
           <div className="p-4 sm:p-6 lg:p-8 overflow-y-auto">
             <DialogHeader className="mb-3 sm:mb-4">
