@@ -10,6 +10,7 @@ import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import amityLogo from "@/assets/amity-logo.jpg";
+import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
 
 // Import the specific icons for approvals
 import ugcIcon from "@/assets/icons/ugc-icon.png";
@@ -140,6 +141,9 @@ const Amity = () => {
           </div>
         </div>
       </section>
+
+      {/* Program Choice Slider */}
+      <ProgramChoiceSlider />
 
       {/* Approvals Section */}
       <section className="py-16 bg-muted/30">

@@ -11,6 +11,7 @@ import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import lpuLogo from "@/assets/lpu-logo.jpg";
 import { MovingBorderButton } from "@/components/ui/moving-border";
+import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
 
 // Import the specific icons for approvals
 import ugcIcon from "@/assets/icons/ugc-icon.png";
@@ -149,6 +150,9 @@ const LPU = () => {
           </div>
         </div>
       </section>
+
+      {/* Program Choice Slider */}
+      <ProgramChoiceSlider />
 
       {/* Approvals Section */}
       <section className="py-16 bg-muted/30">

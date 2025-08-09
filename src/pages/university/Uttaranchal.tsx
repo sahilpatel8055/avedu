@@ -11,6 +11,7 @@ import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import uttaranchalLogo from "@/assets/uttaranchal-logo.png";
 import { MovingBorderButton } from "@/components/ui/moving-border";
+import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
 
 // Import the specific icons for approvals
 import ugcIcon from "@/assets/icons/ugc-icon.png";
@@ -156,6 +157,9 @@ const Uttaranchal = () => {
           </div>
         </div>
       </section>
+
+      {/* Program Choice Slider */}
+      <ProgramChoiceSlider universityType="uttaranchal" />
 
       {/* Approvals Section */}
       <section className="py-16 bg-muted/30">

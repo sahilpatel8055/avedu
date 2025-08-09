@@ -11,6 +11,7 @@ import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import smuLogo from "@/assets/smu-logo.jpg";
+import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
 
 // Import the specific icons for approvals
 import ugcIcon from "@/assets/icons/ugc-icon.png";
@@ -149,6 +150,9 @@ const Sikkim = () => {
           </div>
         </div>
       </section>
+
+      {/* Program Choice Slider */}
+      <ProgramChoiceSlider universityType="sikkim" />
 
       {/* Approvals Section */}
       <section className="py-16 bg-muted/30">
