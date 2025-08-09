@@ -228,24 +228,50 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
             </div>
           </div>
 
-          <aside className="hidden lg:flex items-center justify-center p-4">
-            <div className="w-full rounded-xl bg-primary/5 p-4 shadow-sm">
-              <div className="rounded-lg overflow-hidden mb-4">
-                <div className="aspect-square bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center">
-                  <span className="text-primary font-semibold">Compare & Apply</span>
-                </div>
+          <aside className="hidden lg:flex lg:flex-col bg-gradient-to-br from-blue-50 to-indigo-100 p-3 lg:p-4 relative overflow-hidden">
+            <div className="relative flex-1 flex items-center justify-center">
+              <img 
+                src="/lovable-uploads/4e819542-d4de-47e5-a745-52662caced1a.png"
+                alt="Graduate student"
+                className="w-56 h-56 xl:w-64 xl:h-64 object-cover rounded-lg shadow-lg"
+              />
+            </div>
+
+            {/* Content below image */}
+            <div className="mt-3 xl:mt-4 text-center">
+              <div className="bg-blue-100 text-blue-800 px-2 xl:px-3 py-1 rounded-full text-xs xl:text-sm font-medium mb-2 xl:mb-3 inline-block">
+                🎯 Compare & Apply from 100+ Online Universities
               </div>
-              <div className="space-y-2">
-                <div className="text-primary/80 text-xs font-medium inline-flex items-center rounded-full bg-primary/10 px-3 py-1 mb-1">Compare & Apply from 100+ Online Universities</div>
-                <h3 className="text-lg font-bold text-foreground">Get Free Counseling & Find Your Perfect Course</h3>
-                <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-center gap-2"><svg className="h-4 w-4 text-primary" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2"/></svg>100+ Universities</li>
-                  <li className="flex items-center gap-2"><svg className="h-4 w-4 text-primary" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2"/></svg>30X comparison factors</li>
-                  <li className="flex items-center gap-2"><svg className="h-4 w-4 text-primary" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2"/></svg>Free expert consultation</li>
-                  <li className="flex items-center gap-2"><svg className="h-4 w-4 text-primary" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2"/></svg>Quick loan facility</li>
-                  <li className="flex items-center gap-2"><svg className="h-4 w-4 text-primary" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2"/></svg>Celebrating 1 lac admissions</li>
-                  <li className="flex items-center gap-2"><svg className="h-4 w-4 text-primary" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2"/></svg>Post admission support</li>
-                </ul>
+              <h3 className="text-sm xl:text-lg font-bold text-gray-900 mb-2 xl:mb-3">
+                Get Free Counseling & Find Your Perfect Course
+              </h3>
+              
+              {/* Key Benefits */}
+              <div className="space-y-1.5 xl:space-y-2 text-left">
+                <div className="flex items-center gap-2 text-gray-700">
+                  <Star className="h-3 w-3 xl:h-4 xl:w-4 text-blue-600" />
+                  <span className="text-xs xl:text-sm">100+ Universities</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-700">
+                  <Users className="h-3 w-3 xl:h-4 xl:w-4 text-blue-600" />
+                  <span className="text-xs xl:text-sm">30X comparison factors</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-700">
+                  <GraduationCap className="h-3 w-3 xl:h-4 xl:w-4 text-blue-600" />
+                  <span className="text-xs xl:text-sm">Free expert consultation</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-700">
+                  <Award className="h-3 w-3 xl:h-4 xl:w-4 text-blue-600" />
+                  <span className="text-xs xl:text-sm">Quick Loan facility</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-700">
+                  <Clock className="h-3 w-3 xl:h-4 xl:w-4 text-blue-600" />
+                  <span className="text-xs xl:text-sm">Celebrating 1 lac admissions</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-700">
+                  <Phone className="h-3 w-3 xl:h-4 xl:w-4 text-blue-600" />
+                  <span className="text-xs xl:text-sm">Post Admission Support</span>
+                </div>
               </div>
             </div>
           </aside>
