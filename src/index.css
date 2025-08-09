@@ -206,13 +206,3 @@ All colors MUST be HSL. Professional education-focused design.
     display: none;
   }
 }
-
-@layer components {
-  /* Scoped popular course landing card background */
-  .popular-course-landing .card {
-    background-color: hsl(var(--popular-course-card-bg)) !important;
-  }
-  .popular-course-landing .bg-card {
-    background-color: hsl(var(--popular-course-card-bg)) !important;
-  }
-}

@@ -77,10 +77,10 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="w-[90%] max-w-4xl max-h-[90dvh] sm:max-h-[90vh] p-0 bg-white mx-auto overflow-hidden rounded-xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 h-full max-h-[90dvh] sm:max-h-[90vh]">
+      <DialogContent className="max-w-3xl max-h-[90vh] p-0 bg-white mx-2 sm:mx-4 my-4 sm:my-8 overflow-hidden">
+        <div className="grid lg:grid-cols-2 h-full max-h-[90vh]">
           {/* Left Side - Form */}
-          <div className="p-4 sm:p-6 lg:p-8 overflow-y-auto">
+          <div className="p-3 sm:p-4 lg:p-6 overflow-y-auto">
             <DialogHeader className="mb-3 sm:mb-4">
               <div className="flex items-center justify-between mb-2">
                 <h2 className="text-lg sm:text-xl font-bold text-blue-600">
@@ -100,8 +100,8 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
               </div>
             </DialogHeader>
 
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <Label htmlFor="fullName" className="text-sm font-bold text-gray-700">
                     Full Name *
@@ -113,7 +113,7 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
                     onChange={(e) => handleInputChange("fullName", e.target.value)}
                     placeholder="Enter your full name"
                     required
-                    className="mt-1 h-11 text-base"
+                    className="mt-1"
                   />
                 </div>
                 <div>
@@ -131,7 +131,7 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
                       onChange={(e) => handleInputChange("contactNumber", e.target.value)}
                       placeholder="Enter your mobile number"
                       required
-                      className="pl-16 h-11 text-base"
+                      className="pl-16"
                     />
                   </div>
                 </div>
@@ -148,17 +148,17 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
                   onChange={(e) => handleInputChange("email", e.target.value)}
                   placeholder="Enter your email address"
                   required
-                  className="mt-1 h-11 text-base"
+                  className="mt-1"
                 />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <Label htmlFor="state" className="text-sm font-bold text-gray-700">
                     State *
                   </Label>
                   <Select onValueChange={(value) => handleInputChange("state", value)}>
-                    <SelectTrigger className="mt-1 h-11 text-base">
+                    <SelectTrigger className="mt-1">
                       <SelectValue placeholder="Select your state" />
                     </SelectTrigger>
                     <SelectContent>
@@ -181,7 +181,7 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
                     onChange={(e) => handleInputChange("city", e.target.value)}
                     placeholder="Enter your city"
                     required
-                    className="mt-1 h-11 text-base"
+                    className="mt-1"
                   />
                 </div>
               </div>
@@ -191,7 +191,7 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
                   Course Interested In *
                 </Label>
                 <Select onValueChange={(value) => handleInputChange("course", value)}>
-                  <SelectTrigger className="mt-1 h-11 text-base">
+                  <SelectTrigger className="mt-1">
                     <SelectValue placeholder="Select course" />
                   </SelectTrigger>
                   <SelectContent>
@@ -231,7 +231,7 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
                 </Label>
               </div>
 
-              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-12 text-base font-medium">
+              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-2 sm:py-3">
                 Find Best University in 2 Mins
               </Button>
             </form>
@@ -291,7 +291,6 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
               </div>
             </div>
           </div>
-
         </div>
       </DialogContent>
     </Dialog>

@@ -8,8 +8,8 @@ interface IntelligentPopupConfig {
 }
 
 const defaultConfig: IntelligentPopupConfig = {
-  timeDelay: 25,
-  scrollThreshold: 50,
+  timeDelay: 20,
+  scrollThreshold: 35,
   submissionCooldown: 10,
   closureCooldown: 5
 };
@@ -65,17 +65,14 @@ export const useIntelligentPopup = (
     }
   };
 
-  // Time-based trigger (always schedule, ignore cooldown for first open)
+  // Time-based trigger
   useEffect(() => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
+    if (isInCooldown()) return;
 
     timeoutRef.current = setTimeout(() => {
-      if (!timeTriggered.current && !hasTriggered.current) {
+      if (!timeTriggered.current) {
         timeTriggered.current = true;
-        hasTriggered.current = true;
-        onTrigger();
+        triggerPopup();
       }
     }, finalConfig.timeDelay! * 1000);
 
@@ -84,7 +81,7 @@ export const useIntelligentPopup = (
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [finalConfig.timeDelay]);
+  }, []);
 
   // Scroll-based trigger
   useEffect(() => {

@@ -30,8 +30,6 @@ import lpuLogo from "@/assets/lpu-logo.jpg";
 import smuLogo from "@/assets/smu-logo.jpg";
 import uttaranchalLogo from "@/assets/uttaranchal-logo.png";
 
-import { useCounselingForm } from "@/hooks/use-counseling-form";
-
 const Index = () => {
   const universities = [
     {
@@ -91,7 +89,6 @@ const Index = () => {
   // Words for FlipWords animation with blue color
   const flipWords = ["Online Course", "Learning Path", "Career Path", "Flexible Course"];
 
-  const { openForm: openCounselingForm, CounselingFormComponent } = useCounselingForm();
   return (
     <div className="min-h-screen bg-background">
       <NavigationHeader />
@@ -210,14 +207,13 @@ const Index = () => {
       </section>
 
       {/* 4th Section - Universities Grid */}
-      <UniversityGrid onOpenCounseling={openCounselingForm} />
+      <UniversityGrid />
       
       {/* 5th Section - Career Assistance */}
       <CareerAssistance />
 
       {/* 6th Section - Counselling */}
       <CounsellingSection />
-      <CounselingFormComponent />
       
       <Footer />
     </div>
