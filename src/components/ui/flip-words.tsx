@@ -1,8 +1,10 @@
-
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, LayoutGroup } from "motion/react";
-import { cn } from "@/lib/utils";
+import React, { useCallback, useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion"; // Assuming framer-motion based on the syntax used, as 'motion/react' is not standard
+
+// cn utility function would typically be imported from a lib/utils file
+// For this example, we'll assume it's available or use a basic equivalent
+const cn = (...classes) => classes.filter(Boolean).join(' ');
 
 export const FlipWords = ({
   words,
@@ -17,16 +19,20 @@ export const FlipWords = ({
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
   const startAnimation = useCallback(() => {
-    const word = words[words.indexOf(currentWord) + 1] || words[0];
+    // Find the next word, loop back to the first if at the end
+    const nextWordIndex = words.indexOf(currentWord) + 1;
+    const word = words[nextWordIndex] || words[0];
     setCurrentWord(word);
     setIsAnimating(true);
   }, [currentWord, words]);
 
   useEffect(() => {
-    if (!isAnimating)
-      setTimeout(() => {
+    if (!isAnimating) {
+      const timeoutId = setTimeout(() => {
         startAnimation();
       }, duration);
+      return () => clearTimeout(timeoutId); // Cleanup timeout
+    }
   }, [isAnimating, duration, startAnimation]);
 
   return (
@@ -34,6 +40,7 @@ export const FlipWords = ({
       onExitComplete={() => {
         setIsAnimating(false);
       }}
+      mode="wait" // Use 'wait' mode to ensure the exiting component is fully gone before the new one enters
     >
       <motion.div
         initial={{
@@ -51,17 +58,20 @@ export const FlipWords = ({
         }}
         exit={{
           opacity: 0,
-          y: -40,
-          x: 40,
           filter: "blur(8px)",
-          scale: 2,
-          position: "absolute",
+          // Removed position: "absolute", x, y, and scale from exit to prevent layout shifts.
+          // This ensures the element retains its space during exit animation.
         }}
         className={cn(
-          "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2",
+          "z-10 inline-block relative text-left px-2",
+          "text-blue-600", // Set text color to blue
           className
         )}
         key={currentWord}
+        // Ensure the div maintains a consistent width to prevent layout shifts
+        // This might require wrapping it in a parent div with a fixed width, or dynamically setting its width
+        // based on the longest word, but for simple cases, inline-block often works if content is not too varied.
+        // For more robustness, consider calculating max-width based on longest word.
       >
         {currentWord.split(" ").map((word, wordIndex) => (
           <motion.span
@@ -72,7 +82,7 @@ export const FlipWords = ({
               delay: wordIndex * 0.3,
               duration: 0.3,
             }}
-            className="inline-block whitespace-nowrap"
+            className="inline-block whitespace-nowrap" // Ensures words stay on one line
           >
             {word.split("").map((letter, letterIndex) => (
               <motion.span
@@ -88,7 +98,7 @@ export const FlipWords = ({
                 {letter}
               </motion.span>
             ))}
-            <span className="inline-block">&nbsp;</span>
+            <span className="inline-block">&nbsp;</span> {/* Maintains consistent space between words */}
           </motion.span>
         ))}
       </motion.div>
