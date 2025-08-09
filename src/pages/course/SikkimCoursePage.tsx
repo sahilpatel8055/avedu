@@ -33,6 +33,7 @@ import {
   Headphones
 } from "lucide-react";
 import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
+import CareerAssistance from "@/components/ui/career-assistance";
 import hiringPartnersImg from "@/assets/hiring-partners.png";
 
 // Updated specializationIcons mapping to use Lucide-React icons
@@ -270,6 +271,9 @@ const SikkimCoursePage = () => {
             </div>
           </div>
         </section>
+
+        {/* Career Assistance Section */}
+        <CareerAssistance />
 
         {/* Career Scope & Top Recruiters Section */}
         <section className="py-16 bg-white mt-12">

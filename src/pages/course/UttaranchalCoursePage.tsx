@@ -8,6 +8,7 @@ import Footer from "@/components/ui/footer";
 import uttaranchalLogo from "@/assets/uttaranchal-logo.png";
 import uttaranchalCourseData from "@/data/uttaranchalCourseData.json";
 import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
+import CareerAssistance from "@/components/ui/career-assistance";
 import hiringPartnersImg from "@/assets/hiring-partners.png";
 
 const UttaranchalCoursePage = () => {
@@ -185,9 +186,12 @@ const UttaranchalCoursePage = () => {
             </div>
           </div>
         </div>
-      </section>
+        </section>
 
-      {/* Career Scope & Top Recruiters Section */}
+        {/* Career Assistance Section */}
+        <CareerAssistance />
+
+        {/* Career Scope & Top Recruiters Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Career Scope & Top Recruiters</h2>

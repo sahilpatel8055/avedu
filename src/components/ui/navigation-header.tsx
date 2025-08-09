@@ -49,7 +49,13 @@ const NavigationHeader = () => {
             </button>
             <button 
               className="btn-3d px-6 py-2 rounded-lg text-sm font-semibold transition-all"
-              onClick={() => document.getElementById('universities')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => {
+                if (window.location.pathname === '/') {
+                  document.getElementById('universities')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#universities';
+                }
+              }}
             >
               Top Universities
             </button>
