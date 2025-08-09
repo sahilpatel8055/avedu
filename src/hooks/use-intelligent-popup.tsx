@@ -65,14 +65,17 @@ export const useIntelligentPopup = (
     }
   };
 
-  // Time-based trigger
+  // Time-based trigger (always schedule, ignore cooldown for first open)
   useEffect(() => {
-    if (isInCooldown()) return;
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
 
     timeoutRef.current = setTimeout(() => {
-      if (!timeTriggered.current) {
+      if (!timeTriggered.current && !hasTriggered.current) {
         timeTriggered.current = true;
-        triggerPopup();
+        hasTriggered.current = true;
+        onTrigger();
       }
     }, finalConfig.timeDelay! * 1000);
 
@@ -81,7 +84,7 @@ export const useIntelligentPopup = (
         clearTimeout(timeoutRef.current);
       }
     };
-  }, []);
+  }, [finalConfig.timeDelay]);
 
   // Scroll-based trigger
   useEffect(() => {
