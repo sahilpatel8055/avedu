@@ -39,6 +39,7 @@ import mangalyatanLogo from "@/assets/mangalyatan-logo.png";
 import HorizontalUniversityScroll from "@/components/ui/horizontal-university-scroll";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
+import CareerAssistance from "@/components/ui/career-assistance";
 
 const OnlineArts = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
@@ -404,6 +405,9 @@ const OnlineArts = () => {
           <HorizontalUniversityScroll universities={topUniversities} courseType="Arts" />
         </div>
       </section>
+
+      {/* Career Assistance Section */}
+      <CareerAssistance />
 
       {/* Programs */}
       <section className="py-16 bg-white">

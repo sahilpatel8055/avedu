@@ -38,6 +38,7 @@ import amityLogo from "@/assets/amity-logo.jpg";
 import lpuLogo from "@/assets/lpu-logo.jpg";
 import mangalyatanLogo from "@/assets/mangalyatan-logo.png";
 import HorizontalUniversityScroll from "@/components/ui/horizontal-university-scroll";
+import CareerAssistance from "@/components/ui/career-assistance";
 
 const OnlineTech = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
@@ -487,6 +488,9 @@ const OnlineTech = () => {
           <HorizontalUniversityScroll universities={topUniversities} courseType="Technology" />
         </div>
       </section>
+
+      {/* Career Assistance Section */}
+      <CareerAssistance />
 
       {/* Programs */}
       <section className="py-16 bg-white">

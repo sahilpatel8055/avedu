@@ -134,6 +134,7 @@ export const universities: University[] = [
     pgPrograms: 24,
     fees: "₹50,000/year",
     approvals: ["UGC", "AICTE", "NAAC A++"],
+    image: "/src/assets/uni_logo/jain.png",
   },
   {
     id: "9",
@@ -145,6 +146,7 @@ export const universities: University[] = [
     pgPrograms: 16,
     fees: "₹48,000/year",
     approvals: ["UGC", "AICTE", "NAAC A+"],
+    image: "/src/assets/uni_logo/cu.png",
   },
   {
     id: "10",
@@ -156,6 +158,7 @@ export const universities: University[] = [
     pgPrograms: 18,
     fees: "₹65,000/year",
     approvals: ["UGC", "AICTE", "NAAC A"],
+    image: "/src/assets/uni_logo/dpu.png",
   },
   {
     id: "11",
@@ -167,6 +170,7 @@ export const universities: University[] = [
     pgPrograms: 15,
     fees: "₹70,000/year",
     approvals: ["UGC", "AICTE", "NAAC A++"],
+    image: "/src/assets/uni_logo/nmims.png",
   },
   {
     id: "12",
@@ -178,6 +182,7 @@ export const universities: University[] = [
     pgPrograms: 20,
     fees: "₹68,000/year",
     approvals: ["UGC", "AICTE", "NAAC A+"],
+    image: "/src/assets/uni_logo/symb.png",
   },
   {
     id: "13",
@@ -189,6 +194,7 @@ export const universities: University[] = [
     pgPrograms: 12,
     fees: "₹52,000/year",
     approvals: ["UGC", "AICTE", "NAAC A"],
+    image: "/src/assets/uni_logo/bharti.png",
   },
   {
     id: "14",
@@ -200,6 +206,7 @@ export const universities: University[] = [
     pgPrograms: 18,
     fees: "₹42,000/year",
     approvals: ["UGC", "AICTE", "NAAC A"],
+    image: "/src/assets/uni_logo/gna.png",
   },
   {
     id: "15",
@@ -222,6 +229,7 @@ export const universities: University[] = [
     pgPrograms: 25,
     fees: "₹72,000/year",
     approvals: ["UGC", "AICTE", "NAAC A"],
+    image: "/src/assets/uni_logo/upes.png",
   },
   {
     id: "17",
