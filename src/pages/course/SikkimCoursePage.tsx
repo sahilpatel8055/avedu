@@ -188,10 +188,11 @@ const SikkimCoursePage = () => {
         </Card>
 
         {/* Curriculum Section */}
-        <h2 className="text-3xl font-bold text-foreground mt-12 mb-6 flex items-center gap-2">
-          <BookOpen className="w-8 h-8 text-primary" /> Online {course.name} Curriculum
-        </h2>
-        <Card className="bg-card p-6 shadow-md">
+        <section style={{ backgroundColor: '#fff7f7' }} className="p-8 rounded-lg mt-12">
+          <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center gap-2">
+            <BookOpen className="w-8 h-8 text-primary" /> Online {course.name} Curriculum
+          </h2>
+          <Card className="bg-card p-6 shadow-md">
           <p className="text-muted-foreground mb-6">
             Explore a list of all subjects (semester wise) covered in our {course.level.toUpperCase()} program.
           </p>
@@ -216,12 +217,14 @@ const SikkimCoursePage = () => {
             ))}
           </Tabs>
         </Card>
+        </section>
 
         {/* Specializations Section */}
-        <h2 className="text-3xl font-bold text-foreground mt-12 mb-6 flex items-center gap-2">
-          <BriefcaseBusiness className="w-8 h-8 text-primary" /> {course.name} Specializations Offered
-        </h2>
-        <Card className="bg-card p-6 shadow-md">
+        <section style={{ backgroundColor: '#fff7f7' }} className="p-8 rounded-lg mt-12">
+          <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center gap-2">
+            <BriefcaseBusiness className="w-8 h-8 text-primary" /> {course.name} Specializations Offered
+          </h2>
+          <Card className="bg-card p-6 shadow-md">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {course.specializations.map((spec, index) => (
               <Card key={index} className="flex items-center gap-4 p-4 hover:bg-secondary transition-colors">
@@ -231,6 +234,7 @@ const SikkimCoursePage = () => {
             ))}
           </div>
         </Card>
+        </section>
 
         {/* Experience 100% Placement Support Section */}
         <section className="py-16 bg-yellow-400 mt-12 rounded-lg">

@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
-import manipalCourseData from "@/data/manipalCourseData.json";
+import amityCourseData from "@/data/amityCourseData.json";
 import amityLogo from "@/assets/amity-logo.jpg";
 import {
   BookOpen,
@@ -60,8 +60,7 @@ const specializationIcons = {
 
 const AmityCoursePage = () => {
   const { courseId } = useParams<{ courseId: string }>();
-  // Using manipal course data for now - ideally would have separate amity data
-  const course = manipalCourseData.courses.find((c) => c.id === courseId);
+  const course = amityCourseData.courses.find((c) => c.id === courseId);
 
   if (!course) {
     return (
@@ -188,10 +187,11 @@ const AmityCoursePage = () => {
         </Card>
 
         {/* Curriculum Section */}
-        <h2 className="text-3xl font-bold text-foreground mt-12 mb-6 flex items-center gap-2">
-          <BookOpen className="w-8 h-8 text-primary" /> Online {course.name} Curriculum
-        </h2>
-        <Card className="bg-card p-6 shadow-md">
+        <section style={{ backgroundColor: '#fff7f7' }} className="p-8 rounded-lg mt-12">
+          <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center gap-2">
+            <BookOpen className="w-8 h-8 text-primary" /> Online {course.name} Curriculum
+          </h2>
+          <Card className="bg-card p-6 shadow-md">
           <p className="text-muted-foreground mb-6">
             Explore a list of all subjects (semester wise) covered in our {course.level.toUpperCase()} program.
           </p>
@@ -216,12 +216,14 @@ const AmityCoursePage = () => {
             ))}
           </Tabs>
         </Card>
+        </section>
 
         {/* Specializations Section */}
-        <h2 className="text-3xl font-bold text-foreground mt-12 mb-6 flex items-center gap-2">
-          <BriefcaseBusiness className="w-8 h-8 text-primary" /> {course.name} Specializations Offered
-        </h2>
-        <Card className="bg-card p-6 shadow-md">
+        <section style={{ backgroundColor: '#fff7f7' }} className="p-8 rounded-lg mt-12">
+          <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center gap-2">
+            <BriefcaseBusiness className="w-8 h-8 text-primary" /> {course.name} Specializations Offered
+          </h2>
+          <Card className="bg-card p-6 shadow-md">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {course.specializations.map((spec, index) => (
               <Card key={index} className="flex items-center gap-4 p-4 hover:bg-secondary transition-colors">
@@ -231,6 +233,7 @@ const AmityCoursePage = () => {
             ))}
           </div>
         </Card>
+        </section>
 
         {/* Career Assistance Section */}
         <CareerAssistance />

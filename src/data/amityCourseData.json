@@ -1,0 +1,189 @@
+{
+  "courses": [
+    {
+      "id": "online-mba",
+      "name": "Online MBA",
+      "level": "pg",
+      "university": "Amity University",
+      "fees": "₹1,80,000",
+      "duration": "2 Years",
+      "specializationsCount": 8,
+      "rating": 4.6,
+      "reviews": 13500,
+      "feesBreakdown": {
+        "fullFees": "INR 1,80,000",
+        "perSemester": "INR 45,000",
+        "emi": "INR 7,500/Month"
+      },
+      "curriculum": [
+        {
+          "year": "Year 1",
+          "subjects": [
+            "Management Principles & Practices",
+            "Managerial Economics",
+            "Financial & Management Accounting",
+            "Organizational Behavior & Development",
+            "Marketing Management",
+            "Operations Management",
+            "Human Resource Management",
+            "Business Communication",
+            "Research Methodology & Statistics",
+            "Financial Management",
+            "Strategic Management",
+            "Business Law & Ethics"
+          ]
+        },
+        {
+          "year": "Year 2",
+          "subjects": [
+            "International Business",
+            "Entrepreneurship & Innovation",
+            "Specialization Subject 1",
+            "Specialization Subject 2",
+            "Project Management",
+            "Specialization Subject 3",
+            "Specialization Subject 4",
+            "Dissertation/Project Work"
+          ]
+        }
+      ],
+      "specializations": [
+        "Digital Marketing",
+        "Marketing",
+        "Analytics and Data Science",
+        "IT & FinTech",
+        "Finance",
+        "Human Resource Management",
+        "BFSI",
+        "Operations Management"
+      ]
+    },
+    {
+      "id": "online-bca",
+      "name": "Online BCA",
+      "level": "ug",
+      "university": "Amity University",
+      "fees": "₹1,40,000",
+      "duration": "3 Years",
+      "specializationsCount": 3,
+      "rating": 4.5,
+      "reviews": 12000,
+      "feesBreakdown": {
+        "fullFees": "INR 1,40,000",
+        "perSemester": "INR 23,333",
+        "emi": "INR 1,944/Month"
+      },
+      "curriculum": [
+        {
+          "year": "Year 1",
+          "subjects": [
+            "Computer Fundamentals",
+            "Programming in C",
+            "Digital Electronics",
+            "Mathematics-I",
+            "Data Structures & Algorithms",
+            "Object-Oriented Programming (C++)",
+            "Computer Organization",
+            "Mathematics-II"
+          ]
+        },
+        {
+          "year": "Year 2",
+          "subjects": [
+            "Database Management Systems",
+            "Web Technologies",
+            "Computer Networks",
+            "Java Programming",
+            "Software Engineering",
+            "Python Programming",
+            "Operating Systems",
+            "System Analysis & Design"
+          ]
+        },
+        {
+          "year": "Year 3",
+          "subjects": [
+            "Artificial Intelligence",
+            "Machine Learning",
+            "Cloud Computing",
+            "Cyber Security",
+            "Mobile App Development",
+            "Project Work",
+            "Internship",
+            "Elective Subjects"
+          ]
+        }
+      ],
+      "specializations": [
+        "Data Science",
+        "Cloud Computing",
+        "Cyber Security"
+      ]
+    },
+    {
+      "id": "online-bba",
+      "name": "Online BBA",
+      "level": "ug",
+      "university": "Amity University",
+      "fees": "₹1,40,000",
+      "duration": "3 Years",
+      "specializationsCount": 6,
+      "rating": 4.7,
+      "reviews": 16000,
+      "feesBreakdown": {
+        "fullFees": "INR 1,40,000",
+        "perSemester": "INR 23,333",
+        "emi": "INR 1,944/Month"
+      },
+      "curriculum": [
+        {
+          "year": "Year 1",
+          "subjects": [
+            "Principles of Management",
+            "Business Economics",
+            "Financial Accounting",
+            "Business Law",
+            "Organizational Behavior",
+            "Marketing Management",
+            "Business Mathematics & Statistics",
+            "Business Communication"
+          ]
+        },
+        {
+          "year": "Year 2",
+          "subjects": [
+            "Corporate Finance",
+            "Human Resource Management",
+            "Operations Management",
+            "Research Methodology",
+            "International Business",
+            "Entrepreneurship Development",
+            "Digital Marketing",
+            "Business Ethics"
+          ]
+        },
+        {
+          "year": "Year 3",
+          "subjects": [
+            "Strategic Management",
+            "Project Management",
+            "Specialization Subject 1",
+            "Specialization Subject 2",
+            "Industrial Training/Internship",
+            "Project Work",
+            "Specialization Subject 3",
+            "Comprehensive Viva"
+          ]
+        }
+      ],
+      "specializations": [
+        "Marketing",
+        "Finance",
+        "Human Resource Management",
+        "International Business",
+        "Digital Marketing",
+        "Operations Management"
+      ]
+    }
+  ]
+}

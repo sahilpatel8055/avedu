@@ -1,0 +1,194 @@
+{
+  "courses": [
+    {
+      "id": "online-mba",
+      "name": "Online MBA",
+      "level": "pg",
+      "university": "Lovely Professional University",
+      "fees": "₹1,70,000",
+      "duration": "2 Years",
+      "specializationsCount": 10,
+      "rating": 4.5,
+      "reviews": 14200,
+      "feesBreakdown": {
+        "fullFees": "INR 1,70,000",
+        "perSemester": "INR 42,500",
+        "emi": "INR 7,083/Month"
+      },
+      "curriculum": [
+        {
+          "year": "Year 1",
+          "subjects": [
+            "Management Process & Organizational Behavior",
+            "Managerial Economics",
+            "Accounting for Managers",
+            "Marketing Management",
+            "Operations Research & Business Statistics",
+            "Financial Management",
+            "Human Resource Management",
+            "Operations Management",
+            "Management Information Systems",
+            "Business Communication",
+            "Research Methodology",
+            "Business Law & Corporate Governance"
+          ]
+        },
+        {
+          "year": "Year 2",
+          "subjects": [
+            "Strategic Management",
+            "International Business",
+            "Entrepreneurship & Small Business Management",
+            "Specialization Core 1",
+            "Specialization Core 2",
+            "Specialization Elective 1",
+            "Specialization Elective 2",
+            "Major Project/Dissertation"
+          ]
+        }
+      ],
+      "specializations": [
+        "Digital Marketing",
+        "Marketing",
+        "Finance",
+        "Human Resource Management",
+        "Operations Management",
+        "International Business",
+        "Information Technology",
+        "Banking & Financial Services",
+        "Tourism & Hospitality Management",
+        "Supply Chain Management"
+      ]
+    },
+    {
+      "id": "online-bca",
+      "name": "Online BCA",
+      "level": "ug",
+      "university": "Lovely Professional University",
+      "fees": "₹1,32,000",
+      "duration": "3 Years",
+      "specializationsCount": 4,
+      "rating": 4.4,
+      "reviews": 11800,
+      "feesBreakdown": {
+        "fullFees": "INR 1,32,000",
+        "perSemester": "INR 22,000",
+        "emi": "INR 1,833/Month"
+      },
+      "curriculum": [
+        {
+          "year": "Year 1",
+          "subjects": [
+            "Programming Fundamentals",
+            "Computer System Architecture",
+            "Mathematics for Computing",
+            "Programming in C",
+            "Digital Electronics",
+            "Data Structures",
+            "Object Oriented Programming",
+            "Computer Networks"
+          ]
+        },
+        {
+          "year": "Year 2",
+          "subjects": [
+            "Database Management Systems",
+            "Software Engineering",
+            "Web Technologies",
+            "Operating Systems",
+            "Java Programming",
+            "Python Programming",
+            "Computer Graphics",
+            "Mobile Application Development"
+          ]
+        },
+        {
+          "year": "Year 3",
+          "subjects": [
+            "Artificial Intelligence",
+            "Machine Learning",
+            "Cloud Computing",
+            "Information Security",
+            "Project Work",
+            "Industrial Training",
+            "Specialization Subjects",
+            "Comprehensive Viva"
+          ]
+        }
+      ],
+      "specializations": [
+        "Artificial Intelligence",
+        "Data Science",
+        "Cloud Computing",
+        "Cyber Security"
+      ]
+    },
+    {
+      "id": "online-bba",
+      "name": "Online BBA",
+      "level": "ug",
+      "university": "Lovely Professional University",
+      "fees": "₹1,32,000",
+      "duration": "3 Years",
+      "specializationsCount": 8,
+      "rating": 4.6,
+      "reviews": 15800,
+      "feesBreakdown": {
+        "fullFees": "INR 1,32,000",
+        "perSemester": "INR 22,000",
+        "emi": "INR 1,833/Month"
+      },
+      "curriculum": [
+        {
+          "year": "Year 1",
+          "subjects": [
+            "Principles of Management",
+            "Business Economics",
+            "Financial Accounting",
+            "Business Mathematics",
+            "Organizational Behavior",
+            "Marketing Principles",
+            "Business Communication",
+            "Computer Applications in Business"
+          ]
+        },
+        {
+          "year": "Year 2",
+          "subjects": [
+            "Corporate Finance",
+            "Human Resource Management",
+            "Operations Management",
+            "Business Law",
+            "Research Methodology",
+            "International Business",
+            "E-Commerce",
+            "Entrepreneurship Development"
+          ]
+        },
+        {
+          "year": "Year 3",
+          "subjects": [
+            "Strategic Management",
+            "Business Ethics",
+            "Project Management",
+            "Specialization Core 1",
+            "Specialization Core 2",
+            "Industrial Training",
+            "Major Project",
+            "Comprehensive Viva"
+          ]
+        }
+      ],
+      "specializations": [
+        "Marketing",
+        "Finance",
+        "Human Resource Management",
+        "International Business",
+        "Digital Marketing",
+        "Banking & Insurance",
+        "Logistics & Supply Chain",
+        "Event Management"
+      ]
+    }
+  ]
+}

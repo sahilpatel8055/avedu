@@ -1,0 +1,191 @@
+{
+  "courses": [
+    {
+      "id": "online-mba",
+      "name": "Online MBA",
+      "level": "pg",
+      "university": "Mangalayatan University",
+      "fees": "₹1,60,000",
+      "duration": "2 Years",
+      "specializationsCount": 9,
+      "rating": 4.4,
+      "reviews": 11500,
+      "feesBreakdown": {
+        "fullFees": "INR 1,60,000",
+        "perSemester": "INR 40,000",
+        "emi": "INR 6,667/Month"
+      },
+      "curriculum": [
+        {
+          "year": "Year 1",
+          "subjects": [
+            "Management Concepts & Organizational Behaviour",
+            "Managerial Economics",
+            "Accounting for Management",
+            "Marketing Management",
+            "Financial Management",
+            "Human Resource Management",
+            "Operations Management",
+            "Business Communication & Ethics",
+            "Quantitative Techniques",
+            "Information Technology for Managers",
+            "Research Methodology",
+            "Legal Aspects of Business"
+          ]
+        },
+        {
+          "year": "Year 2",
+          "subjects": [
+            "Strategic Management",
+            "International Business Environment",
+            "Entrepreneurship & Innovation",
+            "Specialization Paper 1",
+            "Specialization Paper 2",
+            "Specialization Paper 3",
+            "Specialization Paper 4",
+            "Project Work/Dissertation"
+          ]
+        }
+      ],
+      "specializations": [
+        "Marketing Management",
+        "Financial Management",
+        "Human Resource Management",
+        "Operations Management",
+        "International Business",
+        "Information Technology",
+        "Rural Management",
+        "Healthcare Management",
+        "Digital Marketing"
+      ]
+    },
+    {
+      "id": "online-bca",
+      "name": "Online BCA",
+      "level": "ug",
+      "university": "Mangalayatan University",
+      "fees": "₹1,25,000",
+      "duration": "3 Years",
+      "specializationsCount": 3,
+      "rating": 4.3,
+      "reviews": 9800,
+      "feesBreakdown": {
+        "fullFees": "INR 1,25,000",
+        "perSemester": "INR 20,833",
+        "emi": "INR 1,736/Month"
+      },
+      "curriculum": [
+        {
+          "year": "Year 1",
+          "subjects": [
+            "Computer Fundamentals & Applications",
+            "Programming Methodology using C",
+            "Mathematical Foundation for Computer Science",
+            "Digital Electronics",
+            "Computer System Architecture",
+            "Data Structures using C",
+            "Object Oriented Programming using C++",
+            "Database Management Systems"
+          ]
+        },
+        {
+          "year": "Year 2",
+          "subjects": [
+            "Software Engineering",
+            "Web Technology",
+            "Computer Networks",
+            "Java Programming",
+            "Operating Systems",
+            "Python Programming",
+            "Computer Graphics & Multimedia",
+            "Mobile Application Development"
+          ]
+        },
+        {
+          "year": "Year 3",
+          "subjects": [
+            "Artificial Intelligence",
+            "Machine Learning",
+            "Information Security",
+            "Cloud Computing",
+            "Project Work",
+            "Practical Training",
+            "Elective Subjects",
+            "Seminar & Viva Voce"
+          ]
+        }
+      ],
+      "specializations": [
+        "Data Analytics",
+        "Web Development",
+        "Mobile App Development"
+      ]
+    },
+    {
+      "id": "online-bba",
+      "name": "Online BBA",
+      "level": "ug",
+      "university": "Mangalayatan University",
+      "fees": "₹1,25,000",
+      "duration": "3 Years",
+      "specializationsCount": 7,
+      "rating": 4.5,
+      "reviews": 13200,
+      "feesBreakdown": {
+        "fullFees": "INR 1,25,000",
+        "perSemester": "INR 20,833",
+        "emi": "INR 1,736/Month"
+      },
+      "curriculum": [
+        {
+          "year": "Year 1",
+          "subjects": [
+            "Principles of Management",
+            "Business Economics",
+            "Financial Accounting",
+            "Business Mathematics & Statistics",
+            "Organizational Behaviour",
+            "Principles of Marketing",
+            "Business Communication",
+            "Computer Applications in Business"
+          ]
+        },
+        {
+          "year": "Year 2",
+          "subjects": [
+            "Corporate Finance",
+            "Human Resource Management",
+            "Production & Operations Management",
+            "Business Law",
+            "Research Methodology",
+            "International Business",
+            "Entrepreneurship Development",
+            "E-Business"
+          ]
+        },
+        {
+          "year": "Year 3",
+          "subjects": [
+            "Strategic Management",
+            "Business Ethics & Governance",
+            "Project Management",
+            "Specialization Subject 1",
+            "Specialization Subject 2",
+            "Industrial Training",
+            "Project Report",
+            "Comprehensive Viva"
+          ]
+        }
+      ],
+      "specializations": [
+        "Marketing",
+        "Finance",
+        "Human Resource Management",
+        "International Business",
+        "Digital Marketing",
+        "Rural Management",
+        "Healthcare Management"
+      ]
+    }
+  ]
+}

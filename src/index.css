@@ -41,10 +41,10 @@ All colors MUST be HSL. Professional education-focused design.
     --secondary-foreground: 215 25% 27%;
 
     --muted: 210 40% 96%;
-    --muted-foreground: 215 15% 45%;
+    --muted-foreground: 215 15% 35%; /* Made darker for better readability */
 
     /* Interactive Elements */
-    --border: 214 31% 91%;
+    --border: 214 31% 75%; /* Made darker for better visibility */
     --input: 214 31% 91%;
     --ring: 210 100% 50%;
     
@@ -112,9 +112,9 @@ All colors MUST be HSL. Professional education-focused design.
     --secondary-foreground: 0 0% 95%;
 
     --muted: 215 25% 12%;
-    --muted-foreground: 215 15% 75%;
+    --muted-foreground: 215 15% 85%; /* Made lighter for better readability in dark mode */
 
-    --border: 215 25% 15%;
+    --border: 215 25% 25%; /* Made lighter for better visibility in dark mode */
     --input: 215 25% 15%;
     --ring: 210 100% 60%;
     
