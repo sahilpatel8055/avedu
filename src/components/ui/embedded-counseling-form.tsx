@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -46,6 +46,13 @@ const EmbeddedCounselingForm: React.FC<EmbeddedCounselingFormProps> = ({ variant
   
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
+
+  // Pre-warm the backend on mount to reduce first-submit latency
+  useEffect(() => {
+    try {
+      fetch('https://avedu.onrender.com/healthz', { mode: 'no-cors' });
+    } catch {}
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
