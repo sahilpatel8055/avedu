@@ -186,7 +186,7 @@ const ManipalCoursePage = () => {
         </Card>
 
         {/* Curriculum Section */}
-        <section style={{ backgroundColor: '#fff7f7' }} className="p-8 rounded-lg mt-12">
+        <section style={{ backgroundColor: '#fff1f1' }} className="p-8 rounded-lg mt-12">
           <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center gap-2">
             <BookOpen className="w-8 h-8 text-primary" /> Online {course.name} Curriculum
           </h2>
@@ -218,7 +218,7 @@ const ManipalCoursePage = () => {
         </section>
 
         {/* Specializations Section */}
-        <section style={{ backgroundColor: '#fff7f7' }} className="p-8 rounded-lg mt-12">
+        <section style={{ backgroundColor: '#fff1f1' }} className="p-8 rounded-lg mt-12">
           <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center gap-2">
             <BriefcaseBusiness className="w-8 h-8 text-primary" /> {course.name} Specializations Offered
           </h2>
