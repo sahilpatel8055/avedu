@@ -45,10 +45,11 @@ const EmbeddedCounselingForm: React.FC<EmbeddedCounselingFormProps> = ({ variant
   });
   
   const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.consent) {
       toast({
         title: "Consent Required",
@@ -58,11 +59,54 @@ const EmbeddedCounselingForm: React.FC<EmbeddedCounselingFormProps> = ({ variant
       return;
     }
 
-    console.log("Form submitted:", formData);
-    toast({
-      title: "Form Submitted Successfully!",
-      description: "Our counselor will contact you within 24 hours.",
-    });
+    if (!formData.state || !formData.course) {
+      toast({
+        title: "Missing details",
+        description: "Please select your state and course.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const selectedCourse = (courses.find(c => c.value === formData.course)?.label) || formData.course;
+    const payload = {
+      name: formData.fullName.trim(),
+      email: formData.email.trim(),
+      phone: formData.contactNumber.trim(),
+      state: formData.state,
+      city: (formData.city || '').trim(),
+      course: selectedCourse,
+    };
+
+    try {
+      setLoading(true);
+      const res = await fetch('https://avedu.onrender.com/api/submit-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data.success === false) {
+        throw new Error(data.error || 'Failed to submit. Please try again.');
+      }
+
+      toast({
+        title: "Form Submitted Successfully!",
+        description: "Our counselor will contact you within 24 hours.",
+      });
+
+      // Optionally reset form
+      setFormData(prev => ({ ...prev, fullName: '', contactNumber: '', email: '', state: '', city: '', course: '' }));
+    } catch (err: any) {
+      toast({
+        title: 'Submission failed',
+        description: err?.message || 'Please try again later.',
+        variant: 'destructive',
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string | boolean) => {
@@ -190,9 +234,9 @@ const EmbeddedCounselingForm: React.FC<EmbeddedCounselingFormProps> = ({ variant
             </Label>
           </div>
 
-          <Button type="submit" className={`w-full bg-primary hover:bg-primary/90 ${isCompact ? 'h-9' : ''}`}>
+          <Button type="submit" disabled={loading} className={`w-full bg-primary hover:bg-primary/90 ${isCompact ? 'h-9' : ''}`}>
             <Phone className="h-4 w-4 mr-2" />
-            Get Free Counseling
+            {loading ? 'Submitting...' : 'Get Free Counseling'}
           </Button>
         </form>
 
