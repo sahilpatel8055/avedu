@@ -191,7 +191,7 @@ const Index = () => {
       <UniversityLogosMarquee />
 
       {/* 3rd Section - Find Your Perfect Online Course with Course Categories and FlipWords */}
-      <section id="programs" className="py-6 bg-muted/30">
+      <section id="programs" className="pt-16 pb-6 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-6">
             <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">

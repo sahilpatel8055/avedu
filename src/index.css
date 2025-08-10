@@ -10,7 +10,7 @@ All colors MUST be HSL. Professional education-focused design.
   :root {
     /* Background & Surfaces */
     --background: 0 0% 100%;
-    --foreground: 215 25% 27%;
+    --foreground: 218 11% 15%; /* #111827 equivalent for headings */
     
     /* Educational Blue Theme */
     --primary: 210 100% 50%;        /* Vibrant blue for CTAs */
@@ -41,7 +41,7 @@ All colors MUST be HSL. Professional education-focused design.
     --secondary-foreground: 215 25% 27%;
 
     --muted: 210 40% 96%;
-    --muted-foreground: 215 15% 35%; /* Made darker for better readability */
+    --muted-foreground: 218 11% 16%; /* #212529 equivalent for descriptions */
 
     /* Interactive Elements */
     --border: 214 31% 75%; /* Made darker for better visibility */
