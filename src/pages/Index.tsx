@@ -202,7 +202,13 @@ const Index = () => {
             </p>
           </div>
           
-          <CourseCategories />
+          <CourseCategories titleOverrides={{
+            mba: "Online MBA",
+            btech: "Online BCA / MCA",
+            bba: "Online BBA",
+            bcom: "Online BCOM / MCOM",
+            ba: "Online BA/MA"
+          }} />
         </div>
       </section>
 

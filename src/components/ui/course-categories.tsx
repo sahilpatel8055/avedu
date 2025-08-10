@@ -153,12 +153,15 @@ const CategoryCard = ({ category }: { category: CourseCategory }) => {
   );
 };
 
-const CourseCategories = () => {
+const CourseCategories = ({ titleOverrides }: { titleOverrides?: Record<string, string> }) => {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-12">
-      {categories.map((category) => (
-        <CategoryCard key={category.id} category={category} />
-      ))}
+      {categories.map((category) => {
+        const displayCategory = titleOverrides && titleOverrides[category.id]
+          ? { ...category, title: titleOverrides[category.id]! }
+          : category;
+        return <CategoryCard key={category.id} category={displayCategory} />
+      })}
     </div>
   );
 };

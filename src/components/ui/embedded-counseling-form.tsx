@@ -124,11 +124,11 @@ const EmbeddedCounselingForm: React.FC<EmbeddedCounselingFormProps> = ({ variant
   
   return (
     <Card className="w-full bg-card/50 backdrop-blur-sm border-primary/20">
-      <CardHeader className={isCompact ? "pb-2" : "pb-4"}>
+      <CardHeader className={isCompact ? "pb-2" : "pb-3"}>
         <CardTitle className="text-center text-primary">Get Free Counseling</CardTitle>
       </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit} className={isCompact ? "space-y-3" : "space-y-4"}>
+      <CardContent className="p-5 pt-0">
+        <form onSubmit={handleSubmit} className={isCompact ? "space-y-2" : "space-y-3"}>
           <div>
             <Label htmlFor="fullName" className="text-sm font-medium">
               Full Name *
@@ -247,7 +247,7 @@ const EmbeddedCounselingForm: React.FC<EmbeddedCounselingFormProps> = ({ variant
           </Button>
         </form>
 
-        <div className="mt-3 text-center">
+        <div className="mt-2 text-center">
           <p className="text-xs text-gray-500">
             🔒 Your information is secure with us
           </p>

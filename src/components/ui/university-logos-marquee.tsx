@@ -30,7 +30,7 @@ const universities = [
 const UniversityLogosMarquee = () => {
   return (
     <div className="py-8 bg-white/50 overflow-hidden">
-      <div className="flex animate-marquee space-x-8 md:space-x-16">
+      <div className="flex animate-marquee-fast md:animate-marquee space-x-8 md:space-x-16">
         {universities.map((university, index) => (
           <div key={index} className="flex flex-col items-center min-w-[120px] md:min-w-[140px]">
             <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white rounded-lg shadow-sm border p-2">
