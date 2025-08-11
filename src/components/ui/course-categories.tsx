@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { 
   Palette, 
   Scale, 
@@ -96,6 +97,16 @@ const CategoryCard = ({ category }: { category: CourseCategory }) => {
     ? "w-16 h-16 sm:w-24 sm:h-24" // ~1.5x larger
     : "w-12 h-12 sm:w-16 sm:h-16";
 
+  // Client-side navigation route map (avoid full page reloads)
+  const routeMap: { [key: string]: string } = {
+    mba: "/courses/mba",
+    btech: "/courses/engineering",
+    bba: "/courses/bba",
+    bcom: "/courses/commerce",
+    ba: "/courses/arts",
+  };
+  const route = routeMap[category.id];
+
   return (
     <Card className="h-full hover:shadow-hover transition-all duration-300 hover:-translate-y-1 group cursor-pointer relative">
       {category.trending && (
@@ -132,21 +143,9 @@ const CategoryCard = ({ category }: { category: CourseCategory }) => {
         <Button 
           size="sm"
           className="w-full text-xs sm:text-sm py-1.5 sm:py-2"
-          onClick={() => {
-            const routeMap: { [key: string]: string } = {
-              'mba': '/courses/mba',
-              'btech': '/courses/engineering', 
-              'bba': '/courses/bba',
-              'bcom': '/courses/commerce',
-              'ba': '/courses/arts'
-            };
-            const route = routeMap[category.id];
-            if (route) {
-              window.location.href = route;
-            }
-          }}
+          asChild
         >
-          Explore Programs
+          <Link to={route ?? "#"}>Explore Programs</Link>
         </Button>
       </CardContent>
     </Card>
