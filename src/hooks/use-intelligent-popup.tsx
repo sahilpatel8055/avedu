@@ -67,10 +67,9 @@ export const useIntelligentPopup = (
 
   // Time-based trigger
   useEffect(() => {
-    if (isInCooldown()) return;
-
+    // Always schedule timer; check cooldown at fire time to better support mobile/tablet
     timeoutRef.current = setTimeout(() => {
-      if (!timeTriggered.current) {
+      if (!timeTriggered.current && !hasTriggered.current && !isInCooldown()) {
         timeTriggered.current = true;
         triggerPopup();
       }
@@ -81,7 +80,7 @@ export const useIntelligentPopup = (
         clearTimeout(timeoutRef.current);
       }
     };
-  }, []);
+  }, [finalConfig.timeDelay]);
 
   // Scroll-based trigger
   useEffect(() => {
