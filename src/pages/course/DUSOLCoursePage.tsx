@@ -8,6 +8,7 @@ import Footer from "@/components/ui/footer";
 import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
 import courseData from "@/data/courseData.json";
+import duSolDegree from "@/assets/DU sol sample degree.jpg";
 
 const DUSOLCoursePage = () => {
   const { courseId } = useParams();
@@ -72,6 +73,21 @@ const DUSOLCoursePage = () => {
         </div>
       </section>
 
+      {/* Sample Degree Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Sample DU SOL Degree Certificate</h2>
+            <p className="text-xl text-gray-600">Your DU SOL degree will look like this</p>
+          </div>
+          <div className="flex justify-center">
+            <div className="max-w-md w-full">
+              <img src={duSolDegree} alt="DU SOL Sample Degree Certificate" className="w-full h-auto rounded-lg shadow-2xl border-4 border-blue-100" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {course.highlights && course.highlights.length > 0 && (
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
@@ -85,6 +101,24 @@ const DUSOLCoursePage = () => {
                   <h3 className="font-bold text-lg mb-2">{highlight.title}</h3>
                   <p className="text-gray-600">{highlight.description}</p>
                 </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {course.keyFeatures && course.keyFeatures.length > 0 && (
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Online {course.name} Stands Out</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {course.keyFeatures.map((feature, index) => (
+                <div key={index} className="text-center">
+                  <h3 className="font-bold text-lg mb-2">{feature.title}</h3>
+                  <p className="text-gray-600">{feature.description}</p>
+                </div>
               ))}
             </div>
           </div>

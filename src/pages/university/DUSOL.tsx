@@ -18,7 +18,7 @@ import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import duSolLogo from "@/assets/uni_logo/DU_SOL.png";
-import ignouDegreeImg from "@/assets/ignou-degree.png";
+import duSolDegree from "@/assets/DU sol sample degree.jpg";
 
 import { Link } from 'react-router-dom';
 import courseData from '../../data/courseData.json';
@@ -103,6 +103,68 @@ const DUSOL = () => {
 
             <div className="flex-1 lg:max-w-md">
               <EmbeddedCounselingForm variant="compact" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8">About DU SOL</h2>
+            <div className="prose prose-lg max-w-none text-muted-foreground">
+              <p className="text-lg leading-relaxed mb-6">
+                Delhi University’s School of Open Learning (DU SOL) is a trusted public institution offering flexible online and distance learning programs with the academic legacy of the University of Delhi.
+              </p>
+              <p className="text-lg leading-relaxed mb-6">
+                DU SOL provides UGC-DEB recognized degrees designed for working professionals and fresh graduates, with affordable fees, updated curricula, and robust student support.
+              </p>
+              <p className="text-lg leading-relaxed">
+                With a strong alumni network and industry-oriented learning, DU SOL enables learners to pursue UG and PG programs without compromising on quality or credibility.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sample Degree Section */}
+      <section className="py-16 bg-gradient-to-br from-primary/5 to-background">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-3xl font-bold text-foreground mb-4">Sample Degree</h2>
+              <p className="text-lg text-muted-foreground mb-6 max-w-prose">
+                DU SOL degrees are recognized by UGC-DEB and accepted for government and private jobs as well as higher education in India and abroad.
+              </p>
+              <ul className="space-y-4 text-left mx-auto md:mx-0 max-w-sm">
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold">UGC-DEB Recognized</p>
+                    <p className="text-sm text-muted-foreground">Valid for jobs and higher studies across India.</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold">Digital Verification Ready</p>
+                    <p className="text-sm text-muted-foreground">Supports online verification with transcripts.</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold">Officially Stamped</p>
+                    <p className="text-sm text-muted-foreground">Signed by University authorities with seal.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div className="flex-1 max-w-lg mx-auto md:max-w-none">
+              <div className="relative p-4 rounded-xl shadow-2xl bg-white transition-transform duration-300 hover:scale-105">
+                <img src={duSolDegree} alt="Sample DU SOL Degree" className="w-full h-auto object-contain rounded-lg" />
+              </div>
             </div>
           </div>
         </div>

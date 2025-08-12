@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import { universities } from "@/components/ui/university-grid";
@@ -8,9 +8,9 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Star, Users, GraduationCap, ExternalLink } from "lucide-react";
 import universityPlaceholder from "@/assets/university-placeholder.jpg";
 import { Link } from "react-router-dom";
-import CounselingForm from "@/components/ui/counseling-form";
+import { useCounselingForm } from "@/hooks/use-counseling-form";
 
-const UniversityCard = ({ university }: { university: any }) => {
+const UniversityCard = ({ university, onOpenCounseling }: { university: any, onOpenCounseling?: () => void }) => {
   return (
     <Card className="h-full rounded-xl bg-[#f5f3ff] border border-gray-200 shadow-[inset_0_1px_3px_rgba(255,255,255,0.6),_0_2px_6px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_10px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 group">
       <CardHeader className="pb-0.5 sm:pb-1">
@@ -75,7 +75,7 @@ const UniversityCard = ({ university }: { university: any }) => {
               View Courses
             </Button>
           </Link>
-          <Button size="sm" className="gap-0.5 w-full text-[0.65rem] py-1 sm:py-1.5 h-auto">
+          <Button size="sm" className="gap-0.5 w-full text-[0.65rem] py-1 sm:py-1.5 h-auto" onClick={onOpenCounseling}>
             <ExternalLink className="h-2.5 w-2.5 sm:h-3 w-3" />
             Apply Now
           </Button>
@@ -86,7 +86,7 @@ const UniversityCard = ({ university }: { university: any }) => {
 };
 
 const Universities = () => {
-  const [isCounselingFormOpen, setIsCounselingFormOpen] = useState(false);
+  const { openForm, CounselingFormComponent } = useCounselingForm();
 
   return (
     <div className="min-h-screen bg-background">
@@ -122,8 +122,8 @@ const Universities = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
-            {universities.map((university) => (
-              <UniversityCard key={university.id} university={university} />
+{universities.map((university) => (
+              <UniversityCard key={university.id} university={university} onOpenCounseling={openForm} />
             ))}
           </div>
         </div>
@@ -131,10 +131,7 @@ const Universities = () => {
 
       <Footer />
       
-      <CounselingForm 
-        open={isCounselingFormOpen} 
-        onOpenChange={setIsCounselingFormOpen} 
-      />
+<CounselingFormComponent />
     </div>
   );
 };

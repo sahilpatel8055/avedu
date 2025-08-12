@@ -215,7 +215,7 @@ const Index = () => {
       </section>
 
       {/* 4th Section - Universities Grid */}
-      <UniversityGrid />
+      <UniversityGrid onOpenCounseling={openForm} />
       
       {/* 5th Section - Career Assistance */}
       <CareerAssistance />
