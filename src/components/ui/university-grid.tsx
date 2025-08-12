@@ -13,6 +13,7 @@ import smuLogo from "@/assets/smu-logo.jpg";
 import amityLogo from "@/assets/amity-logo.jpg";
 import lpuLogo from "@/assets/lpu-logo.jpg";
 import mangalayatanLogo from "@/assets/mangalyatan-logo.png";
+import duSolLogo from "@/assets/uni_logo/DU_SOL.png";
 
 interface University {
   id: string;
@@ -39,6 +40,18 @@ export const universities: University[] = [
     fees: "₹7,200+/year",
     approvals: ["UGC", "AICTE", "NAAC A++"],
     image: ignouLogo,
+  },
+  {
+    id: "du-sol",
+    name: "DU SOL (School of Open Learning)",
+    location: "New Delhi, India",
+    rating: 4.6,
+    students: "500K+",
+    ugPrograms: 20,
+    pgPrograms: 15,
+    fees: "₹6,000+/year",
+    approvals: ["UGC", "AICTE", "NAAC A+"],
+    image: duSolLogo,
   },
   {
     id: "manipal",
@@ -374,7 +387,7 @@ const UniversityGrid: React.FC<UniversityGridProps> = ({ onOpenCounseling }) => 
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-12">
-          {universities.slice(0, 8).map((university) => (
+          {universities.filter(u => u.id !== 'mangalyatan').slice(0, 8).map((university) => (
             <UniversityCard key={university.id} university={university} onOpenCounseling={onOpenCounseling} />
           ))}
         </div>

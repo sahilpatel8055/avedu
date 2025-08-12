@@ -1,0 +1,100 @@
+import { useParams } from "react-router-dom";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { CheckCircle, Clock, IndianRupee, Users, Award, Star } from "lucide-react";
+import NavigationHeader from "@/components/ui/navigation-header";
+import Footer from "@/components/ui/footer";
+import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
+import { useCounselingForm } from "@/hooks/use-counseling-form";
+import courseData from "@/data/courseData.json";
+
+const DUSOLCoursePage = () => {
+  const { courseId } = useParams();
+  const { openForm, CounselingFormComponent } = useCounselingForm();
+  const course = courseId ? courseData[courseId] : null;
+
+  if (!course) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <h1 className="text-3xl font-bold">Course not found!</h1>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <NavigationHeader />
+
+      <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <Badge className="bg-yellow-500 text-blue-900 mb-4">DU SOL {course.name} Program</Badge>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                {course.name} Admission 2025 - Online {course.name} from DU SOL
+              </h1>
+              <p className="text-xl mb-8 text-blue-100">{course.description}</p>
+
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="flex items-center">
+                  <Clock className="h-5 w-5 mr-2 text-yellow-300" />
+                  <span>{course.duration} Duration</span>
+                </div>
+                <div className="flex items-center">
+                  <IndianRupee className="h-5 w-5 mr-2 text-yellow-300" />
+                  <span>{course.fees} Total Fee</span>
+                </div>
+                <div className="flex items-center">
+                  <Users className="h-5 w-5 mr-2 text-yellow-300" />
+                  <span>Online/Distance Mode</span>
+                </div>
+                <div className="flex items-center">
+                  <Award className="h-5 w-5 mr-2 text-yellow-300" />
+                  <span>UGC Recognized</span>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <Button onClick={openForm} className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-8 py-3 text-lg">
+                  Apply Now
+                </Button>
+                <Button variant="outline" onClick={openForm} className="border-white text-white hover:bg-white hover:text-blue-900 font-bold px-8 py-3 text-lg">
+                  Download Brochure
+                </Button>
+              </div>
+            </div>
+
+            <div className="w-full">
+              <EmbeddedCounselingForm variant="compact" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {course.highlights && course.highlights.length > 0 && (
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">DU SOL {course.name} Program Highlights</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {course.highlights.map((highlight, index) => (
+                <Card key={index} className="text-center p-6">
+                  <h3 className="font-bold text-lg mb-2">{highlight.title}</h3>
+                  <p className="text-gray-600">{highlight.description}</p>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <Footer />
+      <CounselingFormComponent />
+    </div>
+  );
+};
+
+export default DUSOLCoursePage;

@@ -57,6 +57,7 @@ const HorizontalUniversityScroll = ({ universities = [], courseType = "" }: Hori
     if (universityName.toLowerCase().includes('amity')) return '/university/amity';
     if (universityName.toLowerCase().includes('lovely') || universityName.toLowerCase().includes('lpu')) return '/university/lpu';
     if (universityName.toLowerCase().includes('mangalyatan')) return '/university/mangalyatan';
+    if (universityName.toLowerCase().includes('du sol') || universityName.toLowerCase().includes('school of open learning')) return '/university/du-sol';
     return '/university/ignou';
   };
 

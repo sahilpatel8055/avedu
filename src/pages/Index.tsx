@@ -13,6 +13,7 @@ import CareerAssistance from "@/components/ui/career-assistance";
 import { FlipWords } from "@/components/ui/flip-words";
 import { Link } from "react-router-dom";
 import { BookOpen, Users, Award, GraduationCap, Star, ArrowRight } from "lucide-react";
+import { useCounselingForm } from "@/hooks/use-counseling-form";
 
 // Course Images
 import mbaImage from "@/assets/course/mba.jpg";
@@ -31,6 +32,7 @@ import smuLogo from "@/assets/smu-logo.jpg";
 import uttaranchalLogo from "@/assets/uttaranchal-logo.png";
 
 const Index = () => {
+  const { openForm, CounselingFormComponent } = useCounselingForm();
   const universities = [
     {
       id: "ignou",
@@ -219,9 +221,10 @@ const Index = () => {
       <CareerAssistance />
 
       {/* 6th Section - Counselling */}
-      <CounsellingSection />
+      <CounsellingSection onOpenCounseling={openForm} />
       
       <Footer />
+      <CounselingFormComponent />
     </div>
   );
 };

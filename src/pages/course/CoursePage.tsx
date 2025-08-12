@@ -6,7 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, GraduationCap, Clock, IndianRupee, Users, Award, BookOpen, TrendingUp, Star } from "lucide-react";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
-import CounsellingSection from "@/components/ui/counselling-section";
+import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
+import { useCounselingForm } from "@/hooks/use-counseling-form";
 import courseData from "../../data/courseData.json";
 
 // Mapping of icon names to components for dynamic rendering
@@ -20,6 +21,7 @@ const iconMap = {
 
 const CoursePage = () => {
   const { courseId } = useParams();
+  const { openForm, CounselingFormComponent } = useCounselingForm();
   const course = courseId ? courseData[courseId] : null;
 
   if (!course) {
@@ -69,16 +71,24 @@ const CoursePage = () => {
 
               <div className="flex flex-wrap gap-4">
                 <Button 
+                  onClick={openForm}
                   className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-8 py-3 text-lg"
                 >
                   Apply Now
+                </Button>
+                <Button 
+                  variant="outline"
+                  onClick={openForm}
+                  className="border-white text-white hover:bg-white hover:text-blue-900 font-bold px-8 py-3 text-lg"
+                >
+                  Download Brochure
                 </Button>
               </div>
             </div>
 
             {/* Right Side - Embedded Counseling Form */}
             <div className="w-full">
-              <CounsellingSection />
+              <EmbeddedCounselingForm variant="compact" />
             </div>
           </div>
         </div>
@@ -241,6 +251,7 @@ const CoursePage = () => {
             Join thousands of successful professionals who have advanced their careers with {course.name}
           </p>
           <Button 
+            onClick={openForm}
             className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
           >
             Apply Now
@@ -249,6 +260,7 @@ const CoursePage = () => {
       </section>
 
       <Footer />
+      <CounselingFormComponent />
     </div>
   );
 };
