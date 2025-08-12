@@ -39,6 +39,8 @@ import AmityCoursePage from "./pages/course/AmityCoursePage";
 import LPUCoursePage from "./pages/course/LPUCoursePage";
 // NEW Mangalyatan dynamic course page
 import MangalayatanCoursePage from "./pages/course/MangalayatanCoursePage";
+// NEW DU SOL dynamic course page
+import DUSOLCoursePage from "./pages/course/DUSOLCoursePage";
 // Legal pages
 import Disclaimer from "./pages/legal/Disclaimer";
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
