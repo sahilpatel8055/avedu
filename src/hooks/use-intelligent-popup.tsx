@@ -47,7 +47,7 @@ export const useIntelligentPopup = (
   };
 
   // Trigger the popup if conditions are met
-  const triggerPopup = () => {
+  const triggerPopup = (triggerType?: 'time' | 'scroll' | 'exit') => {
     if (!hasTriggered.current && !isInCooldown()) {
       hasTriggered.current = true;
       onTrigger();
@@ -65,13 +65,15 @@ export const useIntelligentPopup = (
     }
   };
 
-  // Time-based trigger
+  // Time-based trigger - works independently on all devices
   useEffect(() => {
-    // Always schedule timer; check cooldown at fire time to better support mobile/tablet
     timeoutRef.current = setTimeout(() => {
-      if (!timeTriggered.current && !hasTriggered.current && !isInCooldown()) {
-        timeTriggered.current = true;
-        triggerPopup();
+      if (!timeTriggered.current && !isInCooldown()) {
+        // Check if popup hasn't been triggered yet, if so trigger it
+        if (!hasTriggered.current) {
+          timeTriggered.current = true;
+          triggerPopup('time');
+        }
       }
     }, finalConfig.timeDelay! * 1000);
 
