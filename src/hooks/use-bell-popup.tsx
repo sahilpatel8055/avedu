@@ -16,23 +16,11 @@ export const useBellPopup = (
 ) => {
   const finalConfig = { ...defaultConfig, ...config };
   const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const [hasShownInitially, setHasShownInitially] = useState(false);
   const showTimerRef = useRef<NodeJS.Timeout | null>(null);
   const hideTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Check if user has submitted form via bell icon (session-based)
-  const hasSubmittedViaBell = (): boolean => {
-    return sessionStorage.getItem('bell_form_submitted') === 'true';
-  };
-
-  // Mark form as submitted via bell icon
-  const markFormSubmitted = () => {
-    sessionStorage.setItem('bell_form_submitted', 'true');
-  };
-
   // Reset on page navigation
   const resetForNewPage = () => {
-    setHasShownInitially(false);
     setIsPopupVisible(false);
     if (showTimerRef.current) {
       clearTimeout(showTimerRef.current);
@@ -49,15 +37,11 @@ export const useBellPopup = (
       clearTimeout(showTimerRef.current);
     }
 
-    // Don't show if user already submitted via bell or has seen initially
-    if (hasSubmittedViaBell() || hasShownInitially) return;
-
     console.log(`Bell popup: Setting up timer for ${finalConfig.showDelay} seconds`);
 
     showTimerRef.current = setTimeout(() => {
       console.log('Bell popup: Timer triggered, showing popup');
       setIsPopupVisible(true);
-      setHasShownInitially(true);
     }, finalConfig.showDelay! * 1000);
 
     return () => {
@@ -65,7 +49,7 @@ export const useBellPopup = (
         clearTimeout(showTimerRef.current);
       }
     };
-  }, [finalConfig.showDelay, hasShownInitially]);
+  }, [finalConfig.showDelay]);
 
   // Auto-hide popup after delay
   useEffect(() => {
@@ -99,7 +83,6 @@ export const useBellPopup = (
   const handleApplyNow = () => {
     console.log('Bell popup: Apply Now clicked');
     setIsPopupVisible(false);
-    markFormSubmitted();
     onApplyNow();
   };
 
@@ -116,7 +99,6 @@ export const useBellPopup = (
     handleBellClick,
     handleApplyNow,
     handleClose,
-    hideBellPopup,
-    hasSubmittedViaBell: hasSubmittedViaBell()
+    hideBellPopup
   };
 };
