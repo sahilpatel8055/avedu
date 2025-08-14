@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import React from "react";
 import { Bell, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useBellPopup } from "@/hooks/use-bell-popup";
 
 interface BellPopupProps {
   onApplyNow: () => void;
@@ -8,66 +9,27 @@ interface BellPopupProps {
 }
 
 const BellPopup = ({ onApplyNow, isCounselingFormOpen = false }: BellPopupProps) => {
-  const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const [hasShownInitially, setHasShownInitially] = useState(false);
-
-  // Auto-show popup after 5 seconds
-  useEffect(() => {
-    if (!hasShownInitially && !isCounselingFormOpen) {
-      const timer = setTimeout(() => {
-        setIsPopupVisible(true);
-        setHasShownInitially(true);
-      }, 5000);
-
-      return () => clearTimeout(timer);
-    }
-  }, [hasShownInitially, isCounselingFormOpen]);
-
-  // Auto-hide popup after 35 seconds
-  useEffect(() => {
-    if (isPopupVisible) {
-      const timer = setTimeout(() => {
-        setIsPopupVisible(false);
-      }, 35000);
-
-      return () => clearTimeout(timer);
-    }
-  }, [isPopupVisible]);
+  const {
+    isPopupVisible,
+    handleBellClick,
+    handleApplyNow,
+    handleClose,
+    hideBellPopup
+  } = useBellPopup(onApplyNow);
 
   // Hide popup when counseling form is open
-  useEffect(() => {
+  React.useEffect(() => {
     if (isCounselingFormOpen) {
-      setIsPopupVisible(false);
+      hideBellPopup();
     }
-  }, [isCounselingFormOpen]);
-
-  const handleBellClick = () => {
-    if (isPopupVisible) {
-      setIsPopupVisible(false);
-    } else if (!isCounselingFormOpen) {
-      setIsPopupVisible(true);
-    }
-  };
-
-  const handleApplyNow = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsPopupVisible(false);
-    console.log('Apply Now clicked, triggering counseling form');
-    // Force open the counseling form
-    onApplyNow();
-  };
-
-  const handleClose = () => {
-    setIsPopupVisible(false);
-  };
+  }, [isCounselingFormOpen, hideBellPopup]);
 
   return (
     <div className="fixed bottom-4 right-4 z-40">
       {/* Bell Icon */}
       <div
         onClick={handleBellClick}
-        className="relative cursor-pointer p-3 bg-orange-500/80 rounded-full shadow-lg hover:bg-orange-600/80 transition-colors duration-200"
+        className="relative cursor-pointer p-3 bg-orange-500/70 rounded-full shadow-lg hover:bg-orange-600/70 transition-colors duration-200"
       >
         <Bell className="w-6 h-6 text-white" />
       </div>
@@ -96,7 +58,11 @@ const BellPopup = ({ onApplyNow, isCounselingFormOpen = false }: BellPopupProps)
             </p>
 
             <button
-              onClick={handleApplyNow}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleApplyNow();
+              }}
               className="w-full text-white font-semibold py-2.5 px-4 rounded-lg transition-colors duration-200 text-sm"
               style={{ backgroundColor: '#DC143C' }}
             >
