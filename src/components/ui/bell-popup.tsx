@@ -63,7 +63,7 @@ const BellPopup = ({ onApplyNow, isCounselingFormOpen = false }: BellPopupProps)
       {/* Bell Icon */}
       <div
         onClick={handleBellClick}
-        className="relative cursor-pointer p-3 bg-orange-500 rounded-full shadow-lg hover:bg-orange-600 transition-colors duration-200"
+        className="relative cursor-pointer p-3 bg-orange-500/80 rounded-full shadow-lg hover:bg-orange-600/80 transition-colors duration-200"
       >
         <Bell className="w-6 h-6 text-white" />
       </div>

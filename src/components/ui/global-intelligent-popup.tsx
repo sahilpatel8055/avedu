@@ -4,7 +4,7 @@ import { useIntelligentPopup } from "@/hooks/use-intelligent-popup";
 const GlobalIntelligentPopup = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
 
-  // Initialize intelligent popup with default configuration
+  // Initialize intelligent popup with mobile-optimized configuration
   useIntelligentPopup(openForm, {
     timeDelay: 25,
     scrollThreshold: 50,
