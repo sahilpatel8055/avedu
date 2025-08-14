@@ -67,13 +67,26 @@ export const useIntelligentPopup = (
 
   // Time-based trigger - works independently on all devices
   useEffect(() => {
+    console.log('Setting up time-based trigger:', finalConfig.timeDelay);
+    console.log('Is in cooldown at setup:', isInCooldown());
+    
     timeoutRef.current = setTimeout(() => {
+      console.log('Time trigger fired!');
+      console.log('timeTriggered:', timeTriggered.current);
+      console.log('hasTriggered:', hasTriggered.current);
+      console.log('isInCooldown:', isInCooldown());
+      
       if (!timeTriggered.current && !isInCooldown()) {
         // Check if popup hasn't been triggered yet, if so trigger it
         if (!hasTriggered.current) {
+          console.log('Triggering popup via time');
           timeTriggered.current = true;
           triggerPopup('time');
+        } else {
+          console.log('Popup already triggered, skipping time trigger');
         }
+      } else {
+        console.log('Time trigger conditions not met - timeTriggered:', timeTriggered.current, 'cooldown:', isInCooldown());
       }
     }, finalConfig.timeDelay! * 1000);
 
@@ -101,8 +114,9 @@ export const useIntelligentPopup = (
       const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
       
       if (scrollPercentage >= finalConfig.scrollThreshold!) {
+        console.log('Scroll trigger fired! Percentage:', scrollPercentage);
         scrollTriggered.current = true;
-        triggerPopup();
+        triggerPopup('scroll');
       }
     };
 
