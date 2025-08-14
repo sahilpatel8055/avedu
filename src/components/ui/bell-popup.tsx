@@ -1,0 +1,111 @@
+import { useState, useEffect } from "react";
+import { Bell, X } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+interface BellPopupProps {
+  onApplyNow: () => void;
+  isCounselingFormOpen?: boolean;
+}
+
+const BellPopup = ({ onApplyNow, isCounselingFormOpen = false }: BellPopupProps) => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [hasShownInitially, setHasShownInitially] = useState(false);
+
+  // Auto-show popup after 5 seconds
+  useEffect(() => {
+    if (!hasShownInitially && !isCounselingFormOpen) {
+      const timer = setTimeout(() => {
+        setIsPopupVisible(true);
+        setHasShownInitially(true);
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [hasShownInitially, isCounselingFormOpen]);
+
+  // Auto-hide popup after 35 seconds
+  useEffect(() => {
+    if (isPopupVisible) {
+      const timer = setTimeout(() => {
+        setIsPopupVisible(false);
+      }, 35000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isPopupVisible]);
+
+  // Hide popup when counseling form is open
+  useEffect(() => {
+    if (isCounselingFormOpen) {
+      setIsPopupVisible(false);
+    }
+  }, [isCounselingFormOpen]);
+
+  const handleBellClick = () => {
+    if (!isPopupVisible && !isCounselingFormOpen) {
+      setIsPopupVisible(true);
+    }
+  };
+
+  const handleApplyNow = () => {
+    setIsPopupVisible(false);
+    onApplyNow();
+  };
+
+  const handleClose = () => {
+    setIsPopupVisible(false);
+  };
+
+  return (
+    <div className="fixed bottom-4 right-4 z-40">
+      {/* Bell Icon */}
+      <div
+        onClick={handleBellClick}
+        className="relative cursor-pointer p-3 bg-orange-500 rounded-full shadow-lg hover:bg-orange-600 transition-colors duration-200 animate-pulse"
+      >
+        <Bell className="w-6 h-6 text-white" />
+      </div>
+
+      {/* Popup */}
+      {isPopupVisible && (
+        <div className="absolute bottom-16 right-0 w-64 bg-white rounded-lg shadow-xl border border-gray-200 p-4 transform transition-all duration-300 ease-out animate-scale-in">
+          {/* Close button */}
+          <button
+            onClick={handleClose}
+            className="absolute top-2 right-2 p-1 hover:bg-gray-100 rounded-full transition-colors"
+          >
+            <X className="w-4 h-4 text-gray-400" />
+          </button>
+
+          {/* Content */}
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold text-gray-800 leading-tight">
+              Admission for July Batch Closing on 15th Aug
+            </h3>
+            
+            <p className="text-sm text-purple-600 font-medium relative">
+              <span className="inline-block animate-pulse">
+                Last chance to claim upto 
+                <span className="inline-block mx-1 px-2 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-md text-xs font-bold animate-bounce">
+                  25% Scholarship!
+                </span>
+              </span>
+            </p>
+
+            <button
+              onClick={handleApplyNow}
+              className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2.5 px-4 rounded-lg transition-colors duration-200 text-sm"
+            >
+              Apply Now!
+            </button>
+          </div>
+
+          {/* Arrow pointing to bell */}
+          <div className="absolute bottom-[-8px] right-6 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white"></div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default BellPopup;

@@ -4,7 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import GlobalIntelligentPopup from "@/components/ui/global-intelligent-popup";
+import GlobalComponents from "@/components/ui/global-components";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Universities from "./pages/Universities";
@@ -66,7 +66,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <GlobalIntelligentPopup />
+        <GlobalComponents />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/universities" element={<Universities />} />
