@@ -75,11 +75,21 @@ export const useIntelligentPopup = (
     // Skip if in cooldown
     if (isInCooldown()) return;
 
+    console.log(`Setting up timer for ${finalConfig.timeDelay} seconds`);
+
     // Schedule timer for both mobile and desktop
     timeoutRef.current = setTimeout(() => {
-      if (!timeTriggered.current && !hasTriggered.current) {
+      console.log('Timer triggered, checking conditions');
+      if (!timeTriggered.current && !hasTriggered.current && !isInCooldown()) {
+        console.log('Triggering popup via timer');
         timeTriggered.current = true;
         triggerPopup();
+      } else {
+        console.log('Timer conditions not met:', {
+          timeTriggered: timeTriggered.current,
+          hasTriggered: hasTriggered.current,
+          inCooldown: isInCooldown()
+        });
       }
     }, finalConfig.timeDelay! * 1000);
 

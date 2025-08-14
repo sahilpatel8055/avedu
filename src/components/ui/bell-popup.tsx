@@ -49,8 +49,11 @@ const BellPopup = ({ onApplyNow, isCounselingFormOpen = false }: BellPopupProps)
     }
   };
 
-  const handleApplyNow = () => {
+  const handleApplyNow = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     setIsPopupVisible(false);
+    console.log('Apply Now clicked, triggering counseling form');
     onApplyNow();
   };
 
