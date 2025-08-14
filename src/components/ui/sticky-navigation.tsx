@@ -62,11 +62,11 @@ const StickyNavigation = ({ sections, className }: StickyNavigationProps) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Get the second section to determine when to show nav
-      const secondSection = document.getElementById(sections[1]?.id);
-      if (secondSection) {
-        const rect = secondSection.getBoundingClientRect();
-        // Show nav when second section is scrolled past
+      // Get the first section to determine when to show nav
+      const firstSection = document.getElementById(sections[0]?.id);
+      if (firstSection) {
+        const rect = firstSection.getBoundingClientRect();
+        // Show nav when first section is scrolled past
         setIsVisible(rect.bottom < 100);
       }
 

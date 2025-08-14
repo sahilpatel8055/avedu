@@ -226,4 +226,14 @@ All colors MUST be HSL. Professional education-focused design.
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /* Shimmer animation for scholarship text */
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s ease-in-out infinite;
+  }
 }

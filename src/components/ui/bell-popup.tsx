@@ -42,7 +42,9 @@ const BellPopup = ({ onApplyNow, isCounselingFormOpen = false }: BellPopupProps)
   }, [isCounselingFormOpen]);
 
   const handleBellClick = () => {
-    if (!isPopupVisible && !isCounselingFormOpen) {
+    if (isPopupVisible) {
+      setIsPopupVisible(false);
+    } else if (!isCounselingFormOpen) {
       setIsPopupVisible(true);
     }
   };
@@ -61,7 +63,7 @@ const BellPopup = ({ onApplyNow, isCounselingFormOpen = false }: BellPopupProps)
       {/* Bell Icon */}
       <div
         onClick={handleBellClick}
-        className="relative cursor-pointer p-3 bg-orange-500 rounded-full shadow-lg hover:bg-orange-600 transition-colors duration-200 animate-pulse"
+        className="relative cursor-pointer p-3 bg-orange-500 rounded-full shadow-lg hover:bg-orange-600 transition-colors duration-200"
       >
         <Bell className="w-6 h-6 text-white" />
       </div>
@@ -79,24 +81,22 @@ const BellPopup = ({ onApplyNow, isCounselingFormOpen = false }: BellPopupProps)
 
           {/* Content */}
           <div className="space-y-3">
-            <h3 className="text-sm font-semibold text-gray-800 leading-tight">
-              Admission for July Batch Closing on 15th Aug
+            <h3 className="text-sm font-bold leading-tight" style={{ color: '#000000' }}>
+              Admission for july batch is closing Soon
             </h3>
             
-            <p className="text-sm text-purple-600 font-medium relative">
-              <span className="inline-block animate-pulse">
-                Last chance to claim upto 
-                <span className="inline-block mx-1 px-2 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-md text-xs font-bold animate-bounce">
-                  25% Scholarship!
-                </span>
+            <p className="text-sm font-medium relative">
+              <span className="inline-block animate-shimmer bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent bg-[length:200%_100%]">
+                Claim upto 30% scholarship !
               </span>
             </p>
 
             <button
               onClick={handleApplyNow}
-              className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2.5 px-4 rounded-lg transition-colors duration-200 text-sm"
+              className="w-full text-white font-semibold py-2.5 px-4 rounded-lg transition-colors duration-200 text-sm"
+              style={{ backgroundColor: '#DC143C' }}
             >
-              Apply Now!
+              Apply Now
             </button>
           </div>
 

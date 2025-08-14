@@ -72,9 +72,12 @@ export const useIntelligentPopup = (
       clearTimeout(timeoutRef.current);
     }
 
-    // Schedule timer regardless of device type
+    // Skip if in cooldown
+    if (isInCooldown()) return;
+
+    // Schedule timer for both mobile and desktop
     timeoutRef.current = setTimeout(() => {
-      if (!timeTriggered.current && !hasTriggered.current && !isInCooldown()) {
+      if (!timeTriggered.current && !hasTriggered.current) {
         timeTriggered.current = true;
         triggerPopup();
       }
@@ -85,7 +88,7 @@ export const useIntelligentPopup = (
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [finalConfig.timeDelay, window.location.pathname]);
+  }, [finalConfig.timeDelay]);
 
   // Scroll-based trigger
   useEffect(() => {
