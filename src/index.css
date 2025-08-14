@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-}
-
 /* AVEDU Educational Platform Design System
 All colors MUST be HSL. Professional education-focused design.
 */
@@ -225,15 +215,5 @@ All colors MUST be HSL. Professional education-focused design.
   }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
-  }
-
-  /* Shimmer animation for scholarship text */
-  @keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-  }
-
-  .animate-shimmer {
-    animation: shimmer 2s ease-in-out infinite;
   }
 }

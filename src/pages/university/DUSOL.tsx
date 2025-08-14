@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
-import StickyNavigation from "@/components/ui/sticky-navigation";
 import {
   Star,
   MapPin,
@@ -41,15 +40,6 @@ import bcomImg from "@/assets/course/bcom.jpg";
 const DUSOL = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
 
-  const navigationSections = [
-    { id: "hero", label: "Overview" },
-    { id: "about", label: "About" },
-    { id: "sample-degree", label: "Sample Degree" },
-    { id: "courses", label: "Courses" },
-    { id: "admissions", label: "Admissions" },
-    { id: "contact", label: "Contact" }
-  ];
-
   const features = [
     "Flexible online and distance programs",
     "Affordable fees with quality education",
@@ -69,9 +59,8 @@ const DUSOL = () => {
   return (
     <div className="min-h-screen bg-background">
       <NavigationHeader />
-      <StickyNavigation sections={navigationSections} />
 
-      <section id="hero" className="bg-gradient-to-br from-primary/10 via-background to-primary/5 py-6">
+      <section className="bg-gradient-to-br from-primary/10 via-background to-primary/5 py-6" id="top">
         <div className="container mx-auto px-4">
           <div className="mb-8">
             <UniversitySlideshow />
@@ -120,7 +109,7 @@ const DUSOL = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">About DU SOL</h2>
@@ -140,7 +129,7 @@ const DUSOL = () => {
       </section>
 
       {/* Sample Degree Section */}
-      <section id="sample-degree" className="py-16 bg-gradient-to-br from-primary/5 to-background">
+      <section className="py-16 bg-gradient-to-br from-primary/5 to-background">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1 text-center md:text-left">
@@ -202,7 +191,7 @@ const DUSOL = () => {
         </div>
       </section>
 
-      <section id="courses" className="py-16">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Popular Courses</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">

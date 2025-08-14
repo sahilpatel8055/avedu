@@ -8,7 +8,7 @@ interface IntelligentPopupConfig {
 }
 
 const defaultConfig: IntelligentPopupConfig = {
-  timeDelay: 25, // 25 seconds for normal counseling form
+  timeDelay: 25,
   scrollThreshold: 50,
   submissionCooldown: 10,
   closureCooldown: 5
@@ -65,33 +65,13 @@ export const useIntelligentPopup = (
     }
   };
 
-  // Time-based trigger (Enhanced for mobile)
+  // Time-based trigger
   useEffect(() => {
-    // Clear any existing timer
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
-    // Skip if in cooldown
-    if (isInCooldown()) return;
-
-    console.log(`Normal counseling form: Setting up timer for ${finalConfig.timeDelay} seconds`);
-
-    // Schedule timer for both mobile and desktop - 25 seconds for normal form
+    // Always schedule timer; check cooldown at fire time to better support mobile/tablet
     timeoutRef.current = setTimeout(() => {
-      console.log('Normal counseling form: Timer triggered after', finalConfig.timeDelay, 'seconds');
-      
-      // Force trigger on mobile and desktop regardless of other conditions
-      if (!hasTriggered.current && !isInCooldown()) {
-        console.log('Normal counseling form: Force triggering popup via timer');
+      if (!timeTriggered.current && !hasTriggered.current && !isInCooldown()) {
         timeTriggered.current = true;
-        hasTriggered.current = true;
-        onTrigger(); // Direct call to ensure it works on all devices
-      } else {
-        console.log('Normal counseling form: Timer conditions not met:', {
-          hasTriggered: hasTriggered.current,
-          inCooldown: isInCooldown()
-        });
+        triggerPopup();
       }
     }, finalConfig.timeDelay! * 1000);
 
@@ -100,7 +80,7 @@ export const useIntelligentPopup = (
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [finalConfig.timeDelay, onTrigger]);
+  }, [finalConfig.timeDelay]);
 
   // Scroll-based trigger
   useEffect(() => {
