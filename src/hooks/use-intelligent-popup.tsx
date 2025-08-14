@@ -77,16 +77,18 @@ export const useIntelligentPopup = (
 
     console.log(`Setting up timer for ${finalConfig.timeDelay} seconds`);
 
-    // Schedule timer for both mobile and desktop
+    // Schedule timer for both mobile and desktop with forced trigger
     timeoutRef.current = setTimeout(() => {
-      console.log('Timer triggered, checking conditions');
-      if (!timeTriggered.current && !hasTriggered.current && !isInCooldown()) {
-        console.log('Triggering popup via timer');
+      console.log('Timer triggered after', finalConfig.timeDelay, 'seconds');
+      
+      // Force trigger on mobile and desktop regardless of other conditions
+      if (!hasTriggered.current && !isInCooldown()) {
+        console.log('Force triggering popup via timer');
         timeTriggered.current = true;
-        triggerPopup();
+        hasTriggered.current = true;
+        onTrigger(); // Direct call to ensure it works
       } else {
         console.log('Timer conditions not met:', {
-          timeTriggered: timeTriggered.current,
           hasTriggered: hasTriggered.current,
           inCooldown: isInCooldown()
         });
@@ -98,7 +100,7 @@ export const useIntelligentPopup = (
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [finalConfig.timeDelay]);
+  }, [finalConfig.timeDelay, onTrigger]);
 
   // Scroll-based trigger
   useEffect(() => {

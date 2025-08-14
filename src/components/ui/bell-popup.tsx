@@ -54,6 +54,7 @@ const BellPopup = ({ onApplyNow, isCounselingFormOpen = false }: BellPopupProps)
     e.stopPropagation();
     setIsPopupVisible(false);
     console.log('Apply Now clicked, triggering counseling form');
+    // Force open the counseling form
     onApplyNow();
   };
 
