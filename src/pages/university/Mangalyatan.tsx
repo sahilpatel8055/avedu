@@ -31,7 +31,7 @@ import bcaImg from "@/assets/course/bca.jpg";
 import baImg from "@/assets/course/ba.jpg";
 
 // Import the degree image
-import mangalayatanDegree from "@/assets/mangalyatan.png";
+import mangalayatanDegree from "@/assets/magalyatan.png";
 
 const Mangalyatan = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
