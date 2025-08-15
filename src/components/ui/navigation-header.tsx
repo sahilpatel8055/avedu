@@ -85,13 +85,13 @@ const NavigationHeader = () => {
           {/* Mobile Navigation Buttons & Menu */}
           <div className="md:hidden flex items-center gap-2">
             <button 
-              className="btn-3d px-3 py-1.5 rounded-lg text-xs font-semibold transition-all"
+              className="btn-3d px-2 py-1 rounded-lg text-xs font-semibold transition-all"
               onClick={scrollToPrograms}
             >
               Explore Programs
             </button>
             <button 
-              className="btn-3d px-3 py-1.5 rounded-lg text-xs font-semibold transition-all"
+              className="btn-3d px-2 py-1 rounded-lg text-xs font-semibold transition-all"
               onClick={() => {
                 if (window.location.pathname === '/') {
                   document.getElementById('universities')?.scrollIntoView({ behavior: 'smooth' });

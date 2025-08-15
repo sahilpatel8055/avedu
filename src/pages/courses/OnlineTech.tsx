@@ -589,7 +589,7 @@ const OnlineTech = () => {
       {/* Why Online Programs Section */}
       <WhyOnlineProgramsSection 
         universityName="Top Universities" 
-        lmsImagePath="/src/assets/lms/common.png" 
+        lmsImagePath="/assets/lms/common.png" 
       />
 
       {/* Online Course Subjects/Syllabus */}
