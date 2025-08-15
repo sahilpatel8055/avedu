@@ -36,6 +36,7 @@ import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
 import CareerAssistance from "@/components/ui/career-assistance";
 import hiringPartnersImg from "@/assets/hiring-partners.png";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
+import SectionNavigation from "@/components/ui/section-navigation";
 import manipalLmsImg from "@/assets/lms/muj.png";
 
 // Updated specializationIcons mapping to use Lucide-React icons
@@ -78,12 +79,23 @@ const ManipalCoursePage = () => {
     return <IconComponent className="w-6 h-6 text-primary" />;
   };
 
+  const sections = [
+    { id: "hero", label: "Overview" },
+    { id: "fees", label: "Fees" },
+    { id: "curriculum", label: "Curriculum" },
+    { id: "specializations", label: "Specializations" },
+    { id: "why-online", label: "Why Online" },
+    { id: "career", label: "Career" },
+    { id: "placement", label: "Placement" }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <NavigationHeader />
+      <SectionNavigation sections={sections} />
 
       {/* Header Section */}
-      <section className="bg-gradient-to-br from-primary/10 via-background to-primary/5 py-16">
+      <section id="hero" className="bg-gradient-to-br from-primary/10 via-background to-primary/5 py-16">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="flex-1 text-center lg:text-left">
@@ -138,6 +150,7 @@ const ManipalCoursePage = () => {
       <div className="container mx-auto px-4 py-12">
 
         {/* Fees Card Section */}
+        <section id="fees">
         <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center gap-2">
           <DollarSign className="w-8 h-8 text-primary" /> Online {course.name} Fee
         </h2>
@@ -187,9 +200,10 @@ const ManipalCoursePage = () => {
             </TabsContent>
           </Tabs>
         </Card>
+        </section>
 
         {/* Curriculum Section */}
-        <section style={{ backgroundColor: '#fff1f1' }} className="p-8 rounded-lg mt-12">
+        <section id="curriculum" style={{ backgroundColor: '#fff1f1' }} className="p-8 rounded-lg mt-12">
           <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center gap-2">
             <BookOpen className="w-8 h-8 text-primary" /> Online {course.name} Curriculum
           </h2>
@@ -221,7 +235,7 @@ const ManipalCoursePage = () => {
         </section>
 
         {/* Specializations Section */}
-        <section style={{ backgroundColor: '#fff1f1' }} className="p-8 rounded-lg mt-12">
+        <section id="specializations" style={{ backgroundColor: '#fff1f1' }} className="p-8 rounded-lg mt-12">
           <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center gap-2">
             <BriefcaseBusiness className="w-8 h-8 text-primary" /> {course.name} Specializations Offered
           </h2>
@@ -238,16 +252,20 @@ const ManipalCoursePage = () => {
         </section>
 
         {/* Why Online Programs Section */}
+        <div id="why-online">
         <WhyOnlineProgramsSection 
           universityName="Manipal University" 
           lmsImagePath={manipalLmsImg} 
         />
+        </div>
 
         {/* Career Assistance Section */}
+        <div id="career">
         <CareerAssistance />
+        </div>
 
         {/* Experience 100% Placement Support Section */}
-        <section className="py-16 bg-yellow-400 mt-12 rounded-lg">
+        <section id="placement" className="py-16 bg-yellow-400 mt-12 rounded-lg">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">

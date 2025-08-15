@@ -7,6 +7,7 @@ import { CheckCircle, GraduationCap, Clock, IndianRupee, Users, Award, BookOpen,
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
+import SectionNavigation from "@/components/ui/section-navigation";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
 import courseData from "../../data/courseData.json";
 
@@ -32,12 +33,23 @@ const CoursePage = () => {
     );
   }
 
+  const sections = [
+    { id: "hero", label: "Overview" },
+    { id: "sample-degree", label: "Sample Degree" },
+    { id: "highlights", label: "Highlights" },
+    { id: "eligibility", label: "Eligibility" },
+    { id: "specializations", label: "Specializations" },
+    { id: "features", label: "Features" },
+    { id: "cta", label: "Apply Now" }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       <NavigationHeader />
+      <SectionNavigation sections={sections} />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
+      <section id="hero" className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
@@ -96,7 +108,7 @@ const CoursePage = () => {
 
       {/* Sample Degree Section */}
       {course.degreeImage && (
-        <section className="py-16 bg-white">
+        <section id="sample-degree" className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">Sample IGNOU Degree Certificate</h2>
@@ -118,7 +130,7 @@ const CoursePage = () => {
 
       {/* Program Highlights */}
       {course.highlights && course.highlights.length > 0 && (
-        <section className="py-16 bg-gray-50">
+        <section id="highlights" className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">IGNOU {course.name} Program Highlights</h2>
@@ -142,7 +154,7 @@ const CoursePage = () => {
       )}
 
       {/* Eligibility & Fee Structure */}
-      <section className="py-16 bg-white">
+      <section id="eligibility" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <Card className="p-8">
@@ -193,7 +205,7 @@ const CoursePage = () => {
 
       {/* Specializations */}
       {course.specialisations && course.specialisations.length > 0 && (
-        <section className="py-16 bg-gray-50">
+        <section id="specializations" className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">{course.name} Specializations Available</h2>
@@ -219,7 +231,7 @@ const CoursePage = () => {
 
       {/* Key Features */}
       {course.keyFeatures && course.keyFeatures.length > 0 && (
-        <section className="py-16 bg-white">
+        <section id="features" className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">Why {course.name} Stands Out</h2>
@@ -244,7 +256,7 @@ const CoursePage = () => {
       )}
 
       {/* Call to Action */}
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
+      <section id="cta" className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Career?</h2>
           <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">

@@ -11,6 +11,7 @@ import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
 import CareerAssistance from "@/components/ui/career-assistance";
 import hiringPartnersImg from "@/assets/hiring-partners.png";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
+import SectionNavigation from "@/components/ui/section-navigation";
 import vguLmsImg from "@/assets/lms/vgu.png";
 
 const VguCoursePage = () => {
@@ -25,12 +26,22 @@ const VguCoursePage = () => {
     );
   }
 
+  const sections = [
+    { id: "hero", label: "Overview" },
+    { id: "fees", label: "Fees" },
+    { id: "curriculum", label: "Curriculum" },
+    { id: "why-online", label: "Why Online" },
+    { id: "career", label: "Career" },
+    { id: "placement", label: "Placement" }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <NavigationHeader />
+      <SectionNavigation sections={sections} />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/10 via-background to-primary/5 py-12" id="top">
+      <section id="hero" className="bg-gradient-to-br from-primary/10 via-background to-primary/5 py-12">
         <div className="container mx-auto px-4">
           <Link to="/university/vgu" className="flex items-center text-primary hover:underline mb-6">
             <ChevronLeft className="w-4 h-4 mr-2" />
@@ -75,7 +86,7 @@ const VguCoursePage = () => {
       </section>
 
       {/* Fees & Eligibility Section */}
-      <section className="py-16">
+      <section id="fees" className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <Card className="bg-card/50 backdrop-blur-sm border-primary/20">
@@ -116,7 +127,7 @@ const VguCoursePage = () => {
       </section>
 
       {/* Curriculum & Specializations Section */}
-      <section className="py-16" style={{ backgroundColor: '#fff7f7' }}>
+      <section id="curriculum" className="py-16" style={{ backgroundColor: '#fff7f7' }}>
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Curriculum & Specializations</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -203,10 +214,12 @@ const VguCoursePage = () => {
         </section>
 
         {/* Career Assistance Section */}
+        <div id="career">
         <CareerAssistance />
+        </div>
 
         {/* Career Scope & Top Recruiters Section */}
-      <section className="py-16 bg-white">
+      <section id="placement" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Career Scope & Top Recruiters</h2>
           
@@ -278,10 +291,12 @@ const VguCoursePage = () => {
       </section>
 
       {/* Why Online Programs Section */}
+      <div id="why-online">
       <WhyOnlineProgramsSection 
         universityName="Vivekananda Global University" 
         lmsImagePath={vguLmsImg} 
       />
+      </div>
 
       <Footer />
     </div>

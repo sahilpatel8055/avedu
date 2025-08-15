@@ -6,6 +6,7 @@ import { CheckCircle, Clock, IndianRupee, Users, Award, Star } from "lucide-reac
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
+import SectionNavigation from "@/components/ui/section-navigation";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
 import courseData from "@/data/courseData.json";
 import duSolDegree from "@/assets/DU sol sample degree.jpg";
@@ -23,11 +24,19 @@ const DUSOLCoursePage = () => {
     );
   }
 
+  const sections = [
+    { id: "hero", label: "Overview" },
+    { id: "sample-degree", label: "Sample Degree" },
+    { id: "highlights", label: "Highlights" },
+    { id: "features", label: "Features" }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       <NavigationHeader />
+      <SectionNavigation sections={sections} />
 
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
+      <section id="hero" className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -74,7 +83,7 @@ const DUSOLCoursePage = () => {
       </section>
 
       {/* Sample Degree Section */}
-      <section className="py-16 bg-white">
+      <section id="sample-degree" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Sample DU SOL Degree Certificate</h2>
@@ -89,7 +98,7 @@ const DUSOLCoursePage = () => {
       </section>
 
       {course.highlights && course.highlights.length > 0 && (
-        <section className="py-16 bg-gray-50">
+        <section id="highlights" className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">DU SOL {course.name} Program Highlights</h2>
@@ -108,7 +117,7 @@ const DUSOLCoursePage = () => {
       )}
 
       {course.keyFeatures && course.keyFeatures.length > 0 && (
-        <section className="py-16 bg-white">
+        <section id="features" className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Online {course.name} Stands Out</h2>
