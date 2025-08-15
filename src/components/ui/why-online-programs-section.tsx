@@ -74,11 +74,6 @@ const WhyOnlineProgramsSection = ({ universityName, lmsImagePath }: WhyOnlinePro
                 alt={`${universityName} LMS Platform`}
                 className="w-full h-auto max-w-lg mx-auto rounded-lg"
               />
-              
-              {/* Graduation cap decoration */}
-              <div className="absolute -top-6 -right-6 bg-background rounded-full p-4 shadow-lg border">
-                <GraduationCap className="w-12 h-12 text-foreground" />
-              </div>
             </div>
           </div>
         </div>

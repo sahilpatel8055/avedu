@@ -387,7 +387,7 @@ const OnlineBBA = () => {
       {/* Why Online Programs Section */}
       <WhyOnlineProgramsSection 
         universityName="Top Universities" 
-        lmsImagePath="/src/assets/lms/lpu.png" 
+        lmsImagePath="/src/assets/lms/common.png" 
       />
 
       {/* Specializations */}

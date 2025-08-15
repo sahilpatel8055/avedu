@@ -480,7 +480,7 @@ const OnlineArts = () => {
       {/* Why Online Programs Section */}
       <WhyOnlineProgramsSection 
         universityName="Top Universities" 
-        lmsImagePath="/src/assets/lms/vgu.png" 
+        lmsImagePath="/src/assets/lms/common.png" 
       />
 
       {/* Specializations */}
