@@ -11,7 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import SampleDegreeSection from "@/components/ui/sample-degree-section";
-import mangalayatanDegree from "@/assets/mangalyatan.png";
+import mangalayatanDegree from "@/assets/magalyatan.png";
 import mangalayatanCourseData from "@/data/mangalayatanCourseData.json";
 import mangalayatanLogo from "@/assets/mangalyatan-logo.png";
 import {
