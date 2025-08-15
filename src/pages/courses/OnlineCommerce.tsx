@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
+import SectionNavigation from "@/components/ui/section-navigation";
 import {
   GraduationCap,
   Clock,
@@ -43,6 +44,18 @@ import HorizontalUniversityScroll from "@/components/ui/horizontal-university-sc
 const OnlineCommerce = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
   const [activeTab, setActiveTab] = useState("bcom");
+
+  const sections = [
+    { id: "top", label: "Home" },
+    { id: "stats", label: "Stats" },
+    { id: "universities", label: "Universities" },
+    { id: "programs", label: "Programs" },
+    { id: "specializations", label: "Specializations" },
+    { id: "syllabus", label: "Syllabus" },
+    { id: "skills", label: "Skills" },
+    { id: "careers", label: "Careers" },
+    { id: "faqs", label: "FAQs" }
+  ];
 
   const topUniversities = [
     {
@@ -387,7 +400,7 @@ const OnlineCommerce = () => {
       <NavigationHeader />
 
       {/* Hero Section */}
-      <section className="py-12 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <section id="top" className="py-12 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <div className="mb-6">
@@ -435,7 +448,7 @@ const OnlineCommerce = () => {
       </section>
 
       {/* Quick Stats */}
-      <section className="py-12 bg-white">
+      <section id="stats" className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
@@ -867,6 +880,7 @@ const OnlineCommerce = () => {
         </div>
       </section>
 
+      <SectionNavigation sections={sections} />
       <Footer />
       <CounselingFormComponent />
     </div>

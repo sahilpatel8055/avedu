@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
+import SectionNavigation from "@/components/ui/section-navigation";
 import {
   GraduationCap,
   Clock,
@@ -42,6 +43,17 @@ import HorizontalUniversityScroll from "@/components/ui/horizontal-university-sc
 const OnlineBBA = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
   const [activeTab, setActiveTab] = useState("bba");
+
+  const sections = [
+    { id: "top", label: "Home" },
+    { id: "stats", label: "Stats" },
+    { id: "universities", label: "Universities" },
+    { id: "specializations", label: "Specializations" },
+    { id: "syllabus", label: "Syllabus" },
+    { id: "skills", label: "Skills" },
+    { id: "careers", label: "Careers" },
+    { id: "faqs", label: "FAQs" }
+  ];
 
   const topUniversities = [
     {
@@ -285,7 +297,7 @@ const OnlineBBA = () => {
       <NavigationHeader />
 
       {/* Hero Section */}
-      <section className="py-12 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <section id="top" className="py-12 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <div className="mb-6">
@@ -328,7 +340,7 @@ const OnlineBBA = () => {
       </section>
 
       {/* Quick Stats */}
-      <section className="py-12 bg-white">
+      <section id="stats" className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
@@ -354,7 +366,7 @@ const OnlineBBA = () => {
       </section>
 
       {/* Top Universities */}
-      <section className="py-16 bg-gradient-to-br from-purple-50 to-lavender-100">
+      <section id="universities" className="py-16 bg-gradient-to-br from-purple-50 to-lavender-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -372,7 +384,7 @@ const OnlineBBA = () => {
 
 
       {/* Specializations */}
-      <section className="py-16 bg-white">
+      <section id="specializations" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -401,7 +413,7 @@ const OnlineBBA = () => {
       </section>
       
       {/* NEW SECTION: Syllabus */}
-      <section className="py-16 bg-white">
+      <section id="syllabus" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -456,7 +468,7 @@ const OnlineBBA = () => {
       </section>
 
       {/* NEW SECTION: Skills Obtained */}
-      <section className="py-16 bg-gradient-to-br from-pink-50 to-purple-100">
+      <section id="skills" className="py-16 bg-gradient-to-br from-pink-50 to-purple-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -500,7 +512,7 @@ const OnlineBBA = () => {
       </section>
 
       {/* NEW SECTION: Career Scope & Top Recruiters */}
-      <section className="py-16 bg-white">
+      <section id="careers" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -602,7 +614,7 @@ const OnlineBBA = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <section id="faqs" className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -663,6 +675,7 @@ const OnlineBBA = () => {
         </div>
       </section>
 
+      <SectionNavigation sections={sections} />
       <Footer />
       <CounselingFormComponent />
     </div>

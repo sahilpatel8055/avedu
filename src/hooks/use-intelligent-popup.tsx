@@ -24,6 +24,7 @@ export const useIntelligentPopup = (
   const scrollTriggered = useRef(false);
   const exitIntentTriggered = useRef(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   // Check if user is in cooldown period
   const isInCooldown = (): boolean => {
@@ -65,11 +66,14 @@ export const useIntelligentPopup = (
     }
   };
 
-  // Time-based trigger - works independently on all devices
+  // Enhanced time-based trigger - works on all devices including mobile/tablet
   useEffect(() => {
-    // Clear any existing timeout first
+    // Clear any existing timeout/interval first
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
+    }
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
     }
     
     // Skip if already in cooldown
@@ -77,18 +81,35 @@ export const useIntelligentPopup = (
       return;
     }
     
+    // Use both setTimeout and setInterval for mobile compatibility
     timeoutRef.current = setTimeout(() => {
-      // Double-check conditions when timeout fires
       if (!timeTriggered.current && !hasTriggered.current && !isInCooldown()) {
         timeTriggered.current = true;
         triggerPopup('time');
       }
     }, finalConfig.timeDelay! * 1000);
 
+    // Additional interval check for mobile devices (every 5 seconds after delay)
+    const startInterval = setTimeout(() => {
+      intervalRef.current = setInterval(() => {
+        if (!timeTriggered.current && !hasTriggered.current && !isInCooldown()) {
+          timeTriggered.current = true;
+          triggerPopup('time');
+          if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+          }
+        }
+      }, 5000);
+    }, finalConfig.timeDelay! * 1000);
+
     return () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+      clearTimeout(startInterval);
     };
   }, [finalConfig.timeDelay]);
 

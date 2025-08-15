@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
+import SectionNavigation from "@/components/ui/section-navigation";
 import {
   GraduationCap,
   Clock,
@@ -196,13 +197,23 @@ const faqs = [
 
 const OnlineMBA = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
+
+  const sections = [
+    { id: "top", label: "Home" },
+    { id: "stats", label: "Stats" },
+    { id: "universities", label: "Universities" },
+    { id: "specializations", label: "Specializations" },
+    { id: "syllabus", label: "Syllabus" },
+    { id: "careers", label: "Careers" },
+    { id: "faqs", label: "FAQs" }
+  ];
   
   return (
     <div className="min-h-screen bg-background">
       <NavigationHeader />
 
       {/* Hero */}
-      <section className="py-12 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <section id="top" className="py-12 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <div className="mb-6">
@@ -245,7 +256,7 @@ const OnlineMBA = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-12 bg-white">
+      <section id="stats" className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
@@ -271,7 +282,7 @@ const OnlineMBA = () => {
       </section>
 
       {/* Top Universities */}
-      <section className="py-16 bg-gradient-to-br from-purple-50 to-lavender-100">
+      <section id="universities" className="py-16 bg-gradient-to-br from-purple-50 to-lavender-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -288,7 +299,7 @@ const OnlineMBA = () => {
 
 
       {/* Specializations */}
-      <section className="py-16 bg-white">
+      <section id="specializations" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -316,7 +327,7 @@ const OnlineMBA = () => {
       </section>
 
       {/* Subjects & Syllabus */}
-      <section className="py-16 bg-white">
+      <section id="syllabus" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
             Online MBA Course Subjects/Syllabus
@@ -436,7 +447,7 @@ const OnlineMBA = () => {
       </section>
 
       {/* Career Scope & Top Recruiters - Modified Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <section id="careers" className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
             Career Scope & Top Recruiters
@@ -478,7 +489,7 @@ const OnlineMBA = () => {
       </section>
 
       {/* FAQs */}
-      <section className="py-16 bg-white">
+      <section id="faqs" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -535,6 +546,7 @@ const OnlineMBA = () => {
         </div>
       </section>
 
+      <SectionNavigation sections={sections} />
       <Footer />
       <CounselingFormComponent />
     </div>

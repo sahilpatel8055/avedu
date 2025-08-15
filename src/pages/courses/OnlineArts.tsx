@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
+import SectionNavigation from "@/components/ui/section-navigation";
 import {
   GraduationCap,
   Clock,
@@ -44,6 +45,18 @@ import { useState } from "react";
 const OnlineArts = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
   const [activeTab, setActiveTab] = useState("ba");
+
+  const sections = [
+    { id: "top", label: "Home" },
+    { id: "stats", label: "Stats" },
+    { id: "universities", label: "Universities" },
+    { id: "programs", label: "Programs" },
+    { id: "specializations", label: "Specializations" },
+    { id: "syllabus", label: "Syllabus" },
+    { id: "skills", label: "Skills" },
+    { id: "careers", label: "Careers" },
+    { id: "faqs", label: "FAQs" }
+  ];
 
   const topUniversities = [
     {
@@ -322,7 +335,7 @@ const OnlineArts = () => {
       <NavigationHeader />
 
       {/* Hero Section */}
-      <section className="py-12 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <section id="top" className="py-12 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <div className="mb-6">
@@ -780,6 +793,7 @@ const OnlineArts = () => {
         </div>
       </section>
 
+      <SectionNavigation sections={sections} />
       <Footer />
       <CounselingFormComponent />
     </div>

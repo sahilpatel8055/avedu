@@ -30,6 +30,18 @@ const SectionNavigation: React.FC<SectionNavigationProps> = ({ sections }) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
+          
+          // Auto-scroll navigation on mobile/tablet to show active section
+          setTimeout(() => {
+            const activeButton = document.querySelector(`[data-section="${entry.target.id}"]`);
+            if (activeButton && window.innerWidth <= 1024) {
+              activeButton.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+              });
+            }
+          }, 100);
         }
       });
     }, observerOptions);
@@ -87,6 +99,7 @@ const SectionNavigation: React.FC<SectionNavigationProps> = ({ sections }) => {
           {sections.map(({ id, label }) => (
             <button
               key={id}
+              data-section={id}
               onClick={() => scrollToSection(id)}
               className={cn(
                 "px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap",
