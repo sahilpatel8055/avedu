@@ -10,6 +10,7 @@ import { Star, MapPin, Users, GraduationCap, Award, DollarSign, BookOpen, Clock,
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
+import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import smuLogo from "@/assets/smu-logo.jpg";
 import smuCampus from "@/assets/campus/smu.jpg";
 import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
@@ -165,6 +166,12 @@ const Sikkim = () => {
           </div>
         </div>
       </section>
+
+      {/* Why Online Programs Section */}
+      <WhyOnlineProgramsSection 
+        universityName="Sikkim Manipal University" 
+        lmsImagePath="/src/assets/lms/muj.png" 
+      />
 
       {/* Program Choice Slider */}
       <section id="programs">

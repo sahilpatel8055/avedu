@@ -9,6 +9,7 @@ import { Star, MapPin, Users, GraduationCap, Award, DollarSign, Clock, Check } f
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
+import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import amityLogo from "@/assets/amity-logo.jpg";
 import amityCampus from "@/assets/campus/amity.jpg";
 import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
@@ -156,6 +157,12 @@ const Amity = () => {
           </div>
         </div>
       </section>
+
+      {/* Why Online Programs Section */}
+      <WhyOnlineProgramsSection 
+        universityName="Amity University Online" 
+        lmsImagePath="/src/assets/lms/amity.png" 
+      />
 
       {/* Program Choice Slider */}
       <section id="programs">

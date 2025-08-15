@@ -10,6 +10,7 @@ import { Star, MapPin, Users, GraduationCap, Award, DollarSign, BookOpen, Clock,
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
+import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import manipalLogo from "@/assets/manipal-logo.png";
 import mujCampus from "@/assets/muj.png";
 // New import
@@ -168,6 +169,12 @@ const Manipal = () => {
         </div>
       </section>
       
+      {/* Why Online Programs Section */}
+      <WhyOnlineProgramsSection 
+        universityName="Manipal University" 
+        lmsImagePath="/src/assets/lms/muj.png" 
+      />
+
       {/* Program Choice Slider */}
       <section id="programs">
         <ProgramChoiceSlider universityType="default" />

@@ -9,6 +9,7 @@ import { Star, MapPin, Users, GraduationCap, Award, DollarSign, Clock, Check, Gl
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
+import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import lpuLogo from "@/assets/lpu-logo.jpg";
 import lpuCampus from "@/assets/campus/lpu.png";
 import { MovingBorderButton } from "@/components/ui/moving-border";
@@ -165,6 +166,12 @@ const LPU = () => {
           </div>
         </div>
       </section>
+
+      {/* Why Online Programs Section */}
+      <WhyOnlineProgramsSection 
+        universityName="Lovely Professional University" 
+        lmsImagePath="/src/assets/lms/lpu.png" 
+      />
 
       {/* Program Choice Slider */}
       <section id="programs">

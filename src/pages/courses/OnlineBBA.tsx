@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
 import SectionNavigation from "@/components/ui/section-navigation";
 import {
@@ -382,6 +383,12 @@ const OnlineBBA = () => {
         </div>
       </section>
 
+
+      {/* Why Online Programs Section */}
+      <WhyOnlineProgramsSection 
+        universityName="Top Universities" 
+        lmsImagePath="/src/assets/lms/lpu.png" 
+      />
 
       {/* Specializations */}
       <section id="specializations" className="py-16 bg-white">

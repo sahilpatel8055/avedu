@@ -9,6 +9,7 @@ import { Star, MapPin, Users, GraduationCap, Award, DollarSign, BookOpen, Clock,
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
+import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import vguLogo from "@/assets/vgu-logo.png";
 import vguCampus from "@/assets/campus/vgu.jpg";
 import { MovingBorderButton } from "@/components/ui/moving-border";
@@ -165,6 +166,12 @@ const VGU = () => {
           </div>
         </div>
       </section>
+
+      {/* Why Online Programs Section */}
+      <WhyOnlineProgramsSection 
+        universityName="Vivekananda Global University" 
+        lmsImagePath="/src/assets/lms/vgu.png" 
+      />
 
       {/* Program Choice Slider */}
       <ProgramChoiceSlider universityType="vgu" />
