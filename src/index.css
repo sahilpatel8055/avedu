@@ -242,23 +242,9 @@ All colors MUST be HSL. Professional education-focused design.
 
   .carousel-3d .relative {
     transform-style: preserve-3d;
-    animation: rotate-carousel 20s infinite linear;
   }
 
   .carousel-item {
     transform-origin: center center;
-  }
-
-  @keyframes rotate-carousel {
-    0% {
-      transform: rotateY(0deg);
-    }
-    100% {
-      transform: rotateY(360deg);
-    }
-  }
-
-  .carousel-3d:hover .relative {
-    animation-play-state: paused;
   }
 }

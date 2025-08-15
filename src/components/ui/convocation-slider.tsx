@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 
 // Import all 7 images with the correct paths
@@ -21,6 +21,31 @@ const slides = [
 ];
 
 const ConvocationSlider = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  // Auto-rotate every 3 seconds
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % slides.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+  };
+
+  const goToPrevious = () => {
+    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % slides.length);
+  };
   return (
     <section className="bg-background py-12 md:py-16">
       <div className="container mx-auto px-4">
@@ -34,22 +59,36 @@ const ConvocationSlider = () => {
         </div>
         
         {/* 3D Ring Carousel Container */}
-        <div className="relative h-80 md:h-96 perspective-[1000px] overflow-hidden">
+        <div 
+          className="relative h-80 md:h-96 perspective-[1000px] overflow-hidden"
+          onMouseEnter={() => setIsAutoPlaying(false)}
+          onMouseLeave={() => setIsAutoPlaying(true)}
+        >
           {/* Carousel ring container */}
           <div className="carousel-3d h-full flex items-center justify-center">
-            <div className="relative w-80 h-80 md:w-96 md:h-96 transform-style-preserve-3d">
+            <div 
+              className="relative w-80 h-80 md:w-96 md:h-96 transform-style-preserve-3d transition-transform duration-700 ease-in-out"
+              style={{
+                transform: `rotateY(${-currentIndex * (360 / slides.length)}deg)`
+              }}
+            >
               {slides.map((slide, index) => {
                 const angle = (index * 360) / slides.length;
                 const rotateY = angle;
-                const translateZ = 180; // Distance from center
+                const translateZ = 360; // 2x zoom in (was 180px)
+                const isActive = index === currentIndex;
                 
                 return (
                   <div 
                     key={index} 
-                    className="carousel-item absolute w-40 h-32 md:w-48 md:h-36 left-1/2 top-1/2 -ml-20 -mt-16 md:-ml-24 md:-mt-18 transition-all duration-700 ease-in-out cursor-pointer hover:scale-110"
+                    className={cn(
+                      "carousel-item absolute w-40 h-32 md:w-48 md:h-36 left-1/2 top-1/2 -ml-20 -mt-16 md:-ml-24 md:-mt-18 transition-all duration-700 ease-in-out cursor-pointer",
+                      isActive ? "scale-110 z-10" : "scale-100 hover:scale-105"
+                    )}
                     style={{
                       transform: `rotateY(${rotateY}deg) translateZ(${translateZ}px)`,
                     }}
+                    onClick={() => goToSlide(index)}
                   >
                     <div className="relative w-full h-full rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                       <img
@@ -71,28 +110,32 @@ const ConvocationSlider = () => {
           {/* Navigation buttons */}
           <button 
             className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
-            onClick={() => {
-              const carousel = document.querySelector('.carousel-3d .relative') as HTMLElement;
-              if (carousel) {
-                const currentRotation = parseInt(carousel.style.transform.match(/rotateY\((-?\d+)deg\)/)?.[1] || '0');
-                carousel.style.transform = `rotateY(${currentRotation - 60}deg)`;
-              }
-            }}
+            onClick={goToPrevious}
           >
             &#8249;
           </button>
           <button 
             className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
-            onClick={() => {
-              const carousel = document.querySelector('.carousel-3d .relative') as HTMLElement;
-              if (carousel) {
-                const currentRotation = parseInt(carousel.style.transform.match(/rotateY\((-?\d+)deg\)/)?.[1] || '0');
-                carousel.style.transform = `rotateY(${currentRotation + 60}deg)`;
-              }
-            }}
+            onClick={goToNext}
           >
             &#8250;
           </button>
+          
+          {/* Slide indicators */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                className={cn(
+                  "w-2 h-2 rounded-full transition-all duration-300",
+                  index === currentIndex 
+                    ? "bg-white scale-125" 
+                    : "bg-white/50 hover:bg-white/80"
+                )}
+                onClick={() => goToSlide(index)}
+              />
+            ))}
+          </div>
           
           {/* Background gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 rounded-3xl -z-10"></div>
