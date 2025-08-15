@@ -139,7 +139,7 @@ export const useIntelligentPopup = (
   // Reset triggers on route change
   useEffect(() => {
     resetTriggers();
-  }, [window.location.pathname]);
+  }, []);
 
   return {
     isInCooldown: isInCooldown(),
