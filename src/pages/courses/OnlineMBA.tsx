@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
 import SectionNavigation from "@/components/ui/section-navigation";
+import UniversityComparisonTable from "@/components/ui/university-comparison-table";
 import {
   GraduationCap,
   Clock,
@@ -452,6 +453,93 @@ const OnlineMBA = () => {
           </div>
         </div>
       </section>
+
+      {/* University Comparison Table */}
+      <UniversityComparisonTable 
+        courseName="MBA" 
+        universities={[
+          {
+            name: "Manipal University Online",
+            logo: manipalLogo,
+            courseFee: "₹1,50,000",
+            semesterFee: "₹37,500",
+            emiOption: "₹12,500/month",
+            registrationFee: "₹5,000",
+            rating: 4.6,
+            coursePagePath: "/course/manipal/mba"
+          },
+          {
+            name: "Uttaranchal University",
+            logo: uttaranchalLogo,
+            courseFee: "₹90,000",
+            semesterFee: "₹22,500",
+            emiOption: "₹7,500/month",
+            registrationFee: "₹3,000",
+            rating: 4.5,
+            coursePagePath: "/course/uttaranchal/mba"
+          },
+          {
+            name: "Vivekananda Global University",
+            logo: vguLogo,
+            courseFee: "₹80,000",
+            semesterFee: "₹20,000",
+            emiOption: "₹6,667/month",
+            registrationFee: "₹2,500",
+            rating: 4.4,
+            coursePagePath: "/course/vgu/mba"
+          },
+          {
+            name: "IGNOU",
+            logo: ignouLogo,
+            courseFee: "₹63,000",
+            semesterFee: "₹15,750",
+            emiOption: "₹5,250/month",
+            registrationFee: "₹1,500",
+            rating: 4.8,
+            coursePagePath: "/course/ignou/mba"
+          },
+          {
+            name: "Sikkim Manipal University",
+            logo: smuLogo,
+            courseFee: "₹1,00,000",
+            semesterFee: "₹25,000",
+            emiOption: "₹8,333/month",
+            registrationFee: "₹4,000",
+            rating: 4.5,
+            coursePagePath: "/course/sikkim/mba"
+          },
+          {
+            name: "Amity University Online",
+            logo: amityLogo,
+            courseFee: "₹1,20,000",
+            semesterFee: "₹30,000",
+            emiOption: "₹10,000/month",
+            registrationFee: "₹4,500",
+            rating: 4.3,
+            coursePagePath: "/course/amity/mba"
+          },
+          {
+            name: "Lovely Professional University",
+            logo: lpuLogo,
+            courseFee: "₹1,10,000",
+            semesterFee: "₹27,500",
+            emiOption: "₹9,167/month",
+            registrationFee: "₹4,000",
+            rating: 4.2,
+            coursePagePath: "/course/lpu/mba"
+          },
+          {
+            name: "Mangalyatan University",
+            logo: mangalyatanLogo,
+            courseFee: "₹90,000",
+            semesterFee: "₹22,500",
+            emiOption: "₹7,500/month",
+            registrationFee: "₹3,000",
+            rating: 4.1,
+            coursePagePath: "/course/mangalyatan/mba"
+          }
+        ]}
+      />
 
       {/* Career Scope & Top Recruiters - Modified Section */}
       <section id="careers" className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">

@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
 import SectionNavigation from "@/components/ui/section-navigation";
+import UniversityComparisonTable from "@/components/ui/university-comparison-table";
 import {
   GraduationCap,
   Clock,
@@ -680,6 +681,93 @@ const OnlineTech = () => {
           </div>
         </div>
       </section>
+
+      {/* University Comparison Table */}
+      <UniversityComparisonTable 
+        courseName="BCA/MCA" 
+        universities={[
+          {
+            name: "Manipal University Online",
+            logo: manipalLogo,
+            courseFee: "₹1,80,000",
+            semesterFee: "₹22,500",
+            emiOption: "₹7,500/month",
+            registrationFee: "₹5,000",
+            rating: 4.6,
+            coursePagePath: "/course/manipal/bca"
+          },
+          {
+            name: "Uttaranchal University",
+            logo: uttaranchalLogo,
+            courseFee: "₹1,05,000",
+            semesterFee: "₹13,125",
+            emiOption: "₹4,375/month",
+            registrationFee: "₹3,000",
+            rating: 4.5,
+            coursePagePath: "/course/uttaranchal/bca"
+          },
+          {
+            name: "Vivekananda Global University",
+            logo: vguLogo,
+            courseFee: "₹90,000",
+            semesterFee: "₹11,250",
+            emiOption: "₹3,750/month",
+            registrationFee: "₹2,500",
+            rating: 4.4,
+            coursePagePath: "/course/vgu/bca"
+          },
+          {
+            name: "IGNOU",
+            logo: ignouLogo,
+            courseFee: "₹45,000",
+            semesterFee: "₹5,625",
+            emiOption: "₹1,875/month",
+            registrationFee: "₹1,500",
+            rating: 4.8,
+            coursePagePath: "/course/ignou/bca"
+          },
+          {
+            name: "Sikkim Manipal University",
+            logo: smuLogo,
+            courseFee: "₹1,35,000",
+            semesterFee: "₹16,875",
+            emiOption: "₹5,625/month",
+            registrationFee: "₹4,000",
+            rating: 4.5,
+            coursePagePath: "/course/sikkim/bca"
+          },
+          {
+            name: "Amity University Online",
+            logo: amityLogo,
+            courseFee: "₹1,65,000",
+            semesterFee: "₹20,625",
+            emiOption: "₹6,875/month",
+            registrationFee: "₹4,500",
+            rating: 4.3,
+            coursePagePath: "/course/amity/bca"
+          },
+          {
+            name: "Lovely Professional University",
+            logo: lpuLogo,
+            courseFee: "₹1,20,000",
+            semesterFee: "₹15,000",
+            emiOption: "₹5,000/month",
+            registrationFee: "₹4,000",
+            rating: 4.2,
+            coursePagePath: "/course/lpu/bca"
+          },
+          {
+            name: "Mangalyatan University",
+            logo: mangalyatanLogo,
+            courseFee: "₹1,05,000",
+            semesterFee: "₹13,125",
+            emiOption: "₹4,375/month",
+            registrationFee: "₹3,000",
+            rating: 4.1,
+            coursePagePath: "/course/mangalyatan/bca"
+          }
+        ]}
+      />
 
       {/* Skills Obtained in Online BCA/MCA Course */}
       <section id="skills" className="py-16 bg-gradient-to-br from-purple-50 to-lavender-100">
