@@ -230,6 +230,7 @@ All colors MUST be HSL. Professional education-focused design.
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }

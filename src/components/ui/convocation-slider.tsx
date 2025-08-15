@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React from 'react';
 import { cn } from "@/lib/utils";
 
 // Import all 7 images with the correct paths
@@ -22,60 +21,43 @@ const slides = [
 ];
 
 const ConvocationSlider = () => {
-  const [current, setCurrent] = useState(0);
-
-  const previousSlide = () => {
-    setCurrent(current === 0 ? slides.length - 1 : current - 1);
-  };
-
-  const nextSlide = () => {
-    setCurrent(current === slides.length - 1 ? 0 : current + 1);
-  };
-
   return (
-    <section className="bg-muted py-12 md:py-16">
+    <section className="bg-background py-12 md:py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-4xl lg:text-5xl font-bold text-foreground mb-4">
-          Our Convocation Gallery
-        </h2>
-        <p className="text-center text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
-          Celebrating the achievements of our successful graduates.
-        </p>
+        <div className="text-center mb-8">
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            Our Convocation Gallery
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Celebrate graduation during the Convocation event at our campus, interact with fellow graduates, meet faculty, and foster professional connections for career growth.
+          </p>
+        </div>
         
-        {/* Slider Container */}
-        <div className="relative w-full overflow-hidden rounded-xl shadow-lg">
-          <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${current * 100}%)` }}
-          >
+        {/* Grid Layout for Images */}
+        <div className="relative overflow-hidden">
+          <div className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4">
             {slides.map((slide, index) => (
-              <div key={index} className="w-full flex-shrink-0">
-                <img
-                  src={slide.src}
-                  alt={slide.alt}
-                  className="w-full object-cover rounded-xl"
-                  style={{ maxHeight: '28rem' }}
-                />
+              <div 
+                key={index} 
+                className="flex-shrink-0 w-80 md:w-96 snap-start"
+              >
+                <div className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <img
+                    src={slide.src}
+                    alt={slide.alt}
+                    className="w-full h-64 md:h-72 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                </div>
               </div>
             ))}
           </div>
-
-          {/* Navigation Arrows */}
-          <div className="absolute top-1/2 -translate-y-1/2 flex justify-between w-full px-4">
-            <button
-              onClick={previousSlide}
-              className="bg-background/50 backdrop-blur-sm text-foreground p-2 rounded-full hover:bg-background transition-colors"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="bg-background/50 backdrop-blur-sm text-foreground p-2 rounded-full hover:bg-background transition-colors"
-            >
-              <ChevronRight size={24} />
-            </button>
-          </div>
+          
+          {/* Fade effects on sides */}
+          <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none" />
         </div>
+
       </div>
     </section>
   );
