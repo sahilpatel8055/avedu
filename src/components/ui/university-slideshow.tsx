@@ -11,7 +11,7 @@ const UniversitySlideshow = () => {
         <img
           src={mujImage}
           alt="Manipal University Jaipur"
-          className="w-full h-full object-cover drop-shadow-lg"
+          className="w-full h-full object-cover drop-shadow-lg transform scale-[0.65]"
         />
       </div>
       
