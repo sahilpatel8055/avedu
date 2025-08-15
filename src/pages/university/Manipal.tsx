@@ -11,6 +11,7 @@ import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import manipalLogo from "@/assets/manipal-logo.png";
+import mujCampus from "@/assets/muj.png";
 // New import
 import ProgramHighlightsSlider from "@/components/ui/program-highlights-slider";
 import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
@@ -81,7 +82,7 @@ const Manipal = () => {
         <div className="container mx-auto px-4">
           {/* Slideshow at top of section */}
           <div className="mb-8">
-            <UniversitySlideshow />
+            <UniversitySlideshow imageSrc={mujCampus} imageAlt="Manipal University Jaipur Campus" />
           </div>
           
           <div className="flex flex-col lg:flex-row items-start gap-8">

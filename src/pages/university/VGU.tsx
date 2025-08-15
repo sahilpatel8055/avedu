@@ -10,6 +10,7 @@ import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import vguLogo from "@/assets/vgu-logo.png";
+import vguCampus from "@/assets/campus/vgu.jpg";
 import { MovingBorderButton } from "@/components/ui/moving-border";
 import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
 import SectionNavigation from "@/components/ui/section-navigation";
@@ -81,7 +82,7 @@ const VGU = () => {
         <div className="container mx-auto px-4">
           {/* Slideshow at top of section */}
           <div className="mb-8">
-            <UniversitySlideshow />
+            <UniversitySlideshow imageSrc={vguCampus} imageAlt="Vivekananda Global University Campus" />
           </div>
           
           <div className="flex flex-col lg:flex-row items-start gap-8">

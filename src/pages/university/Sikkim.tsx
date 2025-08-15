@@ -11,6 +11,7 @@ import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import smuLogo from "@/assets/smu-logo.jpg";
+import smuCampus from "@/assets/campus/smu.jpg";
 import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
 import SectionNavigation from "@/components/ui/section-navigation";
 
@@ -79,7 +80,7 @@ const Sikkim = () => {
         <div className="container mx-auto px-4">
           {/* Slideshow at top of section */}
           <div className="mb-8">
-            <UniversitySlideshow />
+            <UniversitySlideshow imageSrc={smuCampus} imageAlt="Sikkim Manipal University Campus" />
           </div>
           
           <div className="flex flex-col lg:flex-row items-start gap-8">

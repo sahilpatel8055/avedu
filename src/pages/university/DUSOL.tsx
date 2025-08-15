@@ -19,6 +19,7 @@ import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import duSolLogo from "@/assets/uni_logo/DU_SOL.png";
 import duSolDegree from "@/assets/DU sol sample degree.jpg";
+import dusolCampus from "@/assets/campus/dusol.jpg";
 
 import { Link } from 'react-router-dom';
 import courseData from '../../data/courseData.json';
@@ -74,7 +75,7 @@ const DUSOL = () => {
       <section className="bg-gradient-to-br from-primary/10 via-background to-primary/5 py-6" id="top">
         <div className="container mx-auto px-4">
           <div className="mb-8">
-            <UniversitySlideshow />
+            <UniversitySlideshow imageSrc={dusolCampus} imageAlt="DU SOL Campus" />
           </div>
 
           <div className="flex flex-col lg:flex-row items-start gap-8">

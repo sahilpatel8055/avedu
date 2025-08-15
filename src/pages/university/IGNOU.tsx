@@ -19,6 +19,7 @@ import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import ignouLogo from "@/assets/ignou-logo.png";
 import ignouDegreeImg from "@/assets/ignou-degree.png";
+import ignouCampus from "@/assets/campus/ignou.jpg";
 
 // Import course data and Link component
 import { Link } from 'react-router-dom';
@@ -88,7 +89,7 @@ const IGNOU = () => {
         <div className="container mx-auto px-4">
           {/* Slideshow at top of section */}
           <div className="mb-8">
-            <UniversitySlideshow />
+            <UniversitySlideshow imageSrc={ignouCampus} imageAlt="IGNOU Campus" />
           </div>
           
           <div className="flex flex-col lg:flex-row items-start gap-8">

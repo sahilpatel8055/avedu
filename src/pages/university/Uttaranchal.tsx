@@ -10,6 +10,7 @@ import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import uttaranchalLogo from "@/assets/uttaranchal-logo.png";
+import uttaranchalCampus from "@/assets/campus/uttaranchal.png";
 import { MovingBorderButton } from "@/components/ui/moving-border";
 import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
 import SectionNavigation from "@/components/ui/section-navigation";
@@ -87,7 +88,7 @@ const Uttaranchal = () => {
         <div className="container mx-auto px-4">
           {/* Slideshow at top of section */}
           <div className="mb-8">
-            <UniversitySlideshow />
+            <UniversitySlideshow imageSrc={uttaranchalCampus} imageAlt="Uttaranchal University Campus" />
           </div>
           
           <div className="flex flex-col lg:flex-row items-start gap-8">

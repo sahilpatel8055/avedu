@@ -1,6 +1,9 @@
-import mujImage from "@/assets/muj.png";
+interface UniversitySlideshowProps {
+  imageSrc: string;
+  imageAlt: string;
+}
 
-const UniversitySlideshow = () => {
+const UniversitySlideshow = ({ imageSrc, imageAlt }: UniversitySlideshowProps) => {
   return (
     <div className="relative w-full h-48 sm:h-56 lg:h-64 mb-6 sm:mb-8 overflow-hidden rounded-xl bg-gradient-to-br from-primary/10 via-background to-primary/5 shadow-lg border border-border/50">
       {/* Decorative overlay */}
@@ -9,8 +12,8 @@ const UniversitySlideshow = () => {
       {/* Main image */}
       <div className="relative w-full h-full">
         <img
-          src={mujImage}
-          alt="Manipal University Jaipur"
+          src={imageSrc}
+          alt={imageAlt}
           className="w-full h-full object-cover drop-shadow-lg"
         />
       </div>
