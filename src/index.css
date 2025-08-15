@@ -234,4 +234,17 @@ All colors MUST be HSL. Professional education-focused design.
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /* Bay Window Style CSS */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .bay-window-container {
+    transform-style: preserve-3d;
+  }
+
+  .bay-window-image {
+    transform-origin: center center;
+  }
 }
