@@ -27,23 +27,32 @@ const SectionNavigation: React.FC<SectionNavigationProps> = ({ sections }) => {
     };
 
     const observer = new IntersectionObserver((entries) => {
+      // Find the entry with highest intersection ratio or the one that's most visible
+      let activeEntry = null;
+      let maxRatio = 0;
+      
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-          
-          // Auto-scroll navigation on mobile/tablet to show active section
-          setTimeout(() => {
-            const activeButton = document.querySelector(`[data-section="${entry.target.id}"]`);
-            if (activeButton && window.innerWidth <= 1024) {
-              activeButton.scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest',
-                inline: 'center'
-              });
-            }
-          }, 100);
+        if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+          maxRatio = entry.intersectionRatio;
+          activeEntry = entry;
         }
       });
+      
+      if (activeEntry) {
+        setActiveSection(activeEntry.target.id);
+        
+        // Auto-scroll navigation on mobile/tablet to show active section
+        setTimeout(() => {
+          const activeButton = document.querySelector(`[data-section="${activeEntry.target.id}"]`);
+          if (activeButton && window.innerWidth <= 1024) {
+            activeButton.scrollIntoView({
+              behavior: 'smooth',
+              block: 'nearest',
+              inline: 'center'
+            });
+          }
+        }, 100);
+      }
     }, observerOptions);
 
     // Observe all sections

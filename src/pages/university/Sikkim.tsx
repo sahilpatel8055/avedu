@@ -12,6 +12,7 @@ import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import smuLogo from "@/assets/smu-logo.jpg";
 import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
+import SectionNavigation from "@/components/ui/section-navigation";
 
 // Import the specific icons for approvals
 import ugcIcon from "@/assets/icons/ugc-icon.png";
@@ -29,6 +30,17 @@ import baImg from "@/assets/course/ba.jpg";
 
 const Sikkim = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
+  
+  const sections = [
+    { id: 'top', label: 'Overview' },
+    { id: 'about', label: 'About' },
+    { id: 'programs', label: 'Programs' },
+    { id: 'approvals', label: 'Approvals' },
+    { id: 'courses', label: 'Courses' },
+    { id: 'placement', label: 'Placement' },
+    { id: 'features', label: 'Features' },
+    { id: 'apply', label: 'Apply' }
+  ];
   
   const courses = [
     { name: "Online MBA", id: "online-mba", fees: "₹60,000", duration: "2 Years", specializations: 8, image: mbaImg },
@@ -131,8 +143,10 @@ const Sikkim = () => {
         </div>
       </section>
 
+      <SectionNavigation sections={sections} />
+      
       {/* About Section */}
-      <section className="py-16">
+      <section className="py-16" id="about">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">About Sikkim Manipal University</h2>
@@ -152,10 +166,12 @@ const Sikkim = () => {
       </section>
 
       {/* Program Choice Slider */}
-      <ProgramChoiceSlider universityType="sikkim" />
+      <section id="programs">
+        <ProgramChoiceSlider universityType="sikkim" />
+      </section>
 
       {/* Approvals Section */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-muted/30" id="approvals">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Approvals & Accreditations</h2>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -177,7 +193,7 @@ const Sikkim = () => {
       </section>
 
       {/* Courses Section */}
-      <section className="py-16">
+      <section className="py-16" id="courses">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Popular Courses</h2>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
@@ -215,7 +231,7 @@ const Sikkim = () => {
       </section>
 
       {/* Experience 100% Placement Support Section - Changed to Sunny Yellow */}
-      <section className="py-16 bg-yellow-400">
+      <section className="py-16 bg-yellow-400" id="placement">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-12">
             {/* Left side: Image */}
@@ -274,7 +290,7 @@ const Sikkim = () => {
       </section>
 
       {/* Features Section - Back to original background */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-muted/30" id="features">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Why Choose Sikkim Manipal University?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -289,7 +305,7 @@ const Sikkim = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary/10">
+      <section className="py-16 bg-primary/10" id="apply">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Start Your Educational Journey?</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">

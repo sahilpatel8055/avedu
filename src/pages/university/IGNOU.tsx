@@ -41,9 +41,20 @@ import baImg from "@/assets/course/ba.jpg";
 import bcomImg from "@/assets/course/bcom.jpg";
 
 import { MovingBorderButton } from "@/components/ui/moving-border";
+import SectionNavigation from "@/components/ui/section-navigation";
 
 const IGNOU = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
+  
+  const sections = [
+    { id: 'top', label: 'Overview' },
+    { id: 'about', label: 'About' },
+    { id: 'programs', label: 'Programs' },
+    { id: 'approvals', label: 'Approvals' },
+    { id: 'courses', label: 'Courses' },
+    { id: 'features', label: 'Features' },
+    { id: 'apply', label: 'Apply' }
+  ];
   
   // We will now use the courseData object directly for rendering
   // const courses = [...] is no longer needed

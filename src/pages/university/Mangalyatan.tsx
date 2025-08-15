@@ -11,6 +11,7 @@ import Footer from "@/components/ui/footer";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import mangalayatanLogo from "@/assets/mangalyatan-logo.png";
 import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
+import SectionNavigation from "@/components/ui/section-navigation";
 
 // Import the specific icons for approvals
 import ugcIcon from "@/assets/icons/ugc-icon.png";
@@ -27,6 +28,17 @@ import baImg from "@/assets/course/ba.jpg";
 
 const Mangalyatan = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
+  
+  const sections = [
+    { id: 'top', label: 'Overview' },
+    { id: 'about', label: 'About' },
+    { id: 'programs', label: 'Programs' },
+    { id: 'approvals', label: 'Approvals' },
+    { id: 'courses', label: 'Courses' },
+    { id: 'placement', label: 'Placement' },
+    { id: 'features', label: 'Features' },
+    { id: 'apply', label: 'Apply' }
+  ];
   
   const courses = [
     { name: "Online MBA", id: "online-mba", fees: "₹1,20,000", duration: "2 Years", specializations: 8, image: mbaImg },

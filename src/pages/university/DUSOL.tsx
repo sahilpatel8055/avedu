@@ -36,9 +36,20 @@ import mcaImg from "@/assets/course/mca.jpg";
 import bcaImg from "@/assets/course/bca.jpg";
 import baImg from "@/assets/course/ba.jpg";
 import bcomImg from "@/assets/course/bcom.jpg";
+import SectionNavigation from "@/components/ui/section-navigation";
 
 const DUSOL = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
+  
+  const sections = [
+    { id: 'top', label: 'Overview' },
+    { id: 'about', label: 'About' },
+    { id: 'programs', label: 'Programs' },
+    { id: 'approvals', label: 'Approvals' },
+    { id: 'courses', label: 'Courses' },
+    { id: 'features', label: 'Features' },
+    { id: 'apply', label: 'Apply' }
+  ];
 
   const features = [
     "Flexible online and distance programs",
