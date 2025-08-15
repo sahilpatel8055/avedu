@@ -46,6 +46,7 @@ const ConvocationSlider = () => {
   const goToNext = () => {
     setCurrentIndex((prev) => (prev + 1) % slides.length);
   };
+
   return (
     <section className="bg-background py-12 md:py-16">
       <div className="container mx-auto px-4">
@@ -58,89 +59,76 @@ const ConvocationSlider = () => {
           </p>
         </div>
         
-        {/* 3D Ring Carousel Container */}
+        {/* 3D Carousel Container */}
         <div 
-          className="relative h-80 md:h-96 perspective-[1000px] overflow-hidden"
+          className="convocation-3d-container w-[500px] h-[300px] mx-auto mb-8"
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
-          {/* Carousel ring container */}
-          <div className="carousel-3d h-full flex items-center justify-center">
-            <div 
-              className="relative w-80 h-80 md:w-96 md:h-96 transform-style-preserve-3d transition-transform duration-700 ease-in-out"
-              style={{
-                transform: `rotateY(${-currentIndex * (360 / slides.length)}deg)`
-              }}
-            >
-              {slides.map((slide, index) => {
-                const angle = (index * 360) / slides.length;
-                const rotateY = angle;
-                const translateZ = 360; // 2x zoom in (was 180px)
-                const isActive = index === currentIndex;
-                
-                return (
-                  <div 
-                    key={index} 
-                    className={cn(
-                      "carousel-item absolute w-40 h-32 md:w-48 md:h-36 left-1/2 top-1/2 -ml-20 -mt-16 md:-ml-24 md:-mt-18 transition-all duration-700 ease-in-out cursor-pointer",
-                      isActive ? "scale-110 z-10" : "scale-100 hover:scale-105"
-                    )}
-                    style={{
-                      transform: `rotateY(${rotateY}deg) translateZ(${translateZ}px)`,
-                    }}
-                    onClick={() => goToSlide(index)}
-                  >
-                    <div className="relative w-full h-full rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
-                      <img
-                        src={slide.src}
-                        alt={slide.alt}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                      <div className="absolute bottom-2 left-2 right-2 text-white text-sm font-medium opacity-0 hover:opacity-100 transition-opacity duration-300">
-                        {slide.alt}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+          <div 
+            className="convocation-carousel"
+            style={{
+              transform: `translateZ(-540px) rotateY(${-currentIndex * (360 / slides.length)}deg)`
+            }}
+          >
+            {slides.map((slide, index) => {
+              const angle = (index * 360) / slides.length;
+              const isActive = index === currentIndex;
+              
+              return (
+                <img
+                  key={index}
+                  src={slide.src}
+                  alt={slide.alt}
+                  className={cn(
+                    "convocation-carousel-image",
+                    isActive ? "active" : ""
+                  )}
+                  style={{
+                    transform: `rotateY(${angle}deg) translateZ(540px) scale(${isActive ? 1 : 0.8})`,
+                    opacity: isActive ? 1 : 0.5
+                  }}
+                  onClick={() => goToSlide(index)}
+                />
+              );
+            })}
           </div>
-          
-          {/* Navigation buttons */}
+        </div>
+
+        {/* Navigation Controls */}
+        <div className="flex justify-center items-center gap-4 mb-4">
           <button 
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+            className="w-10 h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary-dark transition-colors duration-300 flex items-center justify-center"
             onClick={goToPrevious}
           >
             &#8249;
           </button>
-          <button 
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
-            onClick={goToNext}
-          >
-            &#8250;
-          </button>
           
           {/* Slide indicators */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <div className="flex space-x-2">
             {slides.map((_, index) => (
               <button
                 key={index}
                 className={cn(
-                  "w-2 h-2 rounded-full transition-all duration-300",
+                  "w-8 h-8 rounded-full text-sm font-medium transition-all duration-300",
                   index === currentIndex 
-                    ? "bg-white scale-125" 
-                    : "bg-white/50 hover:bg-white/80"
+                    ? "bg-primary text-primary-foreground scale-110" 
+                    : "bg-secondary text-secondary-foreground hover:bg-muted"
                 )}
                 onClick={() => goToSlide(index)}
-              />
+              >
+                {index + 1}
+              </button>
             ))}
           </div>
           
-          {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 rounded-3xl -z-10"></div>
+          <button 
+            className="w-10 h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary-dark transition-colors duration-300 flex items-center justify-center"
+            onClick={goToNext}
+          >
+            &#8250;
+          </button>
         </div>
-
       </div>
     </section>
   );

@@ -235,16 +235,47 @@ All colors MUST be HSL. Professional education-focused design.
     display: none;
   }
 
-  /* 3D Ring Carousel CSS */
-  .perspective-1000 {
+  /* 3D Convocation Carousel CSS */
+  .convocation-3d-container {
+    text-align: left;
+    -webkit-perspective: 1000px;
     perspective: 1000px;
+    -webkit-perspective-origin: 50% -25%;
+    perspective-origin: 50% -25%;
   }
 
-  .carousel-3d .relative {
+  .convocation-carousel {
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
+    -webkit-transform: translateZ(-540px);
+    transform: translateZ(-540px);
+    position: relative;
+    margin: 0;
+    width: 500px;
+    height: 300px;
+    -webkit-transition: 1s;
+    transition: 1s;
   }
 
-  .carousel-item {
-    transform-origin: center center;
+  .convocation-carousel-image {
+    position: absolute;
+    border: 8px solid hsl(var(--border));
+    opacity: 0.5;
+    -webkit-transition: 1s;
+    transition: 1s;
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .convocation-carousel-image:hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .convocation-carousel-image.active {
+    opacity: 1;
   }
 }
