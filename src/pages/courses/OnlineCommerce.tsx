@@ -54,6 +54,7 @@ const OnlineCommerce = () => {
     { id: "programs", label: "Programs" },
     { id: "specializations", label: "Specializations" },
     { id: "syllabus", label: "Syllabus" },
+    { id: "fee-comparison", label: "Fee Comparison" },
     { id: "skills", label: "Skills" },
     { id: "careers", label: "Careers" },
     { id: "faqs", label: "FAQs" }
@@ -678,7 +679,7 @@ const OnlineCommerce = () => {
             emiOption: "₹7,500/month",
             registrationFee: "₹5,000",
             rating: 4.6,
-            coursePagePath: "/university/manipal/courses/online-bcom"
+            coursePagePath: "/courses/manipal-bcom"
           },
           {
             name: "Uttaranchal University",
@@ -688,7 +689,7 @@ const OnlineCommerce = () => {
             emiOption: "₹5,000/month",
             registrationFee: "₹3,000",
             rating: 4.5,
-            coursePagePath: "/university/uttaranchal/courses/online-bcom"
+            coursePagePath: "/courses/uttaranchal-bcom"
           },
           {
             name: "Vivekananda Global University",
@@ -698,7 +699,7 @@ const OnlineCommerce = () => {
             emiOption: "₹4,167/month",
             registrationFee: "₹2,500",
             rating: 4.4,
-            coursePagePath: "/university/vgu/courses/online-bcom"
+            coursePagePath: "/courses/vgu-bcom"
           },
           {
             name: "IGNOU",
@@ -708,7 +709,7 @@ const OnlineCommerce = () => {
             emiOption: "₹2,500/month",
             registrationFee: "₹1,500",
             rating: 4.8,
-            coursePagePath: "/university/ignou/courses/online-bcom"
+            coursePagePath: "/courses/ignou-bcom"
           },
           {
             name: "Sikkim Manipal University",
@@ -718,7 +719,7 @@ const OnlineCommerce = () => {
             emiOption: "₹5,833/month",
             registrationFee: "₹4,000",
             rating: 4.5,
-            coursePagePath: "/university/sikkim/courses/online-bcom"
+            coursePagePath: "/courses/sikkim-manipal-bcom"
           },
           {
             name: "Amity University Online",
@@ -728,7 +729,7 @@ const OnlineCommerce = () => {
             emiOption: "₹6,667/month",
             registrationFee: "₹4,500",
             rating: 4.3,
-            coursePagePath: "/university/amity/courses/online-bcom"
+            coursePagePath: "/courses/amity-bcom"
           },
           {
             name: "Lovely Professional University",
@@ -738,7 +739,7 @@ const OnlineCommerce = () => {
             emiOption: "₹5,833/month",
             registrationFee: "₹4,000",
             rating: 4.2,
-            coursePagePath: "/university/lpu/courses/online-bcom"
+            coursePagePath: "/courses/lpu-bcom"
           },
           {
             name: "Mangalyatan University",
@@ -748,7 +749,7 @@ const OnlineCommerce = () => {
             emiOption: "₹5,000/month",
             registrationFee: "₹3,000",
             rating: 4.1,
-            coursePagePath: "/university/mangalyatan/courses/online-bcom"
+            coursePagePath: "/courses/mangalyatan-bcom"
           }
         ]}
       />

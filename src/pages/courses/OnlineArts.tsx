@@ -55,6 +55,7 @@ const OnlineArts = () => {
     { id: "programs", label: "Programs" },
     { id: "specializations", label: "Specializations" },
     { id: "syllabus", label: "Syllabus" },
+    { id: "fee-comparison", label: "Fee Comparison" },
     { id: "skills", label: "Skills" },
     { id: "careers", label: "Careers" },
     { id: "faqs", label: "FAQs" }
@@ -609,7 +610,7 @@ const OnlineArts = () => {
             emiOption: "₹6,667/month",
             registrationFee: "₹5,000",
             rating: 4.6,
-            coursePagePath: "/university/manipal/courses/online-ba"
+            coursePagePath: "/courses/manipal-ba"
           },
           {
             name: "Uttaranchal University",
@@ -619,7 +620,7 @@ const OnlineArts = () => {
             emiOption: "₹4,167/month",
             registrationFee: "₹3,000",
             rating: 4.5,
-            coursePagePath: "/university/uttaranchal/courses/online-ba"
+            coursePagePath: "/courses/uttaranchal-ba"
           },
           {
             name: "Vivekananda Global University",
@@ -629,7 +630,7 @@ const OnlineArts = () => {
             emiOption: "₹3,667/month",
             registrationFee: "₹2,500",
             rating: 4.4,
-            coursePagePath: "/university/vgu/courses/online-ba"
+            coursePagePath: "/courses/vgu-ba"
           },
           {
             name: "IGNOU",
@@ -639,7 +640,7 @@ const OnlineArts = () => {
             emiOption: "₹2,000/month",
             registrationFee: "₹1,500",
             rating: 4.8,
-            coursePagePath: "/university/ignou/courses/online-ba"
+            coursePagePath: "/courses/ignou-ba"
           },
           {
             name: "Sikkim Manipal University",
@@ -649,7 +650,7 @@ const OnlineArts = () => {
             emiOption: "₹5,000/month",
             registrationFee: "₹4,000",
             rating: 4.5,
-            coursePagePath: "/university/sikkim/courses/online-ba"
+            coursePagePath: "/courses/sikkim-manipal-ba"
           },
           {
             name: "Amity University Online",
@@ -659,7 +660,7 @@ const OnlineArts = () => {
             emiOption: "₹5,833/month",
             registrationFee: "₹4,500",
             rating: 4.3,
-            coursePagePath: "/university/amity/courses/online-ba"
+            coursePagePath: "/courses/amity-ba"
           },
           {
             name: "Lovely Professional University",
@@ -669,7 +670,7 @@ const OnlineArts = () => {
             emiOption: "₹5,000/month",
             registrationFee: "₹4,000",
             rating: 4.2,
-            coursePagePath: "/university/lpu/courses/online-ba"
+            coursePagePath: "/courses/lpu-ba"
           },
           {
             name: "Mangalyatan University",
@@ -679,7 +680,7 @@ const OnlineArts = () => {
             emiOption: "₹4,167/month",
             registrationFee: "₹3,000",
             rating: 4.1,
-            coursePagePath: "/university/mangalyatan/courses/online-ba"
+            coursePagePath: "/courses/mangalyatan-ba"
           }
         ]}
       />
