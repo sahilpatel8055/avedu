@@ -9,11 +9,20 @@ import uttaranchalLogo from "@/assets/uttaranchal-logo.png";
 import uttaranchalCourseData from "@/data/uttaranchalCourseData.json";
 import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
 import CareerAssistance from "@/components/ui/career-assistance";
+import SectionNavigation from "@/components/ui/section-navigation";
 import hiringPartnersImg from "@/assets/hiring-partners.png";
 
 const UttaranchalCoursePage = () => {
   const { courseId } = useParams();
   const course = uttaranchalCourseData.courses.find(c => c.id === courseId);
+
+  const sections = [
+    { id: 'top', label: 'Overview' },
+    { id: 'course-details', label: 'Details' },
+    { id: 'specializations', label: 'Specializations' },
+    { id: 'career-assistance', label: 'Career Support' },
+    { id: 'apply', label: 'Apply Now' }
+  ];
 
   if (!course) {
     return (
@@ -26,6 +35,7 @@ const UttaranchalCoursePage = () => {
   return (
     <div className="min-h-screen bg-background">
       <NavigationHeader />
+      <SectionNavigation sections={sections} />
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/10 via-background to-primary/5 py-12" id="top">
@@ -73,7 +83,7 @@ const UttaranchalCoursePage = () => {
       </section>
 
       {/* Fees & Eligibility Section */}
-      <section className="py-16">
+      <section className="py-16" id="course-details">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <Card className="bg-card/50 backdrop-blur-sm border-primary/20">
@@ -114,7 +124,7 @@ const UttaranchalCoursePage = () => {
       </section>
 
       {/* Curriculum & Specializations Section */}
-      <section className="py-16" style={{ backgroundColor: '#fff7f7' }}>
+      <section className="py-16" style={{ backgroundColor: '#fff7f7' }} id="specializations">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Curriculum & Specializations</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -189,7 +199,9 @@ const UttaranchalCoursePage = () => {
         </section>
 
         {/* Career Assistance Section */}
-        <CareerAssistance />
+        <div id="career-assistance">
+          <CareerAssistance />
+        </div>
 
         {/* Career Scope & Top Recruiters Section */}
       <section className="py-16 bg-white">
@@ -246,7 +258,7 @@ const UttaranchalCoursePage = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-16 bg-primary/10">
+      <section className="py-16 bg-primary/10" id="apply">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Start Your Journey with {course.name}?</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">

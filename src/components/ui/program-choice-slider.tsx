@@ -73,6 +73,12 @@ const ProgramChoiceSlider: React.FC<ProgramChoiceSliderProps> = ({ universityTyp
 
   const cards = getCardContent();
 
+  // Get icon colors for cards
+  const getIconColor = (index: number) => {
+    const colors = ['#ff8c00', '#4285f4', '#f4b400', '#0f9d58', '#9c27b0', '#ff5722', '#795548', '#607d8b'];
+    return colors[index % colors.length];
+  };
+
   useEffect(() => {
     let scrollInterval: NodeJS.Timeout | null = null;
     let scrollTimeout: NodeJS.Timeout | null = null;
@@ -160,8 +166,16 @@ const ProgramChoiceSlider: React.FC<ProgramChoiceSliderProps> = ({ universityTyp
                   height: '15rem',
                 }}
               >
-                <h3 className="text-xl font-bold leading-tight">{card.heading}</h3>
-                <pre className="text-muted-foreground whitespace-pre-wrap text-sm leading-relaxed flex-1">{card.description}</pre>
+                <div className="flex items-start gap-3">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" 
+                       style={{ backgroundColor: getIconColor(index) }}>
+                    <div className="w-6 h-6 bg-white rounded-full"></div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold leading-tight mb-2">{card.heading}</h3>
+                    <pre className="text-muted-foreground whitespace-pre-wrap text-sm leading-relaxed">{card.description}</pre>
+                  </div>
+                </div>
               </Card>
             ))}
           </div>
