@@ -33,52 +33,69 @@ const ConvocationSlider = () => {
           </p>
         </div>
         
-        {/* Bay Window Style Container */}
-        <div className="relative h-80 md:h-96 perspective-1000 overflow-hidden">
-          {/* Black background for bay window effect */}
-          <div className="absolute inset-0 bg-black rounded-3xl shadow-2xl"></div>
-          
-          {/* Curved container for images */}
-          <div className="absolute inset-8 md:inset-12">
-            <div className="bay-window-container h-full overflow-x-auto scrollbar-hide">
-              <div className="flex items-center h-full gap-6 px-8" style={{ width: 'max-content' }}>
-                {slides.map((slide, index) => (
+        {/* 3D Ring Carousel Container */}
+        <div className="relative h-80 md:h-96 perspective-[1000px] overflow-hidden">
+          {/* Carousel ring container */}
+          <div className="carousel-3d h-full flex items-center justify-center">
+            <div className="relative w-80 h-80 md:w-96 md:h-96 transform-style-preserve-3d">
+              {slides.map((slide, index) => {
+                const angle = (index * 360) / slides.length;
+                const rotateY = angle;
+                const translateZ = 180; // Distance from center
+                
+                return (
                   <div 
                     key={index} 
-                    className={cn(
-                      "bay-window-image flex-shrink-0 transition-all duration-500",
-                      index === 0 && "transform -rotate-12 scale-90 -translate-x-4",
-                      index === 1 && "transform -rotate-6 scale-95 -translate-x-2", 
-                      index === 2 && "transform scale-100 z-10",
-                      index === 3 && "transform rotate-6 scale-95 translate-x-2",
-                      index === 4 && "transform rotate-12 scale-90 translate-x-4",
-                      index === 5 && "transform rotate-18 scale-85 translate-x-6",
-                      index === 6 && "transform rotate-24 scale-80 translate-x-8"
-                    )}
+                    className="carousel-item absolute w-40 h-32 md:w-48 md:h-36 left-1/2 top-1/2 -ml-20 -mt-16 md:-ml-24 md:-mt-18 transition-all duration-700 ease-in-out cursor-pointer hover:scale-110"
+                    style={{
+                      transform: `rotateY(${rotateY}deg) translateZ(${translateZ}px)`,
+                    }}
                   >
-                    <div className="relative w-48 h-36 md:w-56 md:h-42 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                    <div className="relative w-full h-full rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                       <img
                         src={slide.src}
                         alt={slide.alt}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute bottom-2 left-2 right-2 text-white text-sm font-medium opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        {slide.alt}
+                      </div>
                     </div>
                   </div>
-                ))}
-              </div>
+                );
+              })}
             </div>
           </div>
           
-          {/* Scroll indicators */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {slides.map((_, index) => (
-              <div
-                key={index}
-                className="w-2 h-2 rounded-full bg-white/50 hover:bg-white/80 transition-colors cursor-pointer"
-              />
-            ))}
-          </div>
+          {/* Navigation buttons */}
+          <button 
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+            onClick={() => {
+              const carousel = document.querySelector('.carousel-3d .relative') as HTMLElement;
+              if (carousel) {
+                const currentRotation = parseInt(carousel.style.transform.match(/rotateY\((-?\d+)deg\)/)?.[1] || '0');
+                carousel.style.transform = `rotateY(${currentRotation - 60}deg)`;
+              }
+            }}
+          >
+            &#8249;
+          </button>
+          <button 
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+            onClick={() => {
+              const carousel = document.querySelector('.carousel-3d .relative') as HTMLElement;
+              if (carousel) {
+                const currentRotation = parseInt(carousel.style.transform.match(/rotateY\((-?\d+)deg\)/)?.[1] || '0');
+                carousel.style.transform = `rotateY(${currentRotation + 60}deg)`;
+              }
+            }}
+          >
+            &#8250;
+          </button>
+          
+          {/* Background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 rounded-3xl -z-10"></div>
         </div>
 
       </div>
