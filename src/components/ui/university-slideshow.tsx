@@ -7,11 +7,11 @@ const UniversitySlideshow = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
       
       {/* Main image */}
-      <div className="relative w-full h-full p-4 flex items-center justify-center">
+      <div className="relative w-full h-full">
         <img
           src={mujImage}
           alt="Manipal University Jaipur"
-          className="max-w-full max-h-full object-contain drop-shadow-lg"
+          className="w-full h-full object-cover drop-shadow-lg"
         />
       </div>
       
