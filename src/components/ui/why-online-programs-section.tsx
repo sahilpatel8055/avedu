@@ -79,18 +79,6 @@ const WhyOnlineProgramsSection = ({ universityName, lmsImagePath }: WhyOnlinePro
               <div className="absolute -top-6 -right-6 bg-background rounded-full p-4 shadow-lg border">
                 <GraduationCap className="w-12 h-12 text-foreground" />
               </div>
-              
-              {/* Comfort & Convenience text overlay */}
-              <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg border max-w-xs">
-                <h4 className="text-lg font-bold text-foreground mb-1">
-                  Earn Your Degree With
-                </h4>
-                <div className="text-2xl font-bold text-foreground">
-                  COMFORT & 
-                  <br />
-                  CONVENIENCE
-                </div>
-              </div>
             </div>
           </div>
         </div>

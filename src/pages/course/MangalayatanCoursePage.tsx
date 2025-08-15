@@ -35,6 +35,8 @@ import {
 import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
 import CareerAssistance from "@/components/ui/career-assistance";
 import hiringPartnersImg from "@/assets/hiring-partners.png";
+import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
+import mangalayatanLmsImg from "@/assets/lms/muj.png";
 
 // Updated specializationIcons mapping to use Lucide-React icons
 const specializationIcons = {
@@ -234,6 +236,12 @@ const MangalayatanCoursePage = () => {
           </div>
         </Card>
         </section>
+
+        {/* Why Online Programs Section */}
+        <WhyOnlineProgramsSection 
+          universityName="Mangalyatan University" 
+          lmsImagePath={mangalayatanLmsImg} 
+        />
 
         {/* Career Assistance Section */}
         <CareerAssistance />

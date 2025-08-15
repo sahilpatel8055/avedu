@@ -10,6 +10,8 @@ import vguCourseData from "@/data/vguCourseData.json";
 import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
 import CareerAssistance from "@/components/ui/career-assistance";
 import hiringPartnersImg from "@/assets/hiring-partners.png";
+import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
+import vguLmsImg from "@/assets/lms/vgu.png";
 
 const VguCoursePage = () => {
   const { courseId } = useParams();
@@ -274,6 +276,12 @@ const VguCoursePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Why Online Programs Section */}
+      <WhyOnlineProgramsSection 
+        universityName="Vivekananda Global University" 
+        lmsImagePath={vguLmsImg} 
+      />
 
       <Footer />
     </div>

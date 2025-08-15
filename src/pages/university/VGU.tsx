@@ -12,6 +12,7 @@ import UniversitySlideshow from "@/components/ui/university-slideshow";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import vguLogo from "@/assets/vgu-logo.png";
 import vguCampus from "@/assets/campus/vgu.jpg";
+import vguLmsImg from "@/assets/lms/vgu.png";
 import { MovingBorderButton } from "@/components/ui/moving-border";
 import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
 import SectionNavigation from "@/components/ui/section-navigation";
@@ -170,7 +171,7 @@ const VGU = () => {
       {/* Why Online Programs Section */}
       <WhyOnlineProgramsSection 
         universityName="Vivekananda Global University" 
-        lmsImagePath="/src/assets/lms/vgu.png" 
+        lmsImagePath={vguLmsImg}
       />
 
       {/* Program Choice Slider */}

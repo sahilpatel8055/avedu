@@ -12,6 +12,7 @@ import UniversitySlideshow from "@/components/ui/university-slideshow";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import mangalayatanLogo from "@/assets/mangalyatan-logo.png";
 import smuCampus from "@/assets/campus/smu.jpg";
+import mangalayatanLmsImg from "@/assets/lms/muj.png";
 import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
 import SectionNavigation from "@/components/ui/section-navigation";
 
@@ -157,7 +158,7 @@ const Mangalyatan = () => {
       {/* Why Online Programs Section */}
       <WhyOnlineProgramsSection 
         universityName="Mangalyatan University" 
-        lmsImagePath="/src/assets/lms/muj.png" 
+        lmsImagePath={mangalayatanLmsImg}
       />
 
       {/* Program Choice Slider */}

@@ -12,6 +12,7 @@ import UniversitySlideshow from "@/components/ui/university-slideshow";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import uttaranchalLogo from "@/assets/uttaranchal-logo.png";
 import uttaranchalCampus from "@/assets/campus/uttaranchal.png";
+import uttaranchalLmsImg from "@/assets/lms/uu.png";
 import { MovingBorderButton } from "@/components/ui/moving-border";
 import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
 import SectionNavigation from "@/components/ui/section-navigation";
@@ -176,7 +177,7 @@ const Uttaranchal = () => {
       {/* Why Online Programs Section */}
       <WhyOnlineProgramsSection 
         universityName="Uttaranchal University" 
-        lmsImagePath="/src/assets/lms/uu.png" 
+        lmsImagePath={uttaranchalLmsImg}
       />
 
       {/* Program Choice Slider */}

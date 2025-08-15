@@ -35,6 +35,8 @@ import {
 import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
 import CareerAssistance from "@/components/ui/career-assistance";
 import hiringPartnersImg from "@/assets/hiring-partners.png";
+import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
+import amityLmsImg from "@/assets/lms/amity.png";
 
 // Updated specializationIcons mapping to use Lucide-React icons
 const specializationIcons = {
@@ -234,6 +236,12 @@ const AmityCoursePage = () => {
           </div>
         </Card>
         </section>
+
+        {/* Why Online Programs Section */}
+        <WhyOnlineProgramsSection 
+          universityName="Amity University Online" 
+          lmsImagePath={amityLmsImg} 
+        />
 
         {/* Career Assistance Section */}
         <CareerAssistance />

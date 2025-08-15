@@ -33,7 +33,10 @@ import {
   Headphones
 } from "lucide-react";
 import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
+import CareerAssistance from "@/components/ui/career-assistance";
 import hiringPartnersImg from "@/assets/hiring-partners.png";
+import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
+import manipalLmsImg from "@/assets/lms/muj.png";
 
 // Updated specializationIcons mapping to use Lucide-React icons
 const specializationIcons = {
@@ -233,6 +236,15 @@ const ManipalCoursePage = () => {
           </div>
         </Card>
         </section>
+
+        {/* Why Online Programs Section */}
+        <WhyOnlineProgramsSection 
+          universityName="Manipal University" 
+          lmsImagePath={manipalLmsImg} 
+        />
+
+        {/* Career Assistance Section */}
+        <CareerAssistance />
 
         {/* Experience 100% Placement Support Section */}
         <section className="py-16 bg-yellow-400 mt-12 rounded-lg">

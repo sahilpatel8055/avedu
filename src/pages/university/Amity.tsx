@@ -12,6 +12,7 @@ import UniversitySlideshow from "@/components/ui/university-slideshow";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import amityLogo from "@/assets/amity-logo.jpg";
 import amityCampus from "@/assets/campus/amity.jpg";
+import amityLmsImg from "@/assets/lms/amity.png";
 import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
 import SectionNavigation from "@/components/ui/section-navigation";
 
@@ -161,7 +162,7 @@ const Amity = () => {
       {/* Why Online Programs Section */}
       <WhyOnlineProgramsSection 
         universityName="Amity University Online" 
-        lmsImagePath="/src/assets/lms/amity.png" 
+        lmsImagePath={amityLmsImg}
       />
 
       {/* Program Choice Slider */}

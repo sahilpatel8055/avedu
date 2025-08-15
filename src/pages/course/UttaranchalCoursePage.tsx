@@ -11,6 +11,8 @@ import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
 import CareerAssistance from "@/components/ui/career-assistance";
 import SectionNavigation from "@/components/ui/section-navigation";
 import hiringPartnersImg from "@/assets/hiring-partners.png";
+import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
+import uttaranchalLmsImg from "@/assets/lms/uu.png";
 
 const UttaranchalCoursePage = () => {
   const { courseId } = useParams();
@@ -274,6 +276,12 @@ const UttaranchalCoursePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Why Online Programs Section */}
+      <WhyOnlineProgramsSection 
+        universityName="Uttaranchal University" 
+        lmsImagePath={uttaranchalLmsImg} 
+      />
 
       <Footer />
     </div>

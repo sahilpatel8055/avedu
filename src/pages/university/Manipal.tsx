@@ -13,6 +13,7 @@ import UniversitySlideshow from "@/components/ui/university-slideshow";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import manipalLogo from "@/assets/manipal-logo.png";
 import mujCampus from "@/assets/muj.png";
+import manipalLmsImg from "@/assets/lms/muj.png";
 // New import
 import ProgramHighlightsSlider from "@/components/ui/program-highlights-slider";
 import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
@@ -172,7 +173,7 @@ const Manipal = () => {
       {/* Why Online Programs Section */}
       <WhyOnlineProgramsSection 
         universityName="Manipal University" 
-        lmsImagePath="/src/assets/lms/muj.png" 
+        lmsImagePath={manipalLmsImg}
       />
 
       {/* Program Choice Slider */}

@@ -12,6 +12,7 @@ import UniversitySlideshow from "@/components/ui/university-slideshow";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import lpuLogo from "@/assets/lpu-logo.jpg";
 import lpuCampus from "@/assets/campus/lpu.png";
+import lpuLmsImg from "@/assets/lms/lpu.png";
 import { MovingBorderButton } from "@/components/ui/moving-border";
 import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
 import SectionNavigation from "@/components/ui/section-navigation";
@@ -170,7 +171,7 @@ const LPU = () => {
       {/* Why Online Programs Section */}
       <WhyOnlineProgramsSection 
         universityName="Lovely Professional University" 
-        lmsImagePath="/src/assets/lms/lpu.png" 
+        lmsImagePath={lpuLmsImg}
       />
 
       {/* Program Choice Slider */}
