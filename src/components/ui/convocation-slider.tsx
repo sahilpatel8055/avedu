@@ -47,12 +47,27 @@ const ConvocationSlider = () => {
     setCurrentIndex((prev) => (prev + 1) % slides.length);
   };
 
+  // Handle manual scrolling
+  const handleWheel = (e: React.WheelEvent) => {
+    e.preventDefault();
+    setIsAutoPlaying(false);
+    
+    if (e.deltaY > 0) {
+      goToNext();
+    } else {
+      goToPrevious();
+    }
+    
+    // Resume auto-playing after 2 seconds of inactivity
+    setTimeout(() => setIsAutoPlaying(true), 2000);
+  };
+
   return (
     <section className="bg-background py-12 md:py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Our Convocation Gallery
+            Glimpses of <span className="text-red-600">the Convocation Ceremony</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Celebrate graduation during the Convocation event at our campus, interact with fellow graduates, meet faculty, and foster professional connections for career growth.
@@ -64,6 +79,7 @@ const ConvocationSlider = () => {
           className="convocation-3d-container w-[500px] h-[300px] mx-auto mb-8"
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
+          onWheel={handleWheel}
         >
           <div 
             className="convocation-carousel"
