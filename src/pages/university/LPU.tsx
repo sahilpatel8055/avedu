@@ -8,6 +8,7 @@ import { useCounselingForm } from "@/hooks/use-counseling-form";
 import { Star, MapPin, Users, GraduationCap, Award, DollarSign, Clock, Check, Globe, BookOpen } from "lucide-react";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
+import SampleDegreeSection from "@/components/ui/sample-degree-section";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import lpuLogo from "@/assets/lpu-logo.jpg";
@@ -31,6 +32,9 @@ import mcaImg from "@/assets/course/mca.jpg";
 import bcaImg from "@/assets/course/bca.jpg";
 import baImg from "@/assets/course/ba.jpg";
 
+// Import the degree image
+import lpuDegree from "@/assets/lpu.png";
+
 const LPU = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
   
@@ -39,6 +43,7 @@ const LPU = () => {
     { id: 'about', label: 'About' },
     { id: 'programs', label: 'Programs' },
     { id: 'approvals', label: 'Approvals' },
+    { id: 'degree', label: 'Sample Degree' },
     { id: 'courses', label: 'Courses' },
     { id: 'more-than-degree', label: 'Benefits' },
     { id: 'features', label: 'Features' },
@@ -200,6 +205,12 @@ const LPU = () => {
           </div>
         </div>
       </section>
+
+      {/* Sample Degree Section */}
+      <SampleDegreeSection 
+        universityName="Lovely Professional University" 
+        degreeImagePath={lpuDegree}
+      />
 
       {/* Courses Section */}
       <section className="py-16" id="courses">

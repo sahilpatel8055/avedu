@@ -8,6 +8,7 @@ import { useCounselingForm } from "@/hooks/use-counseling-form";
 import { Star, MapPin, Users, GraduationCap, Award, DollarSign, BookOpen, Clock, Check, Globe } from "lucide-react";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
+import SampleDegreeSection from "@/components/ui/sample-degree-section";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import vguLogo from "@/assets/vgu-logo.png";
@@ -30,6 +31,9 @@ import bbaImg from "@/assets/course/bba.jpg";
 import mcaImg from "@/assets/course/mca.jpg";
 import bcaImg from "@/assets/course/bca.jpg";
 import baImg from "@/assets/course/ba.jpg";
+
+// Import the degree image
+import vguDegree from "@/assets/vgu-degree.jpg";
 import bcomImg from "@/assets/course/bcom.jpg";
 
 const VGU = () => {
@@ -40,6 +44,7 @@ const VGU = () => {
     { id: 'about', label: 'About' },
     { id: 'programs', label: 'Programs' },
     { id: 'approvals', label: 'Approvals' },
+    { id: 'degree', label: 'Sample Degree' },
     { id: 'courses', label: 'Courses' },
     { id: 'placement', label: 'Placement' },
     { id: 'features', label: 'Features' },
@@ -198,6 +203,12 @@ const VGU = () => {
           </div>
         </div>
       </section>
+
+      {/* Sample Degree Section */}
+      <SampleDegreeSection 
+        universityName="Vivekananda Global University" 
+        degreeImagePath={vguDegree}
+      />
 
       {/* Courses Section */}
       <section className="py-16">

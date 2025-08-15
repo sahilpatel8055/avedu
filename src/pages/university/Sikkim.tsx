@@ -9,6 +9,7 @@ import { useCounselingForm } from "@/hooks/use-counseling-form";
 import { Star, MapPin, Users, GraduationCap, Award, DollarSign, BookOpen, Clock, Check } from "lucide-react";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
+import FlippableDegreeSection from "@/components/ui/flippable-degree-section";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import smuLogo from "@/assets/smu-logo.jpg";
@@ -31,6 +32,10 @@ import mcaImg from "@/assets/course/mca.jpg";
 import bcaImg from "@/assets/course/bca.jpg";
 import baImg from "@/assets/course/ba.jpg";
 
+// Import the degree images
+import sikkimFront from "@/assets/smu.png";
+import sikkimBack from "@/assets/manipal-2nddegree.jpg";
+
 const Sikkim = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
   
@@ -39,6 +44,7 @@ const Sikkim = () => {
     { id: 'about', label: 'About' },
     { id: 'programs', label: 'Programs' },
     { id: 'approvals', label: 'Approvals' },
+    { id: 'degree', label: 'Sample Degree' },
     { id: 'courses', label: 'Courses' },
     { id: 'placement', label: 'Placement' },
     { id: 'features', label: 'Features' },
@@ -200,6 +206,13 @@ const Sikkim = () => {
           </div>
         </div>
       </section>
+
+      {/* Sample Degree Section */}
+      <FlippableDegreeSection 
+        universityName="Sikkim Manipal University" 
+        frontImagePath={sikkimFront}
+        backImagePath={sikkimBack}
+      />
 
       {/* Courses Section */}
       <section className="py-16" id="courses">

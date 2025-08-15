@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { Star, DollarSign, Clock, BookOpen, Award, ChevronLeft } from "lucide-react";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
+import SampleDegreeSection from "@/components/ui/sample-degree-section";
+import vguDegree from "@/assets/vgu-degree.jpg";
 import vguLogo from "@/assets/vgu-logo.png";
 import vguCourseData from "@/data/vguCourseData.json";
 import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
@@ -212,6 +214,12 @@ const VguCoursePage = () => {
           </div>
         </div>
         </section>
+
+        {/* Sample Degree Section */}
+        <SampleDegreeSection 
+          universityName="Vivekananda Global University" 
+          degreeImagePath={vguDegree}
+        />
 
         {/* Career Assistance Section */}
         <div id="career">

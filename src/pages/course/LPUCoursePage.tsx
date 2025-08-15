@@ -10,6 +10,8 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
+import SampleDegreeSection from "@/components/ui/sample-degree-section";
+import lpuDegree from "@/assets/lpu.png";
 import lpuCourseData from "@/data/lpuCourseData.json";
 import lpuLogo from "@/assets/lpu-logo.jpg";
 import {
@@ -258,6 +260,12 @@ const LPUCoursePage = () => {
           lmsImagePath={lpuLmsImg} 
         />
         </div>
+
+        {/* Sample Degree Section */}
+        <SampleDegreeSection 
+          universityName="Lovely Professional University" 
+          degreeImagePath={lpuDegree}
+        />
 
         {/* Career Assistance Section */}
         <div id="career">

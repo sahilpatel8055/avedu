@@ -8,6 +8,7 @@ import { useCounselingForm } from "@/hooks/use-counseling-form";
 import { Star, MapPin, Users, GraduationCap, Award, DollarSign, BookOpen, Clock, Check } from "lucide-react";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
+import SampleDegreeSection from "@/components/ui/sample-degree-section";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import mangalayatanLogo from "@/assets/mangalyatan-logo.png";
@@ -29,6 +30,9 @@ import mcaImg from "@/assets/course/mca.jpg";
 import bcaImg from "@/assets/course/bca.jpg";
 import baImg from "@/assets/course/ba.jpg";
 
+// Import the degree image
+import mangalayatanDegree from "@/assets/mangalyatan.png";
+
 const Mangalyatan = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
   
@@ -37,6 +41,7 @@ const Mangalyatan = () => {
     { id: 'about', label: 'About' },
     { id: 'programs', label: 'Programs' },
     { id: 'approvals', label: 'Approvals' },
+    { id: 'degree', label: 'Sample Degree' },
     { id: 'courses', label: 'Courses' },
     { id: 'placement', label: 'Placement' },
     { id: 'features', label: 'Features' },
@@ -185,6 +190,12 @@ const Mangalyatan = () => {
           </div>
         </div>
       </section>
+
+      {/* Sample Degree Section */}
+      <SampleDegreeSection 
+        universityName="Mangalyatan University" 
+        degreeImagePath={mangalayatanDegree}
+      />
 
       {/* Courses Section */}
       <section className="py-16">

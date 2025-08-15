@@ -9,6 +9,7 @@ import { useCounselingForm } from "@/hooks/use-counseling-form";
 import { Star, MapPin, Users, GraduationCap, Award, DollarSign, BookOpen, Clock, Check } from "lucide-react";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
+import FlippableDegreeSection from "@/components/ui/flippable-degree-section";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import manipalLogo from "@/assets/manipal-logo.png";
@@ -33,6 +34,10 @@ import mcaImg from "@/assets/course/mca.jpg";
 import bcaImg from "@/assets/course/bca.jpg";
 import baImg from "@/assets/course/ba.jpg";
 
+// Import the degree images
+import manipalFront from "@/assets/manipal-1stdegree.jpg";
+import manipalBack from "@/assets/manipal-2nddegree.jpg";
+
 const Manipal = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
   
@@ -41,6 +46,7 @@ const Manipal = () => {
     { id: 'about', label: 'About' },
     { id: 'programs', label: 'Programs' },
     { id: 'approvals', label: 'Approvals' },
+    { id: 'degree', label: 'Sample Degree' },
     { id: 'courses', label: 'Courses' },
     { id: 'placement', label: 'Placement' },
     { id: 'features', label: 'Features' },
@@ -201,7 +207,14 @@ const Manipal = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section>
+
+      {/* Sample Degree Section */}
+      <FlippableDegreeSection 
+        universityName="Manipal University" 
+        frontImagePath={manipalFront}
+        backImagePath={manipalBack}
+      />
 
       {/* Courses Section */}
       <section className="py-16" id="courses">

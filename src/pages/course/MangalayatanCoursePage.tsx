@@ -10,6 +10,8 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
+import SampleDegreeSection from "@/components/ui/sample-degree-section";
+import mangalayatanDegree from "@/assets/mangalyatan.png";
 import mangalayatanCourseData from "@/data/mangalayatanCourseData.json";
 import mangalayatanLogo from "@/assets/mangalyatan-logo.png";
 import {
@@ -258,6 +260,12 @@ const MangalayatanCoursePage = () => {
           lmsImagePath={mangalayatanLmsImg} 
         />
         </div>
+
+        {/* Sample Degree Section */}
+        <SampleDegreeSection 
+          universityName="Mangalyatan University" 
+          degreeImagePath={mangalayatanDegree}
+        />
 
         {/* Career Assistance Section */}
         <div id="career">

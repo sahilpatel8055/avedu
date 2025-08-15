@@ -10,6 +10,8 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
+import SampleDegreeSection from "@/components/ui/sample-degree-section";
+import amityDegree from "@/assets/amity.png";
 import amityCourseData from "@/data/amityCourseData.json";
 import amityLogo from "@/assets/amity-logo.jpg";
 import {
@@ -241,6 +243,12 @@ const AmityCoursePage = () => {
         <WhyOnlineProgramsSection 
           universityName="Amity University Online" 
           lmsImagePath={amityLmsImg} 
+        />
+
+        {/* Sample Degree Section */}
+        <SampleDegreeSection 
+          universityName="Amity University Online" 
+          degreeImagePath={amityDegree}
         />
 
         {/* Career Assistance Section */}

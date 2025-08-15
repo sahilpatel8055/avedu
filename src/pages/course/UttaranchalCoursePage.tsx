@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { Star, DollarSign, Clock, BookOpen, Award, Check, ChevronLeft } from "lucide-react";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
+import SampleDegreeSection from "@/components/ui/sample-degree-section";
+import uttaranchalDegree from "@/assets/uu-degree.jpg";
 import uttaranchalLogo from "@/assets/uttaranchal-logo.png";
 import uttaranchalCourseData from "@/data/uttaranchalCourseData.json";
 import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
@@ -199,6 +201,12 @@ const UttaranchalCoursePage = () => {
           </div>
         </div>
         </section>
+
+        {/* Sample Degree Section */}
+        <SampleDegreeSection 
+          universityName="Uttaranchal University" 
+          degreeImagePath={uttaranchalDegree}
+        />
 
         {/* Career Assistance Section */}
         <div id="career-assistance">
