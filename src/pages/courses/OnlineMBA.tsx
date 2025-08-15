@@ -322,11 +322,11 @@ const OnlineMBA = () => {
             {specializations.map((spec, index) => (
               <Card
                 key={index}
-                className="p-4 hover:shadow-md transition-shadow border border-gray-200/60"
+                className="p-3 md:p-4 hover:shadow-md transition-shadow border border-gray-200/60"
               >
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-[#0052CC]" />
-                  <span className="font-medium">{spec}</span>
+                <div className="flex items-center gap-2 md:gap-3">
+                  <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-[#0052CC] flex-shrink-0" />
+                  <span className="font-medium text-sm md:text-base leading-tight">{spec}</span>
                 </div>
               </Card>
             ))}
@@ -466,7 +466,7 @@ const OnlineMBA = () => {
             emiOption: "₹12,500/month",
             registrationFee: "₹5,000",
             rating: 4.6,
-            coursePagePath: "/course/manipal/mba"
+            coursePagePath: "/university/manipal/courses/online-mba"
           },
           {
             name: "Uttaranchal University",
@@ -476,7 +476,7 @@ const OnlineMBA = () => {
             emiOption: "₹7,500/month",
             registrationFee: "₹3,000",
             rating: 4.5,
-            coursePagePath: "/course/uttaranchal/mba"
+            coursePagePath: "/university/uttaranchal/courses/online-mba"
           },
           {
             name: "Vivekananda Global University",
@@ -486,7 +486,7 @@ const OnlineMBA = () => {
             emiOption: "₹6,667/month",
             registrationFee: "₹2,500",
             rating: 4.4,
-            coursePagePath: "/course/vgu/mba"
+            coursePagePath: "/university/vgu/courses/online-mba"
           },
           {
             name: "IGNOU",
@@ -496,7 +496,7 @@ const OnlineMBA = () => {
             emiOption: "₹5,250/month",
             registrationFee: "₹1,500",
             rating: 4.8,
-            coursePagePath: "/course/ignou/mba"
+            coursePagePath: "/university/ignou/courses/online-mba"
           },
           {
             name: "Sikkim Manipal University",
@@ -506,7 +506,7 @@ const OnlineMBA = () => {
             emiOption: "₹8,333/month",
             registrationFee: "₹4,000",
             rating: 4.5,
-            coursePagePath: "/course/sikkim/mba"
+            coursePagePath: "/university/sikkim/courses/online-mba"
           },
           {
             name: "Amity University Online",
@@ -516,7 +516,7 @@ const OnlineMBA = () => {
             emiOption: "₹10,000/month",
             registrationFee: "₹4,500",
             rating: 4.3,
-            coursePagePath: "/course/amity/mba"
+            coursePagePath: "/university/amity/courses/online-mba"
           },
           {
             name: "Lovely Professional University",
@@ -526,7 +526,7 @@ const OnlineMBA = () => {
             emiOption: "₹9,167/month",
             registrationFee: "₹4,000",
             rating: 4.2,
-            coursePagePath: "/course/lpu/mba"
+            coursePagePath: "/university/lpu/courses/online-mba"
           },
           {
             name: "Mangalyatan University",
@@ -536,7 +536,7 @@ const OnlineMBA = () => {
             emiOption: "₹7,500/month",
             registrationFee: "₹3,000",
             rating: 4.1,
-            coursePagePath: "/course/mangalyatan/mba"
+            coursePagePath: "/university/mangalyatan/courses/online-mba"
           }
         ]}
       />

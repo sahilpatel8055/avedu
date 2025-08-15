@@ -694,7 +694,7 @@ const OnlineTech = () => {
             emiOption: "₹7,500/month",
             registrationFee: "₹5,000",
             rating: 4.6,
-            coursePagePath: "/course/manipal/bca"
+            coursePagePath: "/university/manipal/courses/online-bca"
           },
           {
             name: "Uttaranchal University",
@@ -704,7 +704,7 @@ const OnlineTech = () => {
             emiOption: "₹4,375/month",
             registrationFee: "₹3,000",
             rating: 4.5,
-            coursePagePath: "/course/uttaranchal/bca"
+            coursePagePath: "/university/uttaranchal/courses/online-bca"
           },
           {
             name: "Vivekananda Global University",
@@ -714,7 +714,7 @@ const OnlineTech = () => {
             emiOption: "₹3,750/month",
             registrationFee: "₹2,500",
             rating: 4.4,
-            coursePagePath: "/course/vgu/bca"
+            coursePagePath: "/university/vgu/courses/online-bca"
           },
           {
             name: "IGNOU",
@@ -724,7 +724,7 @@ const OnlineTech = () => {
             emiOption: "₹1,875/month",
             registrationFee: "₹1,500",
             rating: 4.8,
-            coursePagePath: "/course/ignou/bca"
+            coursePagePath: "/university/ignou/courses/online-bca"
           },
           {
             name: "Sikkim Manipal University",
@@ -734,7 +734,7 @@ const OnlineTech = () => {
             emiOption: "₹5,625/month",
             registrationFee: "₹4,000",
             rating: 4.5,
-            coursePagePath: "/course/sikkim/bca"
+            coursePagePath: "/university/sikkim/courses/online-bca"
           },
           {
             name: "Amity University Online",
@@ -744,7 +744,7 @@ const OnlineTech = () => {
             emiOption: "₹6,875/month",
             registrationFee: "₹4,500",
             rating: 4.3,
-            coursePagePath: "/course/amity/bca"
+            coursePagePath: "/university/amity/courses/online-bca"
           },
           {
             name: "Lovely Professional University",
@@ -754,7 +754,7 @@ const OnlineTech = () => {
             emiOption: "₹5,000/month",
             registrationFee: "₹4,000",
             rating: 4.2,
-            coursePagePath: "/course/lpu/bca"
+            coursePagePath: "/university/lpu/courses/online-bca"
           },
           {
             name: "Mangalyatan University",
@@ -764,7 +764,7 @@ const OnlineTech = () => {
             emiOption: "₹4,375/month",
             registrationFee: "₹3,000",
             rating: 4.1,
-            coursePagePath: "/course/mangalyatan/bca"
+            coursePagePath: "/university/mangalyatan/courses/online-bca"
           }
         ]}
       />
