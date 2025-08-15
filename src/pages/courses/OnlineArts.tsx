@@ -610,7 +610,7 @@ const OnlineArts = () => {
             emiOption: "₹6,667/month",
             registrationFee: "₹5,000",
             rating: 4.6,
-            coursePagePath: "/courses/manipal-ba"
+            coursePagePath: "/university/manipal/courses/online-ba"
           },
           {
             name: "Uttaranchal University",
@@ -620,7 +620,7 @@ const OnlineArts = () => {
             emiOption: "₹4,167/month",
             registrationFee: "₹3,000",
             rating: 4.5,
-            coursePagePath: "/courses/uttaranchal-ba"
+            coursePagePath: "/university/uttaranchal/online-ba"
           },
           {
             name: "Vivekananda Global University",
@@ -630,7 +630,7 @@ const OnlineArts = () => {
             emiOption: "₹3,667/month",
             registrationFee: "₹2,500",
             rating: 4.4,
-            coursePagePath: "/courses/vgu-ba"
+            coursePagePath: "/university/vgu/online-ba"
           },
           {
             name: "IGNOU",
@@ -640,7 +640,7 @@ const OnlineArts = () => {
             emiOption: "₹2,000/month",
             registrationFee: "₹1,500",
             rating: 4.8,
-            coursePagePath: "/courses/ignou-ba"
+            coursePagePath: "/courses/online-ba"
           },
           {
             name: "Sikkim Manipal University",
@@ -650,7 +650,7 @@ const OnlineArts = () => {
             emiOption: "₹5,000/month",
             registrationFee: "₹4,000",
             rating: 4.5,
-            coursePagePath: "/courses/sikkim-manipal-ba"
+            coursePagePath: "/university/sikkim/online-ba"
           },
           {
             name: "Amity University Online",
@@ -660,7 +660,7 @@ const OnlineArts = () => {
             emiOption: "₹5,833/month",
             registrationFee: "₹4,500",
             rating: 4.3,
-            coursePagePath: "/courses/amity-ba"
+            coursePagePath: "/university/amity/online-ba"
           },
           {
             name: "Lovely Professional University",
@@ -670,7 +670,7 @@ const OnlineArts = () => {
             emiOption: "₹5,000/month",
             registrationFee: "₹4,000",
             rating: 4.2,
-            coursePagePath: "/courses/lpu-ba"
+            coursePagePath: "/university/lpu/online-ba"
           },
           {
             name: "Mangalyatan University",
@@ -680,7 +680,7 @@ const OnlineArts = () => {
             emiOption: "₹4,167/month",
             registrationFee: "₹3,000",
             rating: 4.1,
-            coursePagePath: "/courses/mangalyatan-ba"
+            coursePagePath: "/university/mangalyatan/online-ba"
           }
         ]}
       />
