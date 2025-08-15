@@ -10,6 +10,7 @@ import UniversityGrid from "@/components/ui/university-grid";
 import UniversityLogosMarquee from "@/components/ui/university-logos-marquee";
 import Slideshow from "@/components/ui/slideshow";
 import CareerAssistance from "@/components/ui/career-assistance";
+import ConvocationSlider from "@/components/ui/convocation-slider";
 import { FlipWords } from "@/components/ui/flip-words";
 import { Link } from "react-router-dom";
 import { BookOpen, Users, Award, GraduationCap, Star, ArrowRight } from "lucide-react";
@@ -217,10 +218,13 @@ const Index = () => {
       {/* 4th Section - Universities Grid */}
       <UniversityGrid onOpenCounseling={openForm} />
       
-      {/* 5th Section - Career Assistance */}
+      {/* 5th Section - Convocation Gallery */}
+      <ConvocationSlider />
+      
+      {/* 6th Section - Career Assistance */}
       <CareerAssistance />
 
-      {/* 6th Section - Counselling */}
+      {/* 7th Section - Counselling */}
       <CounsellingSection onOpenCounseling={openForm} />
       
       <Footer />
