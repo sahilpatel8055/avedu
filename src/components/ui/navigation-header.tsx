@@ -27,7 +27,7 @@ const NavigationHeader = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-14 sm:h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/universities" className="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity">
+          <Link to="/" className="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity">
             <img 
               src={aveduLogo} 
               alt="AVEDU Logo" 
@@ -47,18 +47,11 @@ const NavigationHeader = () => {
             >
               Explore Programs
             </button>
-            <button 
-              className="btn-3d px-6 py-2 rounded-lg text-sm font-semibold transition-all"
-              onClick={() => {
-                if (window.location.pathname === '/') {
-                  document.getElementById('universities')?.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  window.location.href = '/#universities';
-                }
-              }}
-            >
-              Top Universities
-            </button>
+            <Link to="/universities">
+              <button className="btn-3d px-6 py-2 rounded-lg text-sm font-semibold transition-all">
+                Top Universities
+              </button>
+            </Link>
             <a href="#counselling" className="text-foreground hover:text-primary transition-colors font-medium">
               Counselling
             </a>
@@ -90,18 +83,11 @@ const NavigationHeader = () => {
             >
               Explore Programs
             </button>
-            <button 
-              className="btn-3d px-2 py-1 rounded-lg text-xs font-semibold transition-all"
-              onClick={() => {
-                if (window.location.pathname === '/') {
-                  document.getElementById('universities')?.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  window.location.href = '/#universities';
-                }
-              }}
-            >
-              Top Universities
-            </button>
+            <Link to="/universities">
+              <button className="btn-3d px-2 py-1 rounded-lg text-xs font-semibold transition-all">
+                Top Universities
+              </button>
+            </Link>
             <Button
               variant="ghost"
               size="sm"
@@ -124,9 +110,9 @@ const NavigationHeader = () => {
             >
               Explore Programs
             </button>
-            <a href="#universities" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/universities" className="text-foreground hover:text-primary transition-colors">
               Top Universities
-            </a>
+            </Link>
             <a href="#counselling" className="text-foreground hover:text-primary transition-colors">
               Counselling
             </a>

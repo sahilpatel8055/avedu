@@ -70,9 +70,13 @@ const WhyOnlineProgramsSection = ({ universityName, lmsImagePath }: WhyOnlinePro
           <div className="flex-1 relative">
             <div className="relative">
               <img 
-                src={lmsImagePath.startsWith('/src/') ? lmsImagePath.replace('/src/', '/') : lmsImagePath} 
+                src={lmsImagePath.startsWith('/src/') ? lmsImagePath.replace('/src/', '') : lmsImagePath} 
                 alt={`${universityName} LMS Platform`}
                 className="w-full h-auto max-w-lg mx-auto rounded-lg"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = '/assets/lms/common.png';
+                }}
               />
             </div>
           </div>
