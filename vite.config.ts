@@ -29,8 +29,5 @@ export default defineConfig(({ mode }) => ({
         }
       }
     }
-  },
-  ssr: {
-    noExternal: ['react-router-dom', '@radix-ui/react-slot']
   }
 }));

@@ -15,7 +15,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { Link } from "react-router-dom";
 import { BookOpen, Users, Award, GraduationCap, Star, ArrowRight } from "lucide-react";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
-import SEOHead from "@/components/ui/seo-head";
+import { useSEO } from "@/hooks/use-seo";
 
 // Course Images
 import mbaImage from "@/assets/course/mba.jpg";
@@ -35,6 +35,30 @@ import uttaranchalLogo from "@/assets/uttaranchal-logo.png";
 
 const Index = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
+  
+  // SEO optimization for homepage
+  useSEO({
+    title: "AVEDU - Best Online UG & PG Courses | Expert Counselling | avedu.in",
+    description: "Find the perfect online UG & PG courses from 100+ top Indian universities. Get free expert counselling to choose the best degree for your career goals and budget.",
+    keywords: "online degree, distance education, UGC approved universities, online MBA, online BCA, online BBA, IGNOU, Manipal online, Amity online, online graduation, career counselling, distance learning India",
+    canonical: "https://avedu.in/",
+    ogImage: "https://avedu.in/lovable-uploads/d1a868cd-cbeb-4c57-9a43-86bb3e758613.png",
+    ogType: "website",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "AVEDU",
+      "url": "https://avedu.in",
+      "logo": "https://avedu.in/lovable-uploads/d1a868cd-cbeb-4c57-9a43-86bb3e758613.png",
+      "description": "Leading educational counselling platform for online and distance education in India",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "5000"
+      }
+    }
+  });
+  
   const universities = [
     {
       id: "ignou",
@@ -136,13 +160,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead 
-        title="AVEDU - Best Online UG & PG Courses | Expert Counselling | avedu.in"
-        description="Find the perfect online UG & PG courses from 100+ top Indian universities. Get free expert counselling to choose the best degree for your career goals and budget."
-        keywords="online degree, distance education, UGC approved universities, online MBA, online BCA, online BBA, IGNOU, Manipal online, Amity online, online graduation, career counselling, distance learning India"
-        canonical="https://avedu.in/"
-        structuredData={homePageStructuredData}
-      />
       <NavigationHeader />
       
       {/* 1st Section - Hero with FlipWords */}
