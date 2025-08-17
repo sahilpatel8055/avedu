@@ -23,20 +23,11 @@ export default defineConfig(({ mode, command }) => ({
   resolve: {
     alias: {
       "~/": path.resolve(__dirname, "./src/"),
-      "@": path.resolve(__dirname, "./src"),
     },
   },
   build: {
     rollupOptions: {
-      output: {
-        // Only use manual chunks for client builds, not SSR
-        ...(command === 'build' && !process.env.SSR && {
-          manualChunks: {
-            vendor: ['react', 'react-dom'],
-            router: ['react-router-dom'],
-          },
-        }),
-      },
+      // Removed manual chunks to avoid conflicts with SSR externalization
     },
   },
   ssr: {
