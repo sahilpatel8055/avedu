@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 
 export { render };
 
@@ -16,5 +17,11 @@ async function render(pageContext: any) {
   }
 
   const root = ReactDOM.createRoot(container);
-  root.render(React.createElement(Page, pageProps || {}));
+  root.render(
+    React.createElement(
+      BrowserRouter,
+      {},
+      React.createElement(Page, pageProps || {})
+    )
+  );
 }
