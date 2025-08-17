@@ -15,6 +15,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { Link } from "react-router-dom";
 import { BookOpen, Users, Award, GraduationCap, Star, ArrowRight } from "lucide-react";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
+import SEOHead from "@/components/ui/seo-head";
 
 // Course Images
 import mbaImage from "@/assets/course/mba.jpg";
@@ -92,8 +93,56 @@ const Index = () => {
   // Words for FlipWords animation with blue color
   const flipWords = ["Online Course", "Learning Path", "Career Path", "Flexible Course"];
 
+  const homePageStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "AVEDU",
+    "url": "https://avedu.in",
+    "logo": "https://avedu.in/lovable-uploads/d1a868cd-cbeb-4c57-9a43-86bb3e758613.png",
+    "description": "Leading educational counselling platform for online and distance education in India",
+    "educationalCredentialAwarded": [
+      "Online MBA", "Online BBA", "Online BCA", "Online MCA", "Online BCOM", "Online BA", "Online MA"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "category": "Education",
+      "description": "Free educational counselling and course guidance"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Online Degree Programs",
+      "itemListElement": [
+        {
+          "@type": "Course",
+          "name": "Online MBA",
+          "description": "Master of Business Administration online program",
+          "provider": {
+            "@type": "Organization",
+            "name": "AVEDU"
+          }
+        },
+        {
+          "@type": "Course", 
+          "name": "Online BBA",
+          "description": "Bachelor of Business Administration online program",
+          "provider": {
+            "@type": "Organization",
+            "name": "AVEDU"
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="AVEDU - Best Online UG & PG Courses | Expert Counselling | avedu.in"
+        description="Find the perfect online UG & PG courses from 100+ top Indian universities. Get free expert counselling to choose the best degree for your career goals and budget."
+        keywords="online degree, distance education, UGC approved universities, online MBA, online BCA, online BBA, IGNOU, Manipal online, Amity online, online graduation, career counselling, distance learning India"
+        canonical="https://avedu.in/"
+        structuredData={homePageStructuredData}
+      />
       <NavigationHeader />
       
       {/* 1st Section - Hero with FlipWords */}

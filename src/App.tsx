@@ -45,6 +45,7 @@ import DUSOLCoursePage from "./pages/course/DUSOLCoursePage";
 import Disclaimer from "./pages/legal/Disclaimer";
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
 import TermsConditions from "./pages/legal/TermsConditions";
+import Blog from "./pages/Blog";
 
 // Component to scroll to top on route change
 const ScrollToTop = () => {
@@ -69,6 +70,7 @@ const App = () => (
         <GlobalIntelligentPopup />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/universities" element={<Universities />} />
           <Route path="/university/ignou" element={<IGNOU />} />
           <Route path="/university/manipal" element={<Manipal />} />

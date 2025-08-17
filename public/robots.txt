@@ -12,3 +12,19 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /lovable-uploads/
+
+# Important pages for crawlers
+Allow: /university/
+Allow: /courses/
+Allow: /privacy-policy
+Allow: /terms-conditions
+Allow: /disclaimer
+
+# Sitemap location
+Sitemap: https://avedu.in/sitemap.xml
+
+# Crawl-delay (be respectful to server resources)
+Crawl-delay: 1

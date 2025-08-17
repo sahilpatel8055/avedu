@@ -235,6 +235,26 @@ All colors MUST be HSL. Professional education-focused design.
     display: none;
   }
 
+  /* Image optimization and performance */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .lazy-image {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .lazy-image.loaded {
+    opacity: 1;
+  }
+
+  /* Optimize critical font loading */
+  .font-display-swap {
+    font-display: swap;
+  }
+
   /* 3D Convocation Carousel CSS */
   .convocation-3d-container {
     text-align: left;
