@@ -42,7 +42,7 @@ async function render(pageContext: any) {
         <link rel="canonical" href="https://avedu.co.in${pageContext.urlPathname || ''}" />
       </head>
       <body>
-        <div id="react-root">${dangerouslySkipEscape(pageHtml)}</div>
+        <div id="root">${dangerouslySkipEscape(pageHtml)}</div>
       </body>
     </html>`;
 
