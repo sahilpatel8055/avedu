@@ -8,6 +8,7 @@ import { useCounselingForm } from "@/hooks/use-counseling-form";
 import { Star, MapPin, Users, GraduationCap, Award, DollarSign, Clock, Check, Globe, BookOpen } from "lucide-react";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
+import SEOHead from "@/components/ui/seo-head";
 import SampleDegreeSection from "@/components/ui/sample-degree-section";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
@@ -80,6 +81,12 @@ const LPU = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="LPU Distance Education | Online Degree Programs | UGC Approved Courses"
+        description="Join LPU Distance Education with 100+ online programs. NAAC A++ rated, UGC-DEB approved. Flexible learning, industry partnerships & placement support."
+        keywords="LPU distance education, LPU online courses, Lovely Professional University online, UGC approved distance learning"
+        canonical="https://avedu.in/university/lpu"
+      />
       <NavigationHeader />
       
       {/* Hero Section with Moving Border Buttons */}
@@ -93,7 +100,7 @@ const LPU = () => {
           <div className="flex flex-col lg:flex-row items-start gap-8">
             <div className="flex-1 text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
-                <img src={lpuLogo} alt="LPU Logo" className="w-20 h-20 rounded-lg object-contain" />
+                <img src={lpuLogo} alt="LPU Logo" className="w-20 h-20 rounded-lg object-contain" loading="lazy" />
                 <div>
                   <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-2">Lovely Professional University</h1>
                   <p className="text-lg text-muted-foreground">NAAC A++ Accredited University</p>
@@ -193,7 +200,7 @@ const LPU = () => {
               <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
                 <CardHeader className="pb-2">
                   <div className="flex items-center justify-center mb-4">
-                    <img src={approval.icon} alt={`${approval.name} Icon`} className="w-24 h-24 object-contain" />
+                    <img src={approval.icon} alt={`${approval.name} Icon`} className="w-24 h-24 object-contain" loading="lazy" />
                   </div>
                   <CardTitle className="text-lg text-primary">{approval.name}</CardTitle>
                 </CardHeader>
@@ -221,7 +228,7 @@ const LPU = () => {
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader className="pb-4">
                   <div className="flex items-center justify-center mb-4">
-                    <img src={course.image} alt={course.name} className="w-16 h-16 object-cover rounded-lg" />
+                    <img src={course.image} alt={course.name} className="w-16 h-16 object-cover rounded-lg" loading="lazy" />
                   </div>
                   <CardTitle className="text-lg text-center">{course.name}</CardTitle>
                 </CardHeader>

@@ -1,5 +1,6 @@
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
+import SEOHead from "@/components/ui/seo-head";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -213,6 +214,12 @@ const OnlineMBA = () => {
   
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Online MBA Programs 2024 | Top Universities | Fees, Placement & Admission"
+        description="Explore best online MBA programs from top universities like Manipal, Amity, LPU. Compare fees, specializations, placement records. UGC approved degrees with 100% support."
+        keywords="online MBA, MBA distance education, online MBA fees, MBA placement, top MBA universities, UGC approved MBA"
+        canonical="https://avedu.in/courses/online-mba"
+      />
       <NavigationHeader />
 
       {/* Hero */}
@@ -220,7 +227,7 @@ const OnlineMBA = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <div className="mb-6">
-              <img src={mbaIcon} alt="MBA" className="h-24 w-24 mx-auto mb-4" />
+              <img src={mbaIcon} alt="MBA" className="h-24 w-24 mx-auto mb-4" loading="lazy" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Online MBA Programs

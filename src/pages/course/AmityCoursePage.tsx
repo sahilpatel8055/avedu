@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
+import SEOHead from "@/components/ui/seo-head";
 import SampleDegreeSection from "@/components/ui/sample-degree-section";
 import amityDegree from "@/assets/amity.png";
 import amityCourseData from "@/data/amityCourseData.json";
@@ -82,6 +83,12 @@ const AmityCoursePage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title={`${course.name} Online - Amity University | Fee ₹${course.feesBreakdown.fullFees} | Apply Now`}
+        description={`Study ${course.name} online from Amity University. Total fee ${course.feesBreakdown.fullFees}, ${course.duration} duration. UGC approved with 100% placement assistance.`}
+        keywords={`${course.name} online, Amity University ${course.name}, online ${course.name} fees, distance education, UGC approved`}
+        canonical={`https://avedu.in/university/amity/courses/${course.id}`}
+      />
       <NavigationHeader />
 
       {/* Header Section */}
@@ -94,6 +101,7 @@ const AmityCoursePage = () => {
                   src={amityLogo}
                   alt="Amity University Online Logo"
                   className="w-16 h-16 rounded-lg object-contain"
+                  loading="lazy"
                 />
                 <div>
                   <h1 className="text-4xl font-bold text-foreground">

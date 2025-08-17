@@ -8,6 +8,7 @@ import EmbeddedCounselingForm from "@/components/ui/embedded-counseling-form";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
 import { Star, MapPin, Users, GraduationCap, Award, DollarSign, BookOpen, Clock, Check } from "lucide-react";
 import NavigationHeader from "@/components/ui/navigation-header";
+import SEOHead from "@/components/ui/seo-head";
 import Footer from "@/components/ui/footer";
 import FlippableDegreeSection from "@/components/ui/flippable-degree-section";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
@@ -81,9 +82,34 @@ const Manipal = () => {
     { name: "WES", description: "World Education Services Recognition", icon: wesIcon }
   ];
 
-  return (
-    <div className="min-h-screen bg-background">
-      <NavigationHeader />
+  return (
+    <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Manipal University Online Programs | UGC Approved | 100% Placement Support"
+        description="Join 50K+ students at Manipal University Online. NAAC A++ accredited, UGC-DEB approved programs including MBA, MCA, BBA, BCA. Fee starting ₹1.8L. Apply now!"
+        keywords="Manipal University online, online MBA Manipal, Manipal University distance education, UGC approved online courses"
+        canonical="https://avedu.in/university/manipal"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          "name": "Manipal University Online",
+          "url": "https://avedu.in/university/manipal",
+          "logo": "https://avedu.in/assets/manipal-logo.png",
+          "description": "NAAC A++ accredited university offering online degree programs",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Manipal",
+            "addressRegion": "Karnataka",
+            "addressCountry": "India"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "1500"
+          }
+        }}
+      />
+      <NavigationHeader />
       
       {/* Hero Section with Integrated Slideshow */}
       <section className="bg-gradient-to-br from-primary/10 via-background to-primary/5 py-6" id="top">
@@ -96,7 +122,7 @@ const Manipal = () => {
           <div className="flex flex-col lg:flex-row items-start gap-8">
             <div className="flex-1 text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
-                <img src={manipalLogo} alt="Manipal Logo" className="w-20 h-20 rounded-lg object-contain" />
+                <img src={manipalLogo} alt="Manipal Logo" className="w-20 h-20 rounded-lg object-contain" loading="lazy" />
                 <div>
                   <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-2">Manipal University Online</h1>
                   <p className="text-lg text-muted-foreground">NAAC A++ Accredited University</p>
@@ -196,7 +222,7 @@ const Manipal = () => {
               <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
                 <CardHeader className="pb-2">
                   <div className="flex items-center justify-center mb-4">
-                    <img src={approval.icon} alt={`${approval.name} Icon`} className="w-24 h-24 object-contain" />
+                    <img src={approval.icon} alt={`${approval.name} Icon`} className="w-24 h-24 object-contain" loading="lazy" />
                   </div>
                   <CardTitle className="text-lg text-primary">{approval.name}</CardTitle>
                 </CardHeader>
@@ -225,7 +251,7 @@ const Manipal = () => {
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader className="pb-4">
                   <div className="flex items-center justify-center mb-4">
-                    <img src={course.image} alt={course.name} className="w-16 h-16 object-cover rounded-lg" />
+                    <img src={course.image} alt={course.name} className="w-16 h-16 object-cover rounded-lg" loading="lazy" />
                   </div>
                   <CardTitle className="text-lg text-center">{course.name}</CardTitle>
                 </CardHeader>

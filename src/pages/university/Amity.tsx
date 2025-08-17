@@ -8,6 +8,7 @@ import { useCounselingForm } from "@/hooks/use-counseling-form";
 import { Star, MapPin, Users, GraduationCap, Award, DollarSign, Clock, Check } from "lucide-react";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
+import SEOHead from "@/components/ui/seo-head";
 import SampleDegreeSection from "@/components/ui/sample-degree-section";
 import UniversitySlideshow from "@/components/ui/university-slideshow";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
@@ -79,6 +80,12 @@ const Amity = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Amity University Online Programs | UGC Approved Distance Education | Apply Now"
+        description="Join Amity University Online with 100+ programs, UGC-DEB approval, industry-aligned curriculum. Fees starting ₹60K. Expert faculty & placement support."
+        keywords="Amity University online, Amity distance education, online MBA Amity, Amity online courses, UGC approved"
+        canonical="https://avedu.in/university/amity"
+      />
       <NavigationHeader />
       
       {/* Hero Section with Integrated Slideshow */}
@@ -92,7 +99,7 @@ const Amity = () => {
           <div className="flex flex-col lg:flex-row items-start gap-8">
             <div className="flex-1 text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
-                <img src={amityLogo} alt="Amity Logo" className="w-20 h-20 rounded-lg object-contain" />
+                <img src={amityLogo} alt="Amity Logo" className="w-20 h-20 rounded-lg object-contain" loading="lazy" />
                 <div>
                   <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-2">Amity University Online</h1>
                   <p className="text-lg text-muted-foreground">NIRF Ranked Premium University</p>
@@ -184,7 +191,7 @@ const Amity = () => {
               <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
                 <CardHeader className="pb-2">
                   <div className="flex items-center justify-center mb-4">
-                    <img src={approval.icon} alt={`${approval.name} Icon`} className="w-24 h-24 object-contain" />
+                    <img src={approval.icon} alt={`${approval.name} Icon`} className="w-24 h-24 object-contain" loading="lazy" />
                   </div>
                   <CardTitle className="text-lg text-primary">{approval.name}</CardTitle>
                 </CardHeader>
@@ -212,7 +219,7 @@ const Amity = () => {
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader className="pb-4">
                   <div className="flex items-center justify-center mb-4">
-                    <img src={course.image} alt={course.name} className="w-16 h-16 object-cover rounded-lg" />
+                    <img src={course.image} alt={course.name} className="w-16 h-16 object-cover rounded-lg" loading="lazy" />
                   </div>
                   <CardTitle className="text-lg text-center">{course.name}</CardTitle>
                 </CardHeader>

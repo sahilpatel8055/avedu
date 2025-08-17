@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
+import SEOHead from "@/components/ui/seo-head";
 import manipalCourseData from "@/data/manipalCourseData.json";
 import manipalLogo from "@/assets/manipal-logo.png";
 import {
@@ -91,6 +92,37 @@ const ManipalCoursePage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title={`${course.name} Online - Manipal University | Fee ₹${course.feesBreakdown.fullFees} | 100% Placement`}
+        description={`Study ${course.name} online from Manipal University. Total fee ${course.feesBreakdown.fullFees}, ${course.duration} duration, ${course.specializations.length} specializations. NAAC A++ accredited with placement assistance.`}
+        keywords={`${course.name} online, Manipal University ${course.name}, online ${course.name} fees, ${course.name} placement, distance education`}
+        canonical={`https://avedu.in/university/manipal/courses/${course.id}`}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Course",
+          "name": `${course.name} - Manipal University Online`,
+          "description": `${course.name} program offered by Manipal University through online mode`,
+          "provider": {
+            "@type": "Organization",
+            "name": "Manipal University",
+            "sameAs": "https://manipal.edu"
+          },
+          "offers": {
+            "@type": "Offer",
+            "category": "Educational",
+            "price": course.feesBreakdown.fullFees.replace('₹', '').replace(',', ''),
+            "priceCurrency": "INR"
+          },
+          "courseMode": "Online",
+          "educationalLevel": course.level === 'ug' ? 'Undergraduate' : 'Postgraduate',
+          "timeRequired": course.duration,
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": course.rating,
+            "reviewCount": course.reviews
+          }
+        }}
+      />
       <NavigationHeader />
       <SectionNavigation sections={sections} />
 
@@ -104,6 +136,7 @@ const ManipalCoursePage = () => {
                   src={manipalLogo}
                   alt={`${course.university} Logo`}
                   className="w-16 h-16 rounded-lg object-contain"
+                  loading="lazy"
                 />
                 <div>
                   <h1 className="text-4xl font-bold text-foreground">
@@ -335,6 +368,7 @@ const ManipalCoursePage = () => {
                   src={hiringPartnersImg} 
                   alt="Top Hiring Partners" 
                   className="w-full max-w-md mx-auto rounded-lg shadow-md"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -353,6 +387,7 @@ const ManipalCoursePage = () => {
                 src={hiringPartnersImg} 
                 alt="Companies where our students work" 
                 className="max-w-full h-auto rounded-lg shadow-md"
+                loading="lazy"
               />
             </div>
           </div>

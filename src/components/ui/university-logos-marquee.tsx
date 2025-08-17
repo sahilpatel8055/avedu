@@ -38,6 +38,7 @@ const UniversityLogosMarquee = () => {
                 src={university.logo}
                 alt={university.name}
                 className="max-w-full max-h-full object-contain"
+                loading="lazy"
               />
             </div>
             <p className="text-xs md:text-sm text-center mt-2 text-gray-600 font-medium leading-tight">
