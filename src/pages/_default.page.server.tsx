@@ -1,6 +1,7 @@
 import ReactDOMServer from 'react-dom/server';
 import React from 'react';
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr/server';
+import { StaticRouter } from 'react-router-dom/server';
 
 export { render };
 export { passToClient };
@@ -15,7 +16,11 @@ async function render(pageContext: any) {
   }
 
   const pageHtml = ReactDOMServer.renderToString(
-    React.createElement(Page, pageProps || {})
+    React.createElement(
+      StaticRouter,
+      { location: pageContext.urlPathname || '/' },
+      React.createElement(Page, pageProps || {})
+    )
   );
 
   // See https://vite-plugin-ssr.com/head
