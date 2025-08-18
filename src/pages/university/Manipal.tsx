@@ -392,10 +392,17 @@ const Manipal = () => {
         </div>
       </section>
 
-      <Footer />
-      <CounselingFormComponent />
-    </div>
-  );
+      {/* Relevant Blogs Section */}
+      <RelevantBlogsSection 
+        pageType="manipal" 
+        title="University Selection & Guidance Articles"
+        maxBlogs={3}
+      />
+
+      <Footer />
+      <CounselingFormComponent />
+    </div>
+  );
 };
 
 export default Manipal;

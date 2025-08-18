@@ -410,6 +410,13 @@ const ManipalCoursePage = () => {
         </section>
       </div>
 
+      {/* Relevant Blogs Section */}
+      <RelevantBlogsSection 
+        pageType="mba" 
+        title="MBA Career & Guidance Articles"
+        maxBlogs={3}
+      />
+
       <Footer />
     </div>
   );

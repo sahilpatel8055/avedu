@@ -107,6 +107,34 @@ const Courses = () => {
       avgPackage: "₹3-6 LPA",
       topRecruiters: ["Banks", "Financial Institutions", "Accounting Firms", "Corporates"],
       keywords: "online B.Com degree, distance B.Com, B.Com online courses, bachelor of commerce"
+    },
+    {
+      id: "ma",
+      name: "Online MA",
+      level: "PG",
+      duration: "2 Years",
+      image: baImg,
+      startingFee: "₹50,000",
+      description: "Master of Arts - Advanced studies in humanities and social sciences with research focus",
+      universities: ["IGNOU", "DU SOL", "Manipal", "Uttaranchal"],
+      specializations: ["English", "Psychology", "Political Science", "History", "Sociology"],
+      avgPackage: "₹3-7 LPA",
+      topRecruiters: ["Government Sector", "Education Institutions", "NGOs", "Media Houses"],
+      keywords: "online MA degree, distance MA, MA online courses, master of arts"
+    },
+    {
+      id: "mcom",
+      name: "Online M.Com",
+      level: "PG", 
+      duration: "2 Years",
+      image: bcomImg,
+      startingFee: "₹60,000",
+      description: "Master of Commerce - Advanced business and commerce studies with specialization in finance and accounting",
+      universities: ["IGNOU", "DU SOL", "Manipal", "Uttaranchal"],
+      specializations: ["Accounting", "Finance", "Taxation", "Banking", "International Business"],
+      avgPackage: "₹4-8 LPA",
+      topRecruiters: ["Banks", "Financial Services", "Audit Firms", "Corporates", "Government"],
+      keywords: "online M.Com degree, distance M.Com, M.Com online courses, master of commerce"
     }
   ];
 
@@ -280,7 +308,14 @@ const Courses = () => {
                     </div>
                     
                     <div className="flex gap-2">
-                      <Link to={`/courses/${course.id}`} className="flex-1">
+                      <Link 
+                        to={
+                          course.id === "bca" || course.id === "mca" 
+                            ? "/courses/engineering" 
+                            : `/courses/${course.id}`
+                        } 
+                        className="flex-1"
+                      >
                         <Button className="w-full" size="sm">
                           View Details <ArrowRight className="w-4 h-4 ml-1" />
                         </Button>
@@ -326,7 +361,7 @@ const Courses = () => {
                 <p className="text-muted-foreground mb-4">
                   Master programming and tech skills with MCA, BCA, and IT specializations
                 </p>
-                <Link to="/courses/technology">
+                <Link to="/courses/engineering">
                   <Button variant="outline">Explore Tech Courses</Button>
                 </Link>
               </CardContent>
