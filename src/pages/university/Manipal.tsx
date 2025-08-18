@@ -38,6 +38,8 @@ import baImg from "@/assets/course/ba.jpg";
 // Import the degree images
 import manipalFront from "@/assets/manipal-1stdegree.jpg";
 import manipalBack from "@/assets/manipal-2nddegree.jpg";
+import RelevantBlogsSection from "@/components/ui/relevant-blogs-section";
+import UniversityComparisonTool from "@/components/ui/university-comparison-tool";
 
 const Manipal = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();

@@ -39,6 +39,9 @@ import hiringPartnersImg from "@/assets/hiring-partners.png";
 import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-section";
 import SectionNavigation from "@/components/ui/section-navigation";
 import manipalLmsImg from "@/assets/lms/muj.png";
+import { useCounselingForm } from "@/hooks/use-counseling-form";
+import LeadGenerationEnhancements from "@/components/ui/lead-generation-enhancements";
+import RelevantBlogsSection from "@/components/ui/relevant-blogs-section";
 
 // Updated specializationIcons mapping to use Lucide-React icons
 const specializationIcons = {
