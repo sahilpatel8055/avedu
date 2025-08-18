@@ -35,6 +35,8 @@ import baImg from "@/assets/course/ba.jpg";
 // Import the degree image
 import vguDegree from "@/assets/vgu-degree.jpg";
 import bcomImg from "@/assets/course/bcom.jpg";
+import UniversityComparisonTool from "@/components/ui/university-comparison-tool";
+import RelevantBlogsSection from "@/components/ui/relevant-blogs-section";
 
 const VGU = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
@@ -338,6 +340,12 @@ const VGU = () => {
           </div>
         </div>
       </section>
+
+      {/* University Comparison Tool */}
+      <UniversityComparisonTool />
+
+      {/* Relevant Blogs Section */}
+      <RelevantBlogsSection pageType="university" title="University Comparison & Selection Guide" />
 
       {/* CTA Section */}
       <section className="py-16 bg-primary/10">

@@ -35,6 +35,8 @@ import baImg from "@/assets/course/ba.jpg";
 
 // Import the degree image
 import lpuDegree from "@/assets/lpu.png";
+import UniversityComparisonTool from "@/components/ui/university-comparison-tool";
+import RelevantBlogsSection from "@/components/ui/relevant-blogs-section";
 
 const LPU = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
@@ -331,6 +333,12 @@ const LPU = () => {
           </div>
         </div>
       </section>
+
+      {/* University Comparison Tool */}
+      <UniversityComparisonTool />
+
+      {/* Relevant Blogs Section */}
+      <RelevantBlogsSection pageType="university" title="University Comparison & Selection Guide" />
 
       {/* CTA Section */}
       <section className="py-16 bg-primary/10" id="apply">

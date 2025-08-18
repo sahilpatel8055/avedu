@@ -35,6 +35,8 @@ import mcaImg from "@/assets/course/mca.jpg";
 import bcaImg from "@/assets/course/bca.jpg";
 import baImg from "@/assets/course/ba.jpg";
 import bcomImg from "@/assets/course/bcom.jpg";
+import UniversityComparisonTool from "@/components/ui/university-comparison-tool";
+import RelevantBlogsSection from "@/components/ui/relevant-blogs-section";
 
 const Uttaranchal = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
@@ -379,6 +381,12 @@ const Uttaranchal = () => {
           </div>
         </div>
       </section>
+
+      {/* University Comparison Tool */}
+      <UniversityComparisonTool />
+
+      {/* Relevant Blogs Section */}
+      <RelevantBlogsSection pageType="university" title="University Comparison & Selection Guide" />
 
       {/* CTA Section */}
       <section className="py-16 bg-primary/10" id="apply">
