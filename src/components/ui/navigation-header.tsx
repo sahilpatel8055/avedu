@@ -56,9 +56,6 @@ const NavigationHeader = () => {
                 Education Blog
               </button>
             </Link>
-            <a href="#counselling" className="text-foreground hover:text-primary transition-colors font-medium">
-              Counselling
-            </a>
             <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium">
               About Us
             </a>
@@ -116,9 +113,6 @@ const NavigationHeader = () => {
             <Link to="/blog" className="text-foreground hover:text-primary transition-colors">
               Education Blog
             </Link>
-            <a href="#counselling" className="text-foreground hover:text-primary transition-colors">
-              Counselling
-            </a>
             <a href="#about" className="text-foreground hover:text-primary transition-colors">
               About Us
             </a>
