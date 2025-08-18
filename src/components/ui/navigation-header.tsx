@@ -41,15 +41,19 @@ const NavigationHeader = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <button 
-              className="btn-3d px-6 py-2 rounded-lg text-sm font-semibold transition-all"
-              onClick={scrollToPrograms}
-            >
-              Explore Programs
-            </button>
+            <Link to="/courses">
+              <button className="btn-3d px-6 py-2 rounded-lg text-sm font-semibold transition-all">
+                All Courses
+              </button>
+            </Link>
             <Link to="/universities">
               <button className="btn-3d px-6 py-2 rounded-lg text-sm font-semibold transition-all">
                 Top Universities
+              </button>
+            </Link>
+            <Link to="/blog">
+              <button className="text-foreground hover:text-primary transition-colors font-medium">
+                Education Blog
               </button>
             </Link>
             <a href="#counselling" className="text-foreground hover:text-primary transition-colors font-medium">
@@ -77,15 +81,14 @@ const NavigationHeader = () => {
 
           {/* Mobile Navigation Buttons & Menu */}
           <div className="md:hidden flex items-center gap-2">
-            <button 
-              className="btn-3d px-2 py-1 rounded-lg text-xs font-semibold transition-all"
-              onClick={scrollToPrograms}
-            >
-              Explore Programs
-            </button>
+            <Link to="/courses">
+              <button className="btn-3d px-2 py-1 rounded-lg text-xs font-semibold transition-all">
+                Courses
+              </button>
+            </Link>
             <Link to="/universities">
               <button className="btn-3d px-2 py-1 rounded-lg text-xs font-semibold transition-all">
-                Top Universities
+                Universities
               </button>
             </Link>
             <Button
@@ -104,14 +107,14 @@ const NavigationHeader = () => {
           isMenuOpen ? "max-h-96 pb-4" : "max-h-0"
         )}>
           <nav className="flex flex-col space-y-4 pt-4">
-            <button 
-              onClick={scrollToPrograms}
-              className="text-foreground hover:text-primary transition-colors text-left"
-            >
-              Explore Programs
-            </button>
+            <Link to="/courses" className="text-foreground hover:text-primary transition-colors text-left">
+              All Courses
+            </Link>
             <Link to="/universities" className="text-foreground hover:text-primary transition-colors">
               Top Universities
+            </Link>
+            <Link to="/blog" className="text-foreground hover:text-primary transition-colors">
+              Education Blog
             </Link>
             <a href="#counselling" className="text-foreground hover:text-primary transition-colors">
               Counselling

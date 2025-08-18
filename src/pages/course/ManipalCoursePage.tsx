@@ -372,6 +372,22 @@ const ManipalCoursePage = () => {
                 />
               </div>
             </div>
+            
+            {/* Hub-and-Spoke Internal Links */}
+            <div className="bg-primary/5 p-6 rounded-lg mt-12">
+              <h3 className="text-xl font-semibold text-foreground mb-4">Related Resources</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <Link to="/university/manipal" className="text-primary hover:underline font-medium">
+                  ← Back to Manipal University Hub
+                </Link>
+                <Link to="/courses" className="text-primary hover:underline font-medium">
+                  → Compare with Other Courses
+                </Link>
+                <Link to="/blog" className="text-primary hover:underline font-medium">
+                  → Read Career Guidance Articles
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 

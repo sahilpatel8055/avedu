@@ -45,6 +45,7 @@ import Disclaimer from "./pages/legal/Disclaimer";
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
 import TermsConditions from "./pages/legal/TermsConditions";
 import Blog from "./pages/Blog";
+import Courses from "./pages/Courses";
 
 // Component to scroll to top on route change
 const ScrollToTop = () => {
@@ -68,6 +69,7 @@ const App = () => (
     <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/courses" element={<Courses />} />
           <Route path="/universities" element={<Universities />} />
           <Route path="/university/ignou" element={<IGNOU />} />
           <Route path="/university/manipal" element={<Manipal />} />

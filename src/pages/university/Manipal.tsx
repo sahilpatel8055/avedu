@@ -187,17 +187,36 @@ const Manipal = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">About Manipal University Online</h2>
-            <div className="prose prose-lg max-w-none text-muted-foreground">
-              <p className="text-lg leading-relaxed mb-6">
-                <strong className="text-foreground">Manipal University</strong> is one of India's most prestigious private universities, established in 1953. With over 70 years of excellence in education, Manipal has built a global reputation for academic rigor, innovation, and industry relevance. The university's online division brings the same quality education to students worldwide.
-              </p>
-              <p className="text-lg leading-relaxed mb-6">
-                Manipal University Online offers a comprehensive range of undergraduate and postgraduate programs designed to meet the evolving needs of the modern workforce. The programs combine theoretical knowledge with practical applications, ensuring students are well-prepared for their careers.
-              </p>
-              <p className="text-lg leading-relaxed">
-                With NAAC A++ accreditation and WES recognition, Manipal University Online degrees are globally accepted and highly valued by employers. The university's strong industry partnerships and extensive alumni network provide excellent opportunities for career advancement.
-              </p>
-            </div>
+              <div className="prose prose-lg max-w-none text-muted-foreground">
+                <p className="text-lg leading-relaxed mb-6">
+                  <strong className="text-foreground">Manipal University</strong> is one of India's most prestigious private universities, established in 1953. With over 70 years of excellence in education, Manipal has built a global reputation for academic rigor, innovation, and industry relevance. The university's online division brings the same quality education to students worldwide.
+                </p>
+                <p className="text-lg leading-relaxed mb-6">
+                  Manipal University Online offers a comprehensive range of undergraduate and postgraduate programs designed to meet the evolving needs of the modern workforce. The programs combine theoretical knowledge with practical applications, ensuring students are well-prepared for their careers.
+                </p>
+                <p className="text-lg leading-relaxed mb-6">
+                  With NAAC A++ accreditation and WES recognition, Manipal University Online degrees are globally accepted and highly valued by employers. The university's strong industry partnerships and extensive alumni network provide excellent opportunities for career advancement.
+                </p>
+                
+                {/* Hub-and-Spoke Internal Links */}
+                <div className="bg-primary/5 p-6 rounded-lg mt-8">
+                  <h3 className="text-xl font-semibold text-foreground mb-4">Explore Manipal University Programs</h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <Link to="/courses" className="text-primary hover:underline font-medium">
+                      → View All Online Courses Directory
+                    </Link>
+                    <Link to="/courses/mba" className="text-primary hover:underline font-medium">
+                      → Online MBA Programs Comparison
+                    </Link>
+                    <Link to="/blog" className="text-primary hover:underline font-medium">
+                      → Education Insights & Career Guidance
+                    </Link>
+                    <Link to="/universities" className="text-primary hover:underline font-medium">
+                      → Compare with Other Universities
+                    </Link>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
       </section>
