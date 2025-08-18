@@ -178,9 +178,19 @@ const Manipal = () => {
             <div className="flex-1 lg:max-w-md">
               <EmbeddedCounselingForm variant="compact" />
             </div>
-          </div>
-        </div>
-      </section>
+          </div>
+        </div>
+      </section>
+
+      {/* University Comparison Tool */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <UniversityComparisonTool />
+        </div>
+      </section>
+
+      {/* Relevant Blogs Section */}
+      <RelevantBlogsSection pageType="university" title="University Comparison & Selection Guide" />
 
       <SectionNavigation sections={sections} />
       
@@ -393,13 +403,6 @@ const Manipal = () => {
           </div>
         </div>
       </section>
-
-      {/* Relevant Blogs Section */}
-      <RelevantBlogsSection 
-        pageType="manipal" 
-        title="University Selection & Guidance Articles"
-        maxBlogs={3}
-      />
 
       <Footer />
       <CounselingFormComponent />

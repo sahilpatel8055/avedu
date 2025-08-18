@@ -312,6 +312,10 @@ const Courses = () => {
                         to={
                           course.id === "bca" || course.id === "mca" 
                             ? "/courses/engineering" 
+                            : course.id === "ba" || course.id === "ma"
+                            ? "/courses/arts"
+                            : course.id === "bcom" || course.id === "mcom"
+                            ? "/courses/commerce"
                             : `/courses/${course.id}`
                         } 
                         className="flex-1"
@@ -376,9 +380,14 @@ const Courses = () => {
                 <p className="text-muted-foreground mb-4">
                   Explore diverse fields with BA, B.Com, and liberal arts programs
                 </p>
-                <Link to="/courses/arts-commerce">
-                  <Button variant="outline">Explore Arts & Commerce</Button>
-                </Link>
+                <div className="flex flex-col gap-2">
+                  <Link to="/courses/arts">
+                    <Button variant="outline">Explore Arts Courses</Button>
+                  </Link>
+                  <Link to="/courses/commerce">
+                    <Button variant="outline">Explore Commerce Courses</Button>
+                  </Link>
+                </div>
               </CardContent>
             </Card>
           </div>

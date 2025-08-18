@@ -9,6 +9,8 @@ import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-sectio
 import { useCounselingForm } from "@/hooks/use-counseling-form";
 import SectionNavigation from "@/components/ui/section-navigation";
 import UniversityComparisonTable from "@/components/ui/university-comparison-table";
+import RelevantBlogsSection from "@/components/ui/relevant-blogs-section";
+import LeadGenerationEnhancements from "@/components/ui/lead-generation-enhancements";
 import {
   GraduationCap,
   Clock,
@@ -648,6 +650,12 @@ const OnlineMBA = () => {
           </div>
         </div>
       </section>
+
+      {/* Lead Generation Enhancements */}
+      <LeadGenerationEnhancements courseType="MBA" universityName="Top MBA Universities" />
+
+      {/* Relevant Blogs Section */}
+      <RelevantBlogsSection pageType="mba" title="MBA Career Guidance & Tips" />
 
       <SectionNavigation sections={sections} />
       <Footer />
