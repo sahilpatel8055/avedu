@@ -271,7 +271,8 @@ All colors MUST be HSL. Professional education-focused design.
     transform: translateZ(-540px);
     position: relative;
     margin: 0;
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     height: 300px;
     -webkit-transition: 1s;
     transition: 1s;
@@ -279,16 +280,28 @@ All colors MUST be HSL. Professional education-focused design.
 
   .convocation-carousel-image {
     position: absolute;
-    border: 8px solid hsl(var(--border));
+    border: 4px solid hsl(var(--border));
     opacity: 0.5;
     -webkit-transition: 1s;
     transition: 1s;
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     height: 300px;
     object-fit: cover;
     cursor: pointer;
     border-radius: 8px;
     box-shadow: var(--shadow-card);
+  }
+
+  @media (max-width: 768px) {
+    .convocation-carousel-image {
+      border: 2px solid hsl(var(--border));
+      height: 250px;
+    }
+    
+    .convocation-carousel {
+      height: 250px;
+    }
   }
 
   .convocation-carousel-image:hover {

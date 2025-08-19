@@ -76,7 +76,7 @@ const ConvocationSlider = () => {
         
         {/* 3D Carousel Container */}
         <div 
-          className="convocation-3d-container w-[500px] h-[300px] mx-auto mb-8"
+          className="convocation-3d-container w-full max-w-[500px] h-[300px] md:h-[350px] mx-auto mb-8 px-4 md:px-0"
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
           onWheel={handleWheel}

@@ -46,6 +46,7 @@ import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
 import TermsConditions from "./pages/legal/TermsConditions";
 import Blog from "./pages/Blog";
 import Courses from "./pages/Courses";
+import UniversityComparison from "./pages/UniversityComparison";
 
 // Component to scroll to top on route change
 const ScrollToTop = () => {
@@ -100,6 +101,9 @@ const App = () => (
           <Route path="/university/lpu/:courseId" element={<LPUCoursePage />} />
 <Route path="/university/mangalyatan/:courseId" element={<MangalayatanCoursePage />} />
 <Route path="/university/du-sol/:courseId" element={<DUSOLCoursePage />} />
+          {/* Legal pages */}
+          {/* University Comparison Page */}
+          <Route path="/comparison" element={<UniversityComparison />} />
           {/* Legal pages */}
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
