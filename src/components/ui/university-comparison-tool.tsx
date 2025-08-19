@@ -14,7 +14,10 @@ import {
   Shield,
   BookOpen,
   CheckCircle,
-  X
+  X,
+  FileText,
+  Eye,
+  CreditCard
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -25,6 +28,12 @@ import vguLogo from "@/assets/vgu-logo.png";
 import ignouLogo from "@/assets/ignou-logo.png";
 import amityLogo from "@/assets/amity-logo.jpg";
 import lpuLogo from "@/assets/lpu-logo.jpg";
+
+// Sample certificates
+import manipalDegree from "@/assets/manipal-1stdegree.jpg";
+import vguDegree from "@/assets/vgu-degree.jpg";
+import uuDegree from "@/assets/uu-degree.jpg";
+import ignouDegree from "@/assets/ignou-degree.png";
 
 interface University {
   id: string;
@@ -56,6 +65,11 @@ interface University {
     mca: string;
     bca: string;
   };
+  educationMode: string;
+  examinationMode: string;
+  naacRating: string;
+  emiFacility: string;
+  sampleCertificate: string;
 }
 
 const universities: University[] = [
@@ -93,7 +107,12 @@ const universities: University[] = [
       bba: "12th with 50% marks from recognized board",
       mca: "Bachelor's degree with Mathematics/Statistics",
       bca: "12th with Mathematics/Computer Science"
-    }
+    },
+    educationMode: "Online",
+    examinationMode: "Online",
+    naacRating: "A++",
+    emiFacility: "Yes",
+    sampleCertificate: manipalDegree
   },
   {
     id: "uttaranchal",
@@ -129,7 +148,12 @@ const universities: University[] = [
       bba: "12th with 45% marks from recognized board",
       mca: "Bachelor's degree with Mathematics",
       bca: "12th with any stream"
-    }
+    },
+    educationMode: "Online",
+    examinationMode: "Online",
+    naacRating: "A+",
+    emiFacility: "Yes",
+    sampleCertificate: uuDegree
   },
   {
     id: "vgu",
@@ -165,7 +189,12 @@ const universities: University[] = [
       bba: "12th with 50% marks",
       mca: "Bachelor's degree with Mathematics",
       bca: "12th pass with Mathematics"
-    }
+    },
+    educationMode: "Online",
+    examinationMode: "Online",
+    naacRating: "A",
+    emiFacility: "Yes",
+    sampleCertificate: vguDegree
   },
   {
     id: "ignou",
@@ -201,7 +230,12 @@ const universities: University[] = [
       bba: "12th with 45% marks",
       mca: "Bachelor's degree with Mathematics",
       bca: "12th pass any stream"
-    }
+    },
+    educationMode: "Online",
+    examinationMode: "Online",
+    naacRating: "A++",
+    emiFacility: "No",
+    sampleCertificate: ignouDegree
   },
   {
     id: "amity",
@@ -237,7 +271,12 @@ const universities: University[] = [
       bba: "12th with 60% marks",
       mca: "Bachelor's degree with Mathematics",
       bca: "12th with Mathematics/Computer Science"
-    }
+    },
+    educationMode: "Online",
+    examinationMode: "Online",
+    naacRating: "A+",
+    emiFacility: "Yes",
+    sampleCertificate: manipalDegree
   },
   {
     id: "lpu",
@@ -273,7 +312,12 @@ const universities: University[] = [
       bba: "12th with 50% marks",
       mca: "Bachelor's degree with Mathematics",
       bca: "12th with Mathematics preferred"
-    }
+    },
+    educationMode: "Online",
+    examinationMode: "Online",
+    naacRating: "A+",
+    emiFacility: "Yes",
+    sampleCertificate: manipalDegree
   }
 ];
 
@@ -284,6 +328,7 @@ interface UniversityComparisonToolProps {
 const UniversityComparisonTool: React.FC<UniversityComparisonToolProps> = ({ courseType }) => {
   const [selectedUniversities, setSelectedUniversities] = useState<string[]>([]);
   const [showComparison, setShowComparison] = useState(false);
+  const [expandedCertificate, setExpandedCertificate] = useState<string | null>(null);
 
   const handleUniversitySelect = (universityId: string) => {
     if (selectedUniversities.includes(universityId)) {
@@ -307,11 +352,16 @@ const UniversityComparisonTool: React.FC<UniversityComparisonToolProps> = ({ cou
   const resetComparison = () => {
     setSelectedUniversities([]);
     setShowComparison(false);
+    setExpandedCertificate(null);
   };
 
   const selectedUniversityData = universities.filter(uni => 
     selectedUniversities.includes(uni.id)
   );
+
+  const toggleCertificate = (universityId: string) => {
+    setExpandedCertificate(expandedCertificate === universityId ? null : universityId);
+  };
 
   if (showComparison) {
     return (
@@ -326,8 +376,9 @@ const UniversityComparisonTool: React.FC<UniversityComparisonToolProps> = ({ cou
 
         <div className="overflow-x-auto">
           <div className="min-w-full bg-background rounded-lg border">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4">
-              <div className="font-semibold text-muted-foreground">
+            {/* Mobile optimized grid - 3 columns on mobile/tablet */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-4">
+              <div className="font-semibold text-muted-foreground hidden md:block">
                 <div className="space-y-4">
                   <div className="h-16"></div>
                   <div>University Name</div>
@@ -335,6 +386,12 @@ const UniversityComparisonTool: React.FC<UniversityComparisonToolProps> = ({ cou
                   <div>NAAC Grade</div>
                   <div>Location</div>
                   <div>Rating</div>
+                  <div>Sample Certificate</div>
+                  <div>Eligibility</div>
+                  <div>Education Mode</div>
+                  <div>Examination Mode</div>
+                  <div>NAAC Rating</div>
+                  <div>EMI Facility</div>
                   <div>Accreditation</div>
                   {courseType && <div>{courseType.toUpperCase()} Fees</div>}
                   <div>Placement Rate</div>
@@ -345,7 +402,8 @@ const UniversityComparisonTool: React.FC<UniversityComparisonToolProps> = ({ cou
               </div>
               
               {selectedUniversityData.map((university) => (
-                <div key={university.id} className="space-y-4">
+                <div key={university.id} className="space-y-4 border rounded-lg p-4 md:border-none md:p-0">
+                  {/* Mobile headers */}
                   <div className="flex flex-col items-center">
                     <img 
                       src={university.logo} 
@@ -353,52 +411,128 @@ const UniversityComparisonTool: React.FC<UniversityComparisonToolProps> = ({ cou
                       className="w-16 h-16 object-contain"
                     />
                   </div>
-                  <div className="font-semibold text-center">{university.shortName}</div>
-                  <div className="text-center">{university.yearEstablished}</div>
-                  <div className="text-center">
-                    <Badge variant="secondary">{university.naacGrade}</Badge>
-                  </div>
-                  <div className="text-center flex items-center justify-center gap-1">
-                    <MapPin className="w-3 h-3" />
-                    {university.location}
-                  </div>
-                  <div className="text-center flex items-center justify-center gap-1">
-                    <Star className="w-4 h-4 fill-primary text-primary" />
-                    {university.rating}
-                  </div>
-                  <div className="text-center">
-                    <div className="flex flex-wrap gap-1 justify-center">
-                      {university.accreditation.slice(0, 2).map(acc => (
-                        <Badge key={acc} variant="outline" className="text-xs">{acc}</Badge>
-                      ))}
+                  
+                  <div className="space-y-3">
+                    <div className="md:hidden font-semibold text-xs text-muted-foreground">University</div>
+                    <div className="font-semibold text-center">{university.shortName}</div>
+                    
+                    <div className="md:hidden font-semibold text-xs text-muted-foreground">Established</div>
+                    <div className="text-center">{university.yearEstablished}</div>
+                    
+                    <div className="md:hidden font-semibold text-xs text-muted-foreground">NAAC Grade</div>
+                    <div className="text-center">
+                      <Badge variant="secondary">{university.naacGrade}</Badge>
                     </div>
-                  </div>
-                  {courseType && (
-                    <div className="text-center font-semibold text-primary">
-                      {university.totalFees[courseType as keyof typeof university.totalFees]}
+                    
+                    <div className="md:hidden font-semibold text-xs text-muted-foreground">Location</div>
+                    <div className="text-center flex items-center justify-center gap-1">
+                      <MapPin className="w-3 h-3" />
+                      {university.location}
                     </div>
-                  )}
-                  <div className="text-center flex items-center justify-center gap-1">
-                    <TrendingUp className="w-3 h-3" />
-                    {university.placementRate}
-                  </div>
-                  <div className="text-center flex items-center justify-center gap-1">
-                    <DollarSign className="w-3 h-3" />
-                    {university.avgPackage}
-                  </div>
-                  <div className="text-center">
-                    <div className="space-y-1">
-                      {university.usp.slice(0, 3).map(usp => (
-                        <div key={usp} className="text-xs flex items-center gap-1">
-                          <CheckCircle className="w-3 h-3 text-green-500" />
-                          {usp}
+                    
+                    <div className="md:hidden font-semibold text-xs text-muted-foreground">Rating</div>
+                    <div className="text-center flex items-center justify-center gap-1">
+                      <Star className="w-4 h-4 fill-primary text-primary" />
+                      {university.rating}
+                    </div>
+                    
+                    <div className="md:hidden font-semibold text-xs text-muted-foreground">Sample Certificate</div>
+                    <div className="text-center">
+                      <button
+                        onClick={() => toggleCertificate(university.id)}
+                        className="flex items-center gap-1 text-primary hover:underline text-sm"
+                      >
+                        <FileText className="w-3 h-3" />
+                        <Eye className="w-3 h-3" />
+                        View Sample
+                      </button>
+                      {expandedCertificate === university.id && (
+                        <div className="mt-2 border rounded p-2">
+                          <img 
+                            src={university.sampleCertificate} 
+                            alt={`${university.name} Sample Certificate`}
+                            className="w-full h-32 object-contain"
+                          />
                         </div>
-                      ))}
+                      )}
                     </div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-xs">
-                      {university.topRecruiters.slice(0, 3).join(", ")}
+                    
+                    <div className="md:hidden font-semibold text-xs text-muted-foreground">Eligibility (MBA)</div>
+                    <div className="text-center text-xs">{university.eligibility.mba}</div>
+                    
+                    <div className="md:hidden font-semibold text-xs text-muted-foreground">Education Mode</div>
+                    <div className="text-center">
+                      <Badge variant="outline">{university.educationMode}</Badge>
+                    </div>
+                    
+                    <div className="md:hidden font-semibold text-xs text-muted-foreground">Examination Mode</div>
+                    <div className="text-center">
+                      <Badge variant="outline">{university.examinationMode}</Badge>
+                    </div>
+                    
+                    <div className="md:hidden font-semibold text-xs text-muted-foreground">NAAC Rating</div>
+                    <div className="text-center">
+                      <Badge variant="secondary">{university.naacRating}</Badge>
+                    </div>
+                    
+                    <div className="md:hidden font-semibold text-xs text-muted-foreground">EMI Facility</div>
+                    <div className="text-center flex items-center justify-center gap-1">
+                      {university.emiFacility === "Yes" ? (
+                        <><CreditCard className="w-3 h-3 text-green-500" />
+                        <span className="text-green-500 font-semibold">Yes</span></>
+                      ) : (
+                        <><X className="w-3 h-3 text-red-500" />
+                        <span className="text-red-500 font-semibold">No</span></>
+                      )}
+                    </div>
+                    
+                    <div className="md:hidden font-semibold text-xs text-muted-foreground">Accreditation</div>
+                    <div className="text-center">
+                      <div className="flex flex-wrap gap-1 justify-center">
+                        {university.accreditation.slice(0, 2).map(acc => (
+                          <Badge key={acc} variant="outline" className="text-xs">{acc}</Badge>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {courseType && (
+                      <>
+                        <div className="md:hidden font-semibold text-xs text-muted-foreground">{courseType.toUpperCase()} Fees</div>
+                        <div className="text-center font-semibold text-primary">
+                          {university.totalFees[courseType as keyof typeof university.totalFees]}
+                        </div>
+                      </>
+                    )}
+                    
+                    <div className="md:hidden font-semibold text-xs text-muted-foreground">Placement Rate</div>
+                    <div className="text-center flex items-center justify-center gap-1">
+                      <TrendingUp className="w-3 h-3" />
+                      {university.placementRate}
+                    </div>
+                    
+                    <div className="md:hidden font-semibold text-xs text-muted-foreground">Avg Package</div>
+                    <div className="text-center flex items-center justify-center gap-1">
+                      <DollarSign className="w-3 h-3" />
+                      {university.avgPackage}
+                    </div>
+                    
+                    <div className="md:hidden font-semibold text-xs text-muted-foreground">Key USPs</div>
+                    <div className="text-center">
+                      <div className="space-y-1">
+                        {university.usp.slice(0, 3).map(usp => (
+                          <div key={usp} className="text-xs flex items-center gap-1">
+                            <CheckCircle className="w-3 h-3 text-green-500" />
+                            {usp}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className="md:hidden font-semibold text-xs text-muted-foreground">Top Recruiters</div>
+                    <div className="text-center">
+                      <div className="text-xs">
+                        {university.topRecruiters.slice(0, 3).join(", ")}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -469,6 +603,12 @@ const UniversityComparisonTool: React.FC<UniversityComparisonToolProps> = ({ cou
                 <div className="flex items-center justify-between">
                   <span className="text-muted-foreground">Placement:</span>
                   <span className="font-semibold">{university.placementRate}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-muted-foreground">EMI Facility:</span>
+                  <span className={`font-semibold ${university.emiFacility === 'Yes' ? 'text-green-500' : 'text-red-500'}`}>
+                    {university.emiFacility}
+                  </span>
                 </div>
                 {courseType && (
                   <div className="flex items-center justify-between">

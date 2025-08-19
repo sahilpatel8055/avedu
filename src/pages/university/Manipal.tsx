@@ -182,15 +182,6 @@ const Manipal = () => {
         </div>
       </section>
 
-      {/* University Comparison Tool */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <UniversityComparisonTool />
-        </div>
-      </section>
-
-      {/* Relevant Blogs Section */}
-      <RelevantBlogsSection pageType="university" title="University Comparison & Selection Guide" />
 
       <SectionNavigation sections={sections} />
       
@@ -382,8 +373,18 @@ const Manipal = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </div>
+      </section>
+
+      {/* University Comparison & Selection Guide */}
+      <RelevantBlogsSection pageType="university" title="University Comparison & Selection Guide" />
+
+      {/* University Comparison Tool */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <UniversityComparisonTool />
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-16 bg-primary/10" id="apply">

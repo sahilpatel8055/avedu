@@ -147,14 +147,14 @@ const RelevantBlogsSection: React.FC<RelevantBlogsSectionProps> = ({
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8">
           {relevantBlogs.map(blog => (
             <Card key={blog.id} className="overflow-hidden hover:shadow-lg transition-all duration-300 group">
               <div className="relative">
                 <img 
                   src={blog.image}
                   alt={blog.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-32 md:h-36 object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
                 <div className="absolute top-4 left-4">

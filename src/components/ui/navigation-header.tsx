@@ -80,12 +80,12 @@ const NavigationHeader = () => {
           <div className="md:hidden flex items-center gap-2">
             <Link to="/courses">
               <button className="btn-3d px-2 py-1 rounded-lg text-xs font-semibold transition-all">
-                Courses
+                Explore Courses
               </button>
             </Link>
             <Link to="/universities">
               <button className="btn-3d px-2 py-1 rounded-lg text-xs font-semibold transition-all">
-                Universities
+                Top Universities
               </button>
             </Link>
             <Button
