@@ -37,7 +37,7 @@ const categories: CourseCategory[] = [
     title: "Online MCA", 
     icon: techIcon,
     programs: 38,
-    popularCourses: ["MCA", "AI ML", "Data Science", "UI & UX"],
+    popularCourses: ["MCA", "AI ML", "Data Science", "UI & UX", "MCA Specilizations"],
     trending: true,
   },
   {
