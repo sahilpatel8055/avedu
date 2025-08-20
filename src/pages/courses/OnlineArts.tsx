@@ -43,7 +43,6 @@ import HorizontalUniversityScroll from "@/components/ui/horizontal-university-sc
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
 
-
 const OnlineArts = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
   const [activeTab, setActiveTab] = useState("ba");
@@ -58,7 +57,7 @@ const OnlineArts = () => {
     { id: "fee-comparison", label: "Fee Comparison" },
     { id: "skills", label: "Skills" },
     { id: "careers", label: "Careers" },
-    { id: "faqs", label: "FAQs" }
+    { id: "faqs", label: "FAQs" },
   ];
 
   const topUniversities = [
@@ -396,7 +395,7 @@ const OnlineArts = () => {
       />
 
       {/* Specializations */}
-      <section className="py-16 bg-gradient-to-br from-purple-50 to-lavender-100">
+      <section id="specializations" className="py-16 bg-gradient-to-br from-purple-50 to-lavender-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -408,23 +407,38 @@ const OnlineArts = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {specializations.map((spec, index) => (
-              <Card
-                key={index}
-                className="p-4 hover:shadow-md transition-shadow bg-white border border-gray-200/60"
-              >
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-[#0052CC]" />
-                  <span className="font-medium">{spec}</span>
-                </div>
-              </Card>
-            ))}
+            {specializations.map((spec, index) => {
+              // Apply special design to the first three items
+              const isSpecial = index < 3;
+              const cardClass = `
+                p-4 transition-all duration-300
+                ${isSpecial 
+                  ? 'bg-white border-2 border-yellow-400 shadow-[0_0_15px_rgba(255,204,0,0.4)] hover:shadow-xl hover:translate-y-[-5px]' 
+                  : 'bg-white border border-gray-200/60 hover:shadow-md'
+                }
+              `;
+              const titleClass = `
+                font-medium ${isSpecial ? 'text-lg md:text-xl text-yellow-600' : ''}
+              `;
+
+              return (
+                <Card
+                  key={index}
+                  className={cardClass}
+                >
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className={`h-5 w-5 ${isSpecial ? 'text-yellow-500' : 'text-[#0052CC]'}`} />
+                    <span className={titleClass}>{spec}</span>
+                  </div>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* NEW SECTION: Syllabus */}
-      <section className="py-16 bg-white">
+      <section id="syllabus" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -520,7 +534,7 @@ const OnlineArts = () => {
             emiOption: "₹6,667/month",
             registrationFee: "₹5,000",
             rating: 4.6,
-            coursePagePath: "/university/manipal/courses/online-ba"
+            coursePagePath: "/university/manipal/courses/online-ba",
           },
           {
             name: "Uttaranchal University",
@@ -530,7 +544,7 @@ const OnlineArts = () => {
             emiOption: "₹4,167/month",
             registrationFee: "₹3,000",
             rating: 4.5,
-            coursePagePath: "/university/uttaranchal/online-ba"
+            coursePagePath: "/university/uttaranchal/online-ba",
           },
           {
             name: "Vivekananda Global University",
@@ -540,7 +554,7 @@ const OnlineArts = () => {
             emiOption: "₹3,667/month",
             registrationFee: "₹2,500",
             rating: 4.4,
-            coursePagePath: "/university/vgu/online-ba"
+            coursePagePath: "/university/vgu/online-ba",
           },
           {
             name: "IGNOU",
@@ -550,7 +564,7 @@ const OnlineArts = () => {
             emiOption: "₹2,000/month",
             registrationFee: "₹1,500",
             rating: 4.8,
-            coursePagePath: "/courses/online-ba"
+            coursePagePath: "/courses/online-ba",
           },
           {
             name: "Sikkim Manipal University",
@@ -560,7 +574,7 @@ const OnlineArts = () => {
             emiOption: "₹5,000/month",
             registrationFee: "₹4,000",
             rating: 4.5,
-            coursePagePath: "/university/sikkim/online-ba"
+            coursePagePath: "/university/sikkim/online-ba",
           },
           {
             name: "Amity University Online",
@@ -570,7 +584,7 @@ const OnlineArts = () => {
             emiOption: "₹5,833/month",
             registrationFee: "₹4,500",
             rating: 4.3,
-            coursePagePath: "/university/amity/online-ba"
+            coursePagePath: "/university/amity/online-ba",
           },
           {
             name: "Lovely Professional University",
@@ -580,7 +594,7 @@ const OnlineArts = () => {
             emiOption: "₹5,000/month",
             registrationFee: "₹4,000",
             rating: 4.2,
-            coursePagePath: "/university/lpu/online-ba"
+            coursePagePath: "/university/lpu/online-ba",
           },
           {
             name: "Mangalyatan University",
@@ -590,13 +604,13 @@ const OnlineArts = () => {
             emiOption: "₹4,167/month",
             registrationFee: "₹3,000",
             rating: 4.1,
-            coursePagePath: "/university/mangalyatan/online-ba"
-          }
+            coursePagePath: "/university/mangalyatan/online-ba",
+          },
         ]}
       />
 
       {/* NEW SECTION: Skills Obtained */}
-      <section className="py-16 bg-gradient-to-br from-pink-50 to-purple-100">
+      <section id="skills" className="py-16 bg-gradient-to-br from-pink-50 to-purple-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -639,7 +653,7 @@ const OnlineArts = () => {
       </section>
 
       {/* NEW SECTION: Career Scope & Top Recruiters */}
-      <section className="py-16 bg-white">
+      <section id="careers" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -740,7 +754,7 @@ const OnlineArts = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <section id="faqs" className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
