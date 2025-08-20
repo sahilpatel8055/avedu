@@ -523,27 +523,6 @@ const OnlineMCA = () => {
         </div>
       </section>
 
-      {/* Key Features */}
-      <section id="features" className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose Online MCA?
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {keyFeatures.map((feature, index) => (
-              <Card key={index} className="text-center p-6">
-                <CardContent>
-                  <CheckCircle className="h-8 w-8 text-[#0052CC] mx-auto mb-4" />
-                  <h3 className="font-semibold">{feature}</h3>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Career Scope & Top Recruiters */}
       <section id="careers" className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -596,6 +575,27 @@ const OnlineMCA = () => {
               className="mx-auto max-w-full h-auto"
               loading="lazy"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features */}
+      <section id="features" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why Choose Online MCA?
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {keyFeatures.map((feature, index) => (
+              <Card key={index} className="text-center p-6">
+                <CardContent>
+                  <CheckCircle className="h-8 w-8 text-[#0052CC] mx-auto mb-4" />
+                  <h3 className="font-semibold">{feature}</h3>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
