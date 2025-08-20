@@ -22,6 +22,9 @@ import OnlineTech from "./pages/courses/OnlineTech";
 import OnlineBBA from "./pages/courses/OnlineBBA";
 import OnlineCommerce from "./pages/courses/OnlineCommerce";
 import OnlineArts from "./pages/courses/OnlineArts";
+import OnlineMCA from "./pages/courses/OnlineMCA";
+import OnlineMCOM from "./pages/courses/OnlineMCOM";
+import OnlineMA from "./pages/courses/OnlineMA";
 // NEW dynamic course page (general)
 import CoursePage from "./pages/course/CoursePage";
 // NEW Manipal dynamic course page
@@ -61,12 +64,15 @@ const ScrollToTop = () => {
   return null;
 };
 
-const App = () => (
-  <>
-    <Toaster />
-    <Sonner />
-    <ScrollToTop />
-    <GlobalIntelligentPopup />
+const App = () => {
+  const location = useLocation();
+  
+  return (
+    <>
+      <Toaster />
+      <Sonner />
+      <ScrollToTop />
+      {!location.pathname.includes('/courses/mba') && <GlobalIntelligentPopup />}
     <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<Blog />} />
@@ -83,6 +89,9 @@ const App = () => (
 <Route path="/university/du-sol" element={<DUSOL />} />
           {/* Your original course routes - these remain unchanged */}
           <Route path="/courses/mba" element={<OnlineMBA />} />
+          <Route path="/courses/mca" element={<OnlineMCA />} />
+          <Route path="/courses/mcom" element={<OnlineMCOM />} />
+          <Route path="/courses/ma" element={<OnlineMA />} />
           <Route path="/courses/engineering" element={<OnlineTech />} />
           <Route path="/courses/bba" element={<OnlineBBA />} />
           <Route path="/courses/commerce" element={<OnlineCommerce />} />
@@ -110,7 +119,8 @@ const App = () => (
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="*" element={<NotFound />} />
     </Routes>
-  </>
-);
+    </>
+  );
+};
 
 export default App;

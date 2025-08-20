@@ -113,26 +113,23 @@ const CategoryCard = ({ category }: { category: CourseCategory }) => {
   return (
     <Card className="h-full hover:shadow-hover transition-all duration-300 hover:-translate-y-1 group cursor-pointer relative">
       {category.trending && (
-        <Badge className="absolute -top-2 -right-2 bg-blue-600 text-white z-10 animate-pulse">
-          <span className="relative inline-flex">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
-            <span className="relative inline-flex">✨ Trending</span>
-          </span>
+        <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white z-10 border-2 border-white shadow-lg">
+          <span className="font-medium">🌟 Trending</span>
         </Badge>
       )}
 
       <CardContent className="p-3 sm:p-4 lg:p-6 text-center space-y-2 sm:space-y-3">
-        <div className={`rounded-full bg-primary-light mx-auto flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform duration-300 ${iconSizeClasses}`}>
+        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary-light mx-auto flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform duration-300">
           {typeof category.icon === "string" ? (
-            <img src={category.icon} alt={category.title} className="w-full h-full object-cover" loading="lazy" />
+            <img src={category.icon} alt={category.title} className="w-12 h-12 sm:w-14 sm:h-14 object-cover" loading="lazy" />
           ) : (
-            <div className="text-blue-600 w-10 h-10 sm:w-10 sm:h-10">{category.icon}</div>
+            <div className="text-blue-600 w-8 h-8 sm:w-10 sm:h-10">{category.icon}</div>
           )}
         </div>
 
-        <div className="space-y-1 sm:space-y-2">
-          <h3 className="font-bold text-sm sm:text-base lg:text-lg">{category.title}</h3>
-          <p className="text-[#0052CC] font-bold text-xs sm:text-sm">{category.programs}+ Programs</p>
+        <div className="space-y-2">
+          <h3 className="font-bold text-base lg:text-lg">{category.title}</h3>
+          <p className="text-[#0052CC] font-bold text-sm">{category.programs}+ Programs</p>
         </div>
 
         <div className="space-y-1 sm:space-y-2">

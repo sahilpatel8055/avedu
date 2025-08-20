@@ -16,7 +16,7 @@ import lpuLogo from "@/assets/lpu-logo.jpg";
 import lpuCampus from "@/assets/campus/lpu.png";
 import lpuLmsImg from "@/assets/lms/lpu.png";
 import { MovingBorderButton } from "@/components/ui/moving-border";
-import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
+
 import SectionNavigation from "@/components/ui/section-navigation";
 
 // Import the specific icons for approvals
@@ -188,10 +188,6 @@ const LPU = () => {
         lmsImagePath={lpuLmsImg}
       />
 
-      {/* Program Choice Slider */}
-      <section id="programs">
-        <ProgramChoiceSlider />
-      </section>
 
       {/* Approvals Section */}
       <section className="py-16 bg-muted/30" id="approvals">

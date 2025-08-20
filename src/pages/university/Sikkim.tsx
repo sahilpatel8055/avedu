@@ -15,7 +15,7 @@ import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-sectio
 import smuLogo from "@/assets/smu-logo.jpg";
 import smuCampus from "@/assets/campus/smu.jpg";
 import smuLmsImg from "@/assets/lms/muj.png";
-import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
+
 import SectionNavigation from "@/components/ui/section-navigation";
 
 // Import the specific icons for approvals
@@ -182,10 +182,6 @@ const Sikkim = () => {
         lmsImagePath={smuLmsImg}
       />
 
-      {/* Program Choice Slider */}
-      <section id="programs">
-        <ProgramChoiceSlider universityType="sikkim" />
-      </section>
 
       {/* Approvals Section */}
       <section className="py-16 bg-muted/30" id="approvals">

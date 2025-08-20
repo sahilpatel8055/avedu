@@ -18,7 +18,7 @@ import mujCampus from "@/assets/muj.png";
 import manipalLmsImg from "@/assets/lms/muj.png";
 // New import
 import ProgramHighlightsSlider from "@/components/ui/program-highlights-slider";
-import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
+
 import SectionNavigation from "@/components/ui/section-navigation";
 
 // Import the specific icons for approvals
@@ -230,10 +230,6 @@ const Manipal = () => {
         lmsImagePath={manipalLmsImg}
       />
 
-      {/* Program Choice Slider */}
-      <section id="programs">
-        <ProgramChoiceSlider universityType="default" />
-      </section>
 
       {/* Approvals Section */}
       <section className="py-16 bg-muted/30" id="approvals">

@@ -14,7 +14,7 @@ import uttaranchalLogo from "@/assets/uttaranchal-logo.png";
 import uttaranchalCampus from "@/assets/campus/uttaranchal.png";
 import uttaranchalLmsImg from "@/assets/lms/uu.png";
 import { MovingBorderButton } from "@/components/ui/moving-border";
-import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
+
 import SectionNavigation from "@/components/ui/section-navigation";
 
 // Import the specific icons for approvals
@@ -182,10 +182,6 @@ const Uttaranchal = () => {
         lmsImagePath={uttaranchalLmsImg}
       />
 
-      {/* Program Choice Slider */}
-      <section id="programs">
-        <ProgramChoiceSlider universityType="uttaranchal" />
-      </section>
 
       {/* Approvals Section */}
       <section className="py-16 bg-muted/30" id="approvals">

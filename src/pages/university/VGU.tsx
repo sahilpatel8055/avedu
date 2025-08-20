@@ -15,7 +15,7 @@ import vguLogo from "@/assets/vgu-logo.png";
 import vguCampus from "@/assets/campus/vgu.jpg";
 import vguLmsImg from "@/assets/lms/vgu.png";
 import { MovingBorderButton } from "@/components/ui/moving-border";
-import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
+
 import SectionNavigation from "@/components/ui/section-navigation";
 
 // Import the specific icons for approvals
@@ -181,8 +181,6 @@ const VGU = () => {
         lmsImagePath={vguLmsImg}
       />
 
-      {/* Program Choice Slider */}
-      <ProgramChoiceSlider universityType="vgu" />
 
       {/* Approvals Section */}
       <section className="py-16 bg-muted/30">

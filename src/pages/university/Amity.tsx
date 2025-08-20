@@ -15,7 +15,7 @@ import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-sectio
 import amityLogo from "@/assets/amity-logo.jpg";
 import amityCampus from "@/assets/campus/amity.jpg";
 import amityLmsImg from "@/assets/lms/amity.png";
-import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
+
 import SectionNavigation from "@/components/ui/section-navigation";
 
 // Import the specific icons for approvals
@@ -36,6 +36,7 @@ import baImg from "@/assets/course/ba.jpg";
 import amityDegree from "@/assets/amity.png";
 import UniversityComparisonTool from "@/components/ui/university-comparison-tool";
 import RelevantBlogsSection from "@/components/ui/relevant-blogs-section";
+import AdmissionProcedureSection from "@/components/ui/admission-procedure-section";
 
 const Amity = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
@@ -179,10 +180,6 @@ const Amity = () => {
         lmsImagePath={amityLmsImg}
       />
 
-      {/* Program Choice Slider */}
-      <section id="programs">
-        <ProgramChoiceSlider />
-      </section>
 
       {/* Approvals Section */}
       <section className="py-16 bg-muted/30" id="approvals">
@@ -342,6 +339,12 @@ const Amity = () => {
           </div>
         </div>
       </section>
+
+      {/* Amity University Online Admission Procedure */}
+      <AdmissionProcedureSection 
+        universityName="Amity University"
+        type="university"
+      />
 
       {/* University Comparison Tool */}
       <UniversityComparisonTool />

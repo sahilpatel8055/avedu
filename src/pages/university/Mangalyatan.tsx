@@ -14,7 +14,7 @@ import WhyOnlineProgramsSection from "@/components/ui/why-online-programs-sectio
 import mangalayatanLogo from "@/assets/mangalyatan-logo.png";
 import smuCampus from "@/assets/campus/smu.jpg";
 import mangalayatanLmsImg from "@/assets/lms/muj.png";
-import ProgramChoiceSlider from "@/components/ui/program-choice-slider";
+
 import SectionNavigation from "@/components/ui/section-navigation";
 
 // Import the specific icons for approvals
@@ -168,8 +168,6 @@ const Mangalyatan = () => {
         lmsImagePath={mangalayatanLmsImg}
       />
 
-      {/* Program Choice Slider */}
-      <ProgramChoiceSlider />
 
       {/* Approvals Section */}
       <section className="py-16 bg-muted/30">

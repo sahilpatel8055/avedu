@@ -11,6 +11,7 @@ import SectionNavigation from "@/components/ui/section-navigation";
 import UniversityComparisonTable from "@/components/ui/university-comparison-table";
 import RelevantBlogsSection from "@/components/ui/relevant-blogs-section";
 import LeadGenerationEnhancements from "@/components/ui/lead-generation-enhancements";
+import AdmissionProcedureSection from "@/components/ui/admission-procedure-section";
 import {
   GraduationCap,
   Clock,
@@ -549,6 +550,12 @@ const OnlineMBA = () => {
             coursePagePath: "/university/mangalyatan/online-mba"
           }
         ]}
+      />
+
+      {/* Online MBA Admission Procedure */}
+      <AdmissionProcedureSection 
+        courseName="Online MBA"
+        type="course"
       />
 
       {/* Career Scope & Top Recruiters - Modified Section */}
