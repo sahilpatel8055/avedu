@@ -27,6 +27,7 @@ import {
   MessageSquare,
   Search,
   ClipboardList,
+  Calendar
 } from "lucide-react";
 import manipalLogo from "@/assets/manipal-logo.png";
 import uttaranchalLogo from "@/assets/uttaranchal-logo.png";
@@ -389,34 +390,9 @@ const OnlineMA = () => {
         </div>
       </section>
 
+      {/* Why Online Programs Section */}
       <WhyOnlineProgramsSection universityName="Top Universities" lmsImagePath="/assets/lms/common.png" />
       
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose Online Arts & Humanities?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Develop critical thinking and research skills with flexible online learning
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {keyFeatures.map((feature, index) => (
-              <Card
-                key={index}
-                className="p-6 text-center hover:shadow-lg transition-shadow bg-white border border-gray-200/60"
-              >
-                <CheckCircle className="h-8 w-8 text-[#0052CC] mx-auto mb-3" />
-                <h3 className="font-bold mb-2">{feature}</h3>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
       {/* Specializations */}
       <section id="specializations" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -494,7 +470,7 @@ const OnlineMA = () => {
                 </CardContent>
               </Card>
             ))}
-        </div>
+          </div>
         </div>
       </section>
 
@@ -556,7 +532,63 @@ const OnlineMA = () => {
           </div>
         </div>
       </section>
+      
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why Choose Online Arts & Humanities?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Develop critical thinking and research skills with flexible online learning
+            </p>
+          </div>
 
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {keyFeatures.map((feature, index) => (
+              <Card
+                key={index}
+                className="p-6 text-center hover:shadow-lg transition-shadow bg-white border border-gray-200/60"
+              >
+                <CheckCircle className="h-8 w-8 text-[#0052CC] mx-auto mb-3" />
+                <h3 className="font-bold mb-2">{feature}</h3>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-to-br from-[#0052CC] to-blue-700 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Ready to Start Your Business Journey?
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Take the first step towards a successful business career with Online
+            BBA
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button
+              size="lg"
+              className="bg-white text-[#0052CC] hover:bg-gray-100"
+              onClick={openForm}
+            >
+              <Phone className="h-5 w-5 mr-2" />
+              Get Free Counselling
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-[#0052CC]"
+              onClick={openForm}
+            >
+              <Calendar className="h-5 w-5 mr-2" />
+              Book a Demo
+            </Button>
+          </div>
+        </div>
+      </section>
       <RelevantBlogsSection pageType="course" />
       <Footer />
       <CounselingFormComponent />
