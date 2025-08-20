@@ -141,19 +141,6 @@ const OnlineCommerce = () => {
         "International Business",
       ],
     },
-    {
-      title: "Master of Commerce (M.Com)",
-      duration: "2 Years",
-      fees: "₹25,000 - ₹55,000/year",
-      description:
-        "Advanced commerce program for specialized roles in finance, accounting, and business analysis",
-      specializations: [
-        "Financial Management",
-        "Cost & Management Accounting",
-        "Business Analytics",
-        "International Finance",
-      ],
-    },
   ];
 
   const specializations = [
@@ -414,11 +401,11 @@ const OnlineCommerce = () => {
               />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Online Commerce & Finance Programs
+              Online BCOM Programs
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-              Build your career in finance and commerce with Online B.Com and
-              M.Com programs from India's top universities. Get comprehensive
+              Build your career in finance and commerce with Online B.Com
+              programs from India's top universities. Get comprehensive
               knowledge in accounting, finance, taxation, and business
               management.
             </p>

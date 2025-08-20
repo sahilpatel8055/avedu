@@ -114,16 +114,16 @@ const CategoryCard = ({ category }: { category: CourseCategory }) => {
     <Card className="h-full hover:shadow-hover transition-all duration-300 hover:-translate-y-1 group cursor-pointer relative">
       {category.trending && (
         <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white z-10 border-2 border-white shadow-lg">
-          <span className="font-medium">🌟 Trending</span>
+          <span className="font-medium">Trending</span>
         </Badge>
       )}
 
       <CardContent className="p-3 sm:p-4 lg:p-6 text-center space-y-2 sm:space-y-3">
         <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary-light mx-auto flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform duration-300">
           {typeof category.icon === "string" ? (
-            <img src={category.icon} alt={category.title} className="w-12 h-12 sm:w-14 sm:h-14 object-cover" loading="lazy" />
+            <img src={category.icon} alt={category.title} className="w-8 h-8 sm:w-9 sm:h-9 object-cover" loading="lazy" />
           ) : (
-            <div className="text-blue-600 w-8 h-8 sm:w-10 sm:h-10">{category.icon}</div>
+            <div className="text-blue-600 w-8 h-8 sm:w-9 sm:h-9">{category.icon}</div>
           )}
         </div>
 

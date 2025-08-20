@@ -144,21 +144,6 @@ const OnlineArts = () => {
         "Economics",
       ],
     },
-    {
-      title: "Master of Arts (MA)",
-      duration: "2 Years",
-      fees: "₹20,000 - ₹50,000/year",
-      description:
-        "Advanced arts program for specialized knowledge and research in humanities and social sciences",
-      specializations: [
-        "English Literature",
-        "Psychology",
-        "Political Science",
-        "History",
-        "Public Administration",
-        "Social Work",
-      ],
-    },
   ];
 
   const specializations = [
@@ -345,11 +330,11 @@ const OnlineArts = () => {
               <Palette className="h-16 w-16 mx-auto mb-4 text-[#0052CC]" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Online Arts & Humanities Programs
+              Online BA Programs
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
               Explore the world of humanities and social sciences with Online BA
-              and MA programs from India's top universities. Develop critical
+              programs from India's top universities. Develop critical
               thinking, research skills, and comprehensive knowledge across
               diverse disciplines.
             </p>

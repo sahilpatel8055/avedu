@@ -96,25 +96,8 @@ const AdmissionProcedureSection: React.FC<AdmissionProcedureSectionProps> = ({
           </p>
         </div>
 
-        {/* Steps */}
+        {/* Step Details */}
         <div className="mb-16">
-          <div className="flex flex-wrap justify-center items-center mb-8">
-            {steps.map((step, index) => (
-              <div key={index} className="flex items-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center mb-2 mx-auto">
-                    {step.icon}
-                  </div>
-                  <div className="text-white font-medium text-sm">{step.step}</div>
-                </div>
-                {index < steps.length - 1 && (
-                  <div className="w-8 h-0.5 bg-blue-400 mx-2 hidden md:block"></div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Step Details */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.slice(0, 4).map((step, index) => (
               <Card key={index} className="bg-white/10 border-blue-400 backdrop-blur-sm">

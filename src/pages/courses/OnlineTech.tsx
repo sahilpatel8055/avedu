@@ -141,19 +141,6 @@ const OnlineTech = () => {
         "Cyber Security",
       ],
     },
-    {
-      title: "Master of Computer Applications (MCA)",
-      duration: "2 Years",
-      fees: "₹40,000 - ₹85,000/year",
-      description:
-        "Advanced computer applications program for software development and IT management careers",
-      specializations: [
-        "Software Engineering",
-        "AI & Machine Learning",
-        "Cloud Computing",
-        "Data Science",
-      ],
-    },
   ];
 
   const keyFeatures = [
@@ -429,10 +416,10 @@ const OnlineTech = () => {
               />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Online Engineering & Technology Programs
+              Online BCA Programs
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-              Launch your tech career with Online BCA & MCA programs from
+              Launch your tech career with Online BCA programs from
               India's top universities. Get industry-relevant curriculum and
               hands-on coding experience.
             </p>

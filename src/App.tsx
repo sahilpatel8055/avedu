@@ -92,10 +92,10 @@ const App = () => {
           <Route path="/courses/mca" element={<OnlineMCA />} />
           <Route path="/courses/mcom" element={<OnlineMCOM />} />
           <Route path="/courses/ma" element={<OnlineMA />} />
-          <Route path="/courses/engineering" element={<OnlineTech />} />
+          <Route path="/courses/bca" element={<OnlineTech />} />
           <Route path="/courses/bba" element={<OnlineBBA />} />
-          <Route path="/courses/commerce" element={<OnlineCommerce />} />
-          <Route path="/courses/arts" element={<OnlineArts />} />
+          <Route path="/courses/bcom" element={<OnlineCommerce />} />
+          <Route path="/courses/ba" element={<OnlineArts />} />
           {/* The new dynamic route, now correctly pointing to /courses/:courseId */}
           <Route path="/courses/:courseId" element={<CoursePage />} />
           {/* The new route for Manipal's specific course pages */}
