@@ -128,24 +128,6 @@ const OnlineArts = () => {
     },
   ];
 
-  const programs = [
-    {
-      title: "Bachelor of Arts (BA)",
-      duration: "3 Years",
-      fees: "₹15,000 - ₹45,000/year",
-      description:
-        "Comprehensive liberal arts program covering humanities, social sciences, and diverse academic disciplines",
-      specializations: [
-        "English Literature",
-        "Psychology",
-        "Political Science",
-        "History",
-        "Sociology",
-        "Economics",
-      ],
-    },
-  ];
-
   const specializations = [
     "English Literature",
     "Psychology",
@@ -404,63 +386,6 @@ const OnlineArts = () => {
           </div>
 
           <HorizontalUniversityScroll universities={topUniversities} courseType="Arts" />
-        </div>
-      </section>
-
-
-      {/* Programs */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Popular Arts & Humanities Programs
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive programs designed for diverse career paths in
-              humanities and social sciences
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {programs.map((program, index) => (
-              <Card
-                key={index}
-                className="hover:shadow-lg transition-shadow border border-gray-200/60"
-              >
-                <CardHeader>
-                  <h3 className="font-bold text-xl mb-2">{program.title}</h3>
-                  <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-4 w-4" />
-                      {program.duration}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <DollarSign className="h-4 w-4" />
-                      {program.fees}
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4">{program.description}</p>
-                  <div className="mb-4">
-                    <h4 className="font-medium mb-2">
-                      Popular Specializations:
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {program.specializations.map((spec, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-xs">
-                          {spec}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                  <Button className="w-full bg-[#0052CC] hover:bg-[#003d99]">
-                    View Program Details
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </section>
 
