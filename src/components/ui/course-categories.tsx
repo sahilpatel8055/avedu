@@ -29,7 +29,7 @@ const categories: CourseCategory[] = [
     title: "MBA & Management",
     icon: mbaIcon,
     programs: 45,
-    popularCourses: ["MBA", "PGDM", "Executive MBA"],
+    popularCourses: ["MBA", "PGDM", "Executive MBA", "MBA Specilizations"],
     trending: true,
   },
   {
@@ -37,7 +37,7 @@ const categories: CourseCategory[] = [
     title: "Online MCA", 
     icon: techIcon,
     programs: 38,
-    popularCourses: ["MCA", "AI ML", "Data Science"],
+    popularCourses: ["MCA", "AI ML", "Data Science", "UI & UX"],
     trending: true,
   },
   {
@@ -61,7 +61,7 @@ const categories: CourseCategory[] = [
     title: "Online BBA",
     icon: bbaIcon,
     programs: 22,
-    popularCourses: ["BBA", "BBA Hons", "BBA Marketing"],
+    popularCourses: ["BBA", "BBA Hons", "BBA Marketing", "BBA Specilizations"],
     trending: false,
   },
   {
@@ -69,7 +69,7 @@ const categories: CourseCategory[] = [
     title: "Online BCA",
     icon: techIcon,
     programs: 38,
-    popularCourses: ["BCA", "AI & ML", "Cyber security"],
+    popularCourses: ["BCA", "AI & ML", "Cyber security", "UI & UX"],
     trending: false,
   },
   {
@@ -77,7 +77,7 @@ const categories: CourseCategory[] = [
     title: "Online BCOM",
     icon: financeIcon,
     programs: 32,
-    popularCourses: ["B.Com", "BCom Hons", "BCom Finance"],
+    popularCourses: ["B.Com", "BCom Hons", "BCom Finance", "BCOM Specilizations"],
     trending: false,
   },
   {
