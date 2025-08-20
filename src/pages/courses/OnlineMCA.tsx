@@ -30,7 +30,7 @@ import {
   Terminal,
   Cloud,
 } from "lucide-react";
-import mcaIcon from "@/assets/icons/mca-icon.png";
+import mcaIcon from "@/assets/icons/tech-icon.png";
 import manipalLogo from "@/assets/manipal-logo.png";
 import uttaranchalLogo from "@/assets/uttaranchal-logo.png";
 import vguLogo from "@/assets/vgu-logo.png";
