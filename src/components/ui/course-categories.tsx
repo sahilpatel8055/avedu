@@ -33,12 +33,28 @@ const categories: CourseCategory[] = [
     trending: true,
   },
   {
-    id: "btech",
-    title: "Engineering & Technology", 
+    id: "mca",
+    title: "Online MCA", 
     icon: techIcon,
     programs: 38,
-    popularCourses: ["B.Tech", "M.Tech", "BCA", "MCA"],
+    popularCourses: ["MCA", "MSc IT", "M.Tech CS"],
     trending: true,
+  },
+  {
+    id: "mcom",
+    title: "Online MCOM",
+    icon: financeIcon,
+    programs: 32,
+    popularCourses: ["M.Com", "MCom Finance", "MCom Accounting"],
+    trending: true,
+  },
+  {
+    id: "ma",
+    title: "Online MA",
+    icon: <Palette className="h-8 w-8" />,
+    programs: 42,
+    popularCourses: ["MA", "MA English", "MA Psychology"],
+    trending: false,
   },
   {
     id: "bba",
@@ -49,44 +65,28 @@ const categories: CourseCategory[] = [
     trending: false,
   },
   {
-    id: "bcom",
-    title: "Commerce & Finance",
-    icon: financeIcon,
-    programs: 32,
-    popularCourses: ["B.Com", "M.Com", "BCOM", "MCOM"],
-    trending: true,
-  },
-  {
-    id: "healthcare",
-    title: "Healthcare & Medicine",
-    icon: healthcareIcon,
-    programs: 25,
-    popularCourses: ["B.Sc Nursing", "BPT", "Health Admin"],
+    id: "bca",
+    title: "BCA",
+    icon: techIcon,
+    programs: 38,
+    popularCourses: ["BCA", "BSc IT", "BSc CS"],
     trending: false,
   },
   {
-    id: "law",
-    title: "Law & Legal Studies",
-    icon: <Scale className="h-8 w-8" />,
-    programs: 18,
-    popularCourses: ["LLB", "LLM", "BA LLB"],
+    id: "bcom",
+    title: "BCOM",
+    icon: financeIcon,
+    programs: 32,
+    popularCourses: ["B.Com", "BCom Hons", "BCom Finance"],
     trending: false,
   },
   {
     id: "ba",
-    title: "Arts & Humanities",
+    title: "BA",
     icon: <Palette className="h-8 w-8" />,
     programs: 42,
-    popularCourses: ["BA", "MA", "B.Ed"],
+    popularCourses: ["BA", "BA English", "BA Psychology"],
     trending: false,
-  },
-  {
-    id: "data-science",
-    title: "Data Science & AI",
-    icon: <TrendingUp className="h-8 w-8" />,
-    programs: 22,
-    popularCourses: ["Data Science", "AI/ML", "Analytics"],
-    trending: true,
   },
 ];
 
@@ -100,18 +100,24 @@ const CategoryCard = ({ category }: { category: CourseCategory }) => {
   // Client-side navigation route map (avoid full page reloads)
   const routeMap: { [key: string]: string } = {
     mba: "/courses/mba",
-    btech: "/courses/engineering",
+    mca: "/courses/mca",
+    mcom: "/courses/mcom", 
+    ma: "/courses/ma",
     bba: "/courses/bba",
-    bcom: "/courses/commerce",
-    ba: "/courses/arts",
+    bca: "/courses/bca",
+    bcom: "/courses/bcom",
+    ba: "/courses/ba",
   };
   const route = routeMap[category.id];
 
   return (
     <Card className="h-full hover:shadow-hover transition-all duration-300 hover:-translate-y-1 group cursor-pointer relative">
       {category.trending && (
-        <Badge className="absolute -top-2 -right-2 bg-blue-600 text-white z-10">
-          Trending
+        <Badge className="absolute -top-2 -right-2 bg-blue-600 text-white z-10 animate-pulse">
+          <span className="relative inline-flex">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+            <span className="relative inline-flex">✨ Trending</span>
+          </span>
         </Badge>
       )}
 
