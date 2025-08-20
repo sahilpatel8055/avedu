@@ -43,7 +43,6 @@ import amityLogo from "@/assets/amity-logo.jpg";
 import lpuLogo from "@/assets/lpu-logo.jpg";
 import mangalyatanLogo from "@/assets/mangalyatan-logo.png";
 import HorizontalUniversityScroll from "@/components/ui/horizontal-university-scroll";
-import mitLogo from "@/assets/mit-logo.png"; // NEW IMPORT for MCA
 
 const OnlineMCA = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
