@@ -815,6 +815,28 @@ const OnlineTech = () => {
         </div>
       </section>
 
+      {/* Our Students Are Working At */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our Students Are Working At
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Our graduates are employed by leading companies across the globe.
+            </p>
+          </div>
+          {/* New recruiter image section */}
+          <div className="mt-8">
+            <img
+              src={hiringPartnersImg}
+              alt="Our Hiring Partners"
+              className="mx-auto w-full max-w-6xl rounded-lg shadow-md"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Key Features */}
       <section id="features" className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-4">
@@ -838,29 +860,6 @@ const OnlineTech = () => {
                 <h3 className="font-bold mb-2">{feature}</h3>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-
-      {/* Our Students Are Working At */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our Students Are Working At
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our graduates are employed by leading companies across the globe.
-            </p>
-          </div>
-          {/* New recruiter image section */}
-          <div className="mt-8">
-            <img
-              src={hiringPartnersImg}
-              alt="Our Hiring Partners"
-              className="mx-auto w-full max-w-6xl rounded-lg shadow-md"
-            />
           </div>
         </div>
       </section>
@@ -897,13 +896,30 @@ const OnlineTech = () => {
       <section className="py-16 bg-gradient-to-br from-[#0052CC] to-blue-700 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Start Your Tech Career?
+            Ready to Start Your Business Journey?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Join the technology revolution with industry-relevant online
-            programs
+            Take the first step towards a successful business career with Online
+            BBA
           </p>
           <div className="flex flex-wrap justify-center gap-4">
+            <Button
+              size="lg"
+              className="bg-white text-[#0052CC] hover:bg-gray-100"
+              onClick={openForm}
+            >
+              <Phone className="h-5 w-5 mr-2" />
+              Get Free Counselling
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-[#0052CC]"
+              onClick={openForm}
+            >
+              <Calendar className="h-5 w-5 mr-2" />
+              Book a Demo
+            </Button>
           </div>
         </div>
       </section>
