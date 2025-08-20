@@ -913,7 +913,7 @@ const OnlineMCA = () => {
             <div className="mb-6">
               <img src={mcaIcon} alt="MCA" className="h-16 w-16 mx-auto mb-4" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#000000' }}>
               Online MCA Programs
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
