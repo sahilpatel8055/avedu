@@ -48,7 +48,7 @@ const OnlineMCA = () => {
     { id: "top", label: "Home" },
     { id: "stats", label: "Stats" },
     { id: "universities", label: "Universities" },
-    { id: "programs", label: "Programs" },
+    { id: "specializations", label: "Specializations" }, // Changed from 'programs' to 'specializations'
     { id: "features", label: "Features" },
     { id: "syllabus", label: "Syllabus" },
     { id: "fee-comparison", label: "Fee Comparison" },
@@ -125,22 +125,18 @@ const OnlineMCA = () => {
     },
   ];
 
-  const programs = [
-    {
-      title: "Master of Computer Applications (MCA)",
-      duration: "2 Years",
-      fees: "₹40,000 - ₹85,000/year",
-      description:
-        "Advanced computer applications program for software development and IT management careers",
-      specializations: [
-        "Software Engineering",
-        "AI & Machine Learning",
-        "Cloud Computing",
-        "Data Science",
-        "Cyber Security",
-        "Mobile App Development",
-      ],
-    },
+  // Removed const programs
+
+  const specializations = [
+    "Software Engineering",
+    "AI & Machine Learning",
+    "Data Science",
+    "Cloud Computing",
+    "Cyber Security",
+    "Mobile App Development",
+    "Data Analytics",
+    "Full stack development",
+    "Block chain",
   ];
 
   const keyFeatures = [
@@ -319,6 +315,77 @@ const OnlineMCA = () => {
     "HP",
   ];
 
+  const comparisonData = [
+    {
+      name: "Manipal University Online",
+      logo: manipalLogo,
+      courseFee: "₹1,20,000",
+      semesterFee: "₹30,000",
+      emiOption: "₹10,000/month",
+      registrationFee: "₹5,000",
+      rating: 4.6,
+      coursePagePath: "/university/manipal/online-mca"
+    },
+    {
+      name: "Uttaranchal University",
+      logo: uttaranchalLogo,
+      courseFee: "₹70,000",
+      semesterFee: "₹17,500",
+      emiOption: "₹5,833/month",
+      registrationFee: "₹3,000",
+      rating: 4.5,
+      coursePagePath: "/university/uttaranchal/online-mca"
+    },
+    {
+      name: "Vivekananda Global University",
+      logo: vguLogo,
+      courseFee: "₹60,000",
+      semesterFee: "₹15,000",
+      emiOption: "₹5,000/month",
+      registrationFee: "₹2,500",
+      rating: 4.4,
+      coursePagePath: "/university/vgu/online-mca"
+    },
+    {
+      name: "Lovely Professional University",
+      logo: lpuLogo,
+      courseFee: "₹80,000",
+      semesterFee: "₹20,000",
+      emiOption: "₹6,667/month",
+      registrationFee: "₹4,000",
+      rating: 4.2,
+      coursePagePath: "/university/lpu/online-mca"
+    },
+  ];
+
+  const admissionSteps = [
+    {
+      step: "Step 1: Check Eligibility",
+      description: "Ensure you meet the minimum academic qualifications for the program.",
+      icon: <CheckCircle className="h-6 w-6 text-green-500" />
+    },
+    {
+      step: "Step 2: Fill out the Application Form",
+      description: "Complete the online application form on our website or the university's portal.",
+      icon: <ClipboardList className="h-6 w-6 text-blue-500" />
+    },
+    {
+      step: "Step 3: Submit Documents",
+      description: "Upload necessary documents like mark sheets, ID proof, and photographs.",
+      icon: <Layers className="h-6 w-6 text-yellow-500" />
+    },
+    {
+      step: "Step 4: Pay Fees",
+      description: "Make the payment for the registration and course fees via the provided payment gateway.",
+      icon: <Phone className="h-6 w-6 text-purple-500" />
+    },
+    {
+      step: "Step 5: Confirmation & Enrollment",
+      description: "After verification, you will receive an enrollment confirmation and access to the learning portal.",
+      icon: <Award className="h-6 w-6 text-orange-500" />
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* SEOHead */}
@@ -376,6 +443,32 @@ const OnlineMCA = () => {
         </div>
       </section>
 
+      {/* Quick Stats */}
+      <section id="stats" className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-[#0052CC] mb-2">40+</div>
+              <div className="text-gray-600">Universities</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-[#0052CC] mb-2">10+</div>
+              <div className="text-gray-600">Specializations</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-[#0052CC] mb-2">
+                2 Years
+              </div>
+              <div className="text-gray-600">Duration</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-[#0052CC] mb-2">90%</div>
+              <div className="text-gray-600">Placement Rate</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <SectionNavigation sections={sections} />
 
       {/* Top Universities */}
@@ -397,66 +490,32 @@ const OnlineMCA = () => {
       {/* Why Online Programs Section */}
       <WhyOnlineProgramsSection universityName="Top Universities" lmsImagePath="/assets/lms/common.png" />
 
-      {/* Programs */}
-      <section id="programs" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Online MCA Program Details
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive curriculum designed for advanced computer applications
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
-            {programs.map((program, index) => (
-              <Card key={index} className="shadow-lg">
-                <CardHeader>
-                  <h3 className="text-2xl font-bold">{program.title}</h3>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-5 w-5 text-[#0052CC]" />
-                      <span>{program.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <GraduationCap className="h-5 w-5 text-[#0052CC]" />
-                      <span>{program.fees}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Star className="h-5 w-5 text-[#0052CC]" />
-                      <span>Industry Relevant</span>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 mb-6">{program.description}</p>
-                  <div>
-                    <h4 className="font-semibold mb-3">Popular Specializations:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {program.specializations.map((spec) => (
-                        <Badge key={spec} variant="outline">
-                          {spec}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Specializations */}
-      {/* Note: specializations data is already in the programs section, so this is just a placeholder */}
-      {/* You might consider breaking out the specializations into their own section if there's a lot of content */}
       <section id="specializations" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">MCA Specializations</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Popular MCA Specializations
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Choose from a wide range of specializations to match your career
+              interests
+            </p>
           </div>
-          {/* Your specialization content here */}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {specializations.map((spec, index) => (
+              <Card
+                key={index}
+                className="p-3 md:p-4 hover:shadow-md transition-shadow border border-gray-200/60"
+              >
+                <div className="flex items-center gap-2 md:gap-3">
+                  <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-[#0052CC] flex-shrink-0" />
+                  <span className="font-medium text-sm md:text-base leading-tight">{spec}</span>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
