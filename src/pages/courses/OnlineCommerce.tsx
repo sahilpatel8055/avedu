@@ -42,7 +42,6 @@ import lpuLogo from "@/assets/lpu-logo.jpg";
 import mangalyatanLogo from "@/assets/mangalyatan-logo.png";
 import HorizontalUniversityScroll from "@/components/ui/horizontal-university-scroll";
 
-
 const OnlineCommerce = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
   const [activeTab, setActiveTab] = useState("bcom");
@@ -51,13 +50,12 @@ const OnlineCommerce = () => {
     { id: "top", label: "Home" },
     { id: "stats", label: "Stats" },
     { id: "universities", label: "Universities" },
-    { id: "programs", label: "Programs" },
     { id: "specializations", label: "Specializations" },
     { id: "syllabus", label: "Syllabus" },
     { id: "fee-comparison", label: "Fee Comparison" },
     { id: "skills", label: "Skills" },
     { id: "careers", label: "Careers" },
-    { id: "faqs", label: "FAQs" }
+    { id: "faqs", label: "FAQs" },
   ];
 
   const topUniversities = [
@@ -127,22 +125,6 @@ const OnlineCommerce = () => {
     },
   ];
 
-  const programs = [
-    {
-      title: "Bachelor of Commerce (B.Com)",
-      duration: "3 Years",
-      fees: "₹20,000 - ₹50,000/year",
-      description:
-        "Comprehensive commerce program covering accounting, finance, taxation, and business management",
-      specializations: [
-        "Accounting & Finance",
-        "Banking & Insurance",
-        "Taxation",
-        "International Business",
-      ],
-    },
-  ];
-
   const specializations = [
     "Accounting & Finance",
     "Banking & Insurance",
@@ -182,9 +164,9 @@ const OnlineCommerce = () => {
 
   const faqs = [
     {
-      question: "Is Online B.Com/M.Com degree valid for CA/CS preparation?",
+      question: "Is Online B.Com degree valid for CA/CS preparation?",
       answer:
-        "Yes, Online B.Com/M.Com from UGC-recognized universities is valid for CA, CS, CMA and other professional courses. It provides strong foundation for these careers.",
+        "Yes, Online B.Com from UGC-recognized universities is valid for CA, CS, CMA and other professional courses. It provides strong foundation for these careers.",
     },
     {
       question: "What is the eligibility criteria for Online B.Com?",
@@ -237,29 +219,6 @@ const OnlineCommerce = () => {
         "E-Commerce & Digital Marketing",
         "International Business",
         "Project Work",
-      ],
-    },
-  ];
-
-  const mcomSyllabus = [
-    {
-      title: "Year 1",
-      subjects: [
-        "Advanced Financial Accounting",
-        "Corporate Financial Management",
-        "Advanced Cost Accounting",
-        "Managerial Economics",
-        "Strategic Management",
-      ],
-    },
-    {
-      title: "Year 2",
-      subjects: [
-        "International Financial Management",
-        "Business Environment",
-        "E-Commerce & Digital Marketing",
-        "Specialization Electives (e.g., Finance, Taxation)",
-        "Research Project",
       ],
     },
   ];
@@ -340,32 +299,6 @@ const OnlineCommerce = () => {
       {
         role: "Banking Professional",
         salary: "₹4 - 9 LPA",
-      },
-    ],
-    mcom: [
-      {
-        role: "Finance Manager",
-        salary: "₹8 - 15 LPA",
-      },
-      {
-        role: "Senior Accountant",
-        salary: "₹6 - 10 LPA",
-      },
-      {
-        role: "Financial Risk Manager",
-        salary: "₹9 - 18 LPA",
-      },
-      {
-        role: "Corporate Analyst",
-        salary: "₹7 - 14 LPA",
-      },
-      {
-        role: "Cost & Management Accountant",
-        salary: "₹7 - 12 LPA",
-      },
-      {
-        role: "Professor/Lecturer",
-        salary: "₹6 - 11 LPA",
       },
     ],
   };
@@ -477,67 +410,11 @@ const OnlineCommerce = () => {
           <HorizontalUniversityScroll universities={topUniversities} courseType="Commerce" />
         </div>
       </section>
-
-
-      {/* Programs */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Popular Commerce Programs
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive programs designed for finance and accounting careers
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {programs.map((program, index) => (
-              <Card
-                key={index}
-                className="hover:shadow-lg transition-shadow border border-gray-200/60"
-              >
-                <CardHeader>
-                  <h3 className="font-bold text-xl mb-2">{program.title}</h3>
-                  <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-4 w-4" />
-                      {program.duration}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <DollarSign className="h-4 w-4" />
-                      {program.fees}
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4">{program.description}</p>
-                  <div className="mb-4">
-                    <h4 className="font-medium mb-2">
-                      Popular Specializations:
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {program.specializations.map((spec, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-xs">
-                          {spec}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                  <Button className="w-full bg-[#0052CC] hover:bg-[#003d99]">
-                    View Program Details
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
       
       {/* Why Online Programs Section */}
-      <WhyOnlineProgramsSection 
-        universityName="Top Universities" 
-        lmsImagePath="/assets/lms/common.png" 
+      <WhyOnlineProgramsSection
+        universityName="Top Universities"
+        lmsImagePath="/assets/lms/common.png"
       />
 
       {/* Popular Commerce Specializations - Moved Here */}
@@ -574,7 +451,7 @@ const OnlineCommerce = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Online B.Com & M.Com Subjects/Syllabus
+              Online B.Com Subjects/Syllabus
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Explore the comprehensive curriculum designed to build a strong
@@ -587,44 +464,14 @@ const OnlineCommerce = () => {
               onValueChange={setActiveTab}
               className="w-full md:w-3/4 lg:w-1/2"
             >
-              <TabsList className="grid w-full grid-cols-2">
+              <TabsList className="grid w-full grid-cols-1">
                 <TabsTrigger value="bcom" className="text-lg">
                   B.Com Subjects
-                </TabsTrigger>
-                <TabsTrigger value="mcom" className="text-lg">
-                  M.Com Subjects
                 </TabsTrigger>
               </TabsList>
               <TabsContent value="bcom" className="mt-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {bcomSyllabus.map((year, index) => (
-                    <Card
-                      key={index}
-                      className="hover:shadow-md transition-shadow"
-                    >
-                      <CardHeader className="bg-gray-100 border-b">
-                        <h3 className="font-bold text-lg">{year.title}</h3>
-                      </CardHeader>
-                      <CardContent className="pt-4">
-                        <ul className="list-none space-y-2">
-                          {year.subjects.map((subject, idx) => (
-                            <li
-                              key={idx}
-                              className="flex items-center text-gray-700"
-                            >
-                              <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                              {subject}
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </TabsContent>
-              <TabsContent value="mcom" className="mt-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {mcomSyllabus.map((year, index) => (
                     <Card
                       key={index}
                       className="hover:shadow-md transition-shadow"
@@ -655,8 +502,8 @@ const OnlineCommerce = () => {
       </section>
 
       {/* University Comparison Table */}
-      <UniversityComparisonTable 
-        courseName="B.Com/M.Com" 
+      <UniversityComparisonTable
+        courseName="B.Com"
         universities={[
           {
             name: "Manipal University Online",
@@ -746,7 +593,7 @@ const OnlineCommerce = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Skills Obtained in Online B.Com/M.Com Course
+              Skills Obtained in Online B.Com Course
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Build a strong foundation and acquire in-demand skills for a
@@ -803,7 +650,7 @@ const OnlineCommerce = () => {
               commerce graduates.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8">
             <Card className="hover:shadow-lg transition-shadow border border-gray-200/60">
               <CardHeader>
                 <h3 className="font-bold text-xl mb-2">
@@ -814,30 +661,6 @@ const OnlineCommerce = () => {
               <CardContent>
                 <div className="space-y-4">
                   {careerScope.bcom.map((career, index) => (
-                    <div
-                      key={index}
-                      className="flex justify-between items-center bg-gray-50 p-4 rounded-md"
-                    >
-                      <h4 className="font-medium">{career.role}</h4>
-                      <Badge variant="secondary" className="text-sm">
-                        {career.salary}
-                      </Badge>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow border border-gray-200/60">
-              <CardHeader>
-                <h3 className="font-bold text-xl mb-2">
-                  <Briefcase className="h-6 w-6 inline-block mr-2 text-[#0052CC]" />
-                  Career Opportunities after M.Com
-                </h3>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {careerScope.mcom.map((career, index) => (
                     <div
                       key={index}
                       className="flex justify-between items-center bg-gray-50 p-4 rounded-md"
@@ -935,11 +758,11 @@ const OnlineCommerce = () => {
       <section className="py-16 bg-gradient-to-br from-[#0052CC] to-blue-700 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Build Your Finance Career?
+            Ready to Start Your Business Journey?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Start your journey in commerce and finance with industry-relevant
-            online programs
+            Take the first step towards a successful business career with Online
+            B.Com
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -962,8 +785,6 @@ const OnlineCommerce = () => {
           </div>
         </div>
       </section>
-
-      <SectionNavigation sections={sections} />
       <Footer />
       <CounselingFormComponent />
     </div>
