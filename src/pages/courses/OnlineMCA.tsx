@@ -25,6 +25,7 @@ import {
   Briefcase,
   Layers,
   Search,
+  ClipboardList // Added the import for ClipboardList
 } from "lucide-react";
 import techIcon from "@/assets/icons/tech-icon.png";
 import manipalLogo from "@/assets/manipal-logo.png";
@@ -48,7 +49,7 @@ const OnlineMCA = () => {
     { id: "top", label: "Home" },
     { id: "stats", label: "Stats" },
     { id: "universities", label: "Universities" },
-    { id: "specializations", label: "Specializations" }, // Changed from 'programs' to 'specializations'
+    { id: "specializations", label: "Specializations" },
     { id: "features", label: "Features" },
     { id: "syllabus", label: "Syllabus" },
     { id: "fee-comparison", label: "Fee Comparison" },
@@ -124,8 +125,6 @@ const OnlineMCA = () => {
       accreditation: "UGC, AICTE",
     },
   ];
-
-  // Removed const programs
 
   const specializations = [
     "Software Engineering",
