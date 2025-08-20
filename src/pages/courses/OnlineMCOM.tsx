@@ -47,7 +47,6 @@ const OnlineMCOM = () => {
     { id: "top", label: "Home" },
     { id: "stats", label: "Stats" },
     { id: "universities", label: "Universities" },
-    { id: "programs", label: "Programs" },
     { id: "specializations", label: "Specializations" },
     { id: "syllabus", label: "Syllabus" },
     { id: "fee-comparison", label: "Fee Comparison" },
@@ -124,24 +123,6 @@ const OnlineMCOM = () => {
     },
   ];
 
-  const programs = [
-    {
-      title: "Master of Commerce (M.Com)",
-      duration: "2 Years",
-      fees: "₹25,000 - ₹55,000/year",
-      description:
-        "Advanced commerce program for specialized roles in finance, accounting, and business analysis",
-      specializations: [
-        "Financial Management",
-        "Cost & Management Accounting",
-        "Business Analytics",
-        "International Finance",
-        "Taxation & GST",
-        "Corporate Accounting",
-      ],
-    },
-  ];
-
   const specializations = [
     "Financial Management",
     "Cost & Management Accounting",
@@ -164,6 +145,17 @@ const OnlineMCOM = () => {
     "Accounting Software Training",
     "Industry Internships",
     "Professional Certification Support",
+  ];
+  
+  const bbaKeyFeatures = [
+    "Industry-Relevant Curriculum",
+    "Case Study Methodology",
+    "Expert Faculty from Industry",
+    "Flexible Learning Schedule",
+    "Live Interactive Sessions",
+    "Business Project Work",
+    "Internship Opportunities",
+    "Career Guidance & Placement",
   ];
 
   const faqs = [
@@ -310,6 +302,49 @@ const OnlineMCOM = () => {
     "Wipro",
   ];
 
+  const comparisonData = [
+    {
+      name: "Manipal University Online",
+      logo: manipalLogo,
+      courseFee: "₹90,000",
+      semesterFee: "₹22,500",
+      emiOption: "₹7,500/month",
+      registrationFee: "₹5,000",
+      rating: 4.6,
+      coursePagePath: "/university/manipal/online-mcom"
+    },
+    {
+      name: "Uttaranchal University",
+      logo: uttaranchalLogo,
+      courseFee: "₹60,000",
+      semesterFee: "₹15,000",
+      emiOption: "₹5,000/month",
+      registrationFee: "₹3,000",
+      rating: 4.5,
+      coursePagePath: "/university/uttaranchal/online-mcom"
+    },
+    {
+      name: "Vivekananda Global University",
+      logo: vguLogo,
+      courseFee: "₹50,000",
+      semesterFee: "₹12,500",
+      emiOption: "₹4,166/month",
+      registrationFee: "₹2,500",
+      rating: 4.4,
+      coursePagePath: "/university/vgu/online-mcom"
+    },
+    {
+      name: "Lovely Professional University",
+      logo: lpuLogo,
+      courseFee: "₹70,000",
+      semesterFee: "₹17,500",
+      emiOption: "₹5,833/month",
+      registrationFee: "₹4,000",
+      rating: 4.2,
+      coursePagePath: "/university/lpu/online-mcom"
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
@@ -407,57 +442,9 @@ const OnlineMCOM = () => {
           <HorizontalUniversityScroll universities={topUniversities} courseType="M.Com" />
         </div>
       </section>
-
-      {/* Programs */}
-      <section id="programs" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Online M.Com Program Details
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Advanced curriculum designed for commerce and finance professionals
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
-            {programs.map((program, index) => (
-              <Card key={index} className="shadow-lg">
-                <CardHeader>
-                  <h3 className="text-2xl font-bold">{program.title}</h3>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-5 w-5 text-[#0052CC]" />
-                      <span>{program.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <GraduationCap className="h-5 w-5 text-[#0052CC]" />
-                      <span>{program.fees}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Star className="h-5 w-5 text-[#0052CC]" />
-                      <span>Industry Relevant</span>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 mb-6">{program.description}</p>
-                  <div>
-                    <h4 className="font-semibold mb-3">Popular Specializations:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {program.specializations.map((spec) => (
-                        <Badge key={spec} variant="outline">
-                          {spec}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      
+      {/* Why Online Programs Section */}
+      <WhyOnlineProgramsSection universityName="Top Universities" lmsImagePath="/assets/lms/common.png" />
 
       {/* Specializations */}
       <section id="specializations" className="py-16 bg-gray-50">
@@ -598,8 +585,34 @@ const OnlineMCOM = () => {
           </div>
         </div>
       </section>
+      
+      {/* Why Choose Online BBA? - New Section Added */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why Choose Online M.COM?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Experience comprehensive business education with modern learning
+              methods
+            </p>
+          </div>
 
-      <WhyOnlineProgramsSection universityName="Top Universities" lmsImagePath="/assets/lms/common.png" />
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {bbaKeyFeatures.map((feature, index) => (
+              <Card
+                key={index}
+                className="p-6 text-center hover:shadow-lg transition-shadow border border-gray-200/60"
+              >
+                <CheckCircle className="h-8 w-8 text-[#0052CC] mx-auto mb-3" />
+                <h3 className="font-bold mb-2">{feature}</h3>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <RelevantBlogsSection pageType="course" />
       <Footer />
       <CounselingFormComponent />
