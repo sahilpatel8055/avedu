@@ -230,49 +230,6 @@ const OnlineTech = () => {
     },
   ];
 
-  const mcaSyllabus = [
-    {
-      title: "Semester 1",
-      subjects: [
-        "Advanced Data Structures & Algorithms",
-        "Software Engineering",
-        "Database Management Systems",
-        "Operating Systems",
-        "Mathematical Foundations for Computer Applications",
-      ],
-    },
-    {
-      title: "Semester 2",
-      subjects: [
-        "Java Programming",
-        "Web Technologies",
-        "Cloud Computing",
-        "AI & Machine Learning",
-        "Computer Networks",
-      ],
-    },
-    {
-      title: "Semester 3",
-      subjects: [
-        "Python Programming for Data Science",
-        "Cyber Security",
-        "Mobile Computing",
-        "Design & Analysis of Algorithms",
-        "Distributed Systems",
-      ],
-    },
-    {
-      title: "Semester 4",
-      subjects: [
-        "Big Data Analytics",
-        "Internet of Things (IoT)",
-        "Advanced Software Project Management",
-        "Elective Specialization",
-        "Major Project/Dissertation",
-      ],
-    },
-  ];
-
   const skillsObtained = [
     {
       skill: "Programming Languages",
@@ -349,32 +306,6 @@ const OnlineTech = () => {
       {
         role: "IT Consultant",
         salary: "₹5 - 10 LPA",
-      },
-    ],
-    mca: [
-      {
-        role: "Software Architect",
-        salary: "₹12 - 20 LPA",
-      },
-      {
-        role: "Data Scientist",
-        salary: "₹10 - 18 LPA",
-      },
-      {
-        role: "Cloud Architect",
-        salary: "₹15 - 25 LPA",
-      },
-      {
-        role: "Cybersecurity Expert",
-        salary: "₹10 - 16 LPA",
-      },
-      {
-        role: "IT Project Manager",
-        salary: "₹10 - 20 LPA",
-      },
-      {
-        role: "Machine Learning Engineer",
-        salary: "₹11 - 22 LPA",
       },
     ],
   };
@@ -529,7 +460,7 @@ const OnlineTech = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Online BCA & MCA Subjects/Syllabus
+              Online BCA Subjects/Syllabus
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Explore the comprehensive curriculum designed to build a strong
@@ -542,46 +473,14 @@ const OnlineTech = () => {
               onValueChange={setActiveTab}
               className="w-full md:w-3/4 lg:w-1/2"
             >
-              <TabsList className="grid w-full grid-cols-2">
+              <TabsList className="grid w-full grid-cols-1">
                 <TabsTrigger value="bca" className="text-lg">
                   BCA Subjects
-                </TabsTrigger>
-                <TabsTrigger value="mca" className="text-lg">
-                  MCA Subjects
                 </TabsTrigger>
               </TabsList>
               <TabsContent value="bca" className="mt-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {bcaSyllabus.map((semester, index) => (
-                    <Card
-                      key={index}
-                      className="hover:shadow-md transition-shadow"
-                    >
-                      <CardHeader className="bg-gray-100 border-b">
-                        <h3 className="font-bold text-lg">
-                          {semester.title}
-                        </h3>
-                      </CardHeader>
-                      <CardContent className="pt-4">
-                        <ul className="list-none space-y-2">
-                          {semester.subjects.map((subject, idx) => (
-                            <li
-                              key={idx}
-                              className="flex items-center text-gray-700"
-                            >
-                              <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                              {subject}
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </TabsContent>
-              <TabsContent value="mca" className="mt-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {mcaSyllabus.map((semester, index) => (
                     <Card
                       key={index}
                       className="hover:shadow-md transition-shadow"
@@ -615,7 +514,7 @@ const OnlineTech = () => {
 
       {/* University Comparison Table */}
       <UniversityComparisonTable
-        courseName="BCA/MCA"
+        courseName="BCA"
         universities={[
           {
             name: "Manipal University Online",
@@ -760,10 +659,10 @@ const OnlineTech = () => {
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Explore lucrative career opportunities and top companies hiring
-              BCA and MCA graduates.
+              BCA graduates.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8">
             <Card className="hover:shadow-lg transition-shadow border border-gray-200/60">
               <CardHeader>
                 <h3 className="font-bold text-xl mb-2">
@@ -774,30 +673,6 @@ const OnlineTech = () => {
               <CardContent>
                 <div className="space-y-4">
                   {careerScope.bca.map((career, index) => (
-                    <div
-                      key={index}
-                      className="flex justify-between items-center bg-gray-50 p-4 rounded-md"
-                    >
-                      <h4 className="font-medium">{career.role}</h4>
-                      <Badge variant="secondary" className="text-sm">
-                        {career.salary}
-                      </Badge>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow border border-gray-200/60">
-              <CardHeader>
-                <h3 className="font-bold text-xl mb-2">
-                  <Briefcase className="h-6 w-6 inline-block mr-2 text-[#0052CC]" />
-                  Career Opportunities after MCA
-                </h3>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {careerScope.mca.map((career, index) => (
                     <div
                       key={index}
                       className="flex justify-between items-center bg-gray-50 p-4 rounded-md"
