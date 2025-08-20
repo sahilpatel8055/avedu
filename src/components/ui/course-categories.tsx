@@ -121,7 +121,7 @@ const CategoryCard = ({ category }: { category: CourseCategory }) => {
       <CardContent className="p-3 sm:p-4 lg:p-6 text-center space-y-2 sm:space-y-3">
         <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary-light mx-auto flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform duration-300">
           {typeof category.icon === "string" ? (
-            <img src={category.icon} alt={category.title} className="w-16 h-16 sm:w-22 sm:h-22 object-cover" loading="lazy" />
+            <img src={category.icon} alt={category.title} className="w-18 h-18 sm:w-26 sm:h-26 object-cover" loading="lazy" />
           ) : (
             <div className="text-blue-600 w-8 h-8 sm:w-9 sm:h-9">{category.icon}</div>
           )}
