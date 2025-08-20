@@ -42,7 +42,6 @@ import lpuLogo from "@/assets/lpu-logo.jpg";
 import mangalyatanLogo from "@/assets/mangalyatan-logo.png";
 import HorizontalUniversityScroll from "@/components/ui/horizontal-university-scroll";
 
-
 const OnlineTech = () => {
   const { openForm, CounselingFormComponent } = useCounselingForm();
   const [activeTab, setActiveTab] = useState("bca");
@@ -51,13 +50,13 @@ const OnlineTech = () => {
     { id: "top", label: "Home" },
     { id: "stats", label: "Stats" },
     { id: "universities", label: "Universities" },
-    { id: "programs", label: "Programs" },
-    { id: "features", label: "Features" },
+    { id: "specializations", label: "Specializations" },
     { id: "syllabus", label: "Syllabus" },
     { id: "fee-comparison", label: "Fee Comparison" },
     { id: "skills", label: "Skills" },
     { id: "careers", label: "Careers" },
-    { id: "faqs", label: "FAQs" }
+    { id: "features", label: "Features" },
+    { id: "faqs", label: "FAQs" },
   ];
 
   const topUniversities = [
@@ -127,20 +126,16 @@ const OnlineTech = () => {
     },
   ];
 
-  const programs = [
-    {
-      title: "Bachelor of Computer Applications (BCA)",
-      duration: "3 Years",
-      fees: "₹30,000 - ₹75,000/year",
-      description:
-        "Comprehensive computer applications program covering programming, databases, and software development",
-      specializations: [
-        "Web Development",
-        "Mobile App Development",
-        "Data Analytics",
-        "Cyber Security",
-      ],
-    },
+  const specializations = [
+    "Software Engineering",
+    "AI & Machine Learning",
+    "Data Science",
+    "Cloud Computing",
+    "Cyber Security",
+    "Mobile App Development",
+    "Data Analytics",
+    "Full stack development",
+    "Block chain",
   ];
 
   const keyFeatures = [
@@ -451,6 +446,8 @@ const OnlineTech = () => {
         </div>
       </section>
 
+      <SectionNavigation sections={sections} />
+
       {/* Quick Stats */}
       <section id="stats" className="py-12 bg-white">
         <div className="container mx-auto px-4">
@@ -492,94 +489,40 @@ const OnlineTech = () => {
         </div>
       </section>
 
-
-      {/* Programs */}
-      <section id="programs" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Popular Technology Programs
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive programs designed to meet industry demands
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {programs.map((program, index) => (
-              <Card
-                key={index}
-                className="hover:shadow-lg transition-shadow border border-gray-200/60"
-              >
-                <CardHeader>
-                  <h3 className="font-bold text-xl mb-2">{program.title}</h3>
-                  <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-4 w-4" />
-                      {program.duration}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <DollarSign className="h-4 w-4" />
-                      {program.fees}
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4">{program.description}</p>
-                  <div className="mb-4">
-                    <h4 className="font-medium mb-2">
-                      Popular Specializations:
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {program.specializations.map((spec, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-xs">
-                          {spec}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                  <Button className="w-full bg-[#0052CC] hover:bg-[#003d99]">
-                    View Program Details
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Key Features */}
-      <section id="features" className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose Online Engineering & Technology?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Get industry-ready skills with modern learning methods and
-              practical experience
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {keyFeatures.map((feature, index) => (
-              <Card
-                key={index}
-                className="p-6 text-center hover:shadow-lg transition-shadow bg-white border border-gray-200/60"
-              >
-                <CheckCircle className="h-8 w-8 text-[#0052CC] mx-auto mb-3" />
-                <h3 className="font-bold mb-2">{feature}</h3>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Why Online Programs Section */}
-      <WhyOnlineProgramsSection 
-        universityName="Top Universities" 
-        lmsImagePath="/assets/lms/common.png" 
+      <WhyOnlineProgramsSection
+        universityName="Top Universities"
+        lmsImagePath="/assets/lms/common.png"
       />
+
+      {/* Specializations */}
+      <section id="specializations" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Popular MCA Specializations
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Choose from a wide range of specializations to match your career
+              interests
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {specializations.map((spec, index) => (
+              <Card
+                key={index}
+                className="p-3 md:p-4 hover:shadow-md transition-shadow border border-gray-200/60"
+              >
+                <div className="flex items-center gap-2 md:gap-3">
+                  <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-[#0052CC] flex-shrink-0" />
+                  <span className="font-medium text-sm md:text-base leading-tight">{spec}</span>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Online Course Subjects/Syllabus */}
       <section id="syllabus" className="py-16 bg-white">
@@ -671,8 +614,8 @@ const OnlineTech = () => {
       </section>
 
       {/* University Comparison Table */}
-      <UniversityComparisonTable 
-        courseName="BCA/MCA" 
+      <UniversityComparisonTable
+        courseName="BCA/MCA"
         universities={[
           {
             name: "Manipal University Online",
@@ -872,6 +815,34 @@ const OnlineTech = () => {
         </div>
       </section>
 
+      {/* Key Features */}
+      <section id="features" className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why Choose Online Engineering & Technology?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Get industry-ready skills with modern learning methods and
+              practical experience
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {keyFeatures.map((feature, index) => (
+              <Card
+                key={index}
+                className="p-6 text-center hover:shadow-lg transition-shadow bg-white border border-gray-200/60"
+              >
+                <CheckCircle className="h-8 w-8 text-[#0052CC] mx-auto mb-3" />
+                <h3 className="font-bold mb-2">{feature}</h3>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       {/* Our Students Are Working At */}
       <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-4">
@@ -933,28 +904,9 @@ const OnlineTech = () => {
             programs
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button
-              size="lg"
-              className="bg-white text-[#0052CC] hover:bg-gray-100"
-              onClick={openForm}
-            >
-              <Phone className="h-5 w-5 mr-2" />
-              Get Free Counselling
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#0052CC]"
-              onClick={openForm}
-            >
-              <Calendar className="h-5 w-5 mr-2" />
-              Book a Demo
-            </Button>
           </div>
         </div>
       </section>
-
-      <SectionNavigation sections={sections} />
       <Footer />
       <CounselingFormComponent />
     </div>
