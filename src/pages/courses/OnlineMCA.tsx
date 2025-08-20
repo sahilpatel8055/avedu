@@ -321,7 +321,8 @@ const OnlineMCA = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead 
+      {/* SEOHead */}
+      <SEOHead
         title="Online MCA Programs - Master of Computer Applications"
         description="Pursue Online MCA from top universities. Advanced computer applications program with specializations in AI, Cloud Computing, Data Science. Get placement assistance and industry-relevant curriculum."
         keywords="online MCA, master computer applications, online computer science masters, MCA degree online"
@@ -344,7 +345,7 @@ const OnlineMCA = () => {
               Online Master of Computer Applications (MCA)
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-              Advance your tech career with Online MCA programs from India's top universities. 
+              Advance your tech career with Online MCA programs from India's top universities.
               Get specialized knowledge in software engineering, AI, and emerging technologies.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -377,30 +378,6 @@ const OnlineMCA = () => {
 
       <SectionNavigation sections={sections} />
 
-      {/* Quick Stats */}
-      <section id="stats" className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-[#0052CC] mb-2">45+</div>
-              <div className="text-gray-600">Universities</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-[#0052CC] mb-2">150+</div>
-              <div className="text-gray-600">Specializations</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-[#0052CC] mb-2">95%</div>
-              <div className="text-gray-600">Placement Rate</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-[#0052CC] mb-2">500+</div>
-              <div className="text-gray-600">Industry Partners</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Top Universities */}
       <section id="universities" className="py-16 bg-gradient-to-br from-purple-50 to-lavender-100">
         <div className="container mx-auto px-4">
@@ -416,6 +393,9 @@ const OnlineMCA = () => {
           <HorizontalUniversityScroll universities={topUniversities} courseType="MCA" />
         </div>
       </section>
+
+      {/* Why Online Programs Section */}
+      <WhyOnlineProgramsSection universityName="Top Universities" lmsImagePath="/assets/lms/common.png" />
 
       {/* Programs */}
       <section id="programs" className="py-16 bg-white">
@@ -468,24 +448,15 @@ const OnlineMCA = () => {
         </div>
       </section>
 
-      {/* Key Features */}
-      <section id="features" className="py-16 bg-gray-50">
+      {/* Specializations */}
+      {/* Note: specializations data is already in the programs section, so this is just a placeholder */}
+      {/* You might consider breaking out the specializations into their own section if there's a lot of content */}
+      <section id="specializations" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose Online MCA?
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">MCA Specializations</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {keyFeatures.map((feature, index) => (
-              <Card key={index} className="text-center p-6">
-                <CardContent>
-                  <CheckCircle className="h-8 w-8 text-[#0052CC] mx-auto mb-4" />
-                  <h3 className="font-semibold">{feature}</h3>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          {/* Your specialization content here */}
         </div>
       </section>
 
@@ -521,6 +492,9 @@ const OnlineMCA = () => {
         </div>
       </section>
 
+      {/* Admission Procedure */}
+      <AdmissionProcedureSection courseName="Online MCA" type="course" />
+
       {/* Skills */}
       <section id="skills" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -549,8 +523,26 @@ const OnlineMCA = () => {
         </div>
       </section>
 
-      {/* Admission Procedure */}
-      <AdmissionProcedureSection courseName="Online MCA" type="course" />
+      {/* Key Features */}
+      <section id="features" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why Choose Online MCA?
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {keyFeatures.map((feature, index) => (
+              <Card key={index} className="text-center p-6">
+                <CardContent>
+                  <CheckCircle className="h-8 w-8 text-[#0052CC] mx-auto mb-4" />
+                  <h3 className="font-semibold">{feature}</h3>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Career Scope & Top Recruiters */}
       <section id="careers" className="py-16 bg-white">
@@ -608,8 +600,9 @@ const OnlineMCA = () => {
         </div>
       </section>
 
-      <WhyOnlineProgramsSection universityName="Top Universities" lmsImagePath="/assets/lms/common.png" />
+      {/* Related Articles */}
       <RelevantBlogsSection pageType="course" />
+      
       <Footer />
       <CounselingFormComponent />
     </div>
