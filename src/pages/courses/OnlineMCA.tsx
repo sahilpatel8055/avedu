@@ -139,6 +139,10 @@ const OnlineMCA = () => {
         "Data Science",
         "Cyber Security",
         "Mobile App Development",
+        "UI & UX Desing",
+        "Data Anlytics",
+        "Full stack developement",
+        "Generative AI",
       ],
     },
   ];
@@ -445,18 +449,6 @@ const OnlineMCA = () => {
               </Card>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Specializations */}
-      {/* Note: specializations data is already in the programs section, so this is just a placeholder */}
-      {/* You might consider breaking out the specializations into their own section if there's a lot of content */}
-      <section id="specializations" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">MCA Specializations</h2>
-          </div>
-          {/* Your specialization content here */}
         </div>
       </section>
 
