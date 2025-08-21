@@ -19,7 +19,7 @@ import ugcIcon from "/src/assets/icons/ugc-icon.png";
 import naacIcon from "/src/assets/icons/naac-icon.png";
 import nirfIcon from "/src/assets/icons/nirf-icon.png";
 import aicteIcon from "/src/assets/icons/aicte-icon.png";
-import aiuIcon from "/src/assets/icons/aiu-icon.png";
+import aiuIcon from "/src/assets/icons/aiu-icon";
 import wesIcon from "/src/assets/icons/wes-icon.png";
 import qsIcon from "/src/assets/icons/qs-icon.png";
 import bciIcon from "/src/assets/icons/bci-icon.png";
@@ -295,17 +295,17 @@ const JainUniversity = () => {
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">Approvals & Recognitions</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex overflow-x-auto gap-4 md:gap-6 pb-4 snap-x snap-mandatory before:w-1/2 before:shrink-0 after:w-1/2 after:shrink-0">
             {approvals.map((approval, index) => (
-              <Card key={index} className="p-4 shadow-sm text-center">
+              <Card key={index} className="flex-none w-64 snap-center p-4 shadow-lg text-center bg-[#575757] text-white rounded-lg">
                 <CardContent className="flex flex-col items-center p-0">
                   <img
                     src={approval.icon}
                     alt={approval.name}
                     className="h-16 w-16 mb-2 object-contain"
                   />
-                  <h3 className="text-base font-semibold text-gray-900 mb-1">{approval.name}</h3>
-                  <p className="text-gray-600 text-sm">{approval.description}</p>
+                  <h3 className="text-base font-semibold mb-1">{approval.name}</h3>
+                  <p className="text-gray-200 text-sm">{approval.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -349,48 +349,45 @@ const JainUniversity = () => {
             </div>
           </div>
           
-          <div className="flex overflow-x-auto pb-4 -mx-4 md:mx-0">
-            <div className="flex flex-nowrap gap-6 pl-4 md:pl-0">
-              {filteredCourses.map((course, index) => (
-                <Card key={index} className="flex-none w-80 md:w-96 overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-0">
-                  <div className="relative">
-                    <img src={course.image} alt={course.name} className="w-full h-40 object-cover" />
-                    <Badge className="absolute top-4 left-4 text-xs font-medium bg-white text-gray-800">{course.badge}</Badge>
-                  </div>
-                  <CardContent className="p-6 space-y-4 bg-white">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{course.name}</h3>
-                    <div className="grid grid-cols-2 gap-y-4 gap-x-2 text-sm text-gray-700">
-                      <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4 text-orange-600" />
-                        <span>Duration: {course.duration}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <IndianRupee className="h-4 w-4 text-orange-600" />
-                        <span>Fee: {course.fee}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <ClipboardList className="h-4 w-4 text-orange-600" />
-                        <span>Eligibility: {course.eligibility}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Book className="h-4 w-4 text-orange-600" />
-                        <span>Type: {course.type}</span>
-                      </div>
+          <div className="grid grid-rows-2 grid-flow-col gap-6 overflow-x-auto pb-4 custom-scrollbar">
+            {filteredCourses.map((course, index) => (
+              <Card key={index} className="w-80 md:w-96 overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-0">
+                <div className="relative">
+                  <img src={course.image} alt={course.name} className="w-full h-40 object-cover" />
+                  <Badge className="absolute top-4 left-4 text-xs font-medium bg-white text-gray-800">{course.badge}</Badge>
+                </div>
+                <CardContent className="p-6 space-y-4 bg-white">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{course.name}</h3>
+                  <div className="grid grid-cols-2 gap-y-4 gap-x-2 text-sm text-gray-700">
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4 text-orange-600" />
+                      <span>Duration: {course.duration}</span>
                     </div>
-                    <Button 
-                      className="w-full flex justify-between items-center bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded-lg mt-4"
-                      onClick={openForm}
-                    >
-                      Apply Now <ChevronRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                    <div className="flex items-center gap-2">
+                      <IndianRupee className="h-4 w-4 text-orange-600" />
+                      <span>Fee: {course.fee}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <ClipboardList className="h-4 w-4 text-orange-600" />
+                      <span>Eligibility: {course.eligibility}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Book className="h-4 w-4 text-orange-600" />
+                      <span>Type: {course.type}</span>
+                    </div>
+                  </div>
+                  <Button 
+                    className="w-full flex justify-between items-center bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded-lg mt-4"
+                    onClick={openForm}
+                  >
+                    Apply Now <ChevronRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
-
 
       {/* Key Features */}
       <section className="bg-white py-16">
