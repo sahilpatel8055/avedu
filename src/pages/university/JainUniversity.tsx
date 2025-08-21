@@ -15,6 +15,17 @@ import { useCounselingForm } from "@/hooks/use-counseling-form";
 // Import logo - fallback to placeholder if not available
 const jainLogo = "/src/assets/uni_logo/jain.png";
 
+const approvals = [
+  { name: 'UGC', icon: 'src/assets/icons/ugc-icon.png' },
+  { name: 'NAAC', icon: 'src/assets/icons/naac-icon.png' },
+  { name: 'NIRF', icon: 'src/assets/icons/nirf-icon.png' },
+  { name: 'AICTE', icon: 'src/assets/icons/aicte-icon.png' },
+  { name: 'AIU', icon: 'src/assets/icons/aiu-icon.png' },
+  { name: 'WES', icon: 'src/assets/icons/wes-icon.png' },
+  { name: 'QS Ranking', icon: 'src/assets/icons/qs-icon.png' },
+  { name: 'BCI', icon: 'src/assets/icons/bci-icon.png' },
+];
+
 const JainUniversity = () => {
   const { CounselingFormComponent, openForm } = useCounselingForm();
   const [formData, setFormData] = useState({
@@ -25,7 +36,7 @@ const JainUniversity = () => {
     consent: false
   });
 
-  const handleInputChange = (field: string, value: string | boolean) => {
+  const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
@@ -54,7 +65,7 @@ const JainUniversity = () => {
               alt="Jain University Online" 
               className="h-12 w-auto"
               onError={(e) => {
-                const target = e.target as HTMLImageElement;
+                const target = e.target;
                 target.src = '/src/assets/uni_logo/jain.png';
               }}
             />
@@ -220,7 +231,7 @@ const JainUniversity = () => {
                     <Checkbox
                       id="consent"
                       checked={formData.consent}
-                      onCheckedChange={(checked) => handleInputChange("consent", checked as boolean)}
+                      onCheckedChange={(checked) => handleInputChange("consent", checked)}
                       className="border-gray-600 data-[state=checked]:bg-orange-600"
                     />
                     <Label htmlFor="consent" className="text-xs text-gray-300 leading-tight">
@@ -248,6 +259,29 @@ const JainUniversity = () => {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Approvals & Recognitions Section */}
+      <section className="bg-white py-12">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-8">Approvals & Recognitions</h2>
+          <div className="flex flex-nowrap overflow-x-auto gap-6 pb-4 md:justify-center md:flex-wrap">
+            {approvals.map((approval, index) => (
+              <Card key={index} className="flex-none w-48 p-4 text-center border rounded-lg shadow-sm">
+                <CardContent className="p-0 space-y-2">
+                  <div className="flex justify-center items-center">
+                    <img 
+                      src={approval.icon} 
+                      alt={approval.name} 
+                      className="h-16 w-16 object-contain"
+                    />
+                  </div>
+                  <h3 className="text-sm font-semibold text-gray-800">{approval.name}</h3>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
