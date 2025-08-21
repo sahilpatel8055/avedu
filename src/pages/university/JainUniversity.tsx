@@ -11,7 +11,6 @@ import SEOHead from "@/components/ui/seo-head";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
-import { cn } from "@/lib/utils";
 
 // Import all icons
 import jainLogo from "/src/assets/uni_logo/jain.png";
@@ -30,6 +29,18 @@ import bbaImg from "@/assets/course/bba.jpg";
 import mcaImg from "@/assets/course/mca.jpg";
 import bcaImg from "@/assets/course/bca.jpg";
 import baImg from "@/assets/course/ba.jpg";
+
+// You can add this CSS to your global stylesheet or a <style> tag if you are using a tool that supports it
+// This ensures the custom scrollbar works.
+/*
+.custom-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.custom-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+*/
 
 const approvals = [
   { name: 'UGC Entitled', icon: ugcIcon, description: 'The university is entitled by UGC to offer online degrees.', },
@@ -321,28 +332,19 @@ const JainUniversity = () => {
             <div className="flex gap-4">
               <Button
                 onClick={() => setActiveFilter("All")}
-                className={cn(
-                  "px-6 py-2 rounded-full font-semibold",
-                  activeFilter === "All" ? "bg-orange-600 text-white hover:bg-orange-700" : "bg-transparent text-gray-800 border border-gray-300 hover:bg-gray-200"
-                )}
+                className={`px-6 py-2 rounded-full font-semibold ${activeFilter === "All" ? "bg-orange-600 text-white hover:bg-orange-700" : "bg-transparent text-gray-800 border border-gray-300 hover:bg-gray-200"}`}
               >
                 All Courses
               </Button>
               <Button
                 onClick={() => setActiveFilter("UG")}
-                className={cn(
-                  "px-6 py-2 rounded-full font-semibold",
-                  activeFilter === "UG" ? "bg-orange-600 text-white hover:bg-orange-700" : "bg-transparent text-gray-800 border border-gray-300 hover:bg-gray-200"
-                )}
+                className={`px-6 py-2 rounded-full font-semibold ${activeFilter === "UG" ? "bg-orange-600 text-white hover:bg-orange-700" : "bg-transparent text-gray-800 border border-gray-300 hover:bg-gray-200"}`}
               >
                 UG Courses
               </Button>
               <Button
                 onClick={() => setActiveFilter("PG")}
-                className={cn(
-                  "px-6 py-2 rounded-full font-semibold",
-                  activeFilter === "PG" ? "bg-orange-600 text-white hover:bg-orange-700" : "bg-transparent text-gray-800 border border-gray-300 hover:bg-gray-200"
-                )}
+                className={`px-6 py-2 rounded-full font-semibold ${activeFilter === "PG" ? "bg-orange-600 text-white hover:bg-orange-700" : "bg-transparent text-gray-800 border border-gray-300 hover:bg-gray-200"}`}
               >
                 PG Courses
               </Button>
