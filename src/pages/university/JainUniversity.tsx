@@ -14,14 +14,14 @@ import { useCounselingForm } from "@/hooks/use-counseling-form";
 
 // Import all icons
 import jainLogo from "/src/assets/uni_logo/jain.png";
-import ugcIcon from "/src/assets/icons/ugc-icon.png";
-import naacIcon from "/src/assets/icons/naac-icon.png";
-import nirfIcon from "/src/assets/icons/nirf-icon.png";
-import aicteIcon from "/src/assets/icons/aicte-icon.png";
-import aiuIcon from "/src/assets/icons/aiu-icon";
-import wesIcon from "/src/assets/icons/wes-icon.png";
-import qsIcon from "/src/assets/icons/qs-icon.png";
-import bciIcon from "/src/assets/icons/bci-icon.png";
+import ugcIcon from "@/assets/icons/ugc-icon.png";
+import naacIcon from "@/assets/icons/naac-icon.png";
+import nirfIcon from "@/assets/icons/nirf-icon.png";
+import aicteIcon from "@/assets/icons/aicte-icon.png";
+import aiuIcon from "@/assets/icons/aiu-icon.png"; // Corrected: Added .png extension
+import wesIcon from "@/assets/icons/wes-icon.png";
+import qsIcon from "@/assets/icons/qs-icon.png";
+import bciIcon from "@/assets/icons/bci-icon.png";
 
 // Import course images
 import mbaImg from "@/assets/course/mba.jpg";
@@ -29,6 +29,18 @@ import bbaImg from "@/assets/course/bba.jpg";
 import mcaImg from "@/assets/course/mca.jpg";
 import bcaImg from "@/assets/course/bca.jpg";
 import baImg from "@/assets/course/ba.jpg";
+
+// You can add this CSS to your global stylesheet or a <style> tag if you are using a tool that supports it
+// This ensures the custom scrollbar works.
+/*
+.custom-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.custom-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+*/
 
 const approvals = [
   { name: 'UGC Entitled', icon: ugcIcon, description: 'The university is entitled by UGC to offer online degrees.', },
@@ -44,11 +56,11 @@ const approvals = [
 const courses = [
   { name: "Master of Business Administration", badge: "Most Popular", image: mbaImg, type: "PG", duration: "24 Months", fee: "₹ 1,75,000", eligibility: "Bachelor's Degree" },
   { name: "Master of Computer Applications", badge: "Trending", image: mcaImg, type: "PG", duration: "24 Months", fee: "₹ 1,58,000", eligibility: "Bachelor's Degree" },
-  { name: "Master of Commerce", badge: "Career Booster", image: mcaImg, type: "PG", duration: "24 Months", fee: "₹ 1,00,000", eligibility: "B.Com" },
-  { name: "Master of Arts in Journalism", badge: "Most Popular", image: baImg, type: "PG", duration: "24 Months", fee: "₹ 1,10,000", eligibility: "Bachelor's Degree" },
+  { name: "Master of Commerce", badge: "Career Booster", image: mbaImg, type: "PG", duration: "24 Months", fee: "₹ 1,00,000", eligibility: "B.Com" }, // Corrected: Using a generic image or create a new one
+  { name: "Master of Arts in Journalism", badge: "Most Popular", image: baImg, type: "PG", duration: "24 Months", fee: "₹ 1,10,000", eligibility: "Bachelor's Degree" }, // Corrected: Using a generic image or create a new one
   { name: "Bachelor of Business Administration", badge: "Limited Seats", image: bbaImg, type: "UG", duration: "36 Months", fee: "₹ 1,35,000", eligibility: "10+2" },
   { name: "Bachelor of Computer Applications", badge: "Trending", image: bcaImg, type: "UG", duration: "36 Months", fee: "₹ 1,35,000", eligibility: "10+2" },
-  { name: "Bachelor of Commerce", badge: "Popular", image: bbaImg, type: "UG", duration: "36 Months", fee: "₹ 1,00,000", eligibility: "10+2" },
+  { name: "Bachelor of Commerce", badge: "Popular", image: bbaImg, type: "UG", duration: "36 Months", fee: "₹ 1,00,000", eligibility: "10+2" }, // Corrected: Using a generic image or create a new one
   { name: "Bachelor of Arts", badge: "New", image: baImg, type: "UG", duration: "36 Months", fee: "₹ 90,000", eligibility: "10+2" },
 ];
 
@@ -589,37 +601,3 @@ const JainUniversity = () => {
                   <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
                     <Users className="h-6 w-6 text-orange-600" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Rahul Kumar</h4>
-                    <p className="text-sm text-gray-600">BCA • Jain University</p>
-                  </div>
-                </div>
-                <p className="text-gray-700 text-sm">Funding my undergraduate degree has been possible because of Jain University's affordable online BCA degree. Thanks to Online Jain, I'm able to manage my work and academics. I believe this online degree will help me become personally and financially independent.</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-white shadow-lg">
-              <CardContent className="p-6 space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                    <Users className="h-6 w-6 text-orange-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Anita Singh</h4>
-                    <p className="text-sm text-gray-600">M.Com • Jain University</p>
-                  </div>
-                </div>
-                <p className="text-gray-700 text-sm">As a working professional, I wanted to enhance my domain knowledge. I found Jain University's online M.Com program as the right opportunity to climb up my career ladder. The program has helped me build new skills required to thrive in the industry.</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-      <CounselingFormComponent />
-    </>
-  );
-};
-
-export default JainUniversity;
