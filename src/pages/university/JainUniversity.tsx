@@ -16,14 +16,14 @@ import { useCounselingForm } from "@/hooks/use-counseling-form";
 const jainLogo = "/src/assets/uni_logo/jain.png";
 
 const approvals = [
-  { name: 'UGC', icon: 'src/assets/icons/ugc-icon.png' },
-  { name: 'NAAC', icon: 'src/assets/icons/naac-icon.png' },
-  { name: 'NIRF', icon: 'src/assets/icons/nirf-icon.png' },
-  { name: 'AICTE', icon: 'src/assets/icons/aicte-icon.png' },
-  { name: 'AIU', icon: 'src/assets/icons/aiu-icon.png' },
-  { name: 'WES', icon: 'src/assets/icons/wes-icon.png' },
-  { name: 'QS Ranking', icon: 'src/assets/icons/qs-icon.png' },
-  { name: 'BCI', icon: 'src/assets/icons/bci-icon.png' },
+  { name: 'UGC', icon: '@/assets/icons/ugc-icon.png' },
+  { name: 'NAAC', icon: '@/assets/icons/naac-icon.png' },
+  { name: 'NIRF', icon: '@/assets/icons/nirf-icon.png' },
+  { name: 'AICTE', icon: '@/assets/icons/aicte-icon.png' },
+  { name: 'AIU', icon: '@/assets/icons/aiu-icon.png' },
+  { name: 'WES', icon: '@/assets/icons/wes-icon.png' },
+  { name: 'QS Ranking', icon: '@/assets/icons/qs-icon.png' },
+  { name: 'BCI', icon: '@/assets/icons/bci-icon.png' },
 ];
 
 const JainUniversity = () => {
