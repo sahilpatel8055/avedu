@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Download, GraduationCap, Users, Building, Award, Clock, IndianRupee, ClipboardList, Book, ChevronRight } from "lucide-react";
+import { Phone, Download, GraduationCap, Users, Building, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -12,56 +12,26 @@ import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
 
-// Import all icons
+// Import all icons as suggested
 import jainLogo from "/src/assets/uni_logo/jain.png";
-import ugcIcon from "@/assets/icons/ugc-icon.png";
-import naacIcon from "@/assets/icons/naac-icon.png";
-import nirfIcon from "@/assets/icons/nirf-icon.png";
-import aicteIcon from "@/assets/icons/aicte-icon.png";
-import aiuIcon from "@/assets/icons/aiu-icon.png"; // Corrected: Added .png extension
-import wesIcon from "@/assets/icons/wes-icon.png";
-import qsIcon from "@/assets/icons/qs-icon.png";
-import bciIcon from "@/assets/icons/bci-icon.png";
-
-// Import course images
-import mbaImg from "@/assets/course/mba.jpg";
-import bbaImg from "@/assets/course/bba.jpg";
-import mcaImg from "@/assets/course/mca.jpg";
-import bcaImg from "@/assets/course/bca.jpg";
-import baImg from "@/assets/course/ba.jpg";
-
-// You can add this CSS to your global stylesheet or a <style> tag if you are using a tool that supports it
-// This ensures the custom scrollbar works.
-/*
-.custom-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.custom-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-*/
+import ugcIcon from "/src/assets/icons/ugc-icon.png";
+import naacIcon from "/src/assets/icons/naac-icon.png";
+import nirfIcon from "/src/assets/icons/nirf-icon.png";
+import aicteIcon from "/src/assets/icons/aicte-icon.png";
+import aiuIcon from "/src/assets/icons/aiu-icon.png";
+import wesIcon from "/src/assets/icons/wes-icon.png";
+import qsIcon from "/src/assets/icons/qs-icon.png";
+import bciIcon from "/src/assets/icons/bci-icon.png";
 
 const approvals = [
-  { name: 'UGC Entitled', icon: ugcIcon, description: 'The university is entitled by UGC to offer online degrees.', },
-  { name: 'NAAC A++', icon: naacIcon, description: 'Jain University is NAAC A++ accredited for quality education.', },
-  { name: 'NIRF Ranked', icon: nirfIcon, description: 'Ranked amongst the top universities in India by NIRF.', },
-  { name: 'AICTE Approved', icon: aicteIcon, description: 'All technical programs are approved by AICTE.', },
-  { name: 'AIU Member', icon: aiuIcon, description: 'A proud member of the Association of Indian Universities.', },
-  { name: 'WES Recognised', icon: wesIcon, description: 'Degrees are globally recognized and accepted by WES.', },
-  { name: 'QS Ranked', icon: qsIcon, description: 'Recognized for high standards in global university rankings.', },
-  { name: 'BCI Approved', icon: bciIcon, description: 'Law programs are approved by the Bar Council of India.', },
-];
-
-const courses = [
-  { name: "Master of Business Administration", badge: "Most Popular", image: mbaImg, type: "PG", duration: "24 Months", fee: "₹ 1,75,000", eligibility: "Bachelor's Degree" },
-  { name: "Master of Computer Applications", badge: "Trending", image: mcaImg, type: "PG", duration: "24 Months", fee: "₹ 1,58,000", eligibility: "Bachelor's Degree" },
-  { name: "Master of Commerce", badge: "Career Booster", image: mbaImg, type: "PG", duration: "24 Months", fee: "₹ 1,00,000", eligibility: "B.Com" }, // Corrected: Using a generic image or create a new one
-  { name: "Master of Arts in Journalism", badge: "Most Popular", image: baImg, type: "PG", duration: "24 Months", fee: "₹ 1,10,000", eligibility: "Bachelor's Degree" }, // Corrected: Using a generic image or create a new one
-  { name: "Bachelor of Business Administration", badge: "Limited Seats", image: bbaImg, type: "UG", duration: "36 Months", fee: "₹ 1,35,000", eligibility: "10+2" },
-  { name: "Bachelor of Computer Applications", badge: "Trending", image: bcaImg, type: "UG", duration: "36 Months", fee: "₹ 1,35,000", eligibility: "10+2" },
-  { name: "Bachelor of Commerce", badge: "Popular", image: bbaImg, type: "UG", duration: "36 Months", fee: "₹ 1,00,000", eligibility: "10+2" }, // Corrected: Using a generic image or create a new one
-  { name: "Bachelor of Arts", badge: "New", image: baImg, type: "UG", duration: "36 Months", fee: "₹ 90,000", eligibility: "10+2" },
+  { name: 'UGC', icon: ugcIcon },
+  { name: 'NAAC', icon: naacIcon },
+  { name: 'NIRF', icon: nirfIcon },
+  { name: 'AICTE', icon: aicteIcon },
+  { name: 'AIU', icon: aiuIcon },
+  { name: 'WES', icon: wesIcon },
+  { name: 'QS Ranking', icon: qsIcon },
+  { name: 'BCI', icon: bciIcon },
 ];
 
 const JainUniversity = () => {
@@ -73,11 +43,6 @@ const JainUniversity = () => {
     course: "",
     consent: false
   });
-  const [activeFilter, setActiveFilter] = useState("All");
-
-  const filteredCourses = activeFilter === "All"
-    ? courses
-    : courses.filter(course => course.type === activeFilter);
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -107,6 +72,10 @@ const JainUniversity = () => {
               src={jainLogo} 
               alt="Jain University Online" 
               className="h-12 w-auto"
+              onError={(e) => {
+                const target = e.target;
+                target.src = '/src/assets/uni_logo/jain.png';
+              }}
             />
             <span className="text-2xl font-bold text-orange-600">Online JAIN</span>
           </div>
@@ -303,89 +272,18 @@ const JainUniversity = () => {
       </section>
 
       {/* Approvals & Recognitions Section */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-8">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">Approvals & Recognitions</h2>
-          <div className="flex overflow-x-auto gap-4 md:gap-6 pb-4 snap-x snap-mandatory before:w-1/2 before:shrink-0 after:w-1/2 after:shrink-0">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-6">Approvals & Recognitions</h2>
+          <div className="flex flex-nowrap overflow-x-auto gap-12 py-4 justify-center items-center">
             {approvals.map((approval, index) => (
-              <Card key={index} className="flex-none w-64 snap-center p-4 shadow-lg text-center bg-[#575757] text-white rounded-lg">
-                <CardContent className="flex flex-col items-center p-0">
-                  <img
-                    src={approval.icon}
-                    alt={approval.name}
-                    className="h-16 w-16 mb-2 object-contain"
-                  />
-                  <h3 className="text-base font-semibold mb-1">{approval.name}</h3>
-                  <p className="text-gray-200 text-sm">{approval.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Explore Our Top Online Degree Courses */}
-      <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-12">
-            <h2 className="text-4xl font-bold text-center text-gray-900 mb-4 md:mb-0">Explore Our Top Online Degree Courses</h2>
-            <div className="flex gap-4">
-              <Button
-                onClick={() => setActiveFilter("All")}
-                className={`px-6 py-2 rounded-full font-semibold ${activeFilter === "All" ? "bg-orange-600 text-white hover:bg-orange-700" : "bg-transparent text-gray-800 border border-gray-300 hover:bg-gray-200"}`}
-              >
-                All Courses
-              </Button>
-              <Button
-                onClick={() => setActiveFilter("UG")}
-                className={`px-6 py-2 rounded-full font-semibold ${activeFilter === "UG" ? "bg-orange-600 text-white hover:bg-orange-700" : "bg-transparent text-gray-800 border border-gray-300 hover:bg-gray-200"}`}
-              >
-                UG Courses
-              </Button>
-              <Button
-                onClick={() => setActiveFilter("PG")}
-                className={`px-6 py-2 rounded-full font-semibold ${activeFilter === "PG" ? "bg-orange-600 text-white hover:bg-orange-700" : "bg-transparent text-gray-800 border border-gray-300 hover:bg-gray-200"}`}
-              >
-                PG Courses
-              </Button>
-            </div>
-          </div>
-          
-          <div className="grid grid-rows-2 grid-flow-col gap-6 overflow-x-auto pb-4 custom-scrollbar">
-            {filteredCourses.map((course, index) => (
-              <Card key={index} className="w-80 md:w-96 overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-0">
-                <div className="relative">
-                  <img src={course.image} alt={course.name} className="w-full h-40 object-cover" />
-                  <Badge className="absolute top-4 left-4 text-xs font-medium bg-white text-gray-800">{course.badge}</Badge>
-                </div>
-                <CardContent className="p-6 space-y-4 bg-white">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{course.name}</h3>
-                  <div className="grid grid-cols-2 gap-y-4 gap-x-2 text-sm text-gray-700">
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4 text-orange-600" />
-                      <span>Duration: {course.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <IndianRupee className="h-4 w-4 text-orange-600" />
-                      <span>Fee: {course.fee}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <ClipboardList className="h-4 w-4 text-orange-600" />
-                      <span>Eligibility: {course.eligibility}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Book className="h-4 w-4 text-orange-600" />
-                      <span>Type: {course.type}</span>
-                    </div>
-                  </div>
-                  <Button 
-                    className="w-full flex justify-between items-center bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded-lg mt-4"
-                    onClick={openForm}
-                  >
-                    Apply Now <ChevronRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </CardContent>
-              </Card>
+              <div key={index} className="flex-none p-2">
+                <img
+                  src={approval.icon}
+                  alt={approval.name}
+                  className="h-20 w-auto object-contain"
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -458,6 +356,114 @@ const JainUniversity = () => {
                   <div className="text-2xl font-bold text-orange-600">Top 100</div>
                   <div className="text-gray-600">University in India</div>
                 </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Explore Our Top Online Degree Courses */}
+      <section className="bg-white py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">Explore Our Top Online Degree Courses</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* MBA Course */}
+            <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg">
+              <CardContent className="p-6 space-y-4">
+                <Badge className="bg-orange-100 text-orange-800 mb-2">Most Popular</Badge>
+                <div className="space-y-3">
+                  <h3 className="text-xl font-bold text-gray-900">Master of Business Administration</h3>
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center">
+                      {[...Array(5)].map((_, i) => (
+                        <div key={i} className="w-4 h-4 bg-yellow-400 rounded-full mr-1"></div>
+                      ))}
+                    </div>
+                    <span className="text-sm text-gray-600">4.9</span>
+                  </div>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <div className="flex items-center gap-2">
+                      <span>📅</span>
+                      <span>24 months</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span>💰</span>
+                      <span>INR 1,75,000</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span>🎓</span>
+                      <span>No experience required</span>
+                    </div>
+                  </div>
+                </div>
+                <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">Enroll Now</Button>
+              </CardContent>
+            </Card>
+
+            {/* BBA Course */}
+            <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg">
+              <CardContent className="p-6 space-y-4">
+                <Badge className="bg-green-100 text-green-800 mb-2">Limited Seats</Badge>
+                <div className="space-y-3">
+                  <h3 className="text-xl font-bold text-gray-900">Bachelor of Business Administration</h3>
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center">
+                      {[...Array(5)].map((_, i) => (
+                        <div key={i} className="w-4 h-4 bg-yellow-400 rounded-full mr-1"></div>
+                      ))}
+                    </div>
+                    <span className="text-sm text-gray-600">4.7</span>
+                  </div>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <div className="flex items-center gap-2">
+                      <span>📅</span>
+                      <span>36 months</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span>💰</span>
+                      <span>INR 1,35,000</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span>🎓</span>
+                      <span>45% marks in 10+2</span>
+                    </div>
+                  </div>
+                </div>
+                <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">Enroll Now</Button>
+              </CardContent>
+            </Card>
+
+            {/* MCA Course */}
+            <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg">
+              <CardContent className="p-6 space-y-4">
+                <Badge className="bg-blue-100 text-blue-800 mb-2">Trending</Badge>
+                <div className="space-y-3">
+                  <h3 className="text-xl font-bold text-gray-900">Master of Computer Applications</h3>
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center">
+                      {[...Array(5)].map((_, i) => (
+                        <div key={i} className="w-4 h-4 bg-yellow-400 rounded-full mr-1"></div>
+                      ))}
+                    </div>
+                    <span className="text-sm text-gray-600">4.8</span>
+                  </div>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <div className="flex items-center gap-2">
+                      <span>📅</span>
+                      <span>24 months</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span>💰</span>
+                      <span>INR 1,58,000</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span>🎓</span>
+                      <span>No experience required</span>
+                    </div>
+                  </div>
+                </div>
+                <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">Enroll Now</Button>
               </CardContent>
             </Card>
           </div>
@@ -601,3 +607,37 @@ const JainUniversity = () => {
                   <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
                     <Users className="h-6 w-6 text-orange-600" />
                   </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Rahul Kumar</h4>
+                    <p className="text-sm text-gray-600">BCA • Jain University</p>
+                  </div>
+                </div>
+                <p className="text-gray-700 text-sm">Funding my undergraduate degree has been possible because of Jain University's affordable online BCA degree. Thanks to Online Jain, I'm able to manage my work and academics. I believe this online degree will help me become personally and financially independent.</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-white shadow-lg">
+              <CardContent className="p-6 space-y-4">
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                    <Users className="h-6 w-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Anita Singh</h4>
+                    <p className="text-sm text-gray-600">M.Com • Jain University</p>
+                  </div>
+                </div>
+                <p className="text-gray-700 text-sm">As a working professional, I wanted to enhance my domain knowledge. I found Jain University's online M.Com program as the right opportunity to climb up my career ladder. The program has helped me build new skills required to thrive in the industry.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+      <CounselingFormComponent />
+    </>
+  );
+};
+
+export default JainUniversity;
