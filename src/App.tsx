@@ -16,6 +16,7 @@ import Amity from "./pages/university/Amity";
 import LPU from "./pages/university/LPU";
 import Mangalyatan from "./pages/university/Mangalyatan";
 import DUSOL from "./pages/university/DUSOL";
+import JainUniversity from "./pages/university/JainUniversity";
 // Old course pages (from your home page) - DO NOT REMOVE
 import OnlineMBA from "./pages/courses/OnlineMBA";
 import OnlineTech from "./pages/courses/OnlineTech";
@@ -84,9 +85,10 @@ const App = () => {
           <Route path="/university/vgu" element={<VGU />} />
           <Route path="/university/smu" element={<Sikkim />} />
           <Route path="/university/amity" element={<Amity />} />
-<Route path="/university/lpu" element={<LPU />} />
-<Route path="/university/mangalyatan" element={<Mangalyatan />} />
-<Route path="/university/du-sol" element={<DUSOL />} />
+          <Route path="/university/lpu" element={<LPU />} />
+          <Route path="/university/mangalyatan" element={<Mangalyatan />} />
+          <Route path="/university/du-sol" element={<DUSOL />} />
+          <Route path="/university/jain" element={<JainUniversity />} />
           {/* Your original course routes - these remain unchanged */}
           <Route path="/courses/mba" element={<OnlineMBA />} />
           <Route path="/courses/mca" element={<OnlineMCA />} />
