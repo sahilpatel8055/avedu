@@ -12,18 +12,26 @@ import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
 
-// Import logo - fallback to placeholder if not available
-const jainLogo = "/src/assets/uni_logo/jain.png";
+// Import all icons as suggested
+import jainLogo from "/src/assets/uni_logo/jain.png";
+import ugcIcon from "/src/assets/icons/ugc-icon.png";
+import naacIcon from "/src/assets/icons/naac-icon.png";
+import nirfIcon from "/src/assets/icons/nirf-icon.png";
+import aicteIcon from "/src/assets/icons/aicte-icon.png";
+import aiuIcon from "/src/assets/icons/aiu-icon.png";
+import wesIcon from "/src/assets/icons/wes-icon.png";
+import qsIcon from "/src/assets/icons/qs-icon.png";
+import bciIcon from "/src/assets/icons/bci-icon.png";
 
 const approvals = [
-  { name: 'UGC', icon: '@/assets/icons/ugc-icon.png' },
-  { name: 'NAAC', icon: '@/assets/icons/naac-icon.png' },
-  { name: 'NIRF', icon: '@/assets/icons/nirf-icon.png' },
-  { name: 'AICTE', icon: '@/assets/icons/aicte-icon.png' },
-  { name: 'AIU', icon: '@/assets/icons/aiu-icon.png' },
-  { name: 'WES', icon: '@/assets/icons/wes-icon.png' },
-  { name: 'QS Ranking', icon: '@/assets/icons/qs-icon.png' },
-  { name: 'BCI', icon: '@/assets/icons/bci-icon.png' },
+  { name: 'UGC', icon: ugcIcon },
+  { name: 'NAAC', icon: naacIcon },
+  { name: 'NIRF', icon: nirfIcon },
+  { name: 'AICTE', icon: aicteIcon },
+  { name: 'AIU', icon: aiuIcon },
+  { name: 'WES', icon: wesIcon },
+  { name: 'QS Ranking', icon: qsIcon },
+  { name: 'BCI', icon: bciIcon },
 ];
 
 const JainUniversity = () => {
