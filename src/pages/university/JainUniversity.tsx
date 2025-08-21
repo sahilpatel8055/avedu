@@ -65,7 +65,7 @@ const JainUniversity = () => {
               alt="Jain University Online" 
               className="h-12 w-auto"
               onError={(e) => {
-                const target = e.target as HTMLImageElement;
+                const target = e.target;
                 target.src = '/src/assets/uni_logo/jain.png';
               }}
             />
@@ -264,23 +264,18 @@ const JainUniversity = () => {
       </section>
 
       {/* Approvals & Recognitions Section */}
-      <section className="bg-white py-12">
+      <section className="bg-white py-8">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-8">Approvals & Recognitions</h2>
-          <div className="flex flex-nowrap overflow-x-auto gap-6 pb-4 md:justify-center md:flex-wrap">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-6">Approvals & Recognitions</h2>
+          <div className="flex flex-nowrap overflow-x-auto gap-12 py-4 justify-center items-center">
             {approvals.map((approval, index) => (
-              <Card key={index} className="flex-none w-48 p-4 text-center border rounded-lg shadow-sm">
-                <CardContent className="p-0 space-y-2">
-                  <div className="flex justify-center items-center">
-                    <img 
-                      src={approval.icon} 
-                      alt={approval.name} 
-                      className="h-16 w-16 object-contain"
-                    />
-                  </div>
-                  <h3 className="text-sm font-semibold text-gray-800">{approval.name}</h3>
-                </CardContent>
-              </Card>
+              <div key={index} className="flex-none p-2">
+                <img
+                  src={approval.icon}
+                  alt={approval.name}
+                  className="h-20 w-auto object-contain"
+                />
+              </div>
             ))}
           </div>
         </div>
