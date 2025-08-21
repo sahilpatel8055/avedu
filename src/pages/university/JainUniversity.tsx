@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Download, GraduationCap, Users, Building, Award } from "lucide-react";
+import { Phone, Download, GraduationCap, Users, Building, Award, Clock, IndianRupee, ClipboardList, Book, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -11,8 +11,9 @@ import SEOHead from "@/components/ui/seo-head";
 import NavigationHeader from "@/components/ui/navigation-header";
 import Footer from "@/components/ui/footer";
 import { useCounselingForm } from "@/hooks/use-counseling-form";
+import { cn } from "@/lib/utils";
 
-// Import all icons as suggested
+// Import all icons
 import jainLogo from "/src/assets/uni_logo/jain.png";
 import ugcIcon from "/src/assets/icons/ugc-icon.png";
 import naacIcon from "/src/assets/icons/naac-icon.png";
@@ -23,15 +24,33 @@ import wesIcon from "/src/assets/icons/wes-icon.png";
 import qsIcon from "/src/assets/icons/qs-icon.png";
 import bciIcon from "/src/assets/icons/bci-icon.png";
 
+// Import course images
+import mbaImg from "@/assets/course/mba.jpg";
+import bbaImg from "@/assets/course/bba.jpg";
+import mcaImg from "@/assets/course/mca.jpg";
+import bcaImg from "@/assets/course/bca.jpg";
+import baImg from "@/assets/course/ba.jpg";
+
 const approvals = [
-  { name: 'UGC', icon: ugcIcon },
-  { name: 'NAAC', icon: naacIcon },
-  { name: 'NIRF', icon: nirfIcon },
-  { name: 'AICTE', icon: aicteIcon },
-  { name: 'AIU', icon: aiuIcon },
-  { name: 'WES', icon: wesIcon },
-  { name: 'QS Ranking', icon: qsIcon },
-  { name: 'BCI', icon: bciIcon },
+  { name: 'UGC Entitled', icon: ugcIcon, description: 'The university is entitled by UGC to offer online degrees.', },
+  { name: 'NAAC A++', icon: naacIcon, description: 'Jain University is NAAC A++ accredited for quality education.', },
+  { name: 'NIRF Ranked', icon: nirfIcon, description: 'Ranked amongst the top universities in India by NIRF.', },
+  { name: 'AICTE Approved', icon: aicteIcon, description: 'All technical programs are approved by AICTE.', },
+  { name: 'AIU Member', icon: aiuIcon, description: 'A proud member of the Association of Indian Universities.', },
+  { name: 'WES Recognised', icon: wesIcon, description: 'Degrees are globally recognized and accepted by WES.', },
+  { name: 'QS Ranked', icon: qsIcon, description: 'Recognized for high standards in global university rankings.', },
+  { name: 'BCI Approved', icon: bciIcon, description: 'Law programs are approved by the Bar Council of India.', },
+];
+
+const courses = [
+  { name: "Master of Business Administration", badge: "Most Popular", image: mbaImg, type: "PG", duration: "24 Months", fee: "₹ 1,75,000", eligibility: "Bachelor's Degree" },
+  { name: "Master of Computer Applications", badge: "Trending", image: mcaImg, type: "PG", duration: "24 Months", fee: "₹ 1,58,000", eligibility: "Bachelor's Degree" },
+  { name: "Master of Commerce", badge: "Career Booster", image: mcaImg, type: "PG", duration: "24 Months", fee: "₹ 1,00,000", eligibility: "B.Com" },
+  { name: "Master of Arts in Journalism", badge: "Most Popular", image: baImg, type: "PG", duration: "24 Months", fee: "₹ 1,10,000", eligibility: "Bachelor's Degree" },
+  { name: "Bachelor of Business Administration", badge: "Limited Seats", image: bbaImg, type: "UG", duration: "36 Months", fee: "₹ 1,35,000", eligibility: "10+2" },
+  { name: "Bachelor of Computer Applications", badge: "Trending", image: bcaImg, type: "UG", duration: "36 Months", fee: "₹ 1,35,000", eligibility: "10+2" },
+  { name: "Bachelor of Commerce", badge: "Popular", image: bbaImg, type: "UG", duration: "36 Months", fee: "₹ 1,00,000", eligibility: "10+2" },
+  { name: "Bachelor of Arts", badge: "New", image: baImg, type: "UG", duration: "36 Months", fee: "₹ 90,000", eligibility: "10+2" },
 ];
 
 const JainUniversity = () => {
@@ -43,6 +62,11 @@ const JainUniversity = () => {
     course: "",
     consent: false
   });
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  const filteredCourses = activeFilter === "All"
+    ? courses
+    : courses.filter(course => course.type === activeFilter);
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -72,10 +96,6 @@ const JainUniversity = () => {
               src={jainLogo} 
               alt="Jain University Online" 
               className="h-12 w-auto"
-              onError={(e) => {
-                const target = e.target;
-                target.src = '/src/assets/uni_logo/jain.png';
-              }}
             />
             <span className="text-2xl font-bold text-orange-600">Online JAIN</span>
           </div>
@@ -272,22 +292,105 @@ const JainUniversity = () => {
       </section>
 
       {/* Approvals & Recognitions Section */}
-      <section className="bg-white py-8">
+      <section className="bg-white py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-6">Approvals & Recognitions</h2>
-          <div className="flex flex-nowrap overflow-x-auto gap-12 py-4 justify-center items-center">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">Approvals & Recognitions</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {approvals.map((approval, index) => (
-              <div key={index} className="flex-none p-2">
-                <img
-                  src={approval.icon}
-                  alt={approval.name}
-                  className="h-20 w-auto object-contain"
-                />
-              </div>
+              <Card key={index} className="p-4 shadow-sm text-center">
+                <CardContent className="flex flex-col items-center p-0">
+                  <img
+                    src={approval.icon}
+                    alt={approval.name}
+                    className="h-16 w-16 mb-2 object-contain"
+                  />
+                  <h3 className="text-base font-semibold text-gray-900 mb-1">{approval.name}</h3>
+                  <p className="text-gray-600 text-sm">{approval.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Explore Our Top Online Degree Courses */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-12">
+            <h2 className="text-4xl font-bold text-center text-gray-900 mb-4 md:mb-0">Explore Our Top Online Degree Courses</h2>
+            <div className="flex gap-4">
+              <Button
+                onClick={() => setActiveFilter("All")}
+                className={cn(
+                  "px-6 py-2 rounded-full font-semibold",
+                  activeFilter === "All" ? "bg-orange-600 text-white hover:bg-orange-700" : "bg-transparent text-gray-800 border border-gray-300 hover:bg-gray-200"
+                )}
+              >
+                All Courses
+              </Button>
+              <Button
+                onClick={() => setActiveFilter("UG")}
+                className={cn(
+                  "px-6 py-2 rounded-full font-semibold",
+                  activeFilter === "UG" ? "bg-orange-600 text-white hover:bg-orange-700" : "bg-transparent text-gray-800 border border-gray-300 hover:bg-gray-200"
+                )}
+              >
+                UG Courses
+              </Button>
+              <Button
+                onClick={() => setActiveFilter("PG")}
+                className={cn(
+                  "px-6 py-2 rounded-full font-semibold",
+                  activeFilter === "PG" ? "bg-orange-600 text-white hover:bg-orange-700" : "bg-transparent text-gray-800 border border-gray-300 hover:bg-gray-200"
+                )}
+              >
+                PG Courses
+              </Button>
+            </div>
+          </div>
+          
+          <div className="flex overflow-x-auto pb-4 -mx-4 md:mx-0">
+            <div className="flex flex-nowrap gap-6 pl-4 md:pl-0">
+              {filteredCourses.map((course, index) => (
+                <Card key={index} className="flex-none w-80 md:w-96 overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-0">
+                  <div className="relative">
+                    <img src={course.image} alt={course.name} className="w-full h-40 object-cover" />
+                    <Badge className="absolute top-4 left-4 text-xs font-medium bg-white text-gray-800">{course.badge}</Badge>
+                  </div>
+                  <CardContent className="p-6 space-y-4 bg-white">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{course.name}</h3>
+                    <div className="grid grid-cols-2 gap-y-4 gap-x-2 text-sm text-gray-700">
+                      <div className="flex items-center gap-2">
+                        <Clock className="h-4 w-4 text-orange-600" />
+                        <span>Duration: {course.duration}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <IndianRupee className="h-4 w-4 text-orange-600" />
+                        <span>Fee: {course.fee}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <ClipboardList className="h-4 w-4 text-orange-600" />
+                        <span>Eligibility: {course.eligibility}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Book className="h-4 w-4 text-orange-600" />
+                        <span>Type: {course.type}</span>
+                      </div>
+                    </div>
+                    <Button 
+                      className="w-full flex justify-between items-center bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded-lg mt-4"
+                      onClick={openForm}
+                    >
+                      Apply Now <ChevronRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Key Features */}
       <section className="bg-white py-16">
@@ -356,114 +459,6 @@ const JainUniversity = () => {
                   <div className="text-2xl font-bold text-orange-600">Top 100</div>
                   <div className="text-gray-600">University in India</div>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Explore Our Top Online Degree Courses */}
-      <section className="bg-white py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">Explore Our Top Online Degree Courses</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* MBA Course */}
-            <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg">
-              <CardContent className="p-6 space-y-4">
-                <Badge className="bg-orange-100 text-orange-800 mb-2">Most Popular</Badge>
-                <div className="space-y-3">
-                  <h3 className="text-xl font-bold text-gray-900">Master of Business Administration</h3>
-                  <div className="flex items-center gap-2">
-                    <div className="flex items-center">
-                      {[...Array(5)].map((_, i) => (
-                        <div key={i} className="w-4 h-4 bg-yellow-400 rounded-full mr-1"></div>
-                      ))}
-                    </div>
-                    <span className="text-sm text-gray-600">4.9</span>
-                  </div>
-                  <div className="space-y-2 text-sm text-gray-600">
-                    <div className="flex items-center gap-2">
-                      <span>📅</span>
-                      <span>24 months</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span>💰</span>
-                      <span>INR 1,75,000</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span>🎓</span>
-                      <span>No experience required</span>
-                    </div>
-                  </div>
-                </div>
-                <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">Enroll Now</Button>
-              </CardContent>
-            </Card>
-
-            {/* BBA Course */}
-            <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg">
-              <CardContent className="p-6 space-y-4">
-                <Badge className="bg-green-100 text-green-800 mb-2">Limited Seats</Badge>
-                <div className="space-y-3">
-                  <h3 className="text-xl font-bold text-gray-900">Bachelor of Business Administration</h3>
-                  <div className="flex items-center gap-2">
-                    <div className="flex items-center">
-                      {[...Array(5)].map((_, i) => (
-                        <div key={i} className="w-4 h-4 bg-yellow-400 rounded-full mr-1"></div>
-                      ))}
-                    </div>
-                    <span className="text-sm text-gray-600">4.7</span>
-                  </div>
-                  <div className="space-y-2 text-sm text-gray-600">
-                    <div className="flex items-center gap-2">
-                      <span>📅</span>
-                      <span>36 months</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span>💰</span>
-                      <span>INR 1,35,000</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span>🎓</span>
-                      <span>45% marks in 10+2</span>
-                    </div>
-                  </div>
-                </div>
-                <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">Enroll Now</Button>
-              </CardContent>
-            </Card>
-
-            {/* MCA Course */}
-            <Card className="hover:shadow-xl transition-shadow border-0 shadow-lg">
-              <CardContent className="p-6 space-y-4">
-                <Badge className="bg-blue-100 text-blue-800 mb-2">Trending</Badge>
-                <div className="space-y-3">
-                  <h3 className="text-xl font-bold text-gray-900">Master of Computer Applications</h3>
-                  <div className="flex items-center gap-2">
-                    <div className="flex items-center">
-                      {[...Array(5)].map((_, i) => (
-                        <div key={i} className="w-4 h-4 bg-yellow-400 rounded-full mr-1"></div>
-                      ))}
-                    </div>
-                    <span className="text-sm text-gray-600">4.8</span>
-                  </div>
-                  <div className="space-y-2 text-sm text-gray-600">
-                    <div className="flex items-center gap-2">
-                      <span>📅</span>
-                      <span>24 months</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span>💰</span>
-                      <span>INR 1,58,000</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span>🎓</span>
-                      <span>No experience required</span>
-                    </div>
-                  </div>
-                </div>
-                <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">Enroll Now</Button>
               </CardContent>
             </Card>
           </div>
