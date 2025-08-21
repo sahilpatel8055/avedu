@@ -30,18 +30,6 @@ import mcaImg from "@/assets/course/mca.jpg";
 import bcaImg from "@/assets/course/bca.jpg";
 import baImg from "@/assets/course/ba.jpg";
 
-// You can add this CSS to your global stylesheet or a <style> tag if you are using a tool that supports it
-// This ensures the custom scrollbar works.
-/*
-.custom-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.custom-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-*/
-
 const approvals = [
   { name: 'UGC Entitled', icon: ugcIcon, description: 'The university is entitled by UGC to offer online degrees.', },
   { name: 'NAAC A++', icon: naacIcon, description: 'Jain University is NAAC A++ accredited for quality education.', },
