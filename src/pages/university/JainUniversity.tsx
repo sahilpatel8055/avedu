@@ -65,7 +65,7 @@ const JainUniversity = () => {
               alt="Jain University Online" 
               className="h-12 w-auto"
               onError={(e) => {
-                const target = e.target;
+                const target = e.target as HTMLImageElement;
                 target.src = '/src/assets/uni_logo/jain.png';
               }}
             />
