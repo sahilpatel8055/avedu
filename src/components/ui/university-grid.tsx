@@ -138,7 +138,7 @@ export const universities: University[] = [
     image: mangalayatanLogo,
   },
   {
-    id: "6",
+    id: "jain",
     name: "Jain University Online",
     location: "Bangalore, KA",
     rating: 4.5,

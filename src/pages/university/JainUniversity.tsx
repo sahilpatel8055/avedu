@@ -294,21 +294,23 @@ const JainUniversity = () => {
       {/* Approvals & Recognitions Section */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">Approvals & Recognitions</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {approvals.map((approval, index) => (
-              <Card key={index} className="p-4 shadow-sm text-center">
-                <CardContent className="flex flex-col items-center p-0">
-                  <img
-                    src={approval.icon}
-                    alt={approval.name}
-                    className="h-16 w-16 mb-2 object-contain"
-                  />
-                  <h3 className="text-base font-semibold text-gray-900 mb-1">{approval.name}</h3>
-                  <p className="text-gray-600 text-sm">{approval.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">Rankings & Accreditations</h2>
+          <div className="overflow-x-auto">
+            <div className="flex gap-6 pb-4 min-w-max">
+              {approvals.map((approval, index) => (
+                <Card key={index} className="flex-none w-72 p-6 shadow-sm text-center" style={{ backgroundColor: '#575757' }}>
+                  <CardContent className="flex flex-col items-center p-0">
+                    <img
+                      src={approval.icon}
+                      alt={approval.name}
+                      className="h-16 w-16 mb-4 object-contain"
+                    />
+                    <h3 className="text-base font-semibold text-white mb-2">{approval.name}</h3>
+                    <p className="text-gray-200 text-sm">{approval.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -349,43 +351,104 @@ const JainUniversity = () => {
             </div>
           </div>
           
-          <div className="flex overflow-x-auto pb-4 -mx-4 md:mx-0">
-            <div className="flex flex-nowrap gap-6 pl-4 md:pl-0">
-              {filteredCourses.map((course, index) => (
-                <Card key={index} className="flex-none w-80 md:w-96 overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-0">
-                  <div className="relative">
-                    <img src={course.image} alt={course.name} className="w-full h-40 object-cover" />
-                    <Badge className="absolute top-4 left-4 text-xs font-medium bg-white text-gray-800">{course.badge}</Badge>
-                  </div>
-                  <CardContent className="p-6 space-y-4 bg-white">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{course.name}</h3>
-                    <div className="grid grid-cols-2 gap-y-4 gap-x-2 text-sm text-gray-700">
-                      <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4 text-orange-600" />
-                        <span>Duration: {course.duration}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <IndianRupee className="h-4 w-4 text-orange-600" />
-                        <span>Fee: {course.fee}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <ClipboardList className="h-4 w-4 text-orange-600" />
-                        <span>Eligibility: {course.eligibility}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Book className="h-4 w-4 text-orange-600" />
-                        <span>Type: {course.type}</span>
-                      </div>
+          <div className="overflow-x-auto">
+            <div className="grid grid-cols-2 gap-6 min-w-max">
+              <div className="flex flex-nowrap gap-6">
+                {filteredCourses.slice(0, Math.ceil(filteredCourses.length / 2)).map((course, index) => (
+                  <Card key={index} className="flex-none w-80 md:w-96 overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-0">
+                    <div className="relative">
+                      <img src={course.image} alt={course.name} className="w-full h-40 object-cover" />
+                      <Badge className="absolute top-4 left-4 text-xs font-medium bg-white text-gray-800">{course.badge}</Badge>
                     </div>
-                    <Button 
-                      className="w-full flex justify-between items-center bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded-lg mt-4"
-                      onClick={openForm}
-                    >
-                      Apply Now <ChevronRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
+                    <CardContent className="p-6 space-y-4 bg-white">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">{course.name}</h3>
+                      <div className="grid grid-cols-2 gap-y-4 gap-x-2 text-sm text-gray-700">
+                        <div className="flex items-center gap-2">
+                          <Clock className="h-4 w-4 text-orange-600" />
+                          <span>Duration: {course.duration}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <IndianRupee className="h-4 w-4 text-orange-600" />
+                          <span>Fee: {course.fee}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <ClipboardList className="h-4 w-4 text-orange-600" />
+                          <span>Eligibility: {course.eligibility}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Book className="h-4 w-4 text-orange-600" />
+                          <span>Type: {course.type}</span>
+                        </div>
+                      </div>
+                      <div className="flex gap-2 mt-4">
+                        <Button 
+                          className="flex-1 bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded-lg"
+                          onClick={openForm}
+                        >
+                          Apply Now
+                        </Button>
+                        <Button 
+                          asChild
+                          variant="outline"
+                          className="flex-1 border-orange-600 text-orange-600 hover:bg-orange-50 font-semibold py-2 px-4 rounded-lg"
+                        >
+                          <a href={`/university/jain/${course.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z-]/g, '')}`}>
+                            View Details
+                          </a>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              <div className="flex flex-nowrap gap-6">
+                {filteredCourses.slice(Math.ceil(filteredCourses.length / 2)).map((course, index) => (
+                  <Card key={index + Math.ceil(filteredCourses.length / 2)} className="flex-none w-80 md:w-96 overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-0">
+                    <div className="relative">
+                      <img src={course.image} alt={course.name} className="w-full h-40 object-cover" />
+                      <Badge className="absolute top-4 left-4 text-xs font-medium bg-white text-gray-800">{course.badge}</Badge>
+                    </div>
+                    <CardContent className="p-6 space-y-4 bg-white">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">{course.name}</h3>
+                      <div className="grid grid-cols-2 gap-y-4 gap-x-2 text-sm text-gray-700">
+                        <div className="flex items-center gap-2">
+                          <Clock className="h-4 w-4 text-orange-600" />
+                          <span>Duration: {course.duration}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <IndianRupee className="h-4 w-4 text-orange-600" />
+                          <span>Fee: {course.fee}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <ClipboardList className="h-4 w-4 text-orange-600" />
+                          <span>Eligibility: {course.eligibility}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Book className="h-4 w-4 text-orange-600" />
+                          <span>Type: {course.type}</span>
+                        </div>
+                      </div>
+                      <div className="flex gap-2 mt-4">
+                        <Button 
+                          className="flex-1 bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded-lg"
+                          onClick={openForm}
+                        >
+                          Apply Now
+                        </Button>
+                        <Button 
+                          asChild
+                          variant="outline"
+                          className="flex-1 border-orange-600 text-orange-600 hover:bg-orange-50 font-semibold py-2 px-4 rounded-lg"
+                        >
+                          <a href={`/university/jain/${course.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z-]/g, '')}`}>
+                            View Details
+                          </a>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </div>
