@@ -44,6 +44,8 @@ import LPUCoursePage from "./pages/course/LPUCoursePage";
 import MangalayatanCoursePage from "./pages/course/MangalayatanCoursePage";
 // NEW DU SOL dynamic course page
 import DUSOLCoursePage from "./pages/course/DUSOLCoursePage";
+// NEW Jain dynamic course page
+import JainCoursePage from "./pages/course/JainCoursePage";
 // Legal pages
 import Disclaimer from "./pages/legal/Disclaimer";
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
@@ -112,6 +114,7 @@ const App = () => {
           <Route path="/university/lpu/:courseId" element={<LPUCoursePage />} />
 <Route path="/university/mangalyatan/:courseId" element={<MangalayatanCoursePage />} />
 <Route path="/university/du-sol/:courseId" element={<DUSOLCoursePage />} />
+<Route path="/university/jain/:courseId" element={<JainCoursePage />} />
           {/* Legal pages */}
           {/* University Comparison Page */}
           <Route path="/comparison" element={<UniversityComparison />} />
