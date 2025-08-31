@@ -76,11 +76,50 @@ const App = () => {
       <Sonner />
       <ScrollToTop />
       {!location.pathname.includes('/courses/mba') && <GlobalIntelligentPopup />}
-    <Routes>
+        <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/universities" element={<Universities />} />
+
+          {/* SEO Routes */}
+          <Route path="/ignou" element={<IGNOUPage />} />
+          <Route path="/manipal-university" element={<ManipalUniversityPage />} />
+          <Route path="/uu" element={<UttaranchalOnlinePage />} />
+          <Route path="/vgu" element={<VGUOnlinePage />} />
+          <Route path="/amity-online" element={<AmityOnlinePage />} />
+          <Route path="/chandigarh-university-online" element={<ChandigarhUniversityOnlinePage />} />
+          <Route path="/jain-university-online" element={<JainUniversityOnlinePage />} />
+          <Route path="/lpu-online" element={<LPUOnlinePage />} />
+          <Route path="/sikkim-manipal-online" element={<SikkimManipalOnlinePage />} />
+          <Route path="/dy-patil-online" element={<DYPatilOnlinePage />} />
+          <Route path="/symbiosis-centre-for-online-learning" element={<SymbiosisOnlineLearningPage />} />
+
+          {/* Keyword SEO Routes */}
+          <Route path="/onlinemanipal" element={<OnlineManipalPage />} />
+          <Route path="/amityonline" element={<AmityOnlineKeywordPage />} />
+          <Route path="/onlinecu" element={<OnlineCUPage />} />
+          <Route path="/ignoudistance" element={<IGNOUDistancePage />} />
+          <Route path="/onlineuu" element={<OnlineUUPage />} />
+
+          {/* Course Admission SEO Routes */}
+          <Route path="/online-mba-admission" element={<OnlineMBAAdmissionPage />} />
+          <Route path="/online-mba-fees" element={<OnlineMBAFeesPage />} />
+          <Route path="/online-mba-eligibility" element={<OnlineMBAEligibilityPage />} />
+          <Route path="/online-bba-admission" element={<OnlineBBAAdmissionPage />} />
+          <Route path="/online-courses-admission-process" element={<OnlineCoursesAdmissionProcessPage />} />
+          <Route path="/scholarships" element={<ScholarshipsPage />} />
+
+          {/* University-specific course SEO routes */}
+          <Route path="/ignou/online-mba" element={<IGNOU />} />
+          <Route path="/ignou/online-mca" element={<IGNOU />} />
+          <Route path="/manipal/online-mba" element={<Manipal />} />
+          <Route path="/manipal/online-bca" element={<Manipal />} />
+          <Route path="/amity/online-mba" element={<Amity />} />
+          <Route path="/lpu/online-bba" element={<LPU />} />
+          <Route path="/chandigarh-university/online-mcom" element={<Universities />} />
+
+          {/* University pages */}
           <Route path="/university/ignou" element={<IGNOU />} />
           <Route path="/university/manipal" element={<Manipal />} />
           <Route path="/university/uttaranchal" element={<Uttaranchal />} />
@@ -91,7 +130,8 @@ const App = () => {
           <Route path="/university/mangalyatan" element={<Mangalyatan />} />
           <Route path="/university/du-sol" element={<DUSOL />} />
           <Route path="/university/jain" element={<JainUniversity />} />
-          {/* Your original course routes - these remain unchanged */}
+
+          {/* Course category pages */}
           <Route path="/courses/mba" element={<OnlineMBA />} />
           <Route path="/courses/mca" element={<OnlineMCA />} />
           <Route path="/courses/mcom" element={<OnlineMCOM />} />
@@ -100,30 +140,28 @@ const App = () => {
           <Route path="/courses/bba" element={<OnlineBBA />} />
           <Route path="/courses/bcom" element={<OnlineCommerce />} />
           <Route path="/courses/ba" element={<OnlineArts />} />
-          {/* The new dynamic route, now correctly pointing to /courses/:courseId */}
+
+          {/* Dynamic university course pages */}
           <Route path="/courses/:courseId" element={<CoursePage />} />
-          {/* The new route for Manipal's specific course pages */}
           <Route path="/university/manipal/courses/:courseId" element={<ManipalCoursePage />} />
-          {/* The new route for Uttaranchal's specific course pages */}
           <Route path="/university/uttaranchal/:courseId" element={<UttaranchalCoursePage />} />
-          {/* Add the new dynamic route for VGU courses */}
           <Route path="/university/vgu/:courseId" element={<VguCoursePage />} />
-          {/* Add routes for Sikkim, Amity, LPU, and Mangalyatan course pages */}
           <Route path="/university/sikkim/:courseId" element={<SikkimCoursePage />} />
           <Route path="/university/amity/:courseId" element={<AmityCoursePage />} />
           <Route path="/university/lpu/:courseId" element={<LPUCoursePage />} />
-<Route path="/university/mangalyatan/:courseId" element={<MangalayatanCoursePage />} />
-<Route path="/university/du-sol/:courseId" element={<DUSOLCoursePage />} />
-<Route path="/university/jain/:courseId" element={<JainCoursePage />} />
-          {/* Legal pages */}
+          <Route path="/university/mangalyatan/:courseId" element={<MangalayatanCoursePage />} />
+          <Route path="/university/du-sol/:courseId" element={<DUSOLCoursePage />} />
+          <Route path="/university/jain/:courseId" element={<JainCoursePage />} />
+
           {/* University Comparison Page */}
           <Route path="/comparison" element={<UniversityComparison />} />
+
           {/* Legal pages */}
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="*" element={<NotFound />} />
-    </Routes>
+        </Routes>
     </>
   );
 };

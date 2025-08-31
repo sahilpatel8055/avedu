@@ -1,0 +1,36 @@
+{
+  "name": "AVEDU - Online Education Platform",
+  "short_name": "AVEDU",
+  "description": "Find the perfect online UG & PG courses from 100+ top Indian universities. Get free expert counselling.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0066ff",
+  "orientation": "portrait-primary",
+  "categories": ["education", "reference", "productivity"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/lovable-uploads/d1a868cd-cbeb-4c57-9a43-86bb3e758613.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/d1a868cd-cbeb-4c57-9a43-86bb3e758613.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/hero-education.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    }
+  ],
+  "prefer_related_applications": false
+}
