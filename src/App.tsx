@@ -54,6 +54,36 @@ import Blog from "./pages/Blog";
 import Courses from "./pages/Courses";
 import UniversityComparison from "./pages/UniversityComparison";
 
+// SEO redirect pages
+import IGNOUPage from "./pages/seo/IGNOUPage";
+import ManipalUniversityPage from "./pages/seo/ManipalUniversityPage";
+import UttaranchalOnlinePage from "./pages/seo/UttaranchalOnlinePage";
+import VGUOnlinePage from "./pages/seo/VGUOnlinePage";
+import AmityOnlinePage from "./pages/seo/AmityOnlinePage";
+import { 
+  ChandigarhUniversityOnlinePage,
+  JainUniversityOnlinePage,
+  LPUOnlinePage,
+  SikkimManipalOnlinePage,
+  DYPatilOnlinePage,
+  SymbiosisOnlineLearningPage
+} from "./pages/seo/UniversityOnlinePages";
+import { 
+  OnlineManipalPage,
+  AmityOnlineKeywordPage,
+  OnlineCUPage,
+  IGNOUDistancePage,
+  OnlineUUPage
+} from "./pages/seo/KeywordPages";
+import { 
+  OnlineMBAAdmissionPage,
+  OnlineMBAFeesPage,
+  OnlineMBAEligibilityPage,
+  OnlineBBAAdmissionPage,
+  OnlineCoursesAdmissionProcessPage,
+  ScholarshipsPage
+} from "./pages/courses/CourseAdmissionPages";
+
 // Component to scroll to top on route change
 const ScrollToTop = () => {
   const location = useLocation();
