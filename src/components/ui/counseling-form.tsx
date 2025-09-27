@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,6 +7,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { X, Star, Users, GraduationCap, Award, Clock, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+
+// Add type declaration for gtag_report_conversion
+declare global {
+  interface Window {
+    gtag_report_conversion?: () => void;
+  }
+}
 
 interface CounselingFormProps {
   open: boolean;
@@ -94,13 +101,22 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
       setLoading(true);
       const res = await fetch('https://avedu.onrender.com/api/submit-lead', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        mode: 'cors',
         body: JSON.stringify(payload),
       });
 
       const data = await res.json().catch(() => ({}));
       if (!res.ok || data.success === false) {
         throw new Error(data.error || 'Failed to submit. Please try again.');
+      }
+
+      // Track Google Ads conversion
+      if (typeof window !== 'undefined' && window.gtag_report_conversion) {
+        window.gtag_report_conversion();
       }
 
       toast({
@@ -110,9 +126,10 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
       onFormSubmit?.();
       onOpenChange(false);
     } catch (err: any) {
+      console.error('Form submission error:', err);
       toast({
         title: 'Submission failed',
-        description: err?.message || 'Please try again later.',
+        description: err?.message || 'Network error. Please check your connection and try again.',
         variant: 'destructive',
       });
     } finally {
@@ -127,6 +144,8 @@ const CounselingForm: React.FC<CounselingFormProps> = ({ open, onOpenChange, onF
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="w-[min(92vw,900px)] max-w-none rounded-2xl p-3 sm:p-5 bg-white mx-2 sm:mx-4 my-2 sm:my-8 overflow-hidden">
+        <DialogTitle className="sr-only">Counseling Form</DialogTitle>
+        <DialogDescription className="sr-only">Fill out this form to get free counseling for online university courses</DialogDescription>
         <div className="grid lg:grid-cols-[65%_35%] gap-0 h-full">
           {/* Left Side - Form */}
           <div className="p-3 sm:p-4">

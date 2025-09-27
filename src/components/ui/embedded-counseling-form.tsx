@@ -8,6 +8,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
+// Add type declaration for gtag_report_conversion
+declare global {
+  interface Window {
+    gtag_report_conversion?: () => void;
+  }
+}
+
 const states = [
   "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", 
   "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", 
@@ -89,13 +96,27 @@ const EmbeddedCounselingForm: React.FC<EmbeddedCounselingFormProps> = ({ variant
       setLoading(true);
       const res = await fetch('https://avedu.onrender.com/api/submit-lead', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        mode: 'cors',
         body: JSON.stringify(payload),
       });
 
       const data = await res.json().catch(() => ({}));
       if (!res.ok || data.success === false) {
         throw new Error(data.error || 'Failed to submit. Please try again.');
+      }
+
+      // Track Google Ads conversion
+      if (typeof window !== 'undefined' && window.gtag_report_conversion) {
+        window.gtag_report_conversion();
+      }
+
+      // Track Google Ads conversion
+      if (typeof window !== 'undefined' && window.gtag_report_conversion) {
+        window.gtag_report_conversion();
       }
 
       toast({
@@ -106,9 +127,10 @@ const EmbeddedCounselingForm: React.FC<EmbeddedCounselingFormProps> = ({ variant
       // Optionally reset form
       setFormData(prev => ({ ...prev, fullName: '', contactNumber: '', email: '', state: '', city: '', course: '' }));
     } catch (err: any) {
+      console.error('Form submission error:', err);
       toast({
         title: 'Submission failed',
-        description: err?.message || 'Please try again later.',
+        description: err?.message || 'Network error. Please check your connection and try again.',
         variant: 'destructive',
       });
     } finally {
