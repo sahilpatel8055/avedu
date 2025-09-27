@@ -119,6 +119,22 @@
     </script>
     <!-- End Google Tag -->
 
+    <!-- Event snippet for Submit lead form conversion page -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17593418440/TFY5CIjO9KIbEMiFmcVB',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
   </head>
 
   <body>
