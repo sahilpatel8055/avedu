@@ -8,8 +8,8 @@ import dotenv from 'dotenv';
 dotenv.config({ path: './.env' });
 
 const PORT = process.env.PORT || 3001;
-const SHEET_ID = process.env.SHEET_ID;
-const SHEET_NAME = process.env.SHEET_NAME || 'Web leads - Avedu';
+const SHEET_ID = process.env.SHEET_ID || '1bcp4UNpXdUFaaia3kpXsLTVFW_9eT8i2OpuAXSwJoIY';
+const SHEET_NAME = process.env.SHEET_NAME || 'Avedu-MU';
 
 if (!SHEET_ID) {
   console.warn('[WARN] SHEET_ID is not set. API will fail to write until configured.');
